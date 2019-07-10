@@ -135,10 +135,11 @@ def plot_trajectory(data_path, data_file):
     plt.plot(x1[:,0], x1[:,1], label='$M_\\bullet = {:.2e} M_\odot$'.format(bh1.m[0] * unit_mass_in_kg / 1.989e30))
     plt.plot(0, 0, 'ro', label='Initial c.o.m. position')
 
-    plt.legend(loc=3)
+    plt.legend(loc=4)
     plt.xlabel("x-position [pc]")
     plt.ylabel("y-position [pc]")
     plt.show()
+    #plt.savefig("Run_1_Trajectory.png")
 
 data_path = "../data/data_dumps/"
 data_files = [
@@ -149,8 +150,8 @@ data_files = [
 #    "chain_new.txt"
     ]
 
-plot_as_and_es(data_path, data_files)
-#plot_trajectory(data_path, data_files[2])
+#plot_as_and_es(data_path, data_files)
+plot_trajectory(data_path, data_files[3])
 
 '''
 matplotlib.rcParams.update({'font.size': 14})

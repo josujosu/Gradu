@@ -44,6 +44,8 @@ filenames = [
 basic_bins = np.logspace(np.log10(40), np.log10(62000), 50)
 basic_bins20 = np.logspace(np.log10(40), np.log10(62000), 20)
 
+nuker_bins = np.logspace(np.log10(40), np.log10(3100), 50)
+
 beta_bins = np.logspace(1.95, 4.5, 20)
 beta_bins_rb = np.logspace(1.5, 4.5, 20)
 beta_bins2 = np.append(np.array([0]), np.arange(190, 1*10**4.1, 0.19e3))
@@ -636,11 +638,12 @@ def plot_core_fits(r, I, pars, a0, a1):
     a0.plot(x / 1000, y_core, '-g', linewidth=2, label="Core-Sérsic profile")
     a0.set_xlim(1e-2, 1e2)
     a0.semilogx()
-    a0.set_ylabel("$\mu_V$(r) [mag arcsec$^{-2}$]")
+    a0.set_ylabel("$\mu_V$(r) [mag arcsec$^{-2}$]", fontsize=14)
     y_size = a0.get_ybound()[1] - a0.get_ybound()[0]
-    a0.text(0.02, a0.get_ybound()[1]-0.2*y_size, parameter_text, fontsize=12)
+    #a0.text(0.02, a0.get_ybound()[1]-0.2*y_size, parameter_text, fontsize=12)
+    a0.text(0.05, 0.05, parameter_text, fontsize=14, transform=a0.transAxes)
     #a0.text(4, a0.get_ybound()[1]-0.9*y_size, "Core-Sérsic", fontsize=12)
-    a0.legend(loc=3)
+    #a0.legend(loc=3)
     a0.invert_yaxis()
     a0.tick_params(direction='in', bottom=False, right=True, top=True)#, labelbottom=False)
 
@@ -649,11 +652,11 @@ def plot_core_fits(r, I, pars, a0, a1):
     a1.plot(r/1000, rs, 'ob', markersize=3)
     a1.set_xlim(1e-2, 1e2)
     a1.semilogx()
-    a1.set_ylabel("Residuals")
+    a1.set_ylabel("Residuals", fontsize=14)
     a1.invert_yaxis()
     y_size = a1.get_ybound()[1] - a1.get_ybound()[0]
-    a1.text(0.015, a1.get_ybound()[0]-0.05*y_size, "$\Delta =$ {:.4f}".format(rms))
-    a1.set_xlabel("r [kpc]")
+    a1.text(0.015, a1.get_ybound()[0]-0.05*y_size, "$\Delta =$ {:.4f}".format(rms), fontsize=14)
+    a1.set_xlabel("r [kpc]", fontsize=14)
 
 
 def plot_nuker_fits(r, I, pars, a0, a1):
@@ -687,12 +690,13 @@ def plot_nuker_fits(r, I, pars, a0, a1):
     a0.plot(x / 1000, y, '-g', linewidth=2, label="Nuker profile")
     a0.set_xlim(1e-2, np.log10(3100))
     a0.semilogx()
-    a0.set_ylabel("$\mu_V$(r) [mag arcsec$^{-2}$]")
+    a0.set_ylabel("$\mu_V$(r) [mag arcsec$^{-2}$]", fontsize=14)
     y_size = a0.get_ybound()[1] - a0.get_ybound()[0]
-    a0.text(0.015, a0.get_ybound()[1] - 0.2 * y_size, parameter_text, fontsize=16)
-    a0.text(1, a0.get_ybound()[1] - 0.9 * y_size, "Nuker", fontsize=16)
+    #a0.text(0.015, a0.get_ybound()[1] - 0.2 * y_size, parameter_text, fontsize=16)
+    a0.text(0.05, 0.05, parameter_text, fontsize=14, transform=a0.transAxes)
+    #a0.text(1, a0.get_ybound()[1] - 0.9 * y_size, "Nuker", fontsize=16)
     a0.invert_yaxis()
-    a0.legend(loc=3)
+    #a0.legend(loc=3)
     a0.tick_params(direction='in', bottom=False, right=True, top=True)#, labelbottom=False)
 
 
@@ -700,11 +704,11 @@ def plot_nuker_fits(r, I, pars, a0, a1):
     a1.plot(r/1000, rs, 'ob', markersize=3)
     a1.set_xlim(1e-2, np.log10(3100))
     a1.semilogx()
-    a1.set_ylabel("Residuals")
+    a1.set_ylabel("Residuals", fontsize=14)
     a1.invert_yaxis()
     y_size = a1.get_ybound()[1] - a1.get_ybound()[0]
-    a1.text(0.015, a1.get_ybound()[0] - 0.05 * y_size, "$\Delta =$ {:.4f}".format(rms))
-    a1.set_xlabel("r [kpc]")
+    a1.text(0.015, a1.get_ybound()[0] - 0.05 * y_size, "$\Delta =$ {:.4f}".format(rms), fontsize=14)
+    a1.set_xlabel("r [kpc]", fontsize=14)
 
 
 def plot_and_show_nuker_and_core(r_c, I_c, r_n, I_n, core_pars, nuker_pars):
@@ -780,6 +784,57 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
     plt.show()
 
 
+def plot_all_core_nuker_fits(infiles, bins, exc=0, profile='c'):
+
+    f, ax = plt.subplots(6, 2, figsize=(15, 20), gridspec_kw={'height_ratios': [4, 1, 4, 1, 4, 1]})
+
+    init_pars = [0]
+    if profile == 'c':
+        init_pars = [1e5, 300, 2, 0.01, 0]
+    elif profile == 'n':
+        init_pars = [1e6, 500, 0.7, 10, 0]
+
+    identifiers = ['(a)', '(b)', '(c)', '(d)', '(e)', '(f)']
+
+    # Good core sersic initial values: [1e5, 300, 2, 0.01, r_e]
+    # Good nuker initial values: [1e6, 500, 0.7, 10, 0]
+
+    for i, file in enumerate(infiles):
+
+        r, I, pars = fit_from_file(file, bins, init_pars, profile=profile, exc=exc, calc_re=True)
+
+        x = i%2
+        y1 = int(np.floor(i/2)*2)
+        y2 = int(np.floor(i/2)*2+1)
+
+        a0 = ax[y1, x]
+        a1 = ax[y2, x]
+
+        if profile == 'c':
+            plot_core_fits(r, I, pars, a0, a1)
+        if profile == 'n':
+            plot_nuker_fits(r, I, pars, a0, a1)
+
+        # Remove labels from problematic places:
+        if(i % 2 != 0):
+            a0.set_ylabel('')
+            a1.set_ylabel('')
+
+        if(i != 4 and i != 5):
+            a1.set_xlabel('')
+
+        a0.tick_params(labelsize=14)
+        a1.tick_params(labelsize=14)
+
+        a0.text(0.9, 0.9, identifiers[i], transform=a0.transAxes, fontsize=20)
+
+
+
+    plt.savefig('dummy.png')
+
+
+
+
 
 def smooth(xs, m):
     res = np.zeros(len(xs))
@@ -805,12 +860,34 @@ def write_data_to_file(outfile, file_num, bins):
 
 
 
+files = [
+    "file_1_50bins.dat",
+    "file_2_50bins.dat",
+    "file_3_50bins.dat",
+    "file_4_50bins.dat",
+    "file_5_50bins.dat",
+    "file_6_50bins.dat"
+    ]
 
+nuker_files = [
+    "nuker_file_1_50.dat",
+    "nuker_file_2_50.dat",
+    "nuker_file_3_50.dat",
+    "nuker_file_4_50.dat",
+    "nuker_file_5_50.dat",
+    "nuker_file_6_50.dat"
+    ]
+
+plot_all_core_nuker_fits(nuker_files, nuker_bins, 0, 'n')
+
+
+'''
 r, I, pars = fit_from_file('file_0_20bins.dat', basic_bins20, [0, 0, 4], 's', calc_re=True, exc=1)
 
 f, (a0, a1) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]})
 plot_sersic_fits(r, I, pars, a0, a1)
 plt.show()
+'''
 
 #plot_mus('100_bin_100_mean_BH{}.dat', np.arange(0, 7))
 

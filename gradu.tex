@@ -91,17 +91,15 @@ Abstract goes here.
 
 \chapter{KETJU Results}
 
-We analyse the results from two sets of early type galaxy merger KETJU simulations, where the progenitor galaxies contain supermassive black holes, with masses ranging from $8.5 \times 10^8 M_\odot$ to $8.5 \times 10^9 M_\odot$, in their centre \citep{Mannerkoski2019, Rantala2018}. 
-
 \section{Simulation Details}
 
-Both simulation sets use the same progenitor galaxies in their simulations.
+We analyse the results from two sets of KETJU simulations, one done by \cite{Mannerkoski2019}, and another by \cite{Rantala2018}. Both sets simulate early type galaxy mergers, where the progenitors contain supermassive black holes with masses ranging from $8.5 \times 10^8 M_\odot$ to $8.5 \times 10^9 M_\odot$. They use the same progenitor galaxies in their simulations, however, where as \cite{Mannerkoski2019} use 
 
 The results from the simulations done by \cite{Mannerkoski2019} contain only the locations, velocities and the masses of the central black holes of the progenitor galaxies at different time steps; starting from the step where the semi-major-axis of the SMBH system is $a \lesssim 5000 R_s$, where $R_s$ is the Schwarzschild radius, up until the end of the simulation. We will show the initial conditions in more detail in the next subsection.
 
 The simulation results of \cite{Rantala2018} consist of the properties of not only the black holes, but also the stellar particles and dark matter particles. This data comes from a single time before the merging of the black holes step at $t = 2 \mathrm{Gyr}$ of in the simulation time. Once again, we will describe the initial conditions of the specific simulations in more depth later.
 
-To make the päppäpäppä distinction between the different type of simulation results clearer, we will be calling the results from \cite{Mannerkoski2019} "runs", as they contain data from multiple simulation time steps; and the single time step results by \cite{Rantala2018} "snapshots".
+To make the distinction between the different type of simulation results clearer, we will be calling the results from \cite{Mannerkoski2019} "runs", as they contain data from multiple simulation time steps; and the single time step results by \cite{Rantala2018} "snapshots".
 
 
 \section{Black Hole Trajectories}
@@ -120,9 +118,9 @@ To make the päppäpäppä distinction between the different type of simulation 
 
 \section{Core Radius Measurements}
 
-Since the core of a cored galaxy is defined as a deviation from the expected theoretical surface brightness profile, determining its size requires us to: not only calculate surface brightness profiles from the simulation results, but also try to model the results with theoretical models that somehow take the brightness deficiency of the core region into account, as the starting location of the deviations from the expected can't be measured by eye.
+Since the core of a cored galaxy is defined as a deficiency in the surface brightness profile when comparing it to the expected theoretical profile, determining its size requires us to not only calculate surface brightness profiles from the simulation results, but also try to determine the location where the deviation start.   model the results with theoretical models that somehow take the brightness deficiency of the core region into account, as the starting location of the deviations from the expected can't be measured by eye.
 
-We calculate the surface brightness profiles from the simulation snapshots by \cite{Rantala2018} by: projecting the stellar particles onto a plane and calculating the mass inside logarithmically space radial bins. In order to get a smooth density profile, we do this 100 times from random viewing angles and calculate the azimuthal averages of the binned masses. This allows us to form a mass surface density profile, which we then turn into a surface brightness profile by assuming a mass-to-light ratio of $M/L = 4$. In figure \ref{figure:surface_brightness}, one can see example surface brightness profiles for all of the simulated merger remnants. As can already be seen from the figure, the higher the mass of the central black holes in the progenitor galaxies, the larger the surface brightness deficiency near the center.
+We calculate the surface brightness profiles from the simulation snapshots by \cite{Rantala2018} by: projecting the stellar particles onto a plane and calculating the mass inside logarithmically space radial bins. In order to get a smooth density profile, we do the aforementioned calculations 100 times from random viewing angles and calculate the azimuthal averages of the binned masses. This allows us to form a mass surface density profile, which we then turn into a surface brightness profile by assuming a mass-to-light ratio of $M/L = 4$. In figure \ref{figure:surface_brightness}, one can see example surface brightness profiles for all of the simulated merger remnants. Looking at the different curves, it can be seen that, the higher the mass of the central black holes in the progenitor galaxies, the larger the surface brightness deficiency near the center.
 
 \begin{figure}[h]
 	\centering
@@ -131,18 +129,18 @@ We calculate the surface brightness profiles from the simulation snapshots by \c
 	\label{figure:surface_brightness}
 \end{figure}
 
-As stated before, in order to calculate the sizes of the cores from profiles such as the ones seen in figure \ref{figure:surface_brightness}, we need to fit some kind of theoretical model that can describe a profile with surface brightness deficiency near the galactic centre onto the measured quantity. There are two commonly used options of profiles used for measuring the core size. The first one is the core-Sérsic profile \citep{Graham2003}:
+As stated before, in order to calculate the sizes of the cores from profiles such as the ones seen in figure \ref{figure:surface_brightness}, we need to fit some kind of theoretical model that can describe a profile with surface brightness deficiency near the galactic centre. There are two commonly used options for this. The first one is the core-Sérsic profile \citep{Graham2003}, which divides the single power-law Sérsic profile into a combination of an inner and an outer power-law. The profile can be expressed using the following equation:
 \begin{equation}
 \mu(r) = \mu' \left[ 1 + \left( \frac{r_b}{r} \right)^\alpha \right]^{\gamma / \alpha} \exp \left\lbrace -b_n \left[ \left( r^\alpha + r_b^\alpha \right) / r_e^\alpha \right]^{1/(\alpha n)} \right\rbrace, \label{eq:core-sersic}
 \end{equation}
-which divides the single power law Sérsic profile into a combination of an inner and outer power-law, and where $r_b$ is the break radius (i.e. the core radius), $\gamma$ is the logarithmic slope of the inner power-law, $\alpha$ controls the sharpness of the transition between the two power-laws, $r_e$ and $n$ are the effective half-mass radius and the Sérsic index of the outer power-law, and $\mu'$ is defined by:
+where $r_b$ is the break radius (i.e. the core radius), $\gamma$ is the logarithmic slope of the inner power-law, $\alpha$ controls the sharpness of the transition between the two power-laws, $r_e$ and $n$ are the effective half-mass radius and the Sérsic index of the outer power-law, and the normalization factor $\mu'$ is defined by:
 \begin{equation}
 \mu' = \mu_b 2^{-\gamma/\alpha} \exp \left[ b_n \left( 2^(1/\alpha) r_b/r_e \right)^{1/n} \right], 
 \label{eq:mu_dot}
 \end{equation}
 where $\mu_b$ is the surface brightness at the break radius. 
 
-The second option for calculating the core radius is the so called Nuker profile \citep{Lauer1995}:
+The second option for determining the core radius through profile fitting, is using the so called Nuker profile \citep{Lauer1995}:
 \begin{equation}
 \mu(r) = 2^{(\beta - \gamma) / \alpha} \mu_b \left( \frac{r_b}{r} \right)^\gamma \left[ 1 + \left( \frac{r}{r_b} \right)^\alpha \right]^{(\gamma - \beta)/\alpha},
 \label{eq:nuker}
@@ -249,6 +247,81 @@ where $r_b$ is once again the break radius (core radius), $\mu_b$ is the surface
 
 
 \chapter{Conclusions}
+
+\appendix
+
+\chapter{Figures}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{Run1_Trajectory_small.png}
+		\caption{Run 1}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{Run2_Trajectory_small.png}
+		\caption{Run 2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{Run3_Trajectory_small.png}
+		\caption{Run 3}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{Run4_Trajectory_small.png}
+		\caption{Run 4}
+	\end{subfigure}
+	\caption{The trajectories of the black holes from simulation runs by \cite{Mannerkoski2019}. The coordinates are centred on the initial location of the centre-of-mass of the black hole system. The orange and blue lines show the paths taken by the smaller and larger black holes respectively during the simulation.}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{all_core_profiles.png}
+	\caption{Core-Sérsic profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different merger remnants ((a): BH-1, (b): BH-2, (c): BH-3, (d): BH-4, (e): BH-5, (f): BH-6).}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{all_nuker_profiles.png}
+	\caption{Nuker profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different merger remnants ((a): BH-1, (b): BH-2, (c): BH-3, (d): BH-4, (e): BH-5, (f): BH-6).}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_0.png}
+		\caption{BH-0}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_1.png}
+		\caption{BH-1}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_2.png}
+		\caption{BH-2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_3.png}
+		\caption{BH-3}
+	\end{subfigure}
+	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from four simulated merger remnants: BH-0, BH-1, BH-2 and BH-3.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_4.png}
+		\caption{BH-4}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_5.png}
+		\caption{BH-5}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_6.png}
+		\caption{BH-6}
+	\end{subfigure}
+	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from three simulated merger remnants: BH-4, BH-5 and BH-6.}
+\end{figure}
 
 % STEP 5:
 % Uncomment the following lines and set your .bib file and desired bibliography style
