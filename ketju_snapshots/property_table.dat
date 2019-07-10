@@ -1,0 +1,26 @@
+NGC1600
+mass:	   5e11 M_sun (Thomas 2016)
+bh_mass:   1.7e10 M_sun (Thomas 2016)
+sigma: 	   293 km/s (Veale 2017) velocity dispersion within r_e
+r_eff:	   51.7 arcsec (Thomas 2016) -> 0.0160415 Mpc -> 16 kpc
+mu_eff:	   22.53 mag/arcsec (HyperLeda)
+n:	   5.83 (Thomas 2016, Core-Sérsic fit)
+los_v:	   3.4 km/s (Bender 1994) 
+dist: 	   64 Mpc
+lambda_e:  0.026 (Veale 2017 (2018?), MASSIVE)
+ellip:	   0.32 (Goullaud 2018, MASSIVE) (luminosity weighted mean, NOT at effective radius)
+
+-------------------------------------------------------------------------------------------
+
+BH-6
+mass:	   4.959747e11
+bh_mass:   2 x 8.5e9 M_sun
+sigma:	   311 km/s (calculated average from voronoi bins inside r_e = 8.914 kpc) (296 km/s)
+r_eff:	   8.914 kpc (or 5.507 kpc)
+mu_eff:	   17.7 (20.26)
+n: 	   4
+los_v:	   -39.3 / 34.06 (calculated minimum and maximum from voronoi bins inside r_e=8.914) (-39.3 / 34.06  -  6.91)
+dist:	   None
+lambda_e:  0.0215 (0.024)
+ellip:	   0.140 (0.11)
+
