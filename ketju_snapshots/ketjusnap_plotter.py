@@ -414,6 +414,7 @@ def find_cusp_radius(r, I, init_guess, search_area, poly_deg=5):
     fit_coeffs = np.flip(fit_coeffs)
 
     plt.plot(r[mask]/1000, polynomial(r[mask], fit_coeffs))
+    plt.show()
 
     return minimize(x_at_polynomial_value, init_guess, args=(fit_coeffs), method='Nelder-Mead').x
 
@@ -878,8 +879,12 @@ nuker_files = [
     "nuker_file_6_50.dat"
     ]
 
-plot_all_core_nuker_fits(nuker_files, nuker_bins, 0, 'n')
 
+r = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(0,))
+I = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(1,))
+
+
+print(find_cusp_radius(r, I, 5e3, [4e3, 6e3]))
 
 '''
 r, I, pars = fit_from_file('file_0_20bins.dat', basic_bins20, [0, 0, 4], 's', calc_re=True, exc=1)
