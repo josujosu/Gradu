@@ -46,12 +46,15 @@ basic_bins20 = np.logspace(np.log10(40), np.log10(62000), 20)
 
 nuker_bins = np.logspace(np.log10(40), np.log10(3100), 50)
 
-beta_bins = np.logspace(1.95, 4.5, 20)
-beta_bins_rb = np.logspace(1.5, 4.5, 20)
-beta_bins2 = np.append(np.array([0]), np.arange(190, 1*10**4.1, 0.19e3))
+beta_bins = np.logspace(1.9, 4.5, 20)
+beta_bins_rb = np.logspace(1.4, 4.5, 20)
+beta_bins2 = np.append(np.array([0, 100]), np.arange(190, 2e4, 0.19e3))
 
 # Good
-beta_bins3 = np.arange(50, 1*10**4.1, 0.10e3)
+beta_bins3 = np.arange(50, 1.5*10**4.1, 0.10e3)
+beta_bins3_rb = np.arange(0.1, 1.5*10**4.1, 0.10e3)
+
+beta_bins_final = np.append(np.array([0, 100, 190]), np.logspace(np.log10(2.5*190), 5, 20))
 
 
 
@@ -244,9 +247,10 @@ def spherical_velocities(vels, coords):
 
 def project_vector_onto_plane(vectors, planes):
     p_lens = np.sqrt(planes[:, 0]**2 + planes[:, 1]**2 + planes[:, 2]**2)
+    p_unit = planes / np.column_stack((p_lens, p_lens, p_lens))
 
-    dot_p = np.sum(vectors * planes, axis=1) / p_lens**2
-    projected_par = np.column_stack((dot_p, dot_p, dot_p)) * planes
+    dot_p = np.sum(vectors * p_unit, axis=1)
+    projected_par = np.column_stack((dot_p, dot_p, dot_p)) * p_unit
     projected_per = vectors - projected_par
     v_r = np.sqrt(projected_par[:, 0]**2 + projected_par[:, 1]**2 + projected_par[:, 2]**2)
     v_t = np.sqrt(projected_per[:, 0]**2 + projected_per[:, 1]**2 + projected_per[:, 2]**2)
@@ -414,6 +418,7 @@ def find_cusp_radius(r, I, init_guess, search_area, poly_deg=5):
     fit_coeffs = np.flip(fit_coeffs)
 
     plt.plot(r[mask]/1000, polynomial(r[mask], fit_coeffs))
+    plt.plot(r[mask]/1000, I_grad)
     plt.show()
 
     return minimize(x_at_polynomial_value, init_guess, args=(fit_coeffs), method='Nelder-Mead').x
@@ -446,7 +451,7 @@ def plot_mus(filename_base, sim_nums):
         r = data[:,0]
         I = data[:,1]
 
-        plt.plot(r/1000, I, label='BH-{}'.format(num), linewidth=2)
+        plt.plot(r/1000, I, label='Snapshot-{}'.format(num), linewidth=2)
 
 
     plt.xlim(1e-2, 1e2)
@@ -766,9 +771,9 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
 
         if s == 0:
             print(r)
-            plt.plot(r, beta, label='BH-{}'.format(num), linewidth=2)
+            plt.plot(r, beta, label='Snapshot-{}'.format(num), linewidth=2)
         else:
-            plt.plot(r, smooth(beta, s), label='BH-{}'.format(num))
+            plt.plot(r, smooth(beta, s), label='Snapshot-{}'.format(num))
 
     plt.semilogx()
     plt.xlim(0.3, 15)
@@ -860,7 +865,7 @@ def write_data_to_file(outfile, file_num, bins):
     np.savetxt(outfile, outdata)
 
 
-
+'''
 files = [
     "file_1_50bins.dat",
     "file_2_50bins.dat",
@@ -884,7 +889,8 @@ r = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(0,))
 I = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(1,))
 
 
-print(find_cusp_radius(r, I, 5e3, [4e3, 6e3]))
+print(find_cusp_radius(r, I, 5e3, [200, 800]))
+'''
 
 '''
 r, I, pars = fit_from_file('file_0_20bins.dat', basic_bins20, [0, 0, 4], 's', calc_re=True, exc=1)
@@ -894,10 +900,11 @@ plot_sersic_fits(r, I, pars, a0, a1)
 plt.show()
 '''
 
-#plot_mus('100_bin_100_mean_BH{}.dat', np.arange(0, 7))
+#plot_mus('100_bin_100_mean_BH{}.dat', np.append(np.arange(1, 7), np.array([0])))
 
-#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
+plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 
+#plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2)
 
 
 

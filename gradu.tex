@@ -206,7 +206,7 @@ We calculate the surface brightness profiles from the snapshots by: changing the
 	\label{figure:surface_brightness}
 \end{figure}
 
-The surface brightness profiles mentioned above do seem to indicate the presence of cores in the merger remnants with merging SMBH binaries. Determining the precise size of the core requires us to find the exact location where the deviations from the expected power-law profile start. This can be done by fitting the calculated profile with a model that is a combination of two power laws, a shallow inner power-law and steeper outer power-law. The location where the power laws change, i.e. the break radius $r_b$ is the radius of the core. 
+The surface brightness profiles mentioned above do seem to indicate the presence of cores in the merger remnants with merging SMBH binaries. Determining the precise size of the core requires us to find the exact location where the deviations from the expected power-law profile start. This can be done by fitting the calculated profile with a model that is a combination of two power laws, a shallow inner power-law and steeper outer power-law. The location where the power laws change, i.e. the break radius $r_b$ is equivalent to the radius of the core. 
 
 There are two commonly used options for modelling the surface brightnes profiles. The first one is the core-Sérsic profile \citep{Graham2003}, which can be expressed using the following equation:
 \begin{equation}
@@ -233,23 +233,52 @@ where $r_b$ is once again the break radius (core radius), $\mu_b$ is the surface
 	\label{figure:core_nuker}
 \end{figure}
 
-Figure \ref{figure:core_nuker} shows both core-Sérsic ad Nuker fits of the surface brightness profile of snapshot 3 (refer to table \ref{table:runs_and_snaps}). The values of the best-fit parameters are written on the figure, and looking at them, it is clear that the exact value of the break radius, i.e. the core radius, depends quite heavily on the model used.
+We use the "Levenberg-Marquardt" algorithm to fit core-Sérsic and Nuker models to surface brightness profiles that we have calculated. Figure \ref{figure:core_nuker} shows a comparison of the resulting fits for snapshot 3 (refer to table \ref{table:runs_and_snaps}), while figures \ref{figure:all_core} and \ref{figure:all_nuker}, located in the appendix, show the fits for every snapshot containing SMBH binaries. The values of the best-fit parameters are written on the figures, and looking at them, it is clear that the exact value of the best-fit break radius, i.e. the core radius estimate, depends quite heavily on the model used.
 
-It is also possible to estimate the size of the core without model fitting by using the so-called "cusp radius", which is the radius at which the logarithmic slope of the surface brightness density $\gamma' = 1/2$, and an estimation for the location where the inner power-law of the profile changes into the outer power-law \citep{Carollo1997, Lauer2007Cusp}. 
+Which model is better for estimating the size of the core is up for debate \cite{Lauer2007, Dullo2012}. While the rms of the relative residuals seems to be consistently marginally smaller for the Nuker model when compared to the rms for the core-Sérsic model (compare figures \ref{figure:all_core} and \ref{figure:all_nuker}), one also has to take into account that in the Nuker model the best-fit value for $r_b$ is highly dependent on the fitting range \citep{Graham2003Nuker}. Furthermore, as stated by \cite{Rantala2018}, the fitting range of the Nuker model has to be narrowed down closer to the galactic core, in order to get sensible values for all of the model parameters ($\alpha \lesssim 1$ might prevent the model from describing the profile as a combination of two power-laws).
+
+It is also possible to estimate the size of the core without model fitting by using the so-called "cusp radius" $r_\gamma$, which is the radius at which the negative logarithmic slope of the surface brightness density $\gamma'$ equals $1/2$ \citep{Carollo1997, Lauer2007Cusp}. The cusp radius $r_\gamma$ is also an estimation for the location where the inner power-law of the profile changes into the outer power-law, and thus equates to the core radius. 
+
+We calculate $r_\gamma$ for all of the snapshots with SMBH binaries by calculating the first derivative (i.e. gradient) of the surface brightness profiles, and then using a "Nelder-Mead" minimization algorithm to find the radius, at which the gradient gets the value $-1/2$. 
+
+Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every merger remnant from the snapshots. The break radii from the Nuker fits are consistently larger than the other core radius estimates, while also being the ones that, in general, agree least with the other values. However, a clear trend of, the size of the core growing with the masses of the central SMBHs of the merger progenitors, can be seen.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{rb_mass_relation.png}
-	\caption{Comparison of core radii of the merger remnants, gained through three different methods; Core-Sérsic profile fitting (black squares), Nuker profile fitting (blue circles) and using equation (tähän kaava!) for finding the "cusp radius" (red circles).}
+	\caption{Comparison of core radii of the merger remnants, gained through three different methods: Core-Sérsic profile fitting (black squares), Nuker profile fitting (blue circles) and  finding the "cusp radius" (red circles). The x-axis shows the masses of the central SMBHs of the merger progenitors.}
+	\label{figure:radii_comparison}
 \end{figure}
 
-\section{Kinematic Properties}
+\section{Velocity Anisotropy}
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{beta.png}
+%	\caption{Velocity anisotropy (beta) profiles of the simulated merger remnants with central black holes.}
+%\end{figure}
+
+One way of adding to the evidence that a galaxy has experienced core scouring by binary black holes, is to study its velocity anisotropy profile defined in \cite{BinneyTremaine}:
+\begin{equation}
+\beta(r) = 1 - \frac{\sigma_\theta^2 - \sigma_\phi^2}{2\sigma_r^2} = 1 - \frac{\sigma_t^2}{\sigma_r^2}, \label{eq:beta}
+\end{equation}
+where $\sigma_\theta$, $\sigma_\phi$ and $\sigma_r$ are velocity dispersions in the spherical coordinates, and $\sigma_t = \sqrt{(\sigma_\theta^2 + \sigma_\phi^2) / 2}$ is the tangential velocity dispersion. The $\beta$ parameter describes the relation between objects in radial and tangential orbits around the black hole binary, where a negative $\beta$ shows an abundance of tangential orbits, and positive an abundance of radial orbits. 
+
+As the merging of two galaxies would cause a randomization of the stellar orbits, an area with negative $\beta$ (largely tangential stellar orbits) in the merger remnant, would imply that the stars on radial orbits have been ejected from the system. It has been shown that hardening black hole binaries can eject stars on highly radial orbits from the galactic core, which then causes the outer orbits to become more radial \citep{Quinlan1997, Milosavljevic2001, Thomas2014}, and looking at figure \ref{figure:beta_no_rb}, it seems like the same has happened in the simulations.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{beta.png}
+	\includegraphics[width=0.9\textwidth]{beta_no_rb.png}
 	\caption{Velocity anisotropy (beta) profiles of the simulated merger remnants with central black holes.}
+	\label{figure:beta_no_rb}
 \end{figure}
+
+Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger remnant simulation snapshots using equation \ref{eq:beta}. According to the profiles, the outer areas of the remnants are dominated by radial orbits, while the orbits near the centre are more tangential.
+
+
+
+
+\section{Line-of-Sight Kinematics}
 
 \section{Comparison to Observations}
 
@@ -359,12 +388,14 @@ It is also possible to estimate the size of the core without model fitting by us
 	\centering
 	\includegraphics[width=\textwidth]{all_core_profiles.png}
 	\caption{Core-Sérsic profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different snapshots ((a): BH-1, (b): BH-2, (c): BH-3, (d): BH-4, (e): BH-5, (f): BH-6).}
+	\label{figure:all_core}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{all_nuker_profiles.png}
 	\caption{Nuker profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different merger remnants ((a): BH-1, (b): BH-2, (c): BH-3, (d): BH-4, (e): BH-5, (f): BH-6).}
+	\label{figure:all_nuker}
 \end{figure}
 
 \begin{figure}
@@ -418,6 +449,7 @@ It is also possible to estimate the size of the core without model fitting by us
 \newcommand{\apjs}{The Astrophysical Journal Supplement}
 \newcommand{\nat}{Nature}
 \newcommand{\aj}{The Astronomical Journal}
+\newcommand{\na}{New Astronomy}
 
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliography} % This lines adds the bibliography to the ToC
