@@ -91,13 +91,15 @@ Abstract goes here.
 
 \chapter{Merger Simulations Using KETJU}
 
-We analyse the results of two simulation sets of galaxy mergers with central supermassive black holes, both done using the KETJU code by \cite{Mannerkoski2019} and \cite{Rantala2018}. This is done in order to determine if merging SMBHs are able to cause the formation of cored galaxies, how the black hole masses affect the size of the core, and if the KETJU-code produces merger remnants comparable to observations. 
+We analyse the results of two sets of galaxy merger simulations, where the merger progenitor galaxies contain central supermassive black holes. The simulation are done using the KETJU code by \cite{Mannerkoski2019} and \cite{Rantala2018}. The reasoning behind this analysis is to determine if merging SMBHs are able to cause the formation of cored galaxies, how the black hole masses affect the size of the core, and if the KETJU-code produces merger remnants comparable to observations. 
 
 \section{Simulation Details}
 
-All of the different simulation runs analysed, use merger progenitor galaxies from the same progenitor pool. There are seven different progenitors in total. Six of them (BH-1 - BH-6) contain central supermassive black holes, with the BH masses varying from $8.5 \times 10^8 M_\odot$ to $8.5 \times 10^9 M_\odot$. The seventh progenitor (BH-0) doesn't have an SMBH in its centre, and is included for the sake of comparison. The detailed masses of the progenitors' central SMBHs are listed in table \ref{table:progenitors}. Apart from the SMBH masses however, all of the progenitor galaxies have identical physical properties. These properties are described in table \ref{table:properties}, while the reasoning behind them is explained in \cite{Rantala2018} (do I have to go into same amount of detail as in the paper?).
+All of the analysed simulation runs use merger progenitor galaxies from the same progenitor pool. There are seven different progenitors in total. Six of them (BH-1 - BH-6) contain central supermassive black holes, with the SMBH masses varying from $8.5 \times 10^8 M_\odot$ to $8.5 \times 10^9 M_\odot$. The seventh progenitor (BH-0) doesn't contain an SMBH in its centre, and is included simply for the sake of comparison. The detailed masses of the progenitors' central SMBHs are listed in table \ref{table:progenitors}. 
 
-Alongside the physical properties, the distributions of the different particles that make up the progenitor galaxies are also identical. Not counting the central point mass SMBH, all of the particles are distributed according to a Dehnen density-potential model \citep{Dehnen1993}:
+Apart from the SMBH masses however, all of the progenitor galaxies have identical physical properties. These properties, which are motivated by observations and dynamical simulations of NGC 1600 \citep{Rantala2018}, are described in table \ref{table:properties}.
+
+Alongside the physical properties, the distributions of the different particles that make up the progenitor galaxies are also identical. While the central SMBHs are simply modelled as point masses in a progenitor's internal coordinate system, the stellar and dark matter particles are distributed according to a Dehnen density-potential model \citep{Dehnen1993}:
 \begin{equation}
 \rho(r) = \frac{(3-\gamma)M}{4\pi} \frac{a}{r^\gamma (r+a)^{4-\gamma}},
 \end{equation}
@@ -108,7 +110,7 @@ Alongside the physical properties, the distributions of the different particles 
 	\ln \frac{r}{r+a}	 & \; \gamma = 2
 \end{cases},
 \end{equation}
-where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the central slope of the profile. The fundamental difference between the models describing the distribution of the rest of the particles, i.e. stellar and dark matter particles, is that for stellar particles the value used for $\gamma$  is $3/2$, while for the dark matter particles $\gamma = 1$.
+where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the central slope of the profile. The fundamental difference between the models describing the distributions of the two particle types is that, for stellar particles the value used for $\gamma$  is $3/2$, while for the dark matter particles $\gamma = 1$.
 
 \begin{table}
 	\begin{center}
@@ -153,9 +155,9 @@ where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the centra
 	\label{table:properties}
 \end{table}
 
-While the merger progenitor galaxies are the same, the initial conditions of the simulations are quite different. The \cite{Mannerkoski2019} simulations comprise of four subsequent runs, where, initially the progenitor galaxy BH-6 (table \ref{table:progenitors}), and later the remnant of the previous merger, is merged with the progenitor BH-2. On the other hand, the simulations done by \cite{Rantala2018} contain simply seven different mergers between two of the same progenitor galaxies.
+While the merger progenitor galaxies are the same, the initial conditions of the simulations are quite different. The \cite{Mannerkoski2019} simulations comprise of four subsequent runs where the progenitor galaxy BH-6 (table \ref{table:progenitors}) is merged with the progenitor BH-2. On the other hand, the simulations done by \cite{Rantala2018} contain simply seven different mergers between two of the same progenitor galaxies.
 
-The results gathered from the two sets of simulations also differ from each other. From the simulations done by \cite{Mannerkoski2019}; the locations, velocities and masses of the central SMBHs are saved. The data comes from time steps starting from when the semi-major-axis of the merging SMBH binary is $a \lesssim 5000 R_s$ ($R_s$ is the Schwarzschild radius) up until the end of the simulation. The simulation results of \cite{Rantala2018}, however, consists of not only the properties of the black holes, but also the stellar particles and dark matter particles, in the form of a single snapshot at the simulation time $t = 2 \mathrm{Gyr}$. Due to the distinct difference between the type of results gained from the two different simulation sets (and for simplicity's sake), we will from now on be calling the simulations from \cite{Mannerkoski2019} "Runs", and the ones from \cite{Rantala2018} "Snapshots" (table \ref{table:runs_and_snaps}).
+The results gathered from the two sets of simulations also differ from each other. From the simulations done by \cite{Mannerkoski2019}; only the locations, velocities and masses of the central SMBHs are saved. The data comes from time steps starting from when the semi-major-axis of the merging SMBH binary is $a \lesssim 5000 R_s$ ($R_s$ is the Schwarzschild radius) up until the end of the simulation. The simulation results of \cite{Rantala2018} however consists of not only the properties of the black holes, but also of the stellar and dark matter particles. These results are given in the form of a single snapshot at the simulation time $t = 2 \mathrm{Gyr}$. Due to the distinct difference between the type of results gained from the two different simulation sets (and for simplicity's sake), we will, from now on, be calling the simulations from \cite{Mannerkoski2019} "Runs", and the ones from \cite{Rantala2018} "Snapshots" (table \ref{table:runs_and_snaps}).
 
 \begin{table}
 	\begin{center}
@@ -195,9 +197,11 @@ The results gathered from the two sets of simulations also differ from each othe
 
 \section{Core Size Measurements}
 
-In order to check if a merger remnant is cored or not, we first have to calculate their surface brightness profiles. As the "Runs" don't contain stellar data, we use the "Snapshots" for the core analysis. 
+In order to check if a merger remnant is cored or not, we first have to calculate their surface brightness profiles, and then see if they contain surface brightness deficiencies near the centre of the merger. As the "Runs" don't contain stellar data, we use the "Snapshots" for the core analysis. 
 
-We calculate the surface brightness profiles from the snapshots by: changing the coordinate system to centre-of-mass coordinates, projecting the stellar particles onto a plane, and calculating masses inside logarithmically space radial bins to get a radial mass surface density profile. We then do the aforementioned calculations 100 times from random viewing angles and calculate the azimuthal average of the profiles. This allows us to form a smooth mass surface density profile, which we then turn into a surface brightness profile by assuming a mass-to-light ratio of $M/L = 4$ \citep{Rantala2018}. In figure \ref{figure:surface_brightness}, one can see example surface brightness profiles for all of the snapshots. Looking at the different curves, it seems like the presence of central SMBHs in the progenitor galaxies does cause some kind of brightness deficiency near the galactic centre of the remnant's surface brightness profile. Not only that, the higher the mass of the central black holes in the progenitor galaxies, the larger the surface brightness deficiency seems to be.
+We calculate the surface brightness profiles from the snapshots by: changing the coordinate system to centre-of-mass coordinates, projecting the stellar particles onto a plane, and calculating masses inside logarithmically space radial bins to get a radial mass surface density profile. We then do the aforementioned calculations 100 times from random viewing angles and calculate the azimuthal average of the profiles. This allows us to form a smooth mass surface density profile, which we then turn into a surface brightness profile by assuming a mass-to-light ratio of $M/L = 4$ \citep{Rantala2018}.
+
+In figure \ref{figure:surface_brightness}, one can see example surface brightness profiles for all of the snapshots. Looking at the different curves, it seems like the presence of central SMBHs in the merger progenitors does cause some kind of brightness deficiency near the galactic centre of the remnant's surface brightness profile. Not only that, the higher the mass of the central black holes, the larger the surface brightness deficiency seems to be.
 
 \begin{figure}[h]
 	\centering
@@ -206,13 +210,13 @@ We calculate the surface brightness profiles from the snapshots by: changing the
 	\label{figure:surface_brightness}
 \end{figure}
 
-The surface brightness profiles mentioned above do seem to indicate the presence of cores in the merger remnants with merging SMBH binaries. Determining the precise size of the core requires us to find the exact location where the deviations from the expected power-law profile start. This can be done by fitting the calculated profile with a model that is a combination of two power laws, a shallow inner power-law and steeper outer power-law. The location where the power laws change, i.e. the break radius $r_b$ is equivalent to the radius of the core. 
+The deficiencies found in the surface brightness profiles mentioned above imply the presence of cores, however determining the precise size of the core requires us to find the exact location where the deviations from the expected power-law profile start. This can be done by fitting the calculated profile with a model that is a combination of two power laws: a shallow inner power-law, and a steeper outer power-law. The radius at which the power laws shift, i.e. the break radius $r_b$, is equivalent to the radius of the core. 
 
-There are two commonly used options for modelling the surface brightnes profiles. The first one is the core-Sérsic profile \citep{Graham2003}, which can be expressed using the following equation:
+There are two commonly used options for modelling the surface brightness profiles. The first one is the core-Sérsic profile \citep{Graham2003}, which can be expressed using the following equation:
 \begin{equation}
 \mu(r) = \mu' \left[ 1 + \left( \frac{r_b}{r} \right)^\alpha \right]^{\gamma / \alpha} \exp \left\lbrace -b_n \left[ \left( r^\alpha + r_b^\alpha \right) / r_e^\alpha \right]^{1/(\alpha n)} \right\rbrace, \label{eq:core-sersic}
 \end{equation}
-where $r_b$ is the break radius (i.e. the core radius), $\gamma$ is the logarithmic slope of the inner power-law, $\alpha$ controls the sharpness of the transition between the two power-laws, $r_e$ and $n$ are the effective half-mass radius and the Sérsic index of the outer power-law, and the normalization factor $\mu'$ is defined by:
+where $r_b$ is the break radius, $\gamma$ is the logarithmic slope of the inner power-law, $\alpha$ controls the sharpness of the transition between the two power-laws, $r_e$ and $n$ are the effective half-mass radius and the Sérsic index of the outer power-law, and the normalization factor $\mu'$ is defined by:
 \begin{equation}
 \mu' = \mu_b 2^{-\gamma/\alpha} \exp \left[ b_n \left( 2^(1/\alpha) r_b/r_e \right)^{1/n} \right], 
 \label{eq:mu_dot}
@@ -224,7 +228,7 @@ The second option for determining the core radius through profile fitting, is us
 \mu(r) = 2^{(\beta - \gamma) / \alpha} \mu_b \left( \frac{r_b}{r} \right)^\gamma \left[ 1 + \left( \frac{r}{r_b} \right)^\alpha \right]^{(\gamma - \beta)/\alpha},
 \label{eq:nuker}
 \end{equation}
-where $r_b$ is once again the break radius (core radius), $\mu_b$ is the surface brightness at the core radius, $\beta$ and $\gamma$ are the logarithmic slopes of the power-laws inside and outside of the break radius respectively, and $\alpha$ is the sharpness of the transition between the two slopes.
+where $r_b$ is once again the break radius, $\mu_b$ is the surface brightness at the break radius, $\beta$ and $\gamma$ are the logarithmic slopes of the power-laws inside and outside of the break radius respectively, and $\alpha$ is the sharpness of the transition between the two slopes.
 
 \begin{figure}[h]
 	\centering
@@ -233,15 +237,15 @@ where $r_b$ is once again the break radius (core radius), $\mu_b$ is the surface
 	\label{figure:core_nuker}
 \end{figure}
 
-We use the "Levenberg-Marquardt" algorithm to fit core-Sérsic and Nuker models to surface brightness profiles that we have calculated. Figure \ref{figure:core_nuker} shows a comparison of the resulting fits for snapshot 3 (refer to table \ref{table:runs_and_snaps}), while figures \ref{figure:all_core} and \ref{figure:all_nuker}, located in the appendix, show the fits for every snapshot containing SMBH binaries. The values of the best-fit parameters are written on the figures, and looking at them, it is clear that the exact value of the best-fit break radius, i.e. the core radius estimate, depends quite heavily on the model used.
+We use the "Levenberg-Marquardt" algorithm to fit the aforementioned core-Sérsic and Nuker models to the surface brightness profiles that we have calculated. Figure \ref{figure:core_nuker} shows a comparison of the resulting fits for snapshot 3 (refer to table \ref{table:runs_and_snaps}), while figures \ref{figure:all_core} and \ref{figure:all_nuker}, located in the appendix, show the fits for every snapshot that contains SMBH binaries. The values of the best-fit parameters are written on the figures, and looking at them, it is clear that the exact value of the best-fit break radius, i.e. the core radius estimate, depends quite heavily on the model used.
 
-Which model is better for estimating the size of the core is up for debate \cite{Lauer2007, Dullo2012}. While the rms of the relative residuals seems to be consistently marginally smaller for the Nuker model when compared to the rms for the core-Sérsic model (compare figures \ref{figure:all_core} and \ref{figure:all_nuker}), one also has to take into account that in the Nuker model the best-fit value for $r_b$ is highly dependent on the fitting range \citep{Graham2003Nuker}. Furthermore, as stated by \cite{Rantala2018}, the fitting range of the Nuker model has to be narrowed down closer to the galactic core, in order to get sensible values for all of the model parameters ($\alpha \lesssim 1$ might prevent the model from describing the profile as a combination of two power-laws).
+Which model is better for estimating the size of the core is up for debate \citep{Lauer2007, Dullo2012}. While the rms of the relative residuals seems to be consistently marginally smaller for the Nuker model when compared to the rms for the core-Sérsic model (compare figures \ref{figure:all_core} and \ref{figure:all_nuker}), one also has to take into account that in the Nuker model the best-fit value for $r_b$ is highly dependent on the fitting range \citep{Graham2003Nuker}. Furthermore, as stated by \cite{Rantala2018}, in order to get sensible values for all of the model parameters, the fitting range of the Nuker model has to be narrowed down closer to the galactic core ($\alpha \lesssim 1$ might prevent the model from describing the profile as a combination of two power-laws).
 
-It is also possible to estimate the size of the core without model fitting by using the so-called "cusp radius" $r_\gamma$, which is the radius at which the negative logarithmic slope of the surface brightness density $\gamma'$ equals $1/2$ \citep{Carollo1997, Lauer2007Cusp}. The cusp radius $r_\gamma$ is also an estimation for the location where the inner power-law of the profile changes into the outer power-law, and thus equates to the core radius. 
+One could also estimate the size of the core without model fitting by using the so-called "cusp radius" $r_\gamma$, which is the radius at which the negative logarithmic slope of the surface brightness density $\gamma'$ equals $1/2$ \citep{Carollo1997, Lauer2007Cusp}. The cusp radius $r_\gamma$ is also an estimation for the location where the inner power-law of the profile changes into the outer power-law, and thus equates to the core radius. 
 
-We calculate $r_\gamma$ for all of the snapshots with SMBH binaries by calculating the first derivative (i.e. gradient) of the surface brightness profiles, and then using a "Nelder-Mead" minimization algorithm to find the radius, at which the gradient gets the value $-1/2$. 
+We calculate $r_\gamma$ for all of the snapshots with SMBH binaries by calculating the first derivative (gradient) of the surface brightness profiles, and then using a "Nelder-Mead" minimization algorithm to find the radius, at which the gradient gets the value $-1/2$. 
 
-Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every merger remnant from the snapshots. The break radii from the Nuker fits are consistently larger than the other core radius estimates, while also being the ones that, in general, agree least with the other values. However, a clear trend of, the size of the core growing with the masses of the central SMBHs of the merger progenitors, can be seen.
+Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every merger remnant from the snapshots. The break radii from the Nuker fits are consistently larger than the other core radius estimates, while also being the ones that, in general, agree least with the other values. However, a clear trend of the size of the core growing with the merger progenitors' central SMBH masses can be seen.
 
 \begin{figure}[h]
 	\centering
@@ -258,13 +262,13 @@ Figure \ref{figure:radii_comparison} compares the core radius estimates from eac
 %	\caption{Velocity anisotropy (beta) profiles of the simulated merger remnants with central black holes.}
 %\end{figure}
 
-One way of adding to the evidence that a galaxy has experienced core scouring by binary black holes, is to study its velocity anisotropy profile defined in \cite{BinneyTremaine}:
+One way of adding to the evidence that a galaxy has formed a core through core scouring by binary black holes, is to study its velocity anisotropy profile defined in \cite{BinneyTremaine}:
 \begin{equation}
 \beta(r) = 1 - \frac{\sigma_\theta^2 - \sigma_\phi^2}{2\sigma_r^2} = 1 - \frac{\sigma_t^2}{\sigma_r^2}, \label{eq:beta}
 \end{equation}
 where $\sigma_\theta$, $\sigma_\phi$ and $\sigma_r$ are velocity dispersions in the spherical coordinates, and $\sigma_t = \sqrt{(\sigma_\theta^2 + \sigma_\phi^2) / 2}$ is the tangential velocity dispersion. The $\beta$ parameter describes the relation between objects in radial and tangential orbits around the black hole binary, where a negative $\beta$ shows an abundance of tangential orbits, and positive an abundance of radial orbits. 
 
-As the merging of two galaxies would cause a randomization of the stellar orbits, an area with negative $\beta$ (largely tangential stellar orbits) in the merger remnant, would imply that the stars on radial orbits have been ejected from the system. It has been shown that hardening black hole binaries can eject stars on highly radial orbits from the galactic core, which then causes the outer orbits to become more radial \citep{Quinlan1997, Milosavljevic2001, Thomas2014}, and looking at figure \ref{figure:beta_no_rb}, it seems like the same has happened in the simulations.
+Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from all of the merger remnant snapshots using equation \ref{eq:beta}. According to the profiles, the outer areas of the remnants are dominated by radial orbits, while the majority of orbits near the centre are more tangential.
 
 \begin{figure}[h]
 	\centering
@@ -273,9 +277,10 @@ As the merging of two galaxies would cause a randomization of the stellar orbits
 	\label{figure:beta_no_rb}
 \end{figure}
 
-Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger remnant simulation snapshots using equation \ref{eq:beta}. According to the profiles, the outer areas of the remnants are dominated by radial orbits, while the orbits near the centre are more tangential.
 
+As the merging of two galaxies would cause a randomization of the stellar orbits, an area with negative $\beta$ in the merger remnant, would imply that the stars on radial orbits have been ejected from the system. It has been shown that hardening black hole binaries can eject stars on highly radial orbits from the galactic core, which can then cause the outer orbits to become more radial \citep{Quinlan1997, Milosavljevic2001, Thomas2014}.
 
+This could certainly be the reason behind the shapes of the $\beta$ profiles seen in figure \ref{figure:beta_no_rb}. It is clear that the presence of the SMBHs has an effect on the profiles' shape, as not only is the profile for the merger without an SMBH binary the only one completely dominated by radial orbits, but larger the binary's masses result in a steeper slope in the profile. These effects also make sense in the context of ejection of stellar particles by black hole binaries. The larger the masses of the SMBHs in the binary are, the larger their gravitational sphere-of-influence is, and thus more the stellar particles with radial orbits can be ejected.
 
 
 \section{Line-of-Sight Kinematics}
@@ -285,7 +290,7 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{core_sersic_fits_obs_and_sim.png}
-	\caption{Core-Sérsic profile fits of surface brightness profiles calculated from either merger simulation results (top figures) or observed galaxies (bottom figures). The respective fit parameters are written on the figures in units that correspond to the axes. The progenitors of the top-left simulation contained $8.5 \times 10^8 M_\odot$ mass central SMBHs, and $8.5 \times 10^9 M_\odot$ mass central SMBHs in the top-right simulation. The parameters for NGC1600's profile (bottom right), are changed from the units used by \cite{Thomas2016} to the above by assuming $V - R = 0.5$ (the same assumption being done by \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} in order to define the relation between arc seconds and parsecs. As one can see, the profiles gained from simulations and observations are quite similar to each other.}
+	\caption{Core-Sérsic profile fits of surface brightness profiles calculated from either merger simulation results (top figures) or observed galaxies (bottom figures). The respective fit parameters are written on the figures in units that correspond to the axes. The progenitors of the top-left simulation contained $8.5 \times 10^8 M_\odot$ mass central SMBHs, and $8.5 \times 10^9 M_\odot$ mass central SMBHs in the top-right simulation. The parameters for NGC1600's profile (bottom right), are changed from the units used by \cite{Thomas2016} to the above by assuming $V - R = 0.5$ (the same assumption being done by \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} in order to define the relation between arc seconds and parsecs. As one can see, the profiles gained from simulations and observations are quite similar to each other.}atlas
 \end{figure}
 
 \begin{figure}[h]
@@ -298,11 +303,11 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_0.png}
-		\caption{BH-0}
+		\caption{Snapshot-0}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_6.png}
-		\caption{BH-6}
+		\caption{Snapshot-6}
 	\end{subfigure}
 	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from two simulated merger remnants. The four maps on the left are from a merger simulation where the progenitor galaxies had no central SMBHs, where as the four on the right are from a simulation with progenitor galaxies containing $M_\bullet = 8.5 \times 10^9 M_\odot$ central black holes.}
 \end{figure}
@@ -317,7 +322,7 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 		\includegraphics[width=\textwidth]{NGC4111_r1_voronoi.png}
 		\caption{NGC 4111}
 	\end{subfigure}
-	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from ATLAS3D observations of two galaxies (NGC 3414 \citep{Emsellem2004} and NGC 4111 \citep{Cappellari2011}).}
+	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from $\mathrm{ATLAS^{3D}}$ observations of two galaxies (NGC 3414 \citep{Emsellem2004} and NGC 4111 \citep{Cappellari2011}).}
 \end{figure}
 
 \begin{table}
@@ -333,13 +338,13 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 		[kpc] & [$\mathrm{mag/arcsec^2}$] & & [km/s] & [km/s] & & \\
 		(1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) \\
 		\hline
-		BH-6 & $4.960$ & $2 \times 0.85$ & $5.507$ & $20.26$ & $4$ & $6.9$ & $311$ & $0.024$ & $0.11$ \\
+		Snapshot-6 & $4.960$ & $2 \times 0.85$ & $5.507$ & $20.26$ & $4$ & $6.9$ & $311$ & $0.024$ & $0.11$ \\
 		NGC 1600 & $5.0$ & $1.7$ & $\sim 16$ & $(22.53)$ & $5.83$ & $3.4$ & 
 		$293$ & $0.026$ & $032$ \\
 		\hline
 		\end{tabular}
 	\end{center}
-	\caption{Comparison between the physical properties of the simulated merger remnant "BH-6" and the galaxy NGC 1600. The properties described in the columns of the table are explained below, with the sources for the properties of NGC 1600 being written inside the brackets. \\
+	\caption{Comparison between the physical properties of the simulated merger remnant "Snapshot-6" and the galaxy NGC 1600. The properties described in the columns of the table are explained below, with the sources for the properties of NGC 1600 being written inside the brackets. \\
 	(1) Name of the galaxy. \\
 	(2) Total stellar mass \citep{Thomas2016}. \\
 	(3) Central black hole mass \citep{Thomas2016}. \\
@@ -347,9 +352,9 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 	(5) Surface brightness at the effective radius. \\
 	(6) Sérsic index from the best fitting core-Sérsic profile fit \citep{Thomas2016}. \\
 	(7) Mean line-of-sight velocity inside the effective radius \citep{Bender1994}. \\
-	(8) Velocity dispersion inside the effective radius \citep{Veale2017veldisp}. For "BH-6", the given velocity dispersion is calculated from a Voronoi binned image as the mean of the velocity dispersion values of the bins located inside the effective radius. \\
+	(8) Velocity dispersion inside the effective radius \citep{Veale2017veldisp}. For "Snapshot-6", the given velocity dispersion is calculated from a Voronoi binned image as the mean of the velocity dispersion values of the bins located inside the effective radius. \\
 	(9) Spin parameter at the effective radius \citep{Veale2018lambda}. \\
-	(10) For "BH-6": ellipticity of the galaxy at the effective radius; and for GC 1600: luminosity weighted ellipticity \citep{Goullaud2018}.
+	(10) For "Snapshot-6": ellipticity of the galaxy at the effective radius; and for GC 1600: luminosity weighted ellipticity \citep{Goullaud2018}.
 	}
 \end{table}
 
@@ -387,14 +392,14 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{all_core_profiles.png}
-	\caption{Core-Sérsic profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different snapshots ((a): BH-1, (b): BH-2, (c): BH-3, (d): BH-4, (e): BH-5, (f): BH-6).}
+	\caption{Core-Sérsic profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different snapshots ((a): Snapshot-1, (b): Snapshot-2, (c): Snapshot-3, (d): Snapshot-4, (e): Snapshot-5, (f): Snapshot-6).}
 	\label{figure:all_core}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{all_nuker_profiles.png}
-	\caption{Nuker profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different merger remnants ((a): BH-1, (b): BH-2, (c): BH-3, (d): BH-4, (e): BH-5, (f): BH-6).}
+	\caption{Nuker profile fits of the surface brightness data calculated from all of the individual simulated merger remnants with progenitors containing central supermassive black holes. The letters (a)-(f) denote the different merger remnants ((a): Snapshot-1, (b): Snapshot-2, (c): Snapshot-3, (d): Snapshot-4, (e): Snapshot-5, (f): Snapshot-6).}
 	\label{figure:all_nuker}
 \end{figure}
 
@@ -402,38 +407,38 @@ Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from the merger
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_0.png}
-		\caption{BH-0}
+		\caption{Snapshot-0}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_1.png}
-		\caption{BH-1}
+		\caption{Snapshot-1}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_2.png}
-		\caption{BH-2}
+		\caption{Snapshot-2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_3.png}
-		\caption{BH-3}
+		\caption{Snapshot-3}
 	\end{subfigure}
-	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from four simulated merger remnants: BH-0, BH-1, BH-2 and BH-3.}
+	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from four simulated merger remnants: Snapshot-0, Snapshot-1, Snapshot-2 and Snapshot-3.}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_4.png}
-		\caption{BH-4}
+		\caption{Snapshot-4}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_5.png}
-		\caption{BH-5}
+		\caption{Snapshot-5}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_6.png}
-		\caption{BH-6}
+		\caption{Snapshot-6}
 	\end{subfigure}
-	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from three simulated merger remnants: BH-4, BH-5 and BH-6.}
+	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from three simulated merger remnants: Snapshot-4, Snapshot-5 and Snapshot-6.}
 \end{figure}
 
 % STEP 5:
