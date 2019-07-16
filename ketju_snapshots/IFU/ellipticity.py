@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from scipy.optimize import least_squares
 from scipy.optimize import minimize
 
+
+# -------------- Useless junk ------------------
+
 def second_moments(x, y, r, m):
     m_xx = np.average(x**2 / r**2, weights=m)
     m_yy = np.average(y**2 / r**2, weights=m)
@@ -73,6 +76,8 @@ def find_com(coords, masses, r0):
 
 def get_half_mass(snap):
     return np.sum(snap['mass'][:])/2
+
+# -----------------------------------------
 
 
 def calc_shape_tensor(coords, masses, r_ell, b_per_a, c_per_a):
@@ -157,6 +162,7 @@ masses = snap['mass'][mask]
 ba, ca = iterate_shape_tensors(coords, masses, r_e)
 
 print '$\epsilon_e =$', 1-ba
+print ba, ca
 
 
 #print(mass_grid(x, y, m, 20, 100))

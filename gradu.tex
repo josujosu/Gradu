@@ -295,11 +295,9 @@ H_3(y) = \left(2\sqrt{2}y^3 - 3\sqrt{2}y\right) / \sqrt{6}, \\
 H_4(y) = \left(4y^4 - 12y^2 + 3 \right) / \sqrt{24}.
 \end{eqnarray}
 
-In order to calculate the above properties, we define the "line-of-sight" as the intermediate axis of the merger remnants, and orient the remnant accordingly using the inertia tensor. ... \textit{Add text about inertia tensor, histogram forming, voronoi tessellation \citep{Cappellari2003}}. Figure \ref{figure:snapshot_0_and_1_IFU} shows the voronoi binned 2D maps of the four LOS velocity distribution parameters for snapshot-0 and snapshot-6. Similar maps for all of the merger remnant snapshots are in figures \ref{figure:all_voronoi_1} and \ref{figure:all_voronoi_2}.
+In order to calculate the above properties, we define the "line-of-sight" as the intermediate axis of the merger remnants, and orient the remnant accordingly using the inertia tensor. ... \textit{Add text about inertia tensor, histogram forming, voronoi tessellation \citep{Cappellari2003}}. Figure \ref{figure:snapshot_0_and_1_IFU} shows the voronoi binned 2D maps of the four LOS velocity distribution parameters for snapshot-0 and snapshot-6. Similar maps for all of the merger remnant snapshots are in figures \ref{figure:all_voronoi_1} and \ref{figure:all_voronoi_2} in the appendix.
 
 \textit{Informative IFU map analysis}
-
-
 
 \begin{figure}
 	\centering
@@ -315,6 +313,32 @@ In order to calculate the above properties, we define the "line-of-sight" as the
 	\label{figure:snapshot_0_and_1_IFU}
 \end{figure}
 
+Another informative parameter that the 2D kinematic maps allow us to analyse is $\lambda_R$, which describes the angular momentum of the galaxy, and as such allows us to differentiate between slowly and fast rotating galaxies \citep{Emsellem2007}. The $\lambda_R$ parameter is defined in a general form as:
+\begin{equation}
+\lambda_R \equiv \frac{\langle R |V| \rangle}{\langle R \sqrt{V^2 + \sigma^2} \rangle}, \label{eq:general_lambdar}
+\end{equation}
+where $R$ the distance from the galactic centre, $V$ is velocity, $\sigma$ is the velocity dispersion, and $\langle \; \rangle$ denote that the nominator and denominator of the equation are velocity weighted means. However as most of the observational kinematic analysis of galaxies is done through binned 2D spectroscopy, and as the figures made from the kinematic results of our simulations try to mimic the ones gained through observations, we will be using the following version of equation \ref{eq:general_lambdar}:
+\begin{equation}
+\lambda_R = \frac{\sum^{N_p}_{i=1} F_i R_i |V_i|}{\sum^{N_p}_{i=1} F_i R_i \sqrt{V_i^2 + \sigma^2_i}}, \label{eq:binned_lambdar}
+\end{equation}
+where $F_i$, $R_i$, $V_i$ and $\sigma_i$ are the flux, distance from the centre, velocity and velocity dispersion of the $i$th bin, and $N_p$ is the number of bins. In the case of our simulations the bins are the voronoi bins described earlier in this section. 
+
+As stated before, $\lambda_R$ allows us to classify observed and simulated galaxies as either slow or fast rotators; where slow rotators are usually more massive and luminous than fast rotators, and contain more non regular kinematic structures \citep{Emsellem2007}, as can be seen in figure \ref{figure:obs_IFU}. Determining whether a galaxy is a fast or a slow rotator by using $\lambda_R$, is done by comparing the value the  parameter in question gets at the effective radius to some threshold. The original threshold used for differentiating the two rotator types is: $\lambda_{Re} < 0.1$, where $\lambda_{Re}$ is the $\lambda_R$ parameter at the effective radius, and galaxies fulfilling the condition are classified as slow rotators \citep{Emsellem2007}. Later revisions by \cite{Emsellem2011} and \cite{Cappellari2016} define the threshold as being either $\lambda_{Re} < 0.31\sqrt{\epsilon}$ or $\lambda_{Re} < 0.08 + \epsilon/4$ for $\epsilon < 0.4$ respectively, and as such take into account the shape of the galaxy in the form of its projected ellipticity ($\epsilon$). Through including the ellipticity in the threshold, the former revision accounts for increased anisotropy in the kinematics of flatter galaxies, while the latter improves on the former by reducing the risk of misidentifying round non regular slow rotators as fast rotators.
+
+Since two of the aforementioned slow rotator thresholds require us to know the ellipticity of the galaxy, we calculate the simulated merger remnants' ellipticities before analysing their rotation. The ellipticity calculations are done using a method described in \cite{Zemp2011}, which uses the shape tensor:
+\begin{equation}
+\mathbf{S} = \frac{\int_V \rho(\mathbf{r}) \omega(\mathbf{r}) \mathbf{r} \mathbf{r}^T \; dV }{\int_V \rho{\mathbf{r}} \; dV},
+\end{equation}
+where $\mathbf{r}$ is position from the galactic centre, $\rho(\mathbf{r})$ is the mass density, $V$ is the volume of an enclosed ellipsoid with the elliptical radius $r_\mathrm{ell}$, and where the weighting function $\omega(\mathbf{r}) = 1$. The eigenvalues of the shape tensor correspond to $a^2/3$, $b^2/3$ and $c^2/3$; where $a$, $b$ and $c$ are the semi-principal axes; and which can be used to calculate the ellipticity as $\epsilon = 1 - b/a$. \textit{explain further}
+
+We calculate the $\lambda_{Re}$ and $\epsilon_e$ for every merger simulation snapshot, and plot them against each other alongside the previously mentioned slow rotator thresholds and observations from the $\mathrm{ATLAS^{3D}}$-survey \citep{Cappellari2011}. The resulting plot can be seen in figure \ref{figure:lambda_epsilon}. Regardless of the threshold used for differentiating between slow and fast rotators, the merger remnants from the simulations are nonetheless clearly classified as slow rotators. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{lambda_epsilon.png}
+	\caption{The values of the $\lambda_{\mathrm{Re}}$-parameter of galaxies, plotted against their ellipticity at the effective radius. The red dots correspond to the simulated merger remnants, where as the black dots correspond to galaxies observed in the $\mathrm{ATLAS^{3D}}$-survey \citep{Cappellari2011, Emsellem2011}. The dashed lines display different slow rotator thresholds as a function of ellipticity \citep{Emsellem2007, Emsellem2011, Cappellari2016}.}
+	\label{figure:lambda_epsilon}
+\end{figure}
 
 
 \section{Comparison to Observations}
@@ -323,12 +347,6 @@ In order to calculate the above properties, we define the "line-of-sight" as the
 	\centering
 	\includegraphics[width=\textwidth]{core_sersic_fits_obs_and_sim.png}
 	\caption{Core-Sérsic profile fits of surface brightness profiles calculated from either merger simulation results (top figures) or observed galaxies (bottom figures). The respective fit parameters are written on the figures in units that correspond to the axes. The progenitors of the top-left simulation contained $8.5 \times 10^8 M_\odot$ mass central SMBHs, and $8.5 \times 10^9 M_\odot$ mass central SMBHs in the top-right simulation. The parameters for NGC1600's profile (bottom right), are changed from the units used by \cite{Thomas2016} to the above by assuming $V - R = 0.5$ (the same assumption being done by \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} in order to define the relation between arc seconds and parsecs. As one can see, the profiles gained from simulations and observations are quite similar to each other.}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{lambda_epsilon.png}
-	\caption{The values of the $\lambda_{\mathrm{Re}}$-parameter of galaxies, plotted against their ellipticity at the effective radius. The red dots correspond to the simulated merger remnants, where as the black dots correspond to galaxies observed in the $\mathrm{ATLAS^{3D}}$-survey \citep{Emsellem2011}. The dashed lines display different slow rotator thresholds as a function of ellipticity \citep{Emsellem2011, Cappellari2016}.}
 \end{figure}
 
 \begin{figure}
@@ -341,7 +359,8 @@ In order to calculate the above properties, we define the "line-of-sight" as the
 		\includegraphics[width=\textwidth]{NGC4111_r1_voronoi.png}
 		\caption{NGC 4111}
 	\end{subfigure}
-	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from $\mathrm{ATLAS^{3D}}$ observations of two galaxies (NGC 3414 \citep{Emsellem2004} and NGC 4111 \citep{Cappellari2011}).}
+	\caption{Comparison between the IFU-maps of known slow and fast rotator galaxies from the $\mathrm{ATLAS^{3D}}$ survey. The maps show the average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters of NGC 3414 \citep{Emsellem2004} and NGC 4111 \citep{Cappellari2011}.}
+	\label{figure:obs_IFU}
 \end{figure}
 
 \begin{table}
@@ -358,7 +377,7 @@ In order to calculate the above properties, we define the "line-of-sight" as the
 		(1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) \\
 		\hline
 		Snapshot-6 & $4.960$ & $2 \times 0.85$ & $5.507$ & $20.26$ & $4$ & $6.9$ & $311$ & $0.024$ & $0.11$ \\
-		NGC 1600 & $5.0$ & $1.7$ & $\sim 16$ & $(22.53)$ & $5.83$ & $3.4$ & 
+		NGC 1600 & $5.0$ & $1.7$ & $\sim 16$ & $\sim 22.8$ & $5.83$ & $3.4$ & 
 		$293$ & $0.026$ & $032$ \\
 		\hline
 		\end{tabular}
@@ -368,7 +387,7 @@ In order to calculate the above properties, we define the "line-of-sight" as the
 	(2) Total stellar mass \citep{Thomas2016}. \\
 	(3) Central black hole mass \citep{Thomas2016}. \\
 	(4) Effective radius \citep{Thomas2016}. For NGC 1600, the effective radius is changed from arc seconds to kpc by assuming that it is located at the distance of $D = 64 \; \mathrm{Mpc}$ \citep{Thomas2016}. \\
-	(5) Surface brightness at the effective radius. \\
+	(5) Surface brightness at the effective radius. Calculated from the best fit core-Sérsic profile parameters given in \cite{Thomas2016}. \\
 	(6) Sérsic index from the best fitting core-Sérsic profile fit \citep{Thomas2016}. \\
 	(7) Mean line-of-sight velocity inside the effective radius \citep{Bender1994}. \\
 	(8) Velocity dispersion inside the effective radius \citep{Veale2017veldisp}. For "Snapshot-6", the given velocity dispersion is calculated from a Voronoi binned image as the mean of the velocity dispersion values of the bins located inside the effective radius. \\

@@ -21,6 +21,7 @@ ketju-integrator/
 ketju/
 ketju_snapshots/Figure_1-1.png
 ketju_snapshots/Figure_1-2.png
+ketju_snapshots/__pycache__/
 ketju_snapshots/IFU/Cappellari2011a_Atlas3D_Paper1_UnBinned_Cubes_v1.0/
 ketju_snapshots/IFU/MS_NGC3414_r6_C2D.fits
 ketju_snapshots/IFU/MS_NGC3522_r4_C2D.fits
