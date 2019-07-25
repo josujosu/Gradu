@@ -325,6 +325,20 @@ where $R$ is the projected distance from the galactic centre, $V$ is velocity, $
 \end{equation}
 where $F_i$, $R_i$, $V_i$ and $\sigma_i$ are the flux, projected distance from the galaxy centre, velocity and velocity dispersion of the $i$th bin, and $N_p$ is the number of bins. In the case of our simulations the $N_p$ bins used are of course the voronoi bins described earlier in this section. 
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{NGC3414_r6_voronoi.png}
+		\caption{NGC 3414}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{NGC4111_r1_voronoi.png}
+		\caption{NGC 4111}
+	\end{subfigure}
+	\caption{Comparison between the IFU-maps of known slow and fast rotator galaxies from the $\mathrm{ATLAS^{3D}}$ survey. The maps show the average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters of NGC 3414 \citep{Emsellem2004} and NGC 4111 \citep{Cappellari2011}.}
+	\label{figure:obs_IFU}
+\end{figure}
+
 Determining whether a galaxy is either a fast or a slow rotator with $\lambda_R$, is done by comparing the value that the parameter gets at the galaxy's effective radius, to some threshold. The original threshold used for differentiating the two rotator types is: $\lambda_{Re} < 0.1$, where $\lambda_{Re}$ is $\lambda_R$ at the effective radius, and where galaxies fulfilling the condition are classified as slow rotators \citep{Emsellem2007}. Later revisions by \cite{Emsellem2011} and \cite{Cappellari2016} take the ellipticity ($\epsilon$) of the galaxy into account, and define the threshold as being either $\lambda_{Re} < 0.31\sqrt{\epsilon}$ or $\lambda_{Re} < 0.08 + \epsilon/4$ for $\epsilon < 0.4$ respectively. Through including the ellipticity in the threshold, the former revision accounts for increased anisotropy in the kinematics of flatter galaxies, while the latter improves on the former by reducing the risk of misidentifying round non regular slow rotators as fast rotators.
 
 Since two of the aforementioned slow rotator thresholds require us to know the ellipticity of the galaxy, we calculate the simulated merger remnants' ellipticities before analysing their rotation. The ellipticity calculations are done using a method described in \cite{Zemp2011}, which uses the shape tensor:
@@ -350,26 +364,12 @@ We calculate the $\lambda_{Re}$ and $\epsilon_e$, i.e. the ellipticity at the ef
 
 Regardless of the threshold used for differentiating between slow and fast rotators, figure \ref{figure:lambda_epsilon} shows us that all of the simulated merger remnants are clearly classified as slow rotators. This agrees well with the kinematic anisotropies seen in the IFU maps, which also implied the slow rotator classification for the remnants.
 
-\section{Comparison to Observations}
+\section{Comparison to NGC 1600}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{core_sersic_fits_obs_and_sim.png}
 	\caption{Core-Sérsic profile fits of surface brightness profiles calculated from either merger simulation results (top figures) or observed galaxies (bottom figures). The respective fit parameters are written on the figures in units that correspond to the axes. The progenitors of the top-left simulation contained $8.5 \times 10^8 M_\odot$ mass central SMBHs, and $8.5 \times 10^9 M_\odot$ mass central SMBHs in the top-right simulation. The parameters for NGC1600's profile (bottom right), are changed from the units used by \cite{Thomas2016} to the above by assuming $V - R = 0.5$ (the same assumption being done by \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} in order to define the relation between arc seconds and parsecs. As one can see, the profiles gained from simulations and observations are quite similar to each other.}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{NGC3414_r6_voronoi.png}
-		\caption{NGC 3414}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{NGC4111_r1_voronoi.png}
-		\caption{NGC 4111}
-	\end{subfigure}
-	\caption{Comparison between the IFU-maps of known slow and fast rotator galaxies from the $\mathrm{ATLAS^{3D}}$ survey. The maps show the average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters of NGC 3414 \citep{Emsellem2004} and NGC 4111 \citep{Cappellari2011}.}
-	\label{figure:obs_IFU}
 \end{figure}
 
 \begin{table}
