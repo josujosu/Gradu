@@ -901,10 +901,11 @@ plt.show()
 '''
 
 #plot_mus('100_bin_100_mean_BH{}.dat', np.append(np.arange(1, 7), np.array([0])))
-
-plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
-
+#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 #plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2)
+
+
+plot_core_sersic_profiles('core_sersic_profiles.dat', ['Snapshot-1', 'Snapshot-6', 'NGC_4472', 'NGC_1600'])
 
 
 

@@ -157,7 +157,7 @@ where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the centra
 
 While the merger progenitor galaxies are the same, the initial conditions of the simulations are quite different. The \cite{Mannerkoski2019} simulations comprise of four subsequent runs where the progenitor galaxy BH-6 (table \ref{table:progenitors}) is merged with the progenitor BH-2. On the other hand, the simulations done by \cite{Rantala2018} contain simply seven different mergers between two of the same progenitor galaxies.
 
-The results gathered from the two sets of simulations also differ from each other. From the simulations done by \cite{Mannerkoski2019}; only the locations, velocities and masses of the central SMBHs are saved. The data comes from time steps starting from when the semi-major-axis of the merging SMBH binary is $a \lesssim 5000 R_s$ ($R_s$ is the Schwarzschild radius) up until the end of the simulation. The simulation results of \cite{Rantala2018} however consists of not only the properties of the black holes, but also of the stellar and dark matter particles. These results are given in the form of a single snapshot at the simulation time $t = 2 \mathrm{Gyr}$. Due to the distinct difference between the type of results gained from the two different simulation sets (and for simplicity's sake), we will, from now on, be calling the simulations from \cite{Mannerkoski2019} "Runs", and the ones from \cite{Rantala2018} "Snapshots" (table \ref{table:runs_and_snaps}).
+The results gathered from the two sets of simulations also differ from each other. From the simulations done by \cite{Mannerkoski2019}; only the locations, velocities and masses of the central SMBHs are saved. The data comes from time steps starting from when the semi-major-axis of the merging SMBH binary is $a \lesssim 5000 R_s$ ($R_s$ is the Schwarzschild radius) up until the separation between the black holes is $\lesssim 100 R_s$. The simulation results of \cite{Rantala2018} however consists of not only the properties of the black holes, but also of the stellar and dark matter particles. These results are given in the form of a single snapshot at the simulation time $t = 2 \mathrm{Gyr}$. Due to the distinct difference between the type of results gained from the two different simulation sets (and for simplicity's sake), we will, from now on, be calling the simulations from \cite{Mannerkoski2019} "Runs", and the ones from \cite{Rantala2018} "Snapshots" (table \ref{table:runs_and_snaps}).
 
 \begin{table}
 	\begin{center}
@@ -183,17 +183,30 @@ The results gathered from the two sets of simulations also differ from each othe
 
 \section{Black Hole Trajectories}
 
+Since we are trying to determine if merging SMBH binaries form cores in the merger remnant, we of course must make sure that the progenitors' central black holes actually merge in our simulations. This done by looking at the simulation "runs", as they contain the locations of the black holes from multiple time steps, and since the "snapshots" are taken before the SMBHs have merged.
+
+Plotting the positions of the black holes from "Run 3" in coordinates centred on the binary's centre-of-mass during the initial time step gives us figure \ref{figure:run3_traj}. Even by eye, one can clearly see that the orbit of the less massive black hole becomes smaller and smaller as the binary moves further away from its initial position. While this doesn't explicitly tell us if the black holes merge into each other, it does indicate the existence of a hardening process in the binary. Similar figures to figure \ref{figure:run3_traj} from all four "runs" can be found in the appendix (figure \ref{figure:all_traj}).
+
 \begin{figure}[h]
 	\centering	
 	\includegraphics[width=0.7\textwidth]{Run3_Trajectory.png}	
-	\caption{The trajectories of the black holes during "run 3" of the simulation. The coordinates are centred on the initial location of the centre-of-mass of the black hole system. The orange and blue lines show the paths taken by the smaller and larger black holes respectively during the simulation. Both paths show clear spiral patterns which become smaller and smaller as the simulation proceeds. The paths end at the location where the black holes merge, i.e. where the distance between them is below the specific threshold.}
+	\caption{The trajectories of the black holes during "run 3" of the simulation. The coordinates are centred on the initial location of the centre-of-mass of the black hole system. The orange and blue lines show the paths taken by the smaller and larger black holes respectively during the simulation. Both paths show clear spiral patterns which become smaller and smaller as the simulation proceeds. The paths end at the location where the black holes merge, i.e. where the distance between them is $\lesssim 100 R_s$ ($R_s$ is the Schwarzschild radius).}
+	\label{figure:run3_traj}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{semi_major_and_ecc.png}
 	\caption{The semi-major axes (left) and eccentricities (right) of the black hole systems in simulation runs 1-4 as a function of time. The zero position on the x-axis corresponds to the point of time in the simulation, where the black hole merging event happens.}
+	\label{figure:semi_and_ecc}
 \end{figure}
+
+%Figure \ref{figure:semi_and_ecc} shows the time evolution of the semi-major axis $a$ and the eccentricity $e$ of the binary from every run. The behaviour of both $a$ and $e$ indicate that the binary does actually merge, as the orbits go from highly eccentric to almost circular, and as $a$ declines exponentially.
+
+The most likely obstacle for the complete merging of the black hole is the so-called final-parsec problem; where the hardening of the binary stops when the separation between the two black hoes is $\sim 1 \mathrm{pc}$ during the three-body scattering phase, due to the lack of stellar material that can be ejected. This is assumed to happen, since not only is the binary constantly ejecting the finite amount of stars inside the loss cone (defined in section 2), but the loss cone itself is becoming smaller due to the contracting orbit of the binary.
+
+Figure \ref{figure:semi_and_ecc} shows the time evolution of both the semi-major axis and the eccentricity of the binary orbits from all of the simulation runs. Interestingly enough the semi-major axes of the binaries go far below single parsec scales, meaning that the final-parsec problem doesn't seem to play a part in the evolution of the simulated binaries. This implies the existence of some loss cone refill mechanism that allows  the binary eject more stellar material than what exists in the loss cone to begin with.
+
 
 \section{Core Size Measurements}
 
@@ -366,13 +379,18 @@ Regardless of the threshold used for differentiating between slow and fast rotat
 
 \section{Comparison to NGC 1600}
 
-As the physical properties of the merger progenitors are modelled after NGC 1600, it is interesting to see how the results from the simulations compare to observations of NGC 1600. 
+As the physical properties of the merger progenitors are modelled after NGC 1600, it is interesting to see how the results from the simulations compare to actual observations of NGC 1600. We are mainly comparing the observations to the simulated merger remnant from "Snapshot-6", as the mass of the SMBH binary in the simulation in question is equivalent to the assumed mass of the central SMBH in NGC 1600 ($M_\bullet = 1.7 \times 10^7 M_\odot$) \citep{Thomas2016}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{core_sersic_fits_obs_and_sim.png}
-	\caption{Core-Sérsic profile fits of surface brightness profiles calculated from either merger simulation results (top figures) or observed galaxies (bottom figures). The respective fit parameters are written on the figures in units that correspond to the axes. The progenitors of the top-left simulation contained $8.5 \times 10^8 M_\odot$ mass central SMBHs, and $8.5 \times 10^9 M_\odot$ mass central SMBHs in the top-right simulation. The parameters for NGC1600's profile (bottom right), are changed from the units used by \cite{Thomas2016} to the above by assuming $V - R = 0.5$ (the same assumption being done by \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} in order to define the relation between arc seconds and parsecs. As one can see, the profiles gained from simulations and observations are quite similar to each other.}
+	\caption{Core-Sérsic profile fits of surface brightness profiles calculated from either merger simulation results (top figures) or observed galaxies (bottom figures). The respective fit parameters are written on the figures in units that correspond to the axes. The progenitors of the top-left simulation contained $8.5 \times 10^8 M_\odot$ mass central SMBHs, and $8.5 \times 10^9 M_\odot$ mass central SMBHs in the top-right simulation. The parameters for NGC 1600's profile (bottom right), are changed from the units used by \cite{Thomas2016} to the above by assuming $V - R = 0.5$ (the same assumption being done by \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} in order to define the relation between arc seconds and parsecs. As one can see, the profiles gained from simulations and observations are quite similar to each other.}
+	\label{figure:coresersic_sim_obs}
 \end{figure}
+
+Figure \ref{figure:coresersic_sim_obs} shows the core-Sérsic profile fits of the surface brightness profiles alongside the best-fit parameters from Snapshot-6 and NGC 1600 as well as from Snapshot-1 and NGC 4472. Comparing the profiles of Snapshot-6 and NGC 1600, one can see unmistakeable similarities. Not only are the shapes of the profiles extremely similar, apart from the larger core and effective radii the best-fit parameters are also quite closely related.
+
+A further comparison between the physical properties of Snapshot-6 and NGC 1600 can be seen in table \ref{table:snap6_vs_NGC1600}. Once again, apart from the effective radius the physical parameters are extremely similar, as between the simulation and the observations the physical parameters are of the same order of magnitude.
 
 \begin{table}
 	\begin{center}
@@ -381,7 +399,7 @@ As the physical properties of the merger progenitors are modelled after NGC 1600
 		\hline
 		\hline
 		Galaxy & $M_\star$ & $M_\bullet$ & $R_e$ & $\mu_e$ & $n$ & 
-		$\langle V_\mathrm{LOS} \rangle$ & $\sigma_e$ & $\lambda_e$ &
+		$V_\mathrm{LOS}$ & $\sigma_e$ & $\lambda_e$ &
 		$\epsilon_e$ \\
 		& $[\times 10^{11} M_\odot]$ & $[\times 10^{10} M_\odot]$ &
 		[kpc] & [$\mathrm{mag/arcsec^2}$] & & [km/s] & [km/s] & & \\
@@ -405,7 +423,10 @@ As the physical properties of the merger progenitors are modelled after NGC 1600
 	(9) Spin parameter at the effective radius \citep{Veale2018lambda}. \\
 	(10) For "Snapshot-6": ellipticity of the galaxy at the effective radius; and for GC 1600: luminosity weighted ellipticity \citep{Goullaud2018}.
 	}
+	\label{table:snap6_vs_NGC1600}
 \end{table}
+
+Of course, due to the nature in which the merger progenitors were modelled, the physical parameters being similar between the simulated merger remnant and NGC 1600 is the expected result. The only real surprise is that the core size of NGC 1600 is almost three times larger than the one from Snapshot-6.
 
 
 \section{Implications}
@@ -436,6 +457,7 @@ As the physical properties of the merger progenitors are modelled after NGC 1600
 		\caption{Run 4}
 	\end{subfigure}
 	\caption{The trajectories of the black holes from simulation runs by \cite{Mannerkoski2019}. The coordinates are centred on the initial location of the centre-of-mass of the black hole system. The orange and blue lines show the paths taken by the smaller and larger black holes respectively during the simulation.}
+	\label{figure:all_traj}
 \end{figure}
 
 \begin{figure}[h]
