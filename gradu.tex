@@ -87,11 +87,23 @@ Abstract goes here.
 
 \chapter{Theory}
 
+
+
 \chapter{KETJU}
+
+Description of basic functionality: what KETJU does, why it's created, basic description of the multiple integration region system. 
+
+\section{Chain and Tree-code Regions}
+
+\subsection{AR-CHAIN}
+
+\subsection{GADGET-3}
+
 
 \chapter{Merger Simulations Using KETJU}
 
-We analyse the results of two sets of galaxy merger simulations, where the merger progenitor galaxies contain central supermassive black holes. The simulation are done using the KETJU code by \cite{Mannerkoski2019} and \cite{Rantala2018}. The reasoning behind this analysis is to determine if merging SMBHs are able to cause the formation of cored galaxies, how the black hole masses affect the size of the core, and if the KETJU-code produces merger remnants comparable to observations. 
+We study the formation of cored galaxies through galaxy mergers by analysing the results from two sets of KETJU simulations \citep{Rantala2018, Mannerkoski2019}. The merger progenitor galaxies in these simulations contain central supermassive black holes. During the merger event, the SMBHs form a hardening binary, a likely source for the observed cores. We try to determine if there is a connection between the binary SMBH and the existence of a light deficient core, and if the KETJU results are comparable to observations.
+
 
 \section{Simulation Details}
 
@@ -99,7 +111,7 @@ All of the analysed simulation runs use merger progenitor galaxies from the same
 
 Apart from the SMBH masses however, all of the progenitor galaxies have identical physical properties. These properties, which are motivated by observations and dynamical simulations of NGC 1600 \citep{Rantala2018}, are described in table \ref{table:properties}.
 
-Alongside the physical properties, the distributions of the different particles that make up the progenitor galaxies are also identical. The progenitors' central SMBHs are simply modelled as point masses in the origin of their internal coordinate system, they don't contain any gas (i.e. the simulations describe so called "dry" mergers), and the stellar and dark matter particles are distributed according to a Dehnen density-potential model \citep{Dehnen1993}:
+Alongside the physical properties, the distributions of the different particles, that make up the progenitor galaxies, are also identical. The progenitors' central SMBHs are simply modelled as point masses, located in the origin of their internal coordinate system; they don't contain any gas (i.e. the simulations describe so called "dry" mergers); and the stellar and dark matter particles are distributed according to a Dehnen density-potential model \citep{Dehnen1993}:
 \begin{equation}
 \rho(r) = \frac{(3-\gamma)M}{4\pi} \frac{a}{r^\gamma (r+a)^{4-\gamma}},
 \end{equation}
@@ -110,7 +122,7 @@ Alongside the physical properties, the distributions of the different particles 
 	\ln \frac{r}{r+a}	 & \; \gamma = 2
 \end{cases},
 \end{equation}
-where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the central slope of the profile. For stellar particles the value used for $\gamma$  is $\gamma = 3/2$, while for the dark matter particles $\gamma = 1$.
+where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the central slope of the profile. For stellar particles $\gamma = 3/2$, while for the dark matter particles $\gamma = 1$.
 
 \begin{table}
 	\begin{center}
@@ -148,16 +160,16 @@ where $M$ is the total mass, $a$ is a scaling radius, and $\gamma$ is the centra
 	\caption{The constant physical properties of the progenitors: \\
 	$M_\star$: Stellar mass \\
 	$R_e$: Effective radius \\
-	$M_\mathrm{DM}$: Mass of the dark matter halo \\
-	$f_\mathrm{DM}(r_{1/2})$: Fraction of dark matter mass compared to stellar mass inside the effective radius \\
+	$M_\mathrm{DM}$: Dark matter halo mass\\
+	$f_\mathrm{DM}(r_{1/2})$: The fraction of dark matter mass from the total mass inside the effective radius \\
 	$N_\star$: Number of stellar particles \\
 	$N_\mathrm{DM}$: Number of dark matter particles}
 	\label{table:properties}
 \end{table}
 
-While the merger progenitor galaxies are the same, the initial conditions of the simulations are quite different. The \cite{Mannerkoski2019} simulations comprise of four subsequent runs where the progenitor galaxy BH-6 (table \ref{table:progenitors}) is merged with the progenitor BH-2. On the other hand, the simulations done by \cite{Rantala2018} contain simply seven different mergers between two of the same progenitor galaxies.
+While the merger progenitor galaxies are the same, the initial conditions of the simulations are quite different. The \cite{Mannerkoski2019} simulations comprise of four consecutive runs, where the initial run merges the progenitor galaxies BH-6 and BH-2 (table \ref{table:progenitors}) with each other, while the subsequent runs swap BH-6 for the merger remnant from the previous simulation. On the other hand, the simulations done by \cite{Rantala2018} simply comprise of seven different mergers between two of the same type of progenitor galaxies. Table \ref{table:runs_and_snaps} shows the central SMBH masses of the progenitors used in each simulation run.
 
-The results gathered from the two sets of simulations also differ from each other. From the simulations done by \cite{Mannerkoski2019}; only the locations, velocities and masses of the central SMBHs are saved. The data comes from time steps starting from when the semi-major-axis of the merging SMBH binary is $a \lesssim 5000 R_s$ ($R_s$ is the Schwarzschild radius) up until the separation between the black holes is $\lesssim 100 R_s$. The simulation results of \cite{Rantala2018} however consists of not only the velocities, positions and masses of the black holes; but also of the stellar and dark matter particles. These results are given in the form of a single snapshot at the simulation time $t = 2 \mathrm{Gyr}$. Due to the distinct difference between the type of results gained from the two different simulation sets (and for simplicity's sake), we will, from now on, be calling the simulations from \cite{Mannerkoski2019} "Runs" and the ones from \cite{Rantala2018} "Snapshots" (table \ref{table:runs_and_snaps}).
+Like the initial conditions, the type of results gathered from the two sets of simulations also differ from each other. From the simulations done by \cite{Mannerkoski2019}; only the locations, velocities and masses of the central SMBHs are saved. This data comes from time steps starting from when the semi-major-axis of the merging SMBH binary is $a \lesssim 5000 R_s$ ($R_s$ is the Schwarzschild radius) up until the separation between the black holes is $\lesssim 100 R_s$. However, the results from the simulations done by \cite{Rantala2018} not only include the velocities, positions and masses of the black holes; but also of the stellar and dark matter particles. These results, in turn, are given in the form of a single snapshot at the simulation time $t = 2 \mathrm{Gyr}$. Due to the distinct difference between the type of results gained from the two different simulation sets (and for simplicity's sake) we will, from now on, be calling the simulations from \cite{Mannerkoski2019} "Runs" and the ones from \cite{Rantala2018} "Snapshots" (as is also done in table \ref{table:runs_and_snaps}).
 
 \begin{table}
 	\begin{center}
@@ -183,9 +195,9 @@ The results gathered from the two sets of simulations also differ from each othe
 
 \section{Black Hole Trajectories}
 
-Since we are trying to determine if merging SMBH binaries form cores in the merger remnant, we of course must make sure that the progenitors' central black holes actually merge in our simulations. This is done by looking at the "Run" simulations, as they contain the locations of the black holes from multiple time steps, and as the "Snapshots" are taken before the SMBHs have merged.
+Since we are trying to determine if merging SMBH binaries form cores in merger remnants, we must make sure that the progenitors' central black holes actually merge in our simulations. This is done by looking at the "Run" simulations, as they contain the locations of the black holes from multiple time steps, and as the "Snapshots" still show both of the SMBHs.
 
-Plotting the positions of the black holes from "Run 3" in coordinates centred on the binary's centre-of-mass during the initial time step gives us figure \ref{figure:run3_traj}. Even by eye, one can clearly see that the orbit of the less massive black hole becomes smaller and smaller as the binary moves further away from its initial position. While this doesn't explicitly tell us if the black holes merge into each other, it does indicate the existence of a hardening process in the binary. Similar figures to figure \ref{figure:run3_traj} from all four "Runs" can be found in the appendix (figure \ref{figure:all_traj}).
+Plotting the positions of the black holes from "Run 3" in coordinates centred on the binary's centre-of-mass during the initial time step gives us figure \ref{figure:run3_traj}. Even by eye, one can clearly see that the orbit of the black hole with a smaller mass becomes smaller and smaller as the binary moves further away from its initial position. While this doesn't explicitly tell us that the black holes merge into each other, it does indicate the existence of a hardening process in the binary. Similar figures to figure \ref{figure:run3_traj} from all four "Runs" can be found in the appendix (figure \ref{figure:all_traj}).
 
 \begin{figure}[h]
 	\centering	
@@ -203,16 +215,16 @@ Plotting the positions of the black holes from "Run 3" in coordinates centred on
 
 %Figure \ref{figure:semi_and_ecc} shows the time evolution of the semi-major axis $a$ and the eccentricity $e$ of the binary from every run. The behaviour of both $a$ and $e$ indicate that the binary does actually merge, as the orbits go from highly eccentric to almost circular, and as $a$ declines exponentially.
 
-The most likely obstacle for the complete merging of the black holes is the so-called final-parsec problem; where due to the lack of stellar material that can be ejected during the three-body scattering phase, the hardening of the binary stops when the separation between the two black holes is $\sim 1 \mathrm{pc}$. This is assumed to happen since not only is the binary constantly ejecting the finite amount of stars inside the loss cone (defined in section 2), but the loss cone itself is becoming smaller due to the contracting binary orbit.
+The most likely obstacle for the complete merging of the binary black holes is the so-called final-parsec problem; where due to the lack of stellar material that can be ejected during the three-body scattering phase, the hardening of the binary stops when the separation between the two black holes is $\sim 1 \mathrm{pc}$. This is assumed to happen since not only is the binary constantly ejecting the finite amount of stars inside the loss cone (defined in section 2), but the loss cone itself is becoming smaller due to the contracting binary orbit.
 
-Figure \ref{figure:semi_and_ecc} shows the time evolution of both the semi-major axis and the eccentricity of the binary orbits from all of the simulation runs. Interestingly enough the semi-major axes of the binaries go far below single parsec scales, meaning that the final-parsec problem doesn't seem to play a part in the evolution of the simulated binaries. This implies the existence of some loss cone refill mechanism that allows  the binary to eject more stellar material than what exists in the loss cone to begin with.
+Figure \ref{figure:semi_and_ecc} shows the time evolution of both the semi-major axis and the eccentricity of the binary orbits from all of the simulation runs. Interestingly enough the semi-major axes of all of the binaries go far below single parsec scales, meaning that the final-parsec problem doesn't seem to play a part in the simulations. This implies that, there exists some loss cone refill mechanism which allows the binary to eject more stellar material than what initially exists inside the loss cone.
 
 
 \section{Core Size Measurements}
 
-In order to check if galaxies are cored or not, we first have to calculate their surface brightness profiles, and then see if they contain surface brightness deficiencies near their centres. As the "Runs" don't contain stellar data, we use the "Snapshots" for the core analysis. 
+In order to check if a galaxy is cored or not, we have to calculate its surface brightness profile, and check if the galaxy contains surface brightness deficiencies near its centre. As the "Runs" don't contain stellar data, we use the "Snapshots" for this core analysis. 
 
-We calculate the surface brightness profiles from the snapshots by: changing the coordinate system to centre-of-mass coordinates, projecting the stellar particles onto a plane, and calculating masses inside logarithmically spaced radial bins to get a radial mass surface density profile. We then do the aforementioned calculations 100 times from random viewing angles and calculate the azimuthal average of the profiles. This allows us to form a smooth mass surface density profile, which we then turn into a surface brightness profile by assuming a mass-to-light ratio of $M/L = 4$ \citep{Rantala2018}.
+We calculate the surface brightness profiles from the snapshots by: changing the coordinate system to centre-of-mass coordinates, projecting the stellar particles onto a plane, and calculating the mass inside logarithmically spaced radial bins to get a radial surface mass density profile. We then do the aforementioned calculations 100 times from random viewing angles, and get 100 different density profiles. These profiles are then averaged azimuthally, which allows us to form a smooth mass surface density profile, that can be turned into a surface brightness profile by assuming a mass-to-light ratio of $M/L = 4$ \citep{Rantala2018}.
 
 In figure \ref{figure:surface_brightness}, one can see example surface brightness profiles for all of the snapshots. Looking at the different curves, it seems like the presence of central SMBHs in the merger progenitors does cause some kind of brightness deficiency near the merger remnants centre. Not only that, the higher the mass of the central black holes, the larger the surface brightness deficiency seems to be.
 
@@ -390,7 +402,7 @@ As the physical properties of the merger progenitors are modelled after NGC 1600
 
 Figure \ref{figure:coresersic_sim_obs} shows the core-Sérsic profile fits of the surface brightness profiles alongside the best-fit parameters from Snapshot-6 and NGC 1600 as well as from Snapshot-1 and NGC 4472. Comparing the profiles of Snapshot-6 and NGC 1600, one can see unmistakeable similarities. Not only are the shapes of the profiles extremely similar, apart from the larger core and effective radii the best-fit parameters are also quite closely related.
 
-A further comparison between some of the properties of the two galaxies can be seen in table \ref{table:snap6_vs_NGC1600}. Most importantly the table shows that even their kinematic properties are, in the very least, of the same order of magnitude. Furthermore, much like the merger remnants seen in the snapshots NGC 1600 can easily be identified as a slow rotator by looking at it's $\lambda_e$ parameter and effective ellipticity.
+A further comparison between some of the properties of the two galaxies can be seen in table \ref{table:snap6_vs_NGC1600}. Most importantly the table shows that even their kinematic properties are alike, or in the very least, of the same order of magnitude. Furthermore, much like the merger remnants seen in the snapshots, by looking at it's $\lambda_e$ parameter and ellipticity at the effective radius, NGC 1600 can easily be identified as a slow rotator.
 
 \begin{table}
 	\begin{center}
@@ -426,10 +438,7 @@ A further comparison between some of the properties of the two galaxies can be s
 	\label{table:snap6_vs_NGC1600}
 \end{table}
 
-Of course due to the nature in which the merger progenitors were modelled, the physical parameters being similar between the simulated merger remnant and NGC 1600 is expected. This result does however further imply that the light deficiency observed in the cores of galaxies such as NGC 1600 is formed similarly to the simulations, i.e. through a scouring process caused by a binary SMBH during a galaxy merger.
-
-
-\section{Implications}
+Of course due to the nature in which the merger progenitors were modelled, the physical parameters being similar between the simulated merger remnant and NGC 1600 isn't unexpected. This result does however further imply that the light deficiency observed in the cores of galaxies such as NGC 1600 is formed similarly to the simulations, i.e. through a scouring process caused by a binary SMBH during a galaxy merger.
 
 
 \chapter{Conclusions}
