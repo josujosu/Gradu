@@ -19,7 +19,7 @@ sigma:	   311 km/s (calculated average from voronoi bins inside r_e = 8.914 kpc)
 r_eff:	   8.914 kpc (or 5.507 kpc)
 mu_eff:	   17.7 (20.26)
 n: 	   4
-los_v:	   -39.3 / 34.06 (calculated minimum and maximum from voronoi bins inside r_e=8.914) (-39.3 / 34.06  -  6.91)
+los_v:	   -39.3 / 34.06 - 5.84 (calculated minimum and maximum from voronoi bins inside r_e=8.914) (-39.3 / 34.06  -  6.91)
 dist:	   None
 lambda_e:  0.0215 (0.024)
 ellip:	   0.140 (0.11)

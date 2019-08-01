@@ -451,7 +451,7 @@ def plot_mus(filename_base, sim_nums):
         r = data[:,0]
         I = data[:,1]
 
-        plt.plot(r/1000, I, label='Snapshot-{}'.format(num), linewidth=2)
+        plt.plot(r/1000, I, label='BH-{} Merger'.format(num), linewidth=2)
 
 
     plt.xlim(1e-2, 1e2)
@@ -483,7 +483,7 @@ def plot_core_sersic_profiles(infile, target_names, subplots=True, sp_r=2, sp_c=
     targets = np.genfromtxt(infile, usecols=(0,), skip_header=True, dtype=str)
     ps = np.genfromtxt(infile, skip_header=True)[:,1:]
 
-    matplotlib.rcParams.update({"font.size":13})
+    matplotlib.rcParams.update({"font.size":15})
 
     if subplots:
 
@@ -525,18 +525,24 @@ def plot_core_sersic_profiles(infile, target_names, subplots=True, sp_r=2, sp_c=
         x = np.logspace(0, 5, 500)
 
         for name in target_names:
+
             i = np.where(targets == name)[0]
 
-            I = core_sersic_profile(x, 4.83, ps[i,0], ps[i,1],
+            I = core_sersic_profile(x, mu_in_lsun_per_pc_squared(4.83, ps[i, 0]), ps[i,1],
                                     ps[i,4], ps[i,2], ps[i,3], ps[i,5])
 
             # r, mu_b, r_b, alpha, r_e, gamma, n=4
             plt.plot(x / 1000, mu_in_mag_per_arcsec_squared(4.83, I), label=name)
 
+        plt.xlim(min(x)/1000, max(x)/1000)
+        plt.ylim(15, 25)
+
         plt.semilogx()
         plt.gca().invert_yaxis()
-        plt.legend()
+        plt.legend(loc=3)
         plt.ylabel("$\mu_V$[mag arcsec$^{-2}$]")
+        plt.minorticks_on()
+        plt.tick_params(which='both', direction='in', right=True, top=True)
         plt.xlabel("r[kpc]")
 
     plt.show()
@@ -640,16 +646,16 @@ def plot_core_fits(r, I, pars, a0, a1):
     #a0.set_title("Core-Sérsic profile fit \n $M_{\\bullet} = 1.7 \\times 10^9 M_{\odot}$")
 
 
-    a0.plot(r / 1000, I, marker='o', markersize=4, label='Calculated profile')
-    a0.plot(x / 1000, y_core, '-g', linewidth=2, label="Core-Sérsic profile")
+    a0.plot(r / 1000, I, marker='o', markersize=4, label='Simulated data')
+    a0.plot(x / 1000, y_core, '-g', linewidth=2, label="Core-Sérsic profile fit")
     a0.set_xlim(1e-2, 1e2)
     a0.semilogx()
     a0.set_ylabel("$\mu_V$(r) [mag arcsec$^{-2}$]", fontsize=14)
     y_size = a0.get_ybound()[1] - a0.get_ybound()[0]
-    #a0.text(0.02, a0.get_ybound()[1]-0.2*y_size, parameter_text, fontsize=12)
-    a0.text(0.05, 0.05, parameter_text, fontsize=14, transform=a0.transAxes)
-    #a0.text(4, a0.get_ybound()[1]-0.9*y_size, "Core-Sérsic", fontsize=12)
-    #a0.legend(loc=3)
+    a0.text(0.02, a0.get_ybound()[1]-0.2*y_size, parameter_text, fontsize=16)
+    #a0.text(0.05, 0.05, parameter_text, fontsize=14, transform=a0.transAxes)
+    a0.text(4, a0.get_ybound()[1]-0.9*y_size, "Core-Sérsic", fontsize=16)
+    a0.legend(loc=3)
     a0.invert_yaxis()
     a0.tick_params(direction='in', bottom=False, right=True, top=True)#, labelbottom=False)
 
@@ -692,17 +698,17 @@ def plot_nuker_fits(r, I, pars, a0, a1):
     #a0.set_title("Nuker profile fit \n $M_{\\bullet} =  1.7 \\times 10^9 M_{\odot}$")
 
 
-    a0.plot(r / 1000, I, marker='o', markersize=4, label='Calculated profile')
-    a0.plot(x / 1000, y, '-g', linewidth=2, label="Nuker profile")
+    a0.plot(r / 1000, I, marker='o', markersize=4, label='Simulated data')
+    a0.plot(x / 1000, y, '-g', linewidth=2, label="Nuker profile fit")
     a0.set_xlim(1e-2, np.log10(3100))
     a0.semilogx()
     a0.set_ylabel("$\mu_V$(r) [mag arcsec$^{-2}$]", fontsize=14)
     y_size = a0.get_ybound()[1] - a0.get_ybound()[0]
-    #a0.text(0.015, a0.get_ybound()[1] - 0.2 * y_size, parameter_text, fontsize=16)
-    a0.text(0.05, 0.05, parameter_text, fontsize=14, transform=a0.transAxes)
-    #a0.text(1, a0.get_ybound()[1] - 0.9 * y_size, "Nuker", fontsize=16)
+    a0.text(0.015, a0.get_ybound()[1] - 0.2 * y_size, parameter_text, fontsize=16)
+    #a0.text(0.05, 0.05, parameter_text, fontsize=14, transform=a0.transAxes)
+    a0.text(1, a0.get_ybound()[1] - 0.9 * y_size, "Nuker", fontsize=16)
     a0.invert_yaxis()
-    #a0.legend(loc=3)
+    a0.legend(loc=3)
     a0.tick_params(direction='in', bottom=False, right=True, top=True)#, labelbottom=False)
 
 
@@ -741,7 +747,7 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
 
         used_targets = np.array([])
         for i in range(len(file_nums)):
-            used_targets = np.append(used_targets, ['BH-' + str(file_nums[i])])
+            used_targets = np.append(used_targets, ['BH-' + str(file_nums[i]) + '_Merger'])
 
         targets = np.genfromtxt('core_sersic_profiles.dat', usecols=(0,), skip_header=True, dtype=str)
         ps = np.genfromtxt('core_sersic_profiles.dat', skip_header=True)[:, 1:]
@@ -771,13 +777,13 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
 
         if s == 0:
             print(r)
-            plt.plot(r, beta, label='Snapshot-{}'.format(num), linewidth=2)
+            plt.plot(r, beta, label='BH-{} merger'.format(num), linewidth=2)
         else:
-            plt.plot(r, smooth(beta, s), label='Snapshot-{}'.format(num))
+            plt.plot(r, smooth(beta, s), label='BH-{} merger'.format(num))
 
     plt.semilogx()
-    plt.xlim(0.3, 15)
-    plt.ylim(-1.2, 0.6)
+    plt.xlim(0.3, 15)       # 0.3 - 15
+    plt.ylim(-0.7, 0.7)     # -1.2 - 0.6
     if use_r_b:
         plt.xlabel("$r/r_b$")
     else:
@@ -786,7 +792,7 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
     plt.minorticks_on()
     plt.tick_params(right='True', top='true', direction='in', which='both')
     plt.tick_params(right=False, left=False, which='minor')
-    plt.legend()
+    plt.legend(loc=4)
     plt.show()
 
 
@@ -901,12 +907,30 @@ plt.show()
 '''
 
 #plot_mus('100_bin_100_mean_BH{}.dat', np.append(np.arange(1, 7), np.array([0])))
+
 #plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
-#plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2)
+#plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2, use_r_b=False)
+#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 
 
-plot_core_sersic_profiles('core_sersic_profiles.dat', ['Snapshot-1', 'Snapshot-6', 'NGC_4472', 'NGC_1600'])
+#plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
+
+#plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-1_Merger',  'NGC_4472'], subplots=False)
 
 
 
+
+# Good core sersic initial values: [1e5, 300, 2, 0.01, r_e]
+# Good nuker initial values: [1e6, 500, 0.7, 10, 0]
+
+r_c = np.genfromtxt("file_3_50bins.dat", usecols=(0,))[:-4]
+I_c = np.genfromtxt("file_3_50bins.dat", usecols=(1,))[:-4]
+
+r_n = np.genfromtxt("nuker_file_3_50.dat", usecols=(0,))
+I_n = np.genfromtxt("nuker_file_3_50.dat", usecols=(1,))
+
+core_pars = fit_core_profile(I_c, r_c, [1e5, 300, 2, 0.01, 1e4])
+nuker_pars = fit_nuker(I_n, r_n, [1e6, 500, 0.7, 10, 0])
+
+plot_and_show_nuker_and_core(r_c, I_c, r_n, I_n, core_pars, nuker_pars)
 

@@ -12,7 +12,7 @@ digitsize=24
 textsize=26
 titlesize=26
 ncbarlabels=3
-contourthickness=1
+contourthickness=2
 
 # qty: 'vel', 'sigma', 'h3', 'h4'
 def plot_quantity(filename_bin, filename_non, plotnum, qty='vel', limits=[-20, 20]):
@@ -66,7 +66,7 @@ def plot_quantity(filename_bin, filename_non, plotnum, qty='vel', limits=[-20, 2
 
 targets = ['NGC3414_r6', 'NGC3522_r4', 'NGC4111_r1', 'NGC4472_r8']
 
-target_num = 3
+target_num = 2
 
 
 filename_v = 'PXF_bin_MS_'+targets[target_num]+'_idl.fits'
@@ -79,10 +79,10 @@ fig = plt.figure(figsize=(10, 10))
 
 #matplotlib.rcParams.update({'font.size':14})
 
-plot_quantity(filename_v, filename, 1, qty='vel', limits=[-50, 50])
-plot_quantity(filename_v, filename, 2, qty='sigma', limits=[260, 330])
-plot_quantity(filename_v, filename, 3, qty='h3', limits=[-0.1, 0.1])
-plot_quantity(filename_v, filename, 4, qty='h4', limits=[-0.1, 0.1])
+plot_quantity(filename_v, filename, 1, qty='vel', limits=[-160, 160])
+plot_quantity(filename_v, filename, 2, qty='sigma', limits=[100, 200])
+plot_quantity(filename_v, filename, 3, qty='h3', limits=[-0.15, 0.15])
+plot_quantity(filename_v, filename, 4, qty='h4', limits=[-0.15, 0.15])
 
 plt.subplots_adjust(wspace=0.3, hspace=0)
 
