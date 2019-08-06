@@ -779,19 +779,20 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
             print(r)
             plt.plot(r, beta, label='BH-{} merger'.format(num), linewidth=2)
         else:
-            plt.plot(r, smooth(beta, s), label='BH-{} merger'.format(num))
+            plt.plot(r, smooth(beta, s), label='BH-{} merger'.format(num), linewidth=2)
 
     plt.semilogx()
-    plt.xlim(0.3, 15)       # 0.3 - 15
-    plt.ylim(-0.7, 0.7)     # -1.2 - 0.6
+    plt.xlim(0.3, 30)       # 0.3 - 15
+    plt.ylim(-0.8, 0.7)     # -1.2 - 0.6
     if use_r_b:
         plt.xlabel("$r/r_b$")
     else:
         plt.xlabel("r[kpc]")
     plt.ylabel("$\\beta$(r)")
     plt.minorticks_on()
-    plt.tick_params(right='True', top='true', direction='in', which='both')
-    plt.tick_params(right=False, left=False, which='minor')
+    plt.tick_params(right='True', top='true', direction='in', which='both', length=5)
+    plt.tick_params(which='major', length=10)
+    #plt.tick_params(right=False, left=False, which='minor')
     plt.legend(loc=4)
     plt.show()
 
@@ -910,7 +911,7 @@ plt.show()
 
 #plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 #plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2, use_r_b=False)
-#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
+plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 
 
 #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
@@ -919,7 +920,7 @@ plt.show()
 
 
 
-
+'''
 # Good core sersic initial values: [1e5, 300, 2, 0.01, r_e]
 # Good nuker initial values: [1e6, 500, 0.7, 10, 0]
 
@@ -933,4 +934,4 @@ core_pars = fit_core_profile(I_c, r_c, [1e5, 300, 2, 0.01, 1e4])
 nuker_pars = fit_nuker(I_n, r_n, [1e6, 500, 0.7, 10, 0])
 
 plot_and_show_nuker_and_core(r_c, I_c, r_n, I_n, core_pars, nuker_pars)
-
+'''
