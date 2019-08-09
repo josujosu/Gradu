@@ -437,23 +437,13 @@ Regardless of the threshold used for differentiating between slow and fast rotat
 
 As the physical properties of the merger progenitors are modelled after NGC 1600, it is interesting to see how the results from the simulations compare with actual observations of the galaxy. I am mainly comparing the observations to the BH-6 merger remnant, as the mass of the SMBH binary in the simulation is equivalent to the assumed mass of the central SMBH in NGC 1600 ($M_\bullet = 1.7 \times 10^{10} M_\odot$) \citep{Thomas2016}.
 
-\begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{BH-6_NGC1600.png}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{BH-1_NGC4472.png}
-	\end{subfigure}
-	\caption{Comparison between core-Sérsic profile fits from observed galaxies and simulated merger remnants. The figure on the left compares the profile of the BH-6 merger remnant (the merger remnant whose progenitors containing the largest central SMBH massess) to NGC 1600; while the figure on the right compares the profiles of the BH-1 merger remnant (the remnant with progenitors that had the smallest SMBH masses) and NGC 4472. The parameters for plotting the core-Sérsic profile of NGC 1600 were taken from \cite{Thomas2016}, with the units being changed to the above, by assuming $V - R = 0.5$ (the same assumption being done in \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} to define the relation between arc seconds and parsecs. The parameters for the profile of NGC 4472 were from \cite{Dullo2012} and \cite{Lauer2007}. The best-fit parameters can be found from the appendix in table \ref{table:bestfit_parameter_comparison}}
-	\label{figure:profile_comparison}
-\end{figure}
-
 %Figure \ref{figure:coresersic_sim_obs} shows the core-Sérsic profile fits of the surface brightness profiles alongside the best-fit parameters from Snapshot-6 and NGC 1600, as well as from Snapshot-1 and NGC 4472. Comparing the profiles of Snapshot-6 and NGC 1600, one can see unmistakeable similarities. Not only are the shapes of the profiles extremely similar, apart from the larger core and effective radii, the best-fit parameters are also quite closely related.
 
 Figure \ref{figure:profile_comparison} compares the core-Sérsic profile fits of the surface brightness profiles from BH-1 and BH-6 mergers to the profile fits from the observed core galaxies NGC 4472 and NGC 1600 respectively. Not only do the shapes of the profile fits follow each other closely in both cases, the best-fit parameters are also closely related (table \ref{table:bestfit_parameter_comparison}). 
 
 An even further comparison between some of the properties of the two galaxies can be seen in table \ref{table:snap6_vs_NGC1600}. Most importantly the table shows that even their kinematic properties are alike, or in the very least, of the same order of magnitude. Furthermore, much like the merger remnants seen in the snapshots, by looking at its $\lambda_e$ parameter and ellipticity at the effective radius, NGC 1600 can easily be identified as a slow rotator.
+
+Being able to reproduce, not only the photometric qualities, but also the kinematic properties, of an observed galaxy is quite impressive. This clearly indicates that the KETJU code is able to simulate galaxy mergers in a physically accurate manner, and simulated process, i.e. core scouring by a binary SMBH during a galaxy merger,  is most likely the driving mechanism behind core formation.
 
 \begin{table}
 	\begin{center}
@@ -489,7 +479,17 @@ An even further comparison between some of the properties of the two galaxies ca
 	\label{table:snap6_vs_NGC1600}
 \end{table}
 
-Being able to reproduce, not only the photometric qualities, but also the kinematic properties, of an observed galaxy is quite impressive. This clearly indicates that the KETJU code is able to simulate galaxy mergers in a physically accurate manner, and simulated process, i.e. core scouring by a binary SMBH during a galaxy merger,  is most likely the driving mechanism behind core formation.
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH-6_NGC1600.png}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH-1_NGC4472.png}
+	\end{subfigure}
+	\caption{Comparison between core-Sérsic profile fits from observed galaxies and simulated merger remnants. The figure on the left compares the profile of the BH-6 merger remnant (the merger remnant whose progenitors containing the largest central SMBH massess) to NGC 1600; while the figure on the right compares the profiles of the BH-1 merger remnant (the remnant with progenitors that had the smallest SMBH masses) and NGC 4472. The parameters for plotting the core-Sérsic profile of NGC 1600 were taken from \cite{Thomas2016}, with the units being changed to the above, by assuming $V - R = 0.5$ (the same assumption being done in \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} to define the relation between arc seconds and parsecs. The parameters for the profile of NGC 4472 were from \cite{Dullo2012} and \cite{Lauer2007}. The best-fit parameters can be found from the appendix in table \ref{table:bestfit_parameter_comparison}}
+	\label{figure:profile_comparison}
+\end{figure}
 
 
 \chapter{Conclusions}
