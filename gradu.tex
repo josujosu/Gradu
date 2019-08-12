@@ -174,7 +174,7 @@ where $\rho_i$ is the density profile from equation \ref{eq:dehnen_density} for 
 \end{equation}
 where $v$ is the velocity of the particle, and $\Phi_0$ is a chosen zero point for the potential. This zero point is usually chosen so that, $f > 0$ for $\varepsilon > 0$, and $f = 0$ for $\varepsilon \leq 0$. In the case of the analysed simulations $\Phi_0 = 0$, as the modelled galaxies are isolated and extend to infinity.
 
-The physical parameters needed for generating the progenitor galaxies using equations \ref{eq:cumulative_mass} and \ref{eq:eddington_form} are given in table \ref{table:properties} under "Common physical properties", and, as name implies, are identical across all of the progenitors used in the simulations. While the uses for the number of stellar and dark matter particles, and the stellar and dark matter masses, are self-explanatory; the effective radius $R_e$ and dark matter fraction inside the half-mass radius $f_\mathrm{DM}(r_{1/2})$ are used for determining the scaling radius $a$ with the equations:
+The physical parameters needed for generating the progenitor galaxies using equations \ref{eq:cumulative_mass} and \ref{eq:eddington_form} are given in table \ref{table:properties} under "Common physical properties", and, as name implies, are identical across all of the progenitors used in the simulations. While the uses for the number of stellar and dark matter particles, as well as the stellar and dark matter masses, are self-explanatory; the effective radius $R_e$ and dark matter fraction inside the half-mass radius $f_\mathrm{DM}(r_{1/2})$ are used for determining the scaling radius $a$ with the equations:
 \begin{equation}
 a_\star = r_{1/2}(2^{1/(3-\gamma)}-1); \quad r_{1/2} \approx 4/3 R_e,
 \end{equation}
@@ -182,7 +182,9 @@ and
 \begin{equation}
 a_\mathrm{DM} \approx \frac{4}{3} \left[ \sqrt{\frac{2M_\mathrm{DM}}{M_\star} \left( \frac{1}{f_\mathrm{DM}(r_{1/2})} - 1 \right)} -1 \right] R_e,
 \end{equation}
-, for the stellar and dark matter particle profiles respectively. The values for these common properties are motivated by observations and dynamical simulations of NGC 1600 \citep{Rantala2018}, an early-type cored galaxy with a large core radius and a central supermassive black hole with a mass of $\sim 1.7 \times 10^{10} M_\odot$ \citep{Thomas2016}.
+, for the stellar and dark matter particle profiles respectively. 
+
+The values for these common properties are motivated by observations and dynamical simulations of NGC 1600 \citep{Rantala2018}, an early-type cored galaxy with a large core radius and a central supermassive black hole with a mass of $\sim 1.7 \times 10^{10} M_\odot$ \citep{Thomas2016}. Figure \ref{figure:IC_density_profile} shows an example of a merger progenitor's stellar mass density profiles, when the physical properties in question are used.
 
 \begin{table}
 	\begin{center}
@@ -213,6 +215,13 @@ a_\mathrm{DM} \approx \frac{4}{3} \left[ \sqrt{\frac{2M_\mathrm{DM}}{M_\star} \l
 \end{table}
 
 Table \ref{table:properties} also shows the masses of the central SMBHs in each of the seven progenitor galaxies. The mass of the central SMBH is the only physical property that changes from one progenitor to another. Six of the progenitor galaxies (BH-1 - BH-6) contain central supermassive black holes, with the SMBH masses varying from $8.5 \times 10^8 M_\odot$ to $8.5 \times 10^9 M_\odot$, where a merged binary of the largest SMBHs is equivalent in mass to the central SMBH in NGC 1600. The seventh progenitor (BH-0) does not contain an SMBH in its centre, and is included simply for the sake of comparison.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{IC.png}
+	\caption{Example mass density profile of the progenitor galaxies. The initial conditions for the profile in question were the same as in table \ref{table:properties}; with the exception of the number of dark matter and stellar particles, which were only $10\%$ of their respective values.}
+	\label{figure:IC_density_profile}
+\end{figure}
 
 The simulations themselves comprise of seven mergers of two identical progenitor galaxies from table \ref{table:properties}. The galaxies are merged on a nearly parabolic orbit with an initial separation of $d = 30 \mathrm{kpc}$ since, according to \cite{Rantala2018}, this kind of orbit makes the approach of the galaxies swift, and causes the stellar cusps to merge before $t \sim 300 \mathrm{Myr}$.
 

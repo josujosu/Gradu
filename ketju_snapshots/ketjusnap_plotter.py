@@ -911,7 +911,7 @@ plt.show()
 
 #plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 #plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2, use_r_b=False)
-plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
+#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
 
 
 #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
