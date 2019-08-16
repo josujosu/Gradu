@@ -37,10 +37,10 @@ hdf5directorystart = "../gamma-1.5-bh-"
 
 hdf5directoryend   = ".hdf5"
 
-name_start = 'BH_'
+name_start = 'dummy_'
 name_end   = '.png'
 
-for file in range(0,7):
+for file in range(6,7):
 
     filename = hdf5directorystart + str(file) + hdf5directoryend
     print filename

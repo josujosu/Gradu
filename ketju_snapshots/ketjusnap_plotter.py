@@ -56,6 +56,9 @@ beta_bins3_rb = np.arange(0.1, 1.5*10**4.1, 0.10e3)
 
 beta_bins_final = np.append(np.array([0, 100, 190]), np.logspace(np.log10(2.5*190), 5, 20))
 
+# Line colors
+
+colors = ['black', 'red', 'blue', 'orange', 'green', 'purple', 'slategray']
 
 
 # ---------- Theoretical profile functions -----------
@@ -436,6 +439,41 @@ def read_velocities_from_ketju(file_num, partType, data_units):
     data = h5.File(filenames[file_num])
     return data[partType]['Velocities'][:, :] * data_units.unit_vel * unit_vel_in_m_per_s / 1000
 
+def print_half_mass_radius(file_nums):
+
+    for num in file_nums:
+
+        coords, masses = read_coords_and_masses_from_ketju(num, "PartType3", ketjugw.units.DataUnits())
+
+        com = find_com(coords, masses, max(coords[:, 0]) * 0.001)
+        coords = coords - com
+
+        dists = np.sqrt(coords[:,0]**2 + coords[:,1]**2 + coords[:,2]**2)
+
+        hm_r = np.sort(dists)[int(dists.size/2)]
+        print("half mass radius:", hm_r)
+        print("approximate effective radius:", hm_r * 3/4)
+
+
+def print_influence_radius(file_nums):
+
+    for num in file_nums:
+
+        coords, masses = read_coords_and_masses_from_ketju(num, "PartType3", ketjugw.units.DataUnits())
+        coords_bh, masses_bh = read_coords_and_masses_from_ketju(num, "PartType5", ketjugw.units.DataUnits())
+
+        com = find_com(coords, masses, max(coords[:, 0]) * 0.001)
+        coords = coords - com
+
+        dists = np.sort(np.sqrt(coords[:,0]**2 + coords[:,1]**2 + coords[:,2]**2))
+
+        r_m = np.sum(masses_bh)/masses[0]
+
+        print(r_m)
+
+        print("influence radius:", dists[int(r_m)]*3/4)
+
+
 
 def plot_mus(filename_base, sim_nums):
 
@@ -451,11 +489,11 @@ def plot_mus(filename_base, sim_nums):
         r = data[:,0]
         I = data[:,1]
 
-        plt.plot(r/1000, I, label='BH-{} Merger'.format(num), linewidth=2)
+        plt.plot(r/1000, I, color=colors[num], label='BH-{} Merger'.format(num), linewidth=3)
 
 
     plt.xlim(1e-2, 1e2)
-    plt.ylim(1, 5e4)
+    plt.ylim(10, 5e4)
     plt.semilogy()
     plt.semilogx()
     plt.xlabel("r [kpc]")
@@ -522,7 +560,7 @@ def plot_core_sersic_profiles(infile, target_names, subplots=True, sp_r=2, sp_c=
 
     else:
 
-        x = np.logspace(0, 5, 500)
+        x = np.logspace(1, 5, 500)
 
         for name in target_names:
 
@@ -532,10 +570,10 @@ def plot_core_sersic_profiles(infile, target_names, subplots=True, sp_r=2, sp_c=
                                     ps[i,4], ps[i,2], ps[i,3], ps[i,5])
 
             # r, mu_b, r_b, alpha, r_e, gamma, n=4
-            plt.plot(x / 1000, mu_in_mag_per_arcsec_squared(4.83, I), label=name)
+            plt.plot(x / 1000,  mu_in_mag_per_arcsec_squared(4.83, I), label=name, linewidth=3)
 
         plt.xlim(min(x)/1000, max(x)/1000)
-        plt.ylim(15, 25)
+        plt.ylim(15, 26)
 
         plt.semilogx()
         plt.gca().invert_yaxis()
@@ -777,9 +815,9 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
 
         if s == 0:
             print(r)
-            plt.plot(r, beta, label='BH-{} merger'.format(num), linewidth=2)
+            plt.plot(r, beta, color=colors[num], label='BH-{} merger'.format(num), linewidth=2)
         else:
-            plt.plot(r, smooth(beta, s), label='BH-{} merger'.format(num), linewidth=2)
+            plt.plot(r, smooth(beta, s), color=colors[num], label='BH-{} merger'.format(num), linewidth=2)
 
     plt.semilogx()
     plt.xlim(0.3, 30)       # 0.3 - 15
@@ -793,6 +831,8 @@ def plot_and_show_beta(file_nums, bins, s, use_r_b=False):
     plt.tick_params(right='True', top='true', direction='in', which='both', length=5)
     plt.tick_params(which='major', length=10)
     #plt.tick_params(right=False, left=False, which='minor')
+    plt.xticks([1, 10])
+    plt.yticks([-0.5, 0, 0.5])
     plt.legend(loc=4)
     plt.show()
 
@@ -872,66 +912,71 @@ def write_data_to_file(outfile, file_num, bins):
     np.savetxt(outfile, outdata)
 
 
-'''
-files = [
-    "file_1_50bins.dat",
-    "file_2_50bins.dat",
-    "file_3_50bins.dat",
-    "file_4_50bins.dat",
-    "file_5_50bins.dat",
-    "file_6_50bins.dat"
-    ]
 
-nuker_files = [
-    "nuker_file_1_50.dat",
-    "nuker_file_2_50.dat",
-    "nuker_file_3_50.dat",
-    "nuker_file_4_50.dat",
-    "nuker_file_5_50.dat",
-    "nuker_file_6_50.dat"
-    ]
+def main():
+    '''
+    files = [
+        "file_1_50bins.dat",
+        "file_2_50bins.dat",
+        "file_3_50bins.dat",
+        "file_4_50bins.dat",
+        "file_5_50bins.dat",
+        "file_6_50bins.dat"
+        ]
 
-
-r = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(0,))
-I = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(1,))
+    nuker_files = [
+        "nuker_file_1_50.dat",
+        "nuker_file_2_50.dat",
+        "nuker_file_3_50.dat",
+        "nuker_file_4_50.dat",
+        "nuker_file_5_50.dat",
+        "nuker_file_6_50.dat"
+        ]
 
 
-print(find_cusp_radius(r, I, 5e3, [200, 800]))
-'''
-
-'''
-r, I, pars = fit_from_file('file_0_20bins.dat', basic_bins20, [0, 0, 4], 's', calc_re=True, exc=1)
-
-f, (a0, a1) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]})
-plot_sersic_fits(r, I, pars, a0, a1)
-plt.show()
-'''
-
-#plot_mus('100_bin_100_mean_BH{}.dat', np.append(np.arange(1, 7), np.array([0])))
-
-#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
-#plot_and_show_beta(np.append(np.arange(1, 7), np.array([0])), beta_bins, 2, use_r_b=False)
-#plot_and_show_beta(np.arange(1, 7), beta_bins_rb, 2, use_r_b=True)
+    r = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(0,))
+    I = np.genfromtxt('100_bin_100_mean_BH6.dat', usecols=(1,))
 
 
-#plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
+    print(find_cusp_radius(r, I, 5e3, [200, 800]))
+    '''
 
-#plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-1_Merger',  'NGC_4472'], subplots=False)
+    '''
+    r, I, pars = fit_from_file('file_0_20bins.dat', basic_bins20, [0, 0, 4], 's', calc_re=True, exc=1)
+    
+    f, (a0, a1) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]})
+    plot_sersic_fits(r, I, pars, a0, a1)
+    plt.show()
+    '''
+
+    #plot_mus('100_bin_100_mean_BH{}.dat', np.arange(0, 7))
+
+    #plot_and_show_beta(np.arange(0, 7), beta_bins_rb, 2, use_r_b=True)
+    #plot_and_show_beta(np.arange(0, 7), beta_bins, 2, use_r_b=False)
 
 
+    #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
+    #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-1_Merger',  'NGC_4472'], subplots=False)
 
-'''
-# Good core sersic initial values: [1e5, 300, 2, 0.01, r_e]
-# Good nuker initial values: [1e6, 500, 0.7, 10, 0]
+    print_half_mass_radius([0, 1, 2, 3, 4, 5, 6])
+    #print_influence_radius([1, 2, 3, 4, 5, 6])
 
-r_c = np.genfromtxt("file_3_50bins.dat", usecols=(0,))[:-4]
-I_c = np.genfromtxt("file_3_50bins.dat", usecols=(1,))[:-4]
+    '''
+    # Good core sersic initial values: [1e5, 300, 2, 0.01, r_e]
+    # Good nuker initial values: [1e6, 500, 0.7, 10, 0]
+    
+    r_c = np.genfromtxt("file_3_50bins.dat", usecols=(0,))[:-4]
+    I_c = np.genfromtxt("file_3_50bins.dat", usecols=(1,))[:-4]
+    
+    r_n = np.genfromtxt("nuker_file_3_50.dat", usecols=(0,))
+    I_n = np.genfromtxt("nuker_file_3_50.dat", usecols=(1,))
+    
+    core_pars = fit_core_profile(I_c, r_c, [1e5, 300, 2, 0.01, 1e4])
+    nuker_pars = fit_nuker(I_n, r_n, [1e6, 500, 0.7, 10, 0])
+    
+    plot_and_show_nuker_and_core(r_c, I_c, r_n, I_n, core_pars, nuker_pars)
+    '''
 
-r_n = np.genfromtxt("nuker_file_3_50.dat", usecols=(0,))
-I_n = np.genfromtxt("nuker_file_3_50.dat", usecols=(1,))
 
-core_pars = fit_core_profile(I_c, r_c, [1e5, 300, 2, 0.01, 1e4])
-nuker_pars = fit_nuker(I_n, r_n, [1e6, 500, 0.7, 10, 0])
-
-plot_and_show_nuker_and_core(r_c, I_c, r_n, I_n, core_pars, nuker_pars)
-'''
+if __name__ == "__main__":
+    main()

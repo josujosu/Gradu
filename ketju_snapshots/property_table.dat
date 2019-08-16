@@ -15,12 +15,12 @@ ellip:	   0.32 (Goullaud 2018, MASSIVE) (luminosity weighted mean, NOT at effect
 BH-6
 mass:	   4.959747e11
 bh_mass:   2 x 8.5e9 M_sun
-sigma:	   311 km/s (calculated average from voronoi bins inside r_e = 8.914 kpc) (296 km/s)
-r_eff:	   8.914 kpc (or 5.507 kpc)
-mu_eff:	   17.7 (20.26)
+sigma:	   278 km/s (calculated average from voronoi bins inside r_e = 9.304 kpc) (296 km/s)
+r_eff:	   10.722 kpc (or 5.507 kpc)
+mu_eff:	   21.54 (20.26)
 n: 	   4
-los_v:	   -39.3 / 34.06 - 5.84 (calculated minimum and maximum from voronoi bins inside r_e=8.914) (-39.3 / 34.06  -  6.91)
+los_v:	   -39.3 / 34.06 - 5.61 (calculated minimum and maximum from voronoi bins inside r_e=8.914) (-39.3 / 34.06  -  6.91)
 dist:	   None
-lambda_e:  0.0215 (0.024)
-ellip:	   0.140 (0.11)
+lambda_e:  0.0213 (0.024)
+ellip:	   0.150 (0.11)
 

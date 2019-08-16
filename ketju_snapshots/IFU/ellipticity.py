@@ -132,7 +132,7 @@ def iterate_shape_tensors(coords, masses, r_ell):
 
 filename = '../gamma-1.5-bh-6.hdf5'
 
-r_e = 8.9142
+r_e = 10.722
 
 
 s = pygad.Snap(filename)
