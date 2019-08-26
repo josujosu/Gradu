@@ -912,8 +912,61 @@ def write_data_to_file(outfile, file_num, bins):
     np.savetxt(outfile, outdata)
 
 
+# ------- Some maybe usable stuff ------------
+
+def combine_data_from_different_angles(file_num, N):
+
+    coords, masses = read_coords_and_masses_from_ketju(file_num, "PartType3", ketjugw.units.DataUnits())
+
+    com = find_com(coords, masses, max(coords[:, 0]) * 0.001)
+    coords = coords - com
+
+    masses = masses/N
+
+    for i in range(0, N):
+
+        print(i)
+
+        angles = np.random.rand(3) * np.pi * 2
+        coords = np.append(coords, rotate_points(coords, angles[0], angles[1], angles[2]).T, axis=0)
+        masses = np.append(masses, masses)
+
+    return coords, masses
+
+
+def surface_density_profile_binned_by_particle_num(coords, masses, parts_in_bin):
+
+    dists = np.sort(np.sqrt(coords[:,0]**2 + coords[:,1]**2 + coords[:,2]**2))
+
+    N = dists.size % parts_in_bin
+
+    r = np.zeros(N)
+    rho = np.zeros(N)
+
+    for i in range(0, N):
+
+        print(i)
+
+        r[i] = (dists[i*parts_in_bin] * dists[(i+1)*parts_in_bin-1]) / 2
+        rho[i] = masses[i] / (np.pi * dists[i*parts_in_bin]**2 - np.pi * dists[(i+1)*parts_in_bin-1]**2)
+
+    return r, rho
+
+
+# -------------------------------------------
+
+
 
 def main():
+
+    coords, masses = combine_data_from_different_angles(6, 10)
+    r, rho = surface_density_profile_binned_by_particle_num(coords, masses, 1e4)
+
+    plt.plot(r, rho)
+    plt.semilogx()
+    plt.semilogy()
+    plt.show()
+
     '''
     files = [
         "file_1_50bins.dat",
@@ -958,7 +1011,7 @@ def main():
     #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
     #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-1_Merger',  'NGC_4472'], subplots=False)
 
-    print_half_mass_radius([0, 1, 2, 3, 4, 5, 6])
+    #print_half_mass_radius([0, 1, 2, 3, 4, 5, 6])
     #print_influence_radius([1, 2, 3, 4, 5, 6])
 
     '''

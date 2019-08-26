@@ -65,6 +65,9 @@
 % Generate title page.
 \maketitle
 
+%\onehalfspacing
+\doublespacing
+
 % STEP 3:
 % Write your abstract (of course you really do this last).
 % You can make several abstract pages (if you want it in different languages),
@@ -85,22 +88,69 @@ Abstract goes here.
 % to change the parameters. Removing the abstract and ToC commands will mess up stuff.
 \chapter{Introduction}
 
-\chapter{Theory}
+\chapter{Background Theory}
 
-\section*{Topics that need to be explained for Chapter 4}
+\textit{\textbf{Topics that need to be explained for Chapter 4:}
+\\
+Poisson equation, phase-space, gravitational sphere-of-influence, loss-cone, modified gaussian and hermite polynomials and $h_3$ $h_4$, ellipticity...}
 
-Poisson equation, phase-space, gravitational sphere-of-influence, loss-cone, modified gaussian and hermite polynomials and $h_3$ $h_4$, ellipticity...
+\section{Early-Type Galaxies}
 
+The term "early-type galaxy" (ETG) is used to denote galaxies located on the left-side of  the Hubble sequence \citep[defined by][]{Hubble1926}; a system of morphological classification for galaxies, where they are divided into roughly three categories: elliptical, spiral and irregular galaxies. ETGs consist of the aforementioned elliptical as well as the so-called lenticular galaxies, the latter of which are transitional objects with features from both elliptical and spiral galaxies \citep{BinneyTremaine}, which include a small or non-existent amount of cool gas (and thus a negligible amount of star-formation) as well as having a smooth and relatively featureless appearance. However, whereas lenticular galaxies, like spirals, contain a rapidly rotating disk alongside a central bulge; elliptical galaxies are disk-less and generally more ellipsoidal in their shape, with constant luminosity contours (i.e. isophotes) that can be described as co-centric ellipses \citep{BinneyTremaine}.
+
+Elliptical galaxies are divided into seven different subcategories according to their ellipticity (E0 - E7; where the number denotes the tenth multiple of the value of the ellipticity rounded to the nearest integer). Ellipticity itself is simply the measure of how flattened an observed 2D-projection of a spherical stellar system is, and can be calculated as:
+\begin{equation}
+\epsilon = 1 - \frac{b}{a},
+\end{equation}
+where $a$ and $b$ are the semi-major and semi-minor axes of a luminosity isophote respectively, and where the value of the ellipticity grows alongside the flatness of the system ($\epsilon = 0$ denoting a completely spherical galaxy). It is important to note, however, that the ellipticity of a system depends on the luminosity contour from which it is calculated, as the contours generally become flatter farther from the centre of the galaxy \citep{BinneyTremaine}. For this reason the Hubble classification uses the ellipticity at the effective radius ($R_e$), i.e. the radius which encloses half of the galaxy's luminosity, when determining the elliptical subcategory.
+
+The surface brightness of most galaxies decreases as the function of radius. Many of the profiles for earl-type galaxies can be modelled using the Sérsic-profile \citep{Sersic1968}:
+\begin{equation}
+I (R) = I_e \exp \{ -b_n \left[ (R / R_e)^{1/n} \right] \},
+\end{equation}
+where $R$ is the radius, $I_e$ is the surface brightness at the effective radius, $n$ is the so-called Sérsic index, and $b_n$ is a shape factor that is defined so that the definition of $R_e$ hold true. The parameter  $b_n$ can be approximated as $b_n \approx 2n - 0.324$ for $1 \lesssim n \lesssim 10$ \citep{BinneyTremaine}.
+
+\subsection{Core and Cusp Galaxies}
+
+It has been noted that the physical properties of ETGs are highly dependent on their absolute magnitudes.  
+
+\subsubsection{Physical Differences}
+
+\subsubsection{Differences in Formation}
+
+\section{Core Formation}
+
+\subsection{Black Hole Mergers}
+
+The most prominently proposed mechanism for the formation of the cores seen in massive ETGs, is the ejection of stellar material due to three-body interactions between stars and merging supermassive black holes.
+
+\subsubsection{Merger Event}
+
+\subsubsection{Observations of Binary Black Holes}
+
+\subsection{Other Formation theories}
+
+\section{Galactic Dynamics}
+
+\subsection{Potential Theory}
+
+\subsection{Collisionless Systems}
+
+\subsection{Regularisation}
+
+\subsection{Post-Newtonian Dynamics}
+
+\section{Analysis of the Kinematics in Galaxies}
 
 \chapter{KETJU}
 
 \textit{Description of basic functionality: what KETJU does, why it's created, basic description of the multiple integration region system.} 
 
-\section{AR-CHAIN}
+\section{AR-CHAIN / Chain Integrator}
 
 \textit{Chain forming, force calculations, integration}
 
-\section{GADGET-3}
+\section{GADGET-3 / Tree Integrator}
 
 \textit{Softening, tree-codes, calculations}
 
@@ -110,8 +160,9 @@ Poisson equation, phase-space, gravitational sphere-of-influence, loss-cone, mod
 
 \subsection{Particle Types}
 
+\textit{Chain particles, tree particles, perturber particles}
 
-\section{Black Hole Trajectories}
+\section{Merging of Black Hole Particles}
 
 Since we are trying to determine if merging SMBH binaries form cores in merger remnants, we must make sure that the progenitors' central black holes actually merge in our simulations. This is done by looking at the "Run" simulations, as they contain the locations of the black holes from multiple time steps, and as the "Snapshots" still show both of the SMBHs.
 
@@ -341,7 +392,7 @@ Alongside the size of the core, the surface brightness deficit also becomes larg
 \begin{equation}
 L \lesssim [G(M_1 + M_2)a]^{1/2}, \label{eq:loss-cone}
 \end{equation}
-where $M_1$ and $M_2$ are the masses of the binary black holes, interact strongly enough with the binary to be ejected from the system (i.e. are inside the loss-cone). As the above equation implies, the upper limit of this condition grows alongside the binary mass. This causes more of the orbiting stellar particles to be located in the strong interaction range; as not only does the loss-cone widen, allowing for the ejection of particles with orbits more parallel to the plane of the binary; but the maximum velocities, at which a stellar particle can interact strongly with the binary, also become larger. Thus, a larger SMBH binary mass naturally results in the ejection of a larger number of stellar particles, which then leads to the growth of the central surface brightness deficit. 
+where $M_1$ and $M_2$ are the masses of the binary black holes, interact strongly enough with the binary to be ejected from the system (i.e. are inside the loss-cone). As the above equation implies, the upper limit of this condition grows alongside the binary mass. This causes more of the orbiting stellar particles to be located in the strong interaction range; as not only does the loss-cone widen, allowing for the ejection of particles with orbits more parallel to the plane of the binary; but the maximum velocities, at which a stellar particle can interact strongly with the binary, also become larger. Thus, a larger SMBH binary mass naturally results in the ejection of a larger number of stellar particles, which then leads to the growth of the central surface brightness deficit.  
 
 \section{Velocity Anisotropy}
 
