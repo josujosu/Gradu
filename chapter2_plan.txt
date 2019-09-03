@@ -6,6 +6,10 @@ CHAPTER 2:
 - Hubble classification
 - ellipticity
 
+2.2
+
+- Surface brightness (Merritt)
+
 - Sérsic-profile
 
 - Cored vs Cuspy galaxies (Rantala and Lahén, GFE)
@@ -20,7 +24,7 @@ CHAPTER 2:
 
 2.2 Core Formation
 
-- BH mergers (Merritt)
+- BH mergers (Merritt, Faber 1997, Quinlan & Hernquist 1997)
   - three phases
     - final-parsec problem (Milosavljevic, 2003)
     - loss-cone (repopulation mechanisms: triaxial, Merritt 446 and 452)
