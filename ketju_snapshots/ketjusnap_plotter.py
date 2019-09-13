@@ -279,6 +279,11 @@ def velocity_dispersion_profile(coords, masses, vels, bins, method='p'):
     coords = coords[mask]
     vels = vels[mask]
 
+    # better bins?
+
+    bins = np.sort(dists)[::int(dists.size/1000)]
+    print(bins)
+
     r = (bins[1:] + bins[:-1]) / 2
 
     bin_mask = np.digitize(dists, bins)
@@ -914,41 +919,24 @@ def write_data_to_file(outfile, file_num, bins):
 
 # ------- Some maybe usable stuff ------------
 
-def combine_data_from_different_angles(file_num, N):
-
-    coords, masses = read_coords_and_masses_from_ketju(file_num, "PartType3", ketjugw.units.DataUnits())
-
-    com = find_com(coords, masses, max(coords[:, 0]) * 0.001)
-    coords = coords - com
-
-    masses = masses/N
-
-    for i in range(0, N):
-
-        print(i)
-
-        angles = np.random.rand(3) * np.pi * 2
-        coords = np.append(coords, rotate_points(coords, angles[0], angles[1], angles[2]).T, axis=0)
-        masses = np.append(masses, masses)
-
-    return coords, masses
-
-
 def surface_density_profile_binned_by_particle_num(coords, masses, parts_in_bin):
 
-    dists = np.sort(np.sqrt(coords[:,0]**2 + coords[:,1]**2 + coords[:,2]**2))
+    com = find_com(coords, masses,  max(coords[:,0])*0.001)
+    coords -= com
 
-    N = dists.size % parts_in_bin
+    dists = np.sort(np.sqrt(coords[:,0]**2 + coords[:,1]**2))
+
+    N = int(dists.size / parts_in_bin)
 
     r = np.zeros(N)
     rho = np.zeros(N)
 
+    print(N)
+
     for i in range(0, N):
 
-        print(i)
-
-        r[i] = (dists[i*parts_in_bin] * dists[(i+1)*parts_in_bin-1]) / 2
-        rho[i] = masses[i] / (np.pi * dists[i*parts_in_bin]**2 - np.pi * dists[(i+1)*parts_in_bin-1]**2)
+        r[i] = (dists[i*parts_in_bin] + dists[(i+1)*parts_in_bin-1]) / 2
+        rho[i] = parts_in_bin*masses[i] / (-np.pi * dists[i*parts_in_bin]**2 + np.pi * dists[(i+1)*parts_in_bin-1]**2)
 
     return r, rho
 
@@ -959,13 +947,17 @@ def surface_density_profile_binned_by_particle_num(coords, masses, parts_in_bin)
 
 def main():
 
-    coords, masses = combine_data_from_different_angles(6, 10)
-    r, rho = surface_density_profile_binned_by_particle_num(coords, masses, 1e4)
+    '''
+    coords, masses = read_coords_and_masses_from_ketju(1, 'PartType3', ketjugw.units.DataUnits())
+    r, rho = surface_density_profile_binned_by_particle_num(coords, masses, 1000)
 
-    plt.plot(r, rho)
-    plt.semilogx()
+    plt.plot(r/1000, rho/4)
+    plt.xlim(1e-2, 1e2)
+    plt.ylim(10, 1e5)
     plt.semilogy()
+    plt.semilogx()
     plt.show()
+    '''
 
     '''
     files = [
@@ -1004,12 +996,13 @@ def main():
 
     #plot_mus('100_bin_100_mean_BH{}.dat', np.arange(0, 7))
 
-    #plot_and_show_beta(np.arange(0, 7), beta_bins_rb, 2, use_r_b=True)
+    # beta_bins_rb
+    #plot_and_show_beta(np.arange(2, 3), beta_bins, 2, use_r_b=True)
     #plot_and_show_beta(np.arange(0, 7), beta_bins, 2, use_r_b=False)
 
 
     #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-6_Merger', 'NGC_1600'], subplots=False)
-    #plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-1_Merger',  'NGC_4472'], subplots=False)
+    plot_core_sersic_profiles('core_sersic_profiles.dat', ['BH-1_Merger',  'NGC_4472_3', 'NGC_4472_2'], subplots=False)
 
     #print_half_mass_radius([0, 1, 2, 3, 4, 5, 6])
     #print_influence_radius([1, 2, 3, 4, 5, 6])

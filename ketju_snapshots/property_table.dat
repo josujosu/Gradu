@@ -5,7 +5,7 @@ sigma: 	   293 km/s (Veale 2017) velocity dispersion within r_e
 r_eff:	   51.7 arcsec (Thomas 2016) -> 0.0160415 Mpc -> 16 kpc
 mu_eff:	   22.53 mag/arcsec (HyperLeda)
 n:	   5.83 (Thomas 2016, Core-Sérsic fit)
-los_v:	   3.4 km/s (Bender 1994) 
+los_v:	   3.4 km/s (Bender 1994)  7.1 km/s major-axis
 dist: 	   64 Mpc
 lambda_e:  0.026 (Veale 2017 (2018?), MASSIVE)
 ellip:	   0.32 (Goullaud 2018, MASSIVE) (luminosity weighted mean, NOT at effective radius)
@@ -13,7 +13,7 @@ ellip:	   0.32 (Goullaud 2018, MASSIVE) (luminosity weighted mean, NOT at effect
 -------------------------------------------------------------------------------------------
 
 BH-6
-mass:	   4.959747e11
+mass:	   8.3e11
 bh_mass:   2 x 8.5e9 M_sun
 sigma:	   278 km/s (calculated average from voronoi bins inside r_e = 9.304 kpc) (296 km/s)
 r_eff:	   10.722 kpc (or 5.507 kpc)
@@ -23,4 +23,32 @@ los_v:	   -39.3 / 34.06 - 5.61 (calculated minimum and maximum from voronoi bins
 dist:	   None
 lambda_e:  0.0213 (0.024)
 ellip:	   0.150 (0.11)
+
+-------------------------------------------------------------------------------------------
+
+NGC 4472
+mass:      6.03e11 (Veale, MASSIVE VIII)
+bh_mass:   2.5e9 (Rulsi 2013)
+sigma:	   258 km/s  (Veale 2017, MASSIVE Survey VIII)
+r_eff:     14.33 kpc (Veale MASSIVE V)
+mu_eff:	   22.72
+n:	   5.6
+los_v:	   45.4 km/s major axis (Bender 1994)
+dist:	   16.7 Mpc
+lambda_e:  0.197 (Veale 2018) / 0.077 (Emsellem 2011)
+ellip:	   0.172 (Emsellem 2011)
+
+-------------------------------------------------------------------------------------------
+
+BH-1
+mass:	   8.3e11
+bh_mass:   2 x 8.5e8 M_sun
+sigma:	   274 km/s
+r_eff:	   9.879 kpc
+mu_eff:	   21.42
+n:	   4
+los_v:	   -26.27378094624336 / 17.560781388941336 - 5.49
+dist: 	   None
+lambda_e:  0.021
+ellip:	   0.195
 

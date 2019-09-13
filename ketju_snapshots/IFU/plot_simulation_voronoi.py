@@ -40,7 +40,7 @@ hdf5directoryend   = ".hdf5"
 name_start = 'dummy_'
 name_end   = '.png'
 
-for file in range(6,7):
+for file in range(1,2):
 
     filename = hdf5directorystart + str(file) + hdf5directoryend
     print filename
@@ -63,4 +63,4 @@ for file in range(6,7):
     #vely = np.copy(s["vel"][:,1])
 
     
-    vm.voronoimap(snap,'vel',sigmapp=-0.2, weightqty='mass', npseudoparticles=10,npixel_per_side=99 ,extent=20, nspaxels=1000, plotfile=output, savetxt="txt-nspaxels_2000.txt", cmaplimits=[ [-20, 20], [270, 370], [-0.1, 0.1], [-0.1, 0.1] ], addlambdar=True, figureconfig='22')
+    vm.voronoimap(snap,'vel',sigmapp=-0.2, weightqty='mass', npseudoparticles=10,npixel_per_side=99 ,extent=20, nspaxels=1000, plotfile=output, savetxt="txt-nspaxels_2000.txt", cmaplimits=[ [-20, 20], [270, 370], [-0.1, 0.1], [-0.1, 0.1] ], addlambdar=False, figureconfig='22')

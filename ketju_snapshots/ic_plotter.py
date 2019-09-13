@@ -33,6 +33,7 @@ basic_bins = np.logspace(0.5, 5.5, 100)
 n_star = 415000
 n_dm = 1000000
 
+# --------- File reading stuff -------------
 
 def read_file(input_file, n_dm, n_star):
 
@@ -65,7 +66,14 @@ def combine_multiple_pos(N, n_dm, n_star):
 
     return pos
 
+# -------------------------------------------------------------
 
+def create_N_particle_bins(r, p_in_bin):
+    return r[::p_in_bin]
+
+
+
+# ----------------------------------------------------------
 def save_2D_density_profile(input_file, n_dm, n_star, bins):
 
     dm_pos, star_pos = get_pos_from_file(input_file, n_dm, n_star)
