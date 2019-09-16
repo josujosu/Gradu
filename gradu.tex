@@ -414,8 +414,8 @@ We calculate $r_\gamma$ for all of the merger remnants with SMBH binaries (BH-1 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{rb_mass_relation.png}
-	\caption{Comparison of the core radii of the merger remnants, derived through three different methods: Core-Sérsic profile fitting (black squares), Nuker profile fitting (blue circles) and  finding the "cusp radius" (red circles). The x-axis shows the masses of the central SMBHs of the merger progenitors.}
+	\includegraphics[width=\textwidth]{rb_mass_relation.png}
+	\caption{Comparison of the core radii of the merger remnants, derived through three different methods: Core-Sérsic profile fitting (black squares), Nuker profile fitting (blue circles) and  finding the "cusp radius" (red circles). The x-axis shows the masses of the central SMBH binaries in the merger remnants.}
 	\label{figure:radii_comparison}
 \end{figure}
 
@@ -596,11 +596,16 @@ We calculate $\lambda_{Re}$ and $\epsilon_e$, i.e. the ellipticity at the effect
 
 Regardless of the threshold used for differentiating between slow and fast rotators, figure \ref{figure:lambda_epsilon} shows us that, all of the simulated merger remnants are clearly classified as slow rotators. This agrees well with the kinematic anisotropies seen in the IFU maps, which also implied a slow rotator classification for the remnants.
 
-\section{Comparison to NGC 1600}
+\section{Comparison to Observations}
 
-As the physical properties of the merger progenitors are modelled after NGC 1600, it is interesting to see how the results from the simulations compare with the actual observations of the galaxy. I am mainly comparing the observations to the BH-6 merger remnant, as the mass of the SMBH binary in the simulation is equivalent to the observed and modelled mass of the central SMBH in NGC 1600 ($M_\bullet = 1.7 \times 10^{10} M_\odot$) \citep{Thomas2016}.
+- BH-6, NGC 1600 samat kinemaattiset propertiit ja mu-profiilit. dry ETG merger tod.näk. muodstumismekanismi
+- BH-1 samat kinematiikat. SMBH massa ei vaikuta kinematiikkaan, tod.näk vaan progenitoreiden muut ominaisuudet
+- NGC 4472 eri kinematiikat. syntynyt eri tavalla? pitää ottaa huomioon lambdan epätarkkuus
+- BH-1 ja NGC 4472 about sama core radius. vain SMBH massat vaikuttaa. voi tietty olla vaan sattumaa.
 
-Figure \ref{figure:profile_comparison} compares the core-Sérsic profile fits of the surface brightness profiles from BH-1 and BH-6 mergers to the profile fits from the observed core galaxies NGC 4472 and NGC 1600 respectively. Not only do the shapes of the profile fits follow each other closely in both cases, the best-fit parameters are also closely related (table \ref{table:bestfit_parameter_comparison}). 
+As the physical properties of the merger progenitors are modelled after NGC 1600, it is interesting to see how the results from the simulations compare with actual observations of the galaxy. I will be comparing the observations mainly to the BH-6 merger remnant, as the mass of the SMBH binary in the simulated galaxy is equivalent to the observed and modelled mass of the central SMBH in NGC 1600 ($M_\bullet = 1.7 \times 10^{10} M_\odot$) \citep{Thomas2016}. I will also be comparing the observed properties of the cored massive elliptical galaxy NGC 4472 to the simulated BH-1 merger remnant. Both of them have similar central black hole (or in the case of the simulated remnant, black hole binary) masses, as well as similar total stellar masses. Thus, comparing their other physical properties could provide some interesting insight into the formation of cores.
+
+Figure \ref{figure:profile_comparison} shows core-Sérsic profile fits of the surface brightness profiles from the BH-1 and BH-6 mergers, and compares them to the profile fits from the observed core galaxies NGC 4472 and NGC 1600 respectively. Not only do the shapes of the compared profiles follow each other closely in both cases, the best-fit parameters are also quite closely related (table \ref{table:bestfit_parameter_comparison}). 
 
 \begin{table}
 	\begin{center}
@@ -618,13 +623,20 @@ Figure \ref{figure:profile_comparison} compares the core-Sérsic profile fits of
 		\hline
 		\end{tabular}
 	\end{center}
-	\caption{Best fit parameters of the core-Sérsic profile fit seen in figure \ref{figure:profile_comparison}.}
+	\caption{Best-fit parameters of the core-Sérsic profile fit seen in figure \ref{figure:profile_comparison}. The best-fit parameters of NGC 4472 are from \cite{Rusli2013}, while the parameters for NGC 1600 are given in \cite{Thomas2016}.}
 	\label{table:bestfit_parameter_comparison}
 \end{table}
 
-Another comparison between some of the properties of the two galaxies can be seen in table \ref{table:snap6_vs_NGC1600}. Most importantly the table shows that even their kinematic properties are similar. Furthermore, by studying its $\lambda_e$ parameter and ellipticity at the effective radius, NGC 1600 can easily be identified as a slow rotator. 
+Another comparison between some of the properties of the four galaxies can be seen in table \ref{table:snap6_vs_NGC1600}. Most importantly, the table shows that the kinematic properties of the simulated merger remnants and the kinematic properties of NGC 1600 are very similar. On the other hand, compared to the three other galaxies, the spin parameter and line-of-sight velocity of NGC 4472 are almost an order of magnitude larger. Furthermore, like the simulated galaxies, NGC 1600 can easily be identified as a slow rotator by its $\lambda_e$ parameter and ellipticity, while NGC 4472 seems to be classified as a fast rotator. 
 
-Being able to reproduce, not only the photometric quantities, but also the kinematic properties, of an observed galaxy is quite impressive. These results clearly indicate that core scouring by a binary SMBH during a galaxy merger, is most likely the driving mechanism behind core formation.
+Before drawing conclusion from these results, it is important to know that, whether NGC 4472 is in fact classified as a fast rotator is not known for certain. \cite{Emsellem2011} found a significantly lower value for its spin parameter ($\lambda_e = 0.077$), which would easily classify the object as a slow rotator. The value used in this analysis comes from the more recent MASSIVE-survey \citep{Ma2014MASSIVE, Veale2017veldisp}, in which some of the inaccuracies of the aforementioned calculations were shown (e.g. not taking into account a large enough region of the observed galaxy). Conceding to some possible biases in their own calculations, \cite{Veale2017veldisp} ultimately classify NGC 4472 as an intermediate case between slow and fast rotators.
+
+It is impressive, that the simulation of the BH-6 merger is able to reproduce both the kinematic properties and the shape of the surface brightness profile of NGC 1600 so well. Since the simulation describes a dry merger event between two massive ETG with central SMBHs, the results imply that this process could be the formation mechanism behind core galaxies. 
+
+Interestingly, since the BH-6 merger has extremely similar kinematic properties with the BH-1 merger and NGC 1600, it can be assumed that the mass of the central SMBH binary does not affect the rotation of its host galaxy in any significant way. This suggests that, as far as the merger progenitors are concerned, it is the properties other than their central SMBH mass (i.e. them being massive gas-poor ETGs) that determine the kinematic properties of the final merger remnant. As for NGC 4472, since both its $\lambda_e$ and LOS velocity are about an order of magnitude larger compared to the three other galaxies, it can be argued that its formation history must be quite different. However, due to the ambiguity of whether NGC 4472 is a fast rotator and whether its spin parameter is biased towards large values, the possibility that the galaxy has also formed through a dry ETG merger, should not be ruled out.
+
+Earlier in this chapter it was discussed that there is a clear positive correlation between the central SMBH binary masses and the size of the core radii. However, the facts that the core radius sizes for the BH-1 merger remnant and NGC 4472 are comparable, and that many of their other properties are quite different; imply that, not only is there a correlation, the SMBH binary mass might be the only property that affects the size of the core in any significant way. If this is true, it is extremely clear evidence, that the cores are formed through a scouring process by binary SMBHs.
+
 
 \begin{table}
 	\begin{center}
@@ -648,17 +660,17 @@ Being able to reproduce, not only the photometric quantities, but also the kinem
 		\hline
 		\end{tabular}
 	\end{center}
-	\caption{Comparison between the physical properties of the simulated merger remnant BH-6 merger and the galaxy NGC 1600. The properties described in the columns are explained below, with the sources for the properties of NGC 1600 being written inside the parentheses. \\
+	\caption{Comparisons between the physical properties of the simulated BH-1 and BH-6 merger remnants and the observed galaxies NGC 1600 and NGC 4472 respectively. The properties described in the columns are explained below, alongside the sources for the properties of NGC 1600 and NGC 4472. \\
 	(1) Name of the galaxy. \\
-	(2) Total stellar mass \citep{Thomas2016}. \\
-	(3) Central SMBH / central SMBH binary mass \citep{Thomas2016}. \\
-	(4) Effective radius. The value used for the BH-6 merger estimated by calculating the half-mass radius in three dimensions, and using the relation in equation \ref{eq:a_star_re_relation} to get the approximate effective radius. This is done instead of using the core-Sérsic profile best-fit parameter, since the core-Sérsic $R_e$ only takes into account the specific fitting radius. For NGC 1600, the value comes from \cite{Thomas2016} and is changed from arc seconds to kpc by assuming that the galaxy is located at the distance of $D = 64 \; \mathrm{Mpc}$ \citep{Thomas2016}. \\
-	(5) Surface brightness at the effective radius. The values for both of the galaxies are calculated from the core-Sérsic fits. The profile fit for NGC 1600 is given in \citep{Thomas2016}. \\
-	(6) Sérsic index. Once again, the values come from the core-Sérsic profile fits \citep{Thomas2016}. \\
-	(7) Mean line-of-sight velocity inside the effective radius. For the BH-6 merger this is calculated as the mean of the $V_{LOS}$-values from the Voronoi-bins inside the effective radius. The value for NGC 1600 comes from \cite{Bender1994}. \\
-	(8) Velocity dispersion inside the effective radius \citep{Veale2017veldisp}. As with $V_{LOS}$, this value comes from the mean velocity dispersion of the Voronoi bins inside the effective radius for the BH-6 merger. The value for NGC 1600 is given in \cite{Veale2017veldisp}.\\
-	(9) Spin parameter at the effective radius \citep{Veale2018lambda}. \\
-	(10) For BH-6 merger: ellipticity of the galaxy at the effective radius; and for NGC 1600: luminosity weighted ellipticity \citep{Goullaud2018}.
+	(2) Total stellar mass. NGC 1600: \cite{Thomas2016}, NGC 4472: \cite{Veale2018lambda}. \\
+	(3) Central SMBH / central SMBH binary mass. NGC 1600:  \cite{Thomas2016}, NGC 4472: \cite{Rusli2013_BHmass}. \\
+	(4) Effective radius. The values used for the simulated mergers are estimated by calculating the half-mass radius in three dimensions, and using equation \ref{eq:projection_approximation} to get the approximate two dimensional effective radius. This is done instead of using the core-Sérsic profile best-fit parameter, since the core-Sérsic $R_e$ only takes into account the specific fitting radius. NGC 1600: \cite{Thomas2016}, where the value is changed from arc seconds to kpc by assuming that the galaxy is located at the distance of $D = 64 \; \mathrm{Mpc}$; NGC 4472: \cite{Veale2017veldisp}. \\
+	(5) Surface brightness at the effective radius. The values for all of the galaxies are calculated from the core-Sérsic fits. The profile fits best-fit parameters are from table \ref{table:bestfit_parameter_comparison}. \\
+	(6) Sérsic index. NGC 1600: \cite{Thomas2016}, NGC 4472: \cite{Rusli2013}. \\
+	(7) Mean line-of-sight velocity inside the effective radius. For the the simulated mergers these values are calculated from their respective IFU maps as the mean of the $V_{LOS}$-values from the Voronoi-bins inside the effective radius. NGC 1600 and NGC 4472: \cite{Bender1994}. \\
+	(8) Velocity dispersion inside the effective radius. As with $V_{LOS}$, this value comes from the mean velocity dispersion of the Voronoi bins inside the effective radius in the IFU-maps of the simulated mergers. NGC 1600 and NGC 4472: \cite{Veale2017veldisp}.\\
+	(9) Spin parameter at the effective radius. NGC 1600 and NGC 4472: \citep{Veale2018lambda}. \\
+	(10) For the simulated mergers and NGC 4472: ellipticity of the galaxy at the effective radius. For NGC 1600: luminosity weighted ellipticity. NGC 1600: \cite{Goullaud2018}, NGC 4472: \cite{Emsellem2011}.
 	}
 	\label{table:snap6_vs_NGC1600}
 \end{table}
@@ -671,7 +683,7 @@ Being able to reproduce, not only the photometric quantities, but also the kinem
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH-1_NGC4472.png}
 	\end{subfigure}
-	\caption{Comparison between core-Sérsic profile fits from observed galaxies and simulated merger remnants, where the surface brightness is given in V-band magnitudes. The figure on the left compares the profile of the BH-6 merger remnant (the merger remnant whose progenitors containing the largest central SMBH massess) to NGC 1600; while the figure on the right compares the profiles of the BH-1 merger remnant (the remnant with progenitors that had the smallest SMBH masses) and NGC 4472. The parameters for plotting the core-Sérsic profile of NGC 1600 were taken from \cite{Thomas2016}, with the units being changed to the above, by assuming $V - R = 0.5$ (the same assumption being done in \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} to define the relation between arc seconds and parsecs. The parameters for the profile of NGC 4472 were from \cite{Dullo2012} and \cite{Lauer2007}. The best-fit parameters can be found in table \ref{table:bestfit_parameter_comparison}}
+	\caption{Comparison between core-Sérsic profile fits from observed galaxies and simulated merger remnants, where the surface brightness is given in V-band magnitudes. The figure on the left compares the profile of the BH-6 merger remnant (the merger remnant whose progenitors containing the largest central SMBH massess) to NGC 1600; while the figure on the right compares the profiles of the BH-1 merger remnant (the remnant with progenitors that had the smallest SMBH masses) and NGC 4472. The parameters for plotting the core-Sérsic profile of NGC 1600 were taken from \cite{Thomas2016}, with the units being changed to the above, by assuming $V - R = 0.5$ (the same assumption being done in \cite{Lauer2007}), and by using the distance $D = 64 \mathrm{Mpc}$ \citep{Thomas2016} to define the relation between arc seconds and parsecs. The parameters for the profile of NGC 4472 were from \cite{Rusli2013}. All of the best-fit parameters can be found in table \ref{table:bestfit_parameter_comparison}}
 	\label{figure:profile_comparison}
 \end{figure}
 
