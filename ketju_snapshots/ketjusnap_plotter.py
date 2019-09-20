@@ -926,9 +926,15 @@ def smooth(xs, m):
         res[i] = np.mean(xs[i-m:i+1+m])
     return res
 
-def thin_data(data, c):
-    mask = np.arange(0, len(data)) % c == 0
-    return data[mask]
+def thin_smooth(data, c):
+
+    n = 2*c+1
+    res = np.zeros(int(len(data)/n))
+
+    for i in range(len(res)):
+        res[i] = np.mean(data[i*n:(i+1)*n])
+
+    return res
 
 def surface_density_profile_binned_by_particle_num(coords, masses, parts_in_bin):
 
@@ -959,16 +965,19 @@ def surface_density_profile_binned_by_particle_num(coords, masses, parts_in_bin)
 def main():
 
 
-    coords, masses = read_coords_and_masses_from_ketju(1, 'PartType3', ketjugw.units.DataUnits())
+    coords, masses = read_coords_and_masses_from_ketju(3, 'PartType3', ketjugw.units.DataUnits())
     r, rho = surface_density_profile_binned_by_particle_num(coords, masses, 1000)
 
-    r = thin_data(r, 10)
-    rho = thin_data(rho, 10)
-    I = smooth(rho, 0)/4
+    c = 100
+    r = np.concatenate((np.array(r[0:3]), thin_smooth(r, c)))
+    rho = np.concatenate((np.array(rho[0:3]), thin_smooth(rho, c)))
+    I = rho/4
+
+    print(len(r))
 
     np.savetxt("particlebins_test.dat", np.column_stack((r, I)))
 
-    r, I, pars = fit_from_file("particlebins_test.dat", basic_bins20, [1e5, 300, 2, 0.01, 1e8], 'c', calc_re=False)
+    r, I, pars = fit_from_file("particlebins_test.dat", basic_bins20, [1e5, 300, 2, 0, 1e8], 'c', calc_re=False)
 
     f, (a0, a1) = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]})
     plot_core_fits(r, I, pars, a0, a1)
