@@ -1,0 +1,52 @@
+
+------------ ELLIPTICAL GALAXY SECTION --------------
+
+BINNEY:
+
+Surface brightness:
+
+- I falls off smoothly with radius, until indistinguishable from BG sky
+- R_e as measure of size, since no clear edge
+
+Sérsic profile:
+
+- n = 4 -> de Vaucouleurs profile
+- b_m condition explanation
+
+Rotation:
+
+- massives, little to no rotation even in large ellipticity ellipticals
+- dimmer, rotation and flattening correlated (Faber 1997)
+
+
+- M/L ratio gained through dynamical modelling
+
+
+MERRITT:
+
+Sérsic profile:
+
+- Popularity of Sérsic
+  1. fits the profile of many individual galaxies over a wide range of R, usually the whole observed R
+  2. fits into wide variety of galaxy types (Caon 1993 [68] in M)
+- n=4, i.e. de Vaucouleurs is good representation of bright ellipticals
+
+- deviations at large and small radii
+- faints - cusp (NSC - nuclear stellar cluster) - disk-like, rescent star formation in gaseous disk?
+- bright - core (deficit) - break radius 10 - 100 pc
+
+
+CAPPELLARI 2016:
+
+- Massive tend to rotate slowly
+- Less massive faster
+
+Sérsic:
+
+- Capaccioli 1989 -> b(n) = 2n - 0.327
+
+------------ ANALYSIS OF KINEMATICS SECTION --------------
+
+BINNEY:
+
+- velocities of stars can not be measured from far-away galaxies -> have to use v_los etc. to derive the kinematics (Doppler bradening)

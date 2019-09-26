@@ -1,26 +1,36 @@
 
 CHAPTER 2:
 
-2.1 Early Type Galaxies (Galaxy formation and evolution)
+2.1 Elliptical galaxies (Galaxy formation and evolution)
 
-- Hubble classification
-- ellipticity
+- Definition
+- Mention ETGs (Cappellari 2016)
+  - Explain lenticulars
+  - Hubble classification
+  - No spiral
 
-2.2
+(Rantala and Lahén, GFE, cappellari 2016)
 
-- Surface brightness (Merritt)
+Surface brightness
 
-- Sérsic-profile
+- surface brightness profiles
+  - Sérsic-profile
+- Core - Power-law - Cuspy galaxies
+- luminosity difference
+- boxy / disky isophotes
 
-- Cored vs Cuspy galaxies (Rantala and Lahén, GFE)
-  - surface brightness profiles
-  - luminosity difference
-  - Physical differences
-    - slow / fast rotation
-    - boxy / disky isophotes
-  - Differences in formation
-    - in-situ star formation - gas-rich mergers
-    - in-situ star formation -> "dry" mergers
+Rotation
+
+- slow vs fast rotators (Emsellem 2011)
+  - ellipticity
+  - lambda-parameter
+
+Formation
+
+- Hierarchical formation
+- Differences in formation
+  - in-situ star formation - gas-rich mergers
+  - in-situ star formation -> "dry" mergers
 
 2.2 Core Formation
 
@@ -28,26 +38,29 @@ CHAPTER 2:
   - three phases
     - final-parsec problem (Milosavljevic, 2003)
     - loss-cone (repopulation mechanisms: triaxial, Merritt 446 and 452)
-  - observations of binary SMBHs (Abbott 2016 GW-observations)
-  - SMBH scaling relations
+  - observations of binary SMBHs (Merritt, Abbott 2016 GW-observations)
+  - SMBH scaling relations (Merritt)
     - gravitational sphere-of-influence
     - BH-mass - sigma relation, etc.
 - other theories
   - AGN feedback
 
-2.3 Galactic Dynamics
+2.3/2.4 Galactic Dynamics
 
-- Poisson equation (BT)
-  - Density-Potential models, Dehnen
-- Collisionless systems (BT)
-  - phase space
-    - Vlasov equation
-    - collisionless Boltzmano
-- Regularisation
-- PN-dynamics
+Poisson equation (BT)
+- Density-Potential models, Dehnen
 
+Collisionless systems (BT)
+- phase space
+  - Vlasov equation
+  - collisionless Boltzmano
 
-2.4 Analysis of Galaxy Kinematics
+Regularisation
+
+PN-dynamics
+
+2.3/2.4 Integral Field Spectroscopy 
 
 - modified gaussian function
 - hermite polynomials
+- slow and fast rotators

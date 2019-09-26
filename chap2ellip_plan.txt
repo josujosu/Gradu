@@ -1,0 +1,33 @@
+ELLIPTICAL GALAXIES:
+
+- one sentence on what Es are
+- Basic elliptical galaxy properties
+- Surface brightness profiles
+  - deV and Sérsic
+- differences at small radii
+  - type of difference depends on total luminosity
+- luminosity affects other stuff too!
+  - rotation, shape etc.
+- basically two different types of Es (also Hubble classification of Es)
+  - bright and dim
+
+
+CORE GALAXIES:
+
+- definition
+- what is break radius
+- different profiles (core Sér. and Nuker)
+
+Core formation
+
+- Explain mergers
+- Evidence of binary SMBHs
+- Scaling relations?
+
+
+SLOW VS FAST ROTATORS (maybe part of IFU-chapter?):
+
+- "already mentioned that slow and fast exist, but clear dichotomy"
+- lambda
+- ellipticity
+- KDC?
