@@ -2,8 +2,9 @@ ELLIPTICAL GALAXIES:
 
 - one sentence on what Es are
 - Basic elliptical galaxy properties
+- co-cetric ellipses -> Hubble classification -> eccentricity
 - Surface brightness profiles
-  - deV and Sérsic
+  - deVaucouleurs and Sérsic
 - differences at small radii
   - type of difference depends on total luminosity
 - luminosity affects other stuff too!
