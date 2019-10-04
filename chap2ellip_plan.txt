@@ -12,6 +12,17 @@ ELLIPTICAL GALAXIES:
 - basically two different types of Es (also Hubble classification of Es)
   - bright and dim
 
+- formation:
+  - cuspy:
+    - Barnes & Hernquist: gas that accumulates in the centre changes the potential (-> larger velocity dispersion, i.e. faster rotation)
+    - Naab 2006: collisionless simulations without gas -> boxy isophotes; gas in simultions -> elliptical or even disky shapes
+      - steep central potential caused by gas doesn't allow for box orbits 
+    - Naab & Ostriker 2017: Extra-light caused by inflow of gas resulting in starburst
+  - core:
+    - Naab 2006: slow - boxy ellipticals cannot have formed in the same way.
+    - dry, dissipationless, gas-poor mergers
+    - cores formed by core scouring
+
 
 CORE GALAXIES:
 
