@@ -125,24 +125,30 @@ Whether the central surface brightness profile of an elliptical galaxy is a shal
 
 Interestingly, this dichotomy between brighter and fainter ellipticals, that is derived from the shape of their inner surface brightness profiles, also extends to other physical properties of the galaxies. The rotation of the brighter galaxies is slower than the rotation of the fainter galaxies. This corresponds well with the shape of their isophotes, as the bright "core" galaxies have boxy isophotes and the fainter "cusp" galaxies have isophotes with a more disk-like shape \citep{Faber1997}. Furthermore, the velocity distributions of the "core" galaxies contain relatively anisotropic velocities, while also showing distinct kinematic structures such as \textit{Kinematically Distinct Cores} (KDC) and kinematic twists. This is different from the velocity distributions of the fainter galaxies, which are more isotropic with disk-like kinematics \citep{Kormendy2009, Krajnovic2008}.
 
-The differences in the physical properties of the two elliptical galaxy types point to them having different formation histories. The fainter Es with "cuspy" central surface brightness profiles are generally thought to be formed through mergers of gas-rich progenitor galaxies, where the gas is expected to accumulate in the centre of the galaxy, deepening the central potential well \citep{Barnes1996}. The steep central gravitational potential would cause the velocity dispersion in the centre of the galaxy to rise. Furthermore, it would also cause the gravitational potential to become more axisymmetric. As box-orbits can only occur in triaxial-potentials, the axisymmetric potential would result in the merger remnant galaxy having a more disk-like shape \citep{Naab2006}. Finally, the gas accumulating in the centre of the galaxy could result in a starburst event, and thus account for the extra-light seen in the surface brightness profiles of the faint galaxies \citep{Naab2017}. Because... \textit{more about core galaxies}
-\textit{Write about formation history}
+The differences in the physical properties of the two types of elliptical galaxies point to them having different formation histories. \textit{Some extra sentence here.}
+
+The fainter Es with "cuspy" central surface brightness profiles are generally thought to have been formed through mergers of gas-rich progenitor galaxies \citep{Barnes1996}. In a gas-rich galaxy merger, the gas is expected to accumulate in the centre of the merger remnant galaxy, deepening the central gravitational potential well, and causing the remnant galaxy's velocity dispersion to rise in the core regions \citep{Mihos1994, Barnes1996}. The central accumulation of gas would also cause the gravitational potential of the galaxy to become more axisymmetric. As box-orbits can only occur in triaxial-potentials, this would cause these fainter elliptical galaxies to have their characteristic disk-like shapes \citep[wrong citation:][]{Naab2006}. Finally, the gas accumulation could also result in a starburst event, which would account for the extra-light seen in the surface brightness profiles of the faint galaxies \citep{Mihos1994, Hopkins2008}.
+
+
+The formation mechanism for the more massive and brighter elliptical galaxies is assumed to be a two-stage process. Initially, their accumulation of stellar mass is driven by rapid "in-situ" star formation caused by inflows of cold gas; and afterwards, during redshift $3 > z > 0$, their growth in mass is dominated by dry ETG mergers \citep{Naab2009}.
 
 \section{Core Galaxies}
 
 \cite{Kormendy1999} define core galaxies as galaxies whose surface brightness profile contains a shallow inner profile and a steep outer profile, whereas \cite{Lauer1995} determine that the surface brightness profile of core galaxies must contain an inner slope of $\gamma < 0.3$. 
 
-\subsection{Core Formation}
+\subsection{Core Formation Through Black Hole Mergers}
 
-\subsubsection{Black Hole Mergers}
+\subsubsection{Merger Event}
 
 The most prominently proposed mechanism for the formation of the cores seen in massive ETGs, is the ejection of stellar material due to three-body interactions between stars and merging supermassive black holes.
 
-\subsubsection{Observations of Binary Black Holes}
+\subsubsection{Evidence}
 
-\subsubsection{Other Formation theories}
+Observations of SMBHs and SMBH binaries, Scaling relations
 
 \section{Integral Field-Spectroscopy}
+
+\subsection{Fast and Slow Rotators}
 
 \section{Galactic Dynamics}
 
@@ -202,12 +208,12 @@ Figure \ref{figure:semi_and_ecc} shows the time evolution of both the semi-major
 
 \chapter{Merger Simulations Using KETJU}
 
-In this chapter I study the formation of cored galaxies in galaxy mergers. The analysis focuses on the results from galaxy merger simulations run by \cite{Rantala2018} using the KETJU code. In all but one simulation, the merger progenitor galaxies contain central supermassive black holes. During the merger event the SMBHs form a hard binary. These binaries are a likely source for the observed cores, as they can eject stars from the galactic centre through complex three-body interactions. Here I determine if there is a connection between the central binary SMBH and the existence of a core deficient in light, and if the simulated KETJU results agree with observations of cored galaxies.
+In this chapter I study the formation of cored galaxies in galaxy mergers. The analysis focuses on the results from galaxy merger simulations run by \cite{Rantala2018} using the KETJU code. In all but one simulation, the merger progenitor galaxies contain central supermassive black holes. During the merger event the SMBHs form a hard binary. These binaries are a likely source for the observed low-luminosity cores, as they can eject stars from the galactic centre through complex three-body interactions. Here I determine if there is a connection between the central binary SMBH and the existence of a core deficient in light, and if the simulated KETJU results agree with observations of cored galaxies.
 
 
 \section{Simulation Details}
 
-The simulation sample run by \cite{Rantala2018} includes seven different equal-mass mergers of two identical galaxies. The merger progenitor galaxies (named BH-0 - BH-6) used in the different simulations consist of stellar and dark matter particles, where every stellar particle has an identical mass, as does every dark matter particle. The progenitors are gas free (i.e. the simulations describe so-called "dry" mergers), and all of them but one contains an SMBH at their centre.
+The simulation sample run by \cite{Rantala2018} includes seven different equal-mass mergers of two identical galaxies. The merger progenitor galaxies (named BH-0 - BH-6) used in the different simulations consist of equal mass stellar particles and equal mass dark matter particles, where the mass of the stellar particles differ from the mass of the dark matter particles. The progenitors are gas free (i.e. the simulations describe so-called "dry" mergers), and all of them but one contains an SMBH at their centre.
 
 The initial conditions (ICs) of the merger progenitor galaxies are modelled as multicomponent, spherically symmetrical stellar systems. They consist of the three aforementioned components: stellar particles, dark matter particles and a central SMBH. The central SMBH is simply modelled as a single point mass, and is located at the origin of the host galaxy's internal coordinate systems. The stellar and dark matter component, on the other hand, consist of multiple particles which are distributed according to the spherically symmetric Dehnen density-potential model defined as \citep{Dehnen1993}:
 \begin{equation}
@@ -221,7 +227,7 @@ The initial conditions (ICs) of the merger progenitor galaxies are modelled as m
 \end{cases},
 \label{eq:dehnen_potential}
 \end{equation}
-where $M$ is the total mass, $a$ is the scaling radius, and $\gamma$ is the central slope of the profile. For stellar particles we set $\gamma = 3/2$, while for the dark matter particles the value of $\gamma = 1$ is used. The Dehnen density-potential model uses a density profile, which is a generalization of stellar density models that, when projected, resemble the de Vaucouleurs - profile \citep[$\log(\mu) \propto R^{1/4}$;][]{deVaucouleurs1948} in the outer parts. The model's gravitational potential profile is derived from the density profile using the Poisson equation \textit{(refer to equation from chapter 2)}. 
+where $M$ is the total mass, $a$ is the scaling radius, and $\gamma$ is the central slope of the profile. For stellar particles we set $\gamma = 3/2$, while for the dark matter particles the value of $\gamma = 1$ is used ($\gamma = 1$ corresponds to the so-called Hernquist profile, \citealt{Hernquist1990}). The Dehnen density-potential model uses a density profile, which is a generalization of stellar density models that, when projected, resemble the de Vaucouleurs - profile \citep[$\log(\mu) \propto R^{1/4}$;][]{deVaucouleurs1948} in the outer parts. The model's gravitational potential profile is derived from the density profile using the Poisson equation \textit{(refer to equation from chapter 2)}. 
 
 When constructing the multicomponent ICs for the progenitor galaxies, the positions of the stellar and dark matter particles are determined through their respective cumulative mass profiles. These mass profiles are derived using the aforementioned Dehnen density-potential model, and can be written as:
 \begin{equation}
@@ -231,7 +237,7 @@ where $\rho(r)$ is the density profile from equation \ref{eq:dehnen_density}.
 
 In equation \ref{eq:cumulative_mass}, the value of the scaling radius ($a$) is determined quite differently for the stellar and dark matter particle distributions. One way of calculating $a$ is to derive the formula for the half-mass radius from the cumulative mass profile. This gives us the equation:
 \begin{equation}
-r_{1/2} = a \left( 2^{1/(3-\gamma}-1 \right)^{-1}, \label{eq:half-mass-radius}
+r_{1/2} = a \left( 2^{1/(3-\gamma)}-1 \right)^{-1}, \label{eq:half-mass-radius}
 \end{equation}
 from which $a$ can be solved easily. However, in order to get a value for $a$, one now needs to know the half-mass radius of the particle distribution. Fortunately, the half-mass radius of the stellar population can be determined through drawing an equivalence between it and the effective radius of the galaxy. If the galaxy for which we are trying to determine the scaling radius has a constant mass-to-light ratio, its mass and light profiles are proportional to each other. In this case, both profiles describe the same property, which means that the half-mass radius and the effective radius are equivalent to each other. In cases, such as our simulations, where only the 2D projection of the effective radius is known, the three dimensional half-mass radius can be approximated using the following formula:
 \begin{equation}
@@ -261,13 +267,13 @@ where $\rho_i$ is the density profile from equation \ref{eq:dehnen_density} for 
 \begin{equation}
 \varepsilon = -\Phi_T + \Phi_0 - \frac{1}{2} v^2,
 \end{equation}
-where $v$ is the velocity of the particle, and $\Phi_0$ is a chosen zero point for the potential. This zero point is usually chosen so that, $f > 0$ for $\varepsilon > 0$, and that $f = 0$ for $\varepsilon \leq 0$. In the case of our simulations the zero point is set as $\Phi_0 = 0$, since the galaxies are modelled as isolated, and as extending in principle to infinity.
+where $v$ is the velocity of the particle, and $\Phi_0$ is a chosen zero point for the potential. This zero point is usually chosen so that, $f > 0$ for $\varepsilon > 0$, and that $f = 0$ for $\varepsilon \leq 0$. In the case of our simulations the zero point is set as $\Phi_0 = 0$, since the galaxies are modelled in isolation, and extend in principle to infinity.
 
 The general procedure for generating the multicomponent ICs of the progenitor galaxies is as follows. The positions of the stellar and dark matter particles are generated using the inverse of their respective cumulative mass function described in equation \ref{eq:cumulative_mass}. Afterwards, using equation \ref{eq:eddington_form}, values of the two particle types' distribution functions are calculated into a lookup table. The velocities of the particles are then sampled by interpolating these tabulated distribution function values. Finally, the central SMBH is placed in the centre of the progenitor galaxy.
 
 The physical parameters needed for generating the progenitor galaxies using the aforementioned procedure are given in table \ref{table:properties} under "Common physical properties". As the name implies, they are identical across every progenitor galaxy used in the simulations; meaning that, as far as their stellar and dark matter particle populations go, the progenitors are identical. 
 
-The values for these common properties are motivated by observations and dynamical simulations of NGC 1600 \citep{Rantala2018}. NGC 1600 is a massive ($M_\star \approx 8.3 \times 10^{11} M_\odot$) early-type cored galaxy with a large observed core radius ($r_b \approx 2.15 \; \mathrm{arcsec}$, which corresponds to a physical length of $\sim 0.667 \; \mathrm{kpc}$ at the distance of $64 \; \mathrm{Mpc}$) and a central supermassive black hole with a mass of $\sim 1.7 \times 10^{10} M_\odot$ \citep{Thomas2016}. With the exception of the central SMBH mass in the progenitor galaxies BH-0 - BH-5, the precise values of the merger progenitors' physical properties are set in such a manner that the resulting merger remnant is as similar as possible to NGC 1600.
+The values for these common properties are motivated by observations and dynamical simulations of NGC 1600 \citep{Rantala2018}. NGC 1600 is a massive ($M_\star \approx 8.3 \times 10^{11} M_\odot$) early-type cored galaxy with a large observed core radius ($r_b \approx 2.15 \; \mathrm{arcsec}$, which corresponds to a physical length of $\sim 0.667 \; \mathrm{kpc}$ at the distance of $64 \; \mathrm{Mpc}$) and a central supermassive black hole with a mass of $\sim 1.7 \times 10^{10} M_\odot$ \citep{Thomas2016}. Using the values given in table \ref{table:properties} for the physical properties of the simulated merger progenitors, the resulting merger remnant should in principle be as similar as possible to NGC 1600.
 
 Figure \ref{figure:IC_density_profile} shows an example of what the stellar mass density profiles of the merger progenitors used in the simulation look like. The profile is calculated from a stellar particle distribution produced using the multicomponent IC generation procedure described previously in this section. The physical properties used in the generation of the distribution are mostly the same as the ones seen in table \ref{table:properties}. The only difference being that the number of stellar and dark matter particles is only $10 \%$  of the values seen in the table. The density profile itself is calculated by moving the stellar particles of the progenitor galaxy into their centre-of-mass coordinates, dividing them into logarithmic bins, and calculating the mass density inside the respective bins.
 
@@ -305,7 +311,7 @@ Table \ref{table:properties} also shows the masses of the central SMBHs in each 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{IC.png}
-	\caption{Example mass density profile of the progenitor galaxies. The initial conditions for the profile in question were the same as in table \ref{table:properties}; with the exception of the number of dark matter and stellar particles, which were only $10\%$ of their respective values.}
+	\caption{Example mass density profile of the progenitor galaxies. The initial conditions for the profile in question were the same as in table \ref{table:properties}; with the exception of the number of dark matter and stellar particles, which were only $10\%$ of their respective values. The noise in the left-side of the profile is caused by this low particle sample.}
 	\label{figure:IC_density_profile}
 \end{figure}
 
@@ -315,7 +321,7 @@ The simulation data that I will be analysing, comes in the form of snapshots of 
 
 \section{Core Size Measurements}
 
-In order to check if a galaxy is cored, I calculate its surface brightness profile and check if the centre of the galaxy is deficient in light.
+In order to test if a galaxy is cored, I calculate its surface brightness profile and check if the centre of the galaxy is deficient in light.
 
 The surface brightness profiles are calculated from the merger remnant snapshots using the following procedure. First, the coordinate system is changed to centre-of-mass coordinates, and the stellar particles are projected onto a 2D plane. Next, we calculate the mass inside logarithmically spaced radial bins, and get a radial surface mass density profile. This is repeated 100 times from random viewing angles, which naturally results in 100 slightly different density profile projections. These profiles are then averaged azimuthally, which results in a smooth surface mass density profile. Finally, by assuming a mass-to-light ratio for the stellar particles, the surface mass density profile can be turned into a surface brightness profile \citep{Rantala2018}. 
 
@@ -365,11 +371,11 @@ Figure \ref{figure:core_nuker} shows a comparison between the core-Sérsic and N
 \end{equation}
 where $M_\odot$ is the absolute magnitude of the Sun in a specific spectral band (in our case the V-band magnitude of $4.83$ is used), and $I$ is the surface brightness in $L_\odot \mathrm{pc^{-2}}$.
 
-The root-mean-square of the fits' residuals are comparable to the values seen in profile fits of observed surface brightness profiles: $\Delta \approx 0.02 \; \mathrm{mag \; arcsec^{-2}}$ \citep{Dullo2012}. Although, while the RMS of the residuals show that the fits describe the surface brightness profiles rather well, most of the fits have large residual scatter near the centre of the merger remnant. This is especially noticeable in the Nuker fits, since in order to get sensible values for the fitting parameters, the fitting range needs to be concentrated in the galactic centre. 
+The root-mean-square of the fits' residuals are comparable to the values seen in profile fits of observed surface brightness profiles: $\Delta \approx 0.02 \; \mathrm{mag \; arcsec^{-2}}$ \citep{Dullo2012}. Although, while the RMS of the residuals show that the fits describe the surface brightness profiles rather well, most of the fits have large residual scatter near the centre of the merger remnant. This is especially noticeable in the Nuker fits, since in order to get sensible values for the fitting parameters, the fitting range needs to be concentrated in the galactic centre (in our analysis, the fitting range used for the Nuker profile was: $\sim 0.04 - 3 \; \mathrm{kpc}$, which is an order of magnitude lower compared to the range used for the core-Sérsic fit: $\sim 0.04 - 60 \; \mathrm{kpc}$). 
 
 The larger central residual scatter is most likely not indicative of any kind of physical structure in the merger remnant cores; but simply a result of the logarithmic spacing of the bins in the surface brightness profiles. The bins near the centre inherently contain less particles than the outer bins. When calculating the 100 projected surface brightness profiles from random viewing angles, this causes the variations in binned luminosities to be larger in the central bins, resulting in a final averaged profile that contains small jumps as well as small dips in its central luminosity. These arbitrary inconsistencies naturally cause the residuals of the fits to be scattered in a random way near the centre of the simulated galaxy. Unfortunately, remedying this problem by using bins that have a constant number of particles did not yield satisfactory results, due to the total number of particles being extremely small near the centre.
 
-Interestingly, all of the core-Sérsic fits show a peak in the size of the residuals at around $\sim 10 \mathrm{kpc}$. Once again, this residual property is probably just a small anomaly in the simulations and not indicative of any physical structure that could be found in actual merger remnants. However, the fact that this residual anomaly appears in the surface brightness profile of every simulation, indicates that; even though the masses of the SMBHs in the merger progenitors have a large effect on the central regions of the merger remnant, the outer regions are left relatively unaffected. In fact, the central SMBH binary only affects the outer regions of the merger remnant through stellar particles that have been ejected from the galactic centre. 
+Interestingly, all of the core-Sérsic fits show a peak in the size of the residuals at around $\sim 10 \; \mathrm{kpc}$. Once again, this residual property is probably just a small anomaly in the simulations and not indicative of any physical structure that could be found in actual merger remnants. However, the fact that this residual anomaly appears in the surface brightness profile of every simulation, indicates that; even though the masses of the SMBHs in the merger progenitors have a large effect on the central regions of the merger remnant, the outer regions are left relatively unaffected. In fact, the central SMBH binary only affects the outer regions of the merger remnant through stellar particles that have been ejected from the galactic centre. 
 
 All of the significant residual variations between the profile fits of the simulated merger remnant galaxies are concentrated near their respective centres. This implies that the results of the different simulations vary significantly from each other only due to the formation of a central SMBH binary, since the similar shapes of the outer regions of the residual plots can be explained through the limited range of the binaries' gravitational spheres-of-influence (SOI). The sizes of the SMBH binaries' SOI can be seen in table \ref{table:s-o-i}. They were calculated by: finding the radius of a sphere (centred at the c.o.m. of the host galaxy) that contains the amount of stellar mass equivalent to the mass of the SMBH binary. The sizes of the projected radii were determined through a similar relation to the one described in equation \ref{eq:projection_approximation}.
 
@@ -416,15 +422,15 @@ We calculate $r_\gamma$ for all of the merger remnants with central SMBH binarie
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{rb_mass_relation.png}
-	\caption{Comparison of the different core radis estimates of the merger remnants. These estimates were derived through three different methods: Core-Sérsic profile fitting (black squares), Nuker profile fitting (blue circles) and  finding the "cusp radius" (red circles). The x-axis shows the masses of the central SMBH binaries in the merger remnants.}
+	\caption{Comparison of the different core radius estimates of the merger remnants. These estimates were derived through three different methods: Core-Sérsic profile fitting (black squares), Nuker profile fitting (blue circles) and  finding the "cusp radius" (red circles). The x-axis shows the masses of the central SMBH binaries in the merger remnants.}
 	\label{figure:radii_comparison}
 \end{figure}
 
-Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every simulated merger remnant. The break radii from the Nuker fits are consistently larger than the other core radius estimates. They also have, in general, the largest deviations from the other core radii, and even contain two values that seem to break the trend of the core radius growing with the central SMBH binary mass (these being the break radii for the BH-2 and BH-3 mergers). Similar larger than expected Nuker core radii can be seen in the analysis of the simulations by \cite{Rantala2018}. Much like in figure \ref{figure:radii_comparison}, the difference in their Nuker break radii and the other core radius estimates for the two mergers with the smallest and third smallest central SMBH binaries, are significantly larger than for the other mergers. The fact that these large deviations are present in both our analysis and the analysis by \cite{Rantala2018}, further implies that, due to its high dependence on the fitting range, the Nuker model can provide inconsistent values for the break radius. However, when excluding these few Nuker break radii, a clear trend of the size of the core growing with the merger progenitors' central SMBH masses can be seen.
+Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every simulated merger remnant. The break radii from the Nuker fits are consistently larger than the other core radius estimates. They also have, in general, the largest deviations from the other core radii, and even contain two values that seem to break the trend of the core radius growing with the central SMBH binary mass (these being the break radii for the BH-2 and BH-3 mergers). Similar larger than expected Nuker core radii can be seen in the analysis of the simulations by \cite{Rantala2018}. Similarly to figure \ref{figure:radii_comparison}, the difference in their Nuker break radii and the other core radius estimates for the two mergers with the smallest and third smallest central SMBH binaries, are significantly larger than for the other mergers. The fact that these large deviations are present in both our analysis and the analysis by \cite{Rantala2018}, further implies that, due to its high dependence on the fitting range, the Nuker model can provide inconsistent values for the break radius. However, when excluding these few Nuker break radii, a clear trend of the size of the core growing with the merger progenitors' central SMBH masses can be seen.
 
 The fact that the size of the core is dependent on the mass of the central SMBH binary is clear evidence towards the cores being formed through a scouring process by the binary black holes. Binaries with larger masses have larger gravitational spheres-of-influence (table \ref{table:s-o-i}), which naturally leads to the ejection of stellar particles that orbit farther away from the galactic centre (the larger SMBH binary mass also causes the stellar material to be ejected at a larger velocity). 
 
-This positive correlation between the core size and the SMBH binary mass has also been identified in independent measurements of the break radius and the central SMBH mass in cored galaxies \citep[e.g.][]{deRuiter2005, Lauer2007Cusp, Thomas2016}. The fact that this effect can be seen, not only in the simulations but also in the observations, makes it clear that merging SMBH binaries are a likely source for the core.
+This positive correlation between the core size and the SMBH binary mass has also been identified in independent measurements of the break radius and the central SMBH mass in cored galaxies \citep[e.g.][]{deRuiter2005, Lauer2007Cusp, Thomas2016}. The fact that this effect can be seen, not only in the simulations but also in the observations, makes it clear that merging SMBH binaries are a likely source for the observed cores.
 
 Alongside the size of the core, the surface brightness deficit also becomes larger as the central SMBH binary mass grows, as can clearly be seen in figure \ref{figure:surface_brightness}. This can be explained trough the concept of the loss-cone. \cite{BinneyTremaine} show that only stars with the angular momentum:
 \begin{equation}
@@ -444,14 +450,14 @@ Another method of studying whether a galaxy has formed a core through core scour
 \begin{equation}
 \beta(r) = 1 - \frac{\sigma_\theta^2 + \sigma_\phi^2}{2\sigma_r^2} = 1 - \frac{\sigma_t^2}{\sigma_r^2}, \label{eq:beta}
 \end{equation}
-where $\sigma_\theta$, $\sigma_\phi$ and $\sigma_r$ are one dimensional velocity dispersions in the spherical coordinates, and $\sigma_t = \sqrt{(\sigma_\theta^2 + \sigma_\phi^2) / 2}$ is the tangential velocity dispersion. This $\beta$-parameter describes the ratio of tangential velocity dispersion in the stellar system to the radial velocity dispersion and, as such, provides information about the nature of the stellar orbits around the black hole binary. A negative value for $\beta$ shows an abundance of tangential orbits, whereas a positive $\beta$ corresponds to an abundance of radial orbits. 
+where $\sigma_\theta$, $\sigma_\phi$ and $\sigma_r$ are one-dimensional velocity dispersions in the spherical coordinates, and $\sigma_t = \sqrt{(\sigma_\theta^2 + \sigma_\phi^2) / 2}$ is the tangential velocity dispersion. This $\beta$-parameter describes the ratio of tangential velocity dispersion in the stellar system to the radial velocity dispersion and, as such, provides information about the nature of the stellar orbits around the black hole binary. A negative value for $\beta$ shows an abundance of tangential orbits, whereas a positive $\beta$ corresponds to an abundance of radial orbits. 
 
 Figure \ref{figure:beta_no_rb} shows $\beta$-profiles calculated from all of the final merger remnant snapshots using equation \ref{eq:beta}. In order to get the velocity dispersions, the stellar particles of the remnants were first divided into logarithmic bins, and their velocities were changed from a Cartesian to a spherical coordinate system. Next, the root-mean-squares, which correspond to the velocity dispersions, of the different spherical velocity components were calculated for each bin separately, resulting in a $\beta$-value for every bin. Plotting these values gives us the aforementioned profiles in figure \ref{figure:beta_no_rb}. 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\textwidth]{beta_no_rb.png}
-	\caption{Velocity anisotropy (beta) profiles for every simulated merger remnant. The profiles are calculated from the velocity dispersions in radial logarithmic bins, using equation \ref{eq:beta}. As the profile goes from the outer regions of the merger remnants to the central regions, the profiles of the remnants with SMBH binaries go from being radially dominated to tangentially dominated.}
+	\caption{Velocity anisotropy (beta) profiles for every simulated merger remnant. The profiles are calculated from the velocity dispersions in radial logarithmic bins, using equation \ref{eq:beta}. Going from the outer regions to the central regions of the merger remnants, the profiles of the remnants with SMBH binaries go from being radially dominated to being tangentially dominated.}
 	\label{figure:beta_no_rb}
 \end{figure}
 
@@ -459,7 +465,7 @@ According to the $\beta$-profiles, the outer areas of the remnants are dominated
 
 Figure \ref{figure:beta_no_rb} clearly shows that the presence of an SMBH binary has an effect on the shape of the $\beta$-profiles. Not only is the slope of the profile steeper for merger remnants which contain a more massive central SMBH binary, but the only merger with a profile that is completely dominated by radial velocity dispersion, is the one without a central SMBH binary (the BH-0 merger). 
 
-The shapes of the profiles also make sense in the context of ejection of stellar particles by hardening black hole binaries. The larger the mass of the SMBH biary is, the larger its gravitational sphere-of-influence, which results in more of the radially orbiting stellar particles being ejected.
+The shapes of the profiles also make sense in the context of ejection of stellar particles by hardening black hole binaries. The larger the mass of the SMBH binary is, the larger its gravitational sphere-of-influence, which results in more of the radially orbiting stellar particles being ejected.
 
 \begin{figure}
 	\centering
@@ -479,7 +485,7 @@ Figure \ref{figure:beta_NGC1600_Simul} shows, both the observed $\beta$-profile 
 
 %According to \cite{Rantala2018} it is likely that, the larger steepness of the profile seen in NGC 1600 is due the simulations only comprising a single generation of completely isotropic ($\beta = 0$) mergers. Most observed cored galaxies, including NGC 1600, are most likely the result of multiple generations of mergers. The progenitors of the observed major merger remnant galaxy would thus have already had tangentially biased $\beta$-profiles, leading to a remnant with an even steeper profile.
 
-According to \cite{Rantala2018}, the kinematics being more tangential close to the core in NGC 1600 than in the simulations, could be caused by further adiabatic growth of the merged central SMBH's mass. \cite{Young1980} shows that black holes that grow adiabatically through, for example accretion of gas, can cause the surrounding stellar orbits to become more tangential. If the time scale of the mass growth is smaller than the relaxation time scale of the galaxy while also being larger than the dynamical time scale of the stellar system, the growth can be considered adiabatic. This results in the conservation of the angular momentum and the radial action of the stellar orbits (radial action being one of the momenta in the canonical Hamiltonian coordinates called \textit{angle-action variables} \citep[e.g.][]{BinneyTremaine}), which, due to the now higher gravitational potential induced by the central black hole, causes the orbits to become more circular. Although this effect is not strong enough to account for the entire shape of the $\beta$-profile \citep{Thomas2016}, it could certainly be a reason for the more tangentially dominated core regions seen in the observations.
+According to \cite{Rantala2018}, the kinematics being more tangential close to the core in NGC 1600 than in the simulations, could be caused by further adiabatic growth of the merged central SMBH's mass. \cite{Young1980} shows that black holes that grow adiabatically through, for example accretion of gas, can cause the surrounding stellar orbits to become more tangential. If the time scale of the mass growth is smaller than the relaxation time scale of the galaxy while also being larger than the dynamical time scale of the stellar system, the growth can be considered adiabatic. This results in the conservation of the angular momentum and the radial action of the stellar orbits (radial action being one of the momenta in the canonical Hamiltonian coordinates called \textit{angle-action variables} \citep[e.g.][]{BinneyTremaine}, which, due to the now higher gravitational potential induced by the central black hole, causes the orbits to become more circular. Although this effect is not strong enough to account for the entire shape of the $\beta$-profile \citep{Thomas2016}, it could certainly be a reason for the more tangentially dominated core regions seen in the observations.
 
 As for the outer region of the $\beta$-profile of NGC 1600, it is possible, that the reason why it is more radially dominated than any of the outer parts in the simulated merger remnants, is due to the lack of minor-mergers in the simulations \citep{Rantala2018}. These minor-mergers would deposit all of their mass in the outer regions of the galaxy, and would thus disrupt only the outer stellar orbits, making some of the more tangential of these orbits more radial. Furthermore, they would not contribute to the destruction of radial orbits near the centre of the galaxy, as the smaller progenitor galaxy would not contain a central SMBH.
 
@@ -531,23 +537,23 @@ Figures \ref{figure:IFU-maps} and \ref{figure:rest_of_voronoi} also contain IFU-
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_1.png}
-		\caption{BH-0 merger}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{BH_2.png}
 		\caption{BH-1 merger}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{BH_3.png}
+		\includegraphics[width=\textwidth]{BH_2.png}
 		\caption{BH-2 merger}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{BH_4.png}
+		\includegraphics[width=\textwidth]{BH_3.png}
 		\caption{BH-3 merger}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{BH_4.png}
+		\caption{BH-4 merger}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{BH_5.png}
-		\caption{BH-3 merger}
+		\caption{BH-5 merger}
 	\end{subfigure}
 	\caption{IFU-maps of average LOS-velocities, velocity dispersion, $h_3$ parameters and $h_4$ parameters from four simulated merger remnants: BH-1, BH-2, BH-3, BH-4 and BH-5 mergers.}
 	\label{figure:rest_of_voronoi}
@@ -562,7 +568,7 @@ The $h_4$-parameter roughly corresponds to the velocity anisotropy parameter $\b
 
 \subsection{The $\lambda_R$-parameter}
 
-Further analysis on the kinematics of the simulated merger remnants can be done by studying the $\lambda_R$ parameter, which describes the angular momentum of a galaxy \citep{Emsellem2007}. More importantly, the parameter allows us to differentiate between the aforementioned slowly rotating galaxies and so-called fast rotators (see figure \ref{figure:IFU-maps}) \citep{Emsellem2007}. The parameter itself is defined in a general form as:
+Further analysis of the kinematics of the simulated merger remnants can be done by studying the $\lambda_R$ parameter, which describes the angular momentum of a galaxy \citep{Emsellem2007}. More importantly, the parameter allows us to differentiate between the aforementioned slowly rotating galaxies and so-called fast rotators (see figure \ref{figure:IFU-maps}) \citep{Emsellem2007}. The parameter itself is defined in a general form as:
 \begin{equation}
 \lambda_R \equiv \frac{\langle R |V| \rangle}{\langle R \sqrt{V^2 + \sigma^2} \rangle}, \label{eq:general_lambdar}
 \end{equation}
@@ -572,9 +578,9 @@ where $R$ is the projected distance from the galactic centre, $V$ is the line-of
 \end{equation}
 where $F_i$, $R_i$, $V_i$ and $\sigma_i$ are the flux, projected distance from the galaxy centre, velocity and velocity dispersion of the $i$th bin, and $N_p$ is the number of bins. In the case of our simulations, the $N_p$ bins used are of course the voronoi bins described earlier in this section. 
 
-Determining whether a galaxy is either a fast or a slow rotator using $\lambda_R$, is done by comparing the value that the parameter gets at the galaxy's effective radius, to some pre-defined threshold. The originally used threshold is: $\lambda_{Re} < 0.1$, where $\lambda_{Re}$ is the aforementioned $\lambda_R$ at the effective radius, and where galaxies fulfilling this condition are classified as slow rotators \citep{Emsellem2007}. A revision of the threshold by \cite{Emsellem2011} takes the ellipticity ($\epsilon$) of the galaxy into account, and defines slow rotators as having $\lambda_{R_e} < 0.31 \sqrt{\epsilon}$, which accounts for the increased anisotropy in the kinematics of flatter galaxies. An even further refinement of the slow rotator definition has been proposed by \cite{Cappellari2016}, where slow rotator galaxies are determined using the following two criteria: $\lambda_{R_e} < 0.08 + \epsilon/4$ and $\epsilon < 0.4$. The former criterion of the threshold reduces the risk of misidentifying very round non-regular slow rotators as fast rotators, while the latter makes sure that only sufficiently round galaxies are classified as slow rotators (\cite{Cappellari2016} argues that "genuine" disk-less slow rotators are all rounder than $\epsilon = 0.4$).
+Determining whether a galaxy is either a fast or a slow rotator using $\lambda_R$, is done by comparing the value that the parameter gets at the galaxy's effective radius, to some pre-defined threshold. The originally used threshold is: $\lambda_{Re} < 0.1$, where $\lambda_{Re}$ is the aforementioned $\lambda_R$ at the effective radius, and where galaxies fulfilling this condition are classified as slow rotators \citep{Emsellem2007}. A revision of the threshold by \cite{Emsellem2011} takes the ellipticity ($\epsilon$) of the galaxy into account, and defines slow rotators as having $\lambda_{R_e} < 0.31 \sqrt{\epsilon}$, which accounts for the increased anisotropy in the kinematics of flatter galaxies. An even further refinement of the slow rotator definition has been proposed by \cite{Cappellari2016}, where slow rotator galaxies are determined using the following two criteria: $\lambda_{R_e} < 0.08 + \epsilon/4$ and $\epsilon < 0.4$. The former criterion of the threshold reduces the risk of misidentifying very round non-regular slow rotators as fast rotators, while the latter makes sure that only sufficiently round galaxies are classified as slow rotators (\citealt{Cappellari2016} argues that "genuine" disk-less slow rotators are all rounder than $\epsilon = 0.4$).
 
-Since two of the three aforementioned slow rotator thresholds require us to know the ellipticity of the galaxy; before analysing their rotation, I wrote a program in Python that calculates ellipticities of the simulated merger remnants. The ellipticity calculations are done using a method described in \cite{Zemp2011}, which uses the shape tensor:
+As two of the three aforementioned slow rotator thresholds require us to know the ellipticity of the galaxy I wrote a program in Python that calculates ellipticities of the simulated merger remnants. These ellipticity calculations are done using a method described in \cite{Zemp2011}, which uses the shape tensor:
 \begin{equation}
 \mathbf{S} = \frac{\int_V \rho(\mathbf{r}) \omega(\mathbf{r}) \mathbf{r} \mathbf{r}^T \; dV }{\int_V \rho{\mathbf{r}} \; dV},
 \end{equation}
@@ -601,7 +607,7 @@ Regardless of the threshold used for differentiating between slow and fast rotat
 
 As the physical properties of the merger progenitors are modelled after NGC 1600, it is interesting to see how the results from the simulations compare with actual observations of the galaxy. While I will be comparing the observations mainly to the BH-6 merger remnant, as the mass of the SMBH binary in the simulated galaxy is equivalent to the observed and modelled mass of the central SMBH in NGC 1600 ($M_\bullet = 1.7 \times 10^{10} M_\odot$) \citep{Thomas2016}; I will also be comparing the observed properties of the cored massive elliptical galaxy NGC 4472 to the simulated BH-1 merger remnant. Both of the latter galaxies have similar central black hole masses (or in the case of the simulated remnant, black hole binary mass), as well as similar total stellar masses. Thus, comparing their other physical properties could provide some interesting insight into the formation of cores.
 
-Figure \ref{figure:profile_comparison} shows core-Sérsic profile fits of the surface brightness profiles from the BH-1 and BH-6 mergers, and compares them to the profile fits from the observed core galaxies NGC 4472 and NGC 1600 respectively. Not only do the shapes of the compared profiles follow each other closely in both cases, the best-fit parameters are also quite closely related (table \ref{table:bestfit_parameter_comparison}). 
+Figure \ref{figure:profile_comparison} shows core-Sérsic profile fits of the surface brightness profiles from the BH-1 and BH-6 mergers, and compares them to the profile fits from the observed core galaxies NGC 4472 and NGC 1600 respectively. Not only do the shapes of the compared photometric profiles follow each other closely in both cases, the best-fit parameters are also quite closely related (table \ref{table:bestfit_parameter_comparison}). 
 
 \begin{table}
 	\begin{center}
@@ -619,19 +625,19 @@ Figure \ref{figure:profile_comparison} shows core-Sérsic profile fits of the su
 		\hline
 		\end{tabular}
 	\end{center}
-	\caption{Best-fit parameters of the core-Sérsic profile fits seen in figure \ref{figure:profile_comparison}. The best-fit parameters of NGC 4472 are from \cite{Rusli2013}, while the parameters for NGC 1600 are given in \cite{Thomas2016}.}
+	\caption{Best-fit parameters of the core-Sérsic profile fits seen in figure \ref{figure:profile_comparison}. The best-fit parameters of NGC 4472 are from \cite{Rusli2013}, while the parameters for NGC 1600 are given in \cite{Thomas2016}. $n$ is the Sérsic index, $\alpha$ controls the sharpness of the transition between the inner and outer profiles, and $\gamma$ is the slope of the inner profile.}
 	\label{table:bestfit_parameter_comparison}
 \end{table}
 
 Another comparison between some of the properties of the four galaxies can be seen in table \ref{table:snap6_vs_NGC1600}. Most importantly, the table shows that the kinematic properties of the simulated merger remnants and the kinematic properties of NGC 1600 are very similar. On the other hand, compared to the three other galaxies, the spin parameter and line-of-sight velocity of NGC 4472 are almost an order of magnitude larger. Furthermore, like the simulated galaxies, NGC 1600 can easily be identified as a slow rotator by its $\lambda_e$ parameter and ellipticity, while NGC 4472 seems to be classified as a fast rotator. 
 
-Before drawing conclusion from these results, it is important to know that, whether NGC 4472 is in fact classified as a fast rotator is not known for certain. \cite{Emsellem2011} found a significantly lower value for its spin parameter ($\lambda_e = 0.077$), which would easily classify the object as a slow rotator. The value used in this analysis comes from the more recent MASSIVE-survey \citep{Ma2014MASSIVE, Veale2017veldisp}, in which some of the inaccuracies of the previous calculations were shown (e.g. not taking into account a large enough region of the observed galaxy). Conceding to some possible biases in their own calculations, \cite{Veale2017veldisp} ultimately classify NGC 4472 as an intermediate case between slow and fast rotators.
+Before drawing conclusion from these results, it is important to know that, whether NGC 4472 is in fact classified as a fast rotator is not known for certain. \cite{Emsellem2011} found a significantly lower value for its spin parameter ($\lambda_e = 0.077$), which would easily classify the object as a slow rotator. The value used in this analysis comes from the more recent MASSIVE-survey \citep{Ma2014MASSIVE, Veale2017veldisp}, in which some of the inaccuracies of the previous observations were shown (e.g. not taking into account a large enough region of the observed galaxy). Conceding to some possible biases in their own calculations, \cite{Veale2017veldisp} ultimately classify NGC 4472 as an intermediate case between slow and fast rotators.
 
-It is impressive, that the simulation of the BH-6 merger is able to reproduce both the kinematic properties and the shape of the surface brightness profile of NGC 1600 so well. Since the simulation describes a dry merger event between two massive ETG with central SMBHs, the results imply that this process could be the formation mechanism behind core galaxies. 
+It is impressive, that the simulation of the BH-6 merger is able to reproduce both the kinematic properties and the shape of the surface brightness profile of NGC 1600 so well. Since the simulation describes a dry major merger event between two massive ETG with central SMBHs, the results imply that this process could be the formation mechanism behind core galaxies. 
 
 Interestingly, since the BH-6 merger has extremely similar kinematic properties with the BH-1 merger and NGC 1600, it can be assumed that the mass of the central SMBH binary does not affect the rotation of its host galaxy in any significant way. This suggests that, as far as the merger progenitors are concerned, it is the properties other than their central SMBH mass (i.e. them being massive gas-poor ETGs) that determine the stellar kinematics in the final merger remnant. As for NGC 4472, since both its $\lambda_e$ and LOS velocity are about an order of magnitude larger compared to the three other galaxies, it can be argued that its formation history must be quite different when compare to the other galaxies. However, due to the ambiguity of whether NGC 4472 is a fast rotator and whether its spin parameter is biased towards large values, the possibility that the galaxy has also formed through a dry ETG merger, should not be ruled out.
 
-Earlier in this chapter it was shown that there is a clear positive correlation between the central SMBH binary masses and the size of the core radii. However, the fact that the core radius sizes for the BH-1 merger remnant and NGC 4472 are comparable, and that many of their other properties are quite different; imply that, not only is there a correlation, the SMBH binary mass might be the only property that affects the size of the core in any significant way. If this is true, it is extremely clear evidence, that the cores are formed through a scouring process by binary SMBHs.
+Earlier in this chapter it was shown that there is a clear positive correlation between the central SMBH binary masses and the size of the core radii. However, the fact that the core radius sizes for the BH-1 merger remnant and NGC 4472 are comparable, and that many of their other properties are quite different; imply that, not only is there a correlation, the SMBH binary mass might be the only property that affects the size of the core in any significant way. If this is true, it is very strong evidence, that the cores are formed through a scouring process by binary SMBHs.
 
 
 \begin{table}

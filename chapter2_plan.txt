@@ -19,20 +19,23 @@ Surface brightness
 - luminosity difference
 - boxy / disky isophotes
 
-Rotation
-
-- slow vs fast rotators (Emsellem 2011)
-  - ellipticity
-  - lambda-parameter
-
 Formation
 
 - Hierarchical formation
-- Differences in formation
-  - in-situ star formation - gas-rich mergers
-  - in-situ star formation -> "dry" mergers
+- Differences in formation of cuspys and cores
+  - cuspy: in-situ star formation - gas-rich mergers
+  - core: in-situ star formation -> "dry" mergers
 
-2.2 Core Formation
+2.2 Core Galaxies
+
+Definition
+- inner slope < 0.3 (Lauer 1995)
+- shallow inner profile, seep outer (Kormendy and Bender 1999)
+
+Surface brightness profiles
+- stuff from chapter 2
+
+Core Formation
 
 - BH mergers (Merritt, Faber 1997, Quinlan & Hernquist 1997)
   - three phases
@@ -47,7 +50,8 @@ Formation
 
 2.3/2.4 Galactic Dynamics
 
-Poisson equation (BT)
+Potential theory
+- Poisson equation (BT)
 - Density-Potential models, Dehnen
 
 Collisionless systems (BT)
@@ -59,8 +63,9 @@ Regularisation
 
 PN-dynamics
 
-2.3/2.4 Integral Field Spectroscopy 
+2.3/2.4 Integral Field Spectroscopy
 
 - modified gaussian function
 - hermite polynomials
-- slow and fast rotators
+- slow vs fast rotators (Emsellem 2011)
+  - lambda-parameter

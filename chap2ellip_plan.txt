@@ -14,15 +14,16 @@ ELLIPTICAL GALAXIES:
 
 - formation:
   - cuspy:
+    - accumulation of gas: mihos 1994 ja hopkins
     - Barnes & Hernquist: gas that accumulates in the centre changes the potential (-> larger velocity dispersion, i.e. faster rotation)
     - Naab 2006: collisionless simulations without gas -> boxy isophotes; gas in simultions -> elliptical or even disky shapes
       - steep central potential caused by gas doesn't allow for box orbits 
     - Naab & Ostriker 2017: Extra-light caused by inflow of gas resulting in starburst
   - core:
-    - Naab 2006: slow - boxy ellipticals cannot have formed in the same way.
-    - dry, dissipationless, gas-poor mergers
-    - cores formed by core scouring
-
+    Massive galaxies:
+    - Naab 2006: ETG mergers play important part at late evolution
+    - Naab 2009: in-situ star firmation z > 2
+    Core galaxies:
 
 CORE GALAXIES:
 
