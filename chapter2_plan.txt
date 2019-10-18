@@ -19,6 +19,14 @@ Surface brightness
 - luminosity difference
 - boxy / disky isophotes
 
+Kinematics (GFE)
+
+- disky rotate fast / boxy rotate slowly
+  -> flatness of diskys caused by rotational flattening. for boxys anisotropic velocity distribution
+- triaxial (for boxy) and axisymmetric (for disky) potentials
+- KDC seen in boxy
+- velocity dispersion rise near centre -> shows existence of BH (GFE)
+
 Formation
 
 - Hierarchical formation
@@ -37,16 +45,17 @@ Surface brightness profiles
 
 Core Formation
 
-- BH mergers (Merritt, Faber 1997, Quinlan & Hernquist 1997)
+- BH mergers (Merritt chapter 8, Faber 1997, Quinlan & Hernquist 1997, Milosavljevic 2002)
   - three phases
+    - hard binary: binary SMBH whose relative velocity >> field star velocity
     - final-parsec problem (Milosavljevic, 2003)
     - loss-cone (repopulation mechanisms: triaxial, Merritt 446 and 452)
-  - observations of binary SMBHs (Merritt, Abbott 2016 GW-observations)
-  - SMBH scaling relations (Merritt)
-    - gravitational sphere-of-influence
-    - BH-mass - sigma relation, etc.
-- other theories
-  - AGN feedback
+  - Evidence:
+    - SMBH scaling relations (Merritt)
+      - BH-mass - sigma relation, etc.
+    - observations of binary SMBHs (Merritt, Abbott 2016 GW-observations)
+  
+
 
 2.3/2.4 Galactic Dynamics
 
@@ -67,5 +76,6 @@ PN-dynamics
 
 - modified gaussian function
 - hermite polynomials
+  - GFE: Gauss-Hermite polynomials used because LOSVD not perfectly Gaussian
 - slow vs fast rotators (Emsellem 2011)
   - lambda-parameter
