@@ -51,8 +51,10 @@ Core Formation
     - final-parsec problem (Milosavljevic, 2003)
     - loss-cone (repopulation mechanisms: triaxial, Merritt 446 and 452)
   - Evidence:
-    - SMBH scaling relations (Merritt)
-      - BH-mass - sigma relation, etc.
+    - SMBH scaling relations (Merritt 2010)
+      - BH-mass - mass deficit relation - evidence of SMBHs causing cores (Merritt 2006, Graham 2004, Dullo 2014)
+      - BH-mass - R_b relation also (Dullo 2012)
+      - scaling relations might provide evidence for coevolution (though maybe not) (Kormendy 2013)
     - observations of binary SMBHs (Merritt, Abbott 2016 GW-observations)
   
 
@@ -63,14 +65,15 @@ Potential theory
 - Poisson equation (BT)
 - Density-Potential models, Dehnen
 
-Collisionless systems (BT)
+Collisionless systems (Merritt)
 - phase space
-  - Vlasov equation
-  - collisionless Boltzmano
+  - Vlasov equation - collisionless Boltzmano
+  - conservation of number density f
 
 Regularisation
 
-PN-dynamics
+PN-dynamics (Mora 2004, Merritt)
+- spin parameters dont come out at any PN-order, because basic PN-terms assume point masses
 
 2.3/2.4 Integral Field Spectroscopy
 
