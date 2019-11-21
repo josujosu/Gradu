@@ -1,0 +1,48 @@
+
+CHAPTER 3:
+
+- KETJU 
+  - designed for simulating global galactic dynamics
+  - combination of tree-code and an algorithmic regularization method
+  - allows for the simulation of both general galactic dynamics and prceise gravitational interactions near SMBHs
+
+3.1 AR-CHAIN
+
+- three parts:
+  - regularization with time change and leapfrog integration
+  - chain formation to combat roundoff error
+  - bulrisch-stoer extrapolation method for increased accuracy
+
+3.2 GADGET-3
+
+- tree-codes
+  - more efficient than N-body codes, NlnN scaling
+  - G3 contains both tree and particle mesh codes, but PM not useful enough in galactic-scale simulations (Binney)
+
+- Formation and use of tree structure
+  - explain tree-formation and how to use cells (Binney)
+  - multipole expansion (Binney)
+    - GADGET-3 uses only the monopole expansion (sum of masses, Springel2005)
+
+- softened dynamics
+  - Plummer softening
+  - softening kernel W_2 (väitöskirja, Springel2005?)
+
+3.3 Combined Functionality
+
+- Chain subsystem
+  - selection criterion
+  - macro particle in tree code
+  - perturber particles
+  - merging / ejecting particles
+
+- time steps
+  - adaptive and individual time steps
+  - GADGET-3 steps dependent on accel.
+  - SMBHs in smallest time-step level, ejected particles smallest tree time-step level
+  
+- SMBH mergers (3.4)
+  - safety factor
+  - coalescence timescale
+  - minimum separations
+  - properties after merger
