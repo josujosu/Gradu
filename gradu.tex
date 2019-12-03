@@ -95,7 +95,7 @@ Abstract goes here.
 
 \subsection{Basic Properties and Classification}
 
-Nearly all massive galaxies are so-called elliptical galaxies (Es), which are stellar systems characterised by their ellipsoidal shape, lack of a rapidly rotating disk, and their small or essentially almost non-existent content of cool gas and dust. Furthermore, due to the absence of star formation caused by the lack of dust and cool gas, the stellar population of elliptical galaxies is generally quite old, with a mean age of $\gtrsim{10} \; \mathrm{Gyr}$ \citep{GalaxyFormationAndEvo2010}. This correlates well with their observed red colours \citep{Cappellari2016}, as galactic spectra tend to become redder with age.
+Nearly all massive galaxies are elliptical galaxies (Es), which are stellar systems characterised by their ellipsoidal shape, lack of a rapidly rotating disk, and their small or essentially almost non-existent content of cool gas and dust. Furthermore, due to the absence of star formation caused by the lack of dust and cool gas, the stellar population of elliptical galaxies is generally quite old, with a mean age of $\gtrsim{10} \; \mathrm{Gyr}$ \citep{GalaxyFormationAndEvo2010}. This correlates well with their observed red colours \citep{Cappellari2016}, as galactic spectra tend to become redder with age.
 
 Elliptical galaxies are included in the Hubble classification of galaxies \citep{Hubble1926}. In the Hubble "tuning-fork diagram" (figure \ref{figure:tuning_fork}), they are located left of the point where the sequence diverges into the two spiral galaxy paths. This means that alongside lenticular galaxies, which are transitional objects between elliptical and spiral galaxies, elliptical galaxies are so-called "early-type galaxies" (ETGs). ETGs are, in fact, often defined simply as galaxies that do not contain spiral arms.
 
@@ -108,7 +108,7 @@ Elliptical galaxies are included in the Hubble classification of galaxies \citep
 
 In the Hubble classification, elliptical galaxies are further divided into seven different subcategories according to their observed apparent ellipticity. These categories range from E0 to E7, where the number denotes the ellipticity of the galaxy multiplied by ten and rounded to the nearest integer. The ellipticity of a galaxy is simply the measure of how flattened an observed 2D-projection of a ellipsoidal stellar system is. It can be calculated using the equation:
 \begin{equation}
-\epsilon = 1 - \frac{b}{a},
+\epsilon = 1 - \frac{b}{a}, \label{eq:ellipticity}
 \end{equation}
 where $a$ and $b$ are the semi-major and semi-minor axes of a luminosity isophote (i.e. constant luminosity or surface brightness contour), respectively. The larger the ellipticity, the flatter the system ($\epsilon = 0$ denotes a completely spherical galaxy). It is important to note, however, that the ellipticity of a system can depend on the specific isophote from which it is calculated. Since the isophotes of elliptical galaxies generally become flatter the farther they are located from the galactic centre \citep{BinneyTremaine}, this could result in a single galaxy having multiple ellipticities. To remedy this, the Hubble classification uses the ellipticity at the effective radius ($R_e$) to determine the subcategory of an elliptical galaxy. The effective radius is the radius of a sphere that encloses half of the total luminosity of the galaxy. Since galaxies do not have clearly defined boundaries, $R_e$ is also often used as a measure of their size. 
 
@@ -156,11 +156,11 @@ The more ordered and faster rotation of the fainter galaxies seems to be, at lea
 \begin{equation}
 \frac{V}{\overline{\sigma}} \approx \sqrt{\frac{\epsilon}{1-\epsilon}}, \label{eq:v-sigma-epsilon}
 \end{equation}
-where $\overline{\sigma}$ is the mean velocity dispersion inside half of the effective radius and $\epsilon$ is the ellipticity of the galaxy. This gives a relation between the rotation and the expected ellipticity of the galaxy, often noted as the $V/\sigma$ – $\epsilon$-relation. Figure \ref{figure:v-sigma} shows the expected $V/\sigma$ – $\epsilon$ relation described by equation \ref{eq:v-sigma-epsilon} as a curve, alongside the observed apparent ellipticities and $V/\sigma$ parameters for elliptical galaxies with a $B$-band magnitude of either $M_B > -20.5$ (filled circles) or $M_B < -20.5$ (open circles) \citep{Davies1983}. By looking at the figure, it is clear that, when compared to the brighter galaxies, the fainter galaxies are, in general, situated closer to the curve describing the expected relation. This implies that, unlike the boxy bright ellipticals, the fainter disky ellipticals are flattened by rotation. The generally weaker flattening of the brighter galaxies is then usually attributed to their anisotropic velocity distributions, as the galaxy is more spread out along the axes where the velocity dispersion is larger.
+where $\overline{\sigma}$ is the mean velocity dispersion inside half of the effective radius and $\epsilon$ is the ellipticity of the galaxy. This gives a relation between the rotation and the expected ellipticity of the galaxy, often noted as the $V/\sigma$ – $\epsilon$-relation. Figure \ref{figure:v-sigma} shows the expected $V/\sigma$ – $\epsilon$ relation described by equation \ref{eq:v-sigma-epsilon} as a curve, alongside the observed apparent ellipticities and $V/\sigma$ parameters for elliptical galaxies with a $B$-band magnitude of either $M_B > -20.5$ (filled circles) or $M_B < -20.5$ (open circles) \citep{Davies1983}. By looking at the figure, it is clear that, when compared to the brighter galaxies, the fainter galaxies are, in general, situated closer to the curve describing the expected relation. This implies that, unlike the boxy bright ellipticals, the fainter disky ellipticals are flattened by rotation. The generally weaker flattening of the brighter galaxies is then usually attributed to their anisotropic velocity distributions, as the galaxy is more extended along the axes where the velocity dispersion is larger.
 
 A further distinction between the bright and relatively faint ellipticals can be drawn from their gravitational potentials. While the "disky" galaxies are assumed to be axisymmetric, with an ellipsoidal shape containing two identical-length semi-principal axes ($A = B \neq C$); the "boxy" galaxies seem to be triaxial, with all of their semi-principal axes having different lengths ($A \neq B \neq C$) \citep{GalaxyFormationAndEvo2010}. 
 
-The triaxial potential of the bright ellipticals can be identified from the fact, that unlike the fainter galaxies, bright Es often contain kinematic misalignments, meaning that the position angle of their projected kinematic axis differs from their photometric minor axis. According to \cite{GalaxyFormationAndEvo2010}, these misalignments can arise as a result of two different effects. A kinematic misalignment might be caused by, a misalignment between the projected and the apparent observed minor axes of the galaxy, which is common for triaxial galaxies due to their asymmetric shape. On the other hand, the deviation in the position angles might also be the result of the observed galaxy having intrinsically misaligned angular momentum, which would be a natural consequence of triaxial potentials supporting rotation around all three axes. Both of these effects require the host galaxy to be triaxial.
+The triaxial potential of the bright ellipticals can be identified from the fact, that unlike the fainter ellipticals, bright Es often contain kinematic misalignments, meaning that the position angle of their projected kinematic axis differs from their photometric minor axis. According to \cite{GalaxyFormationAndEvo2010}, these misalignments can arise as a result of two different effects. A kinematic misalignment might be caused by, a misalignment between the projected and the apparent observed minor axes of the galaxy, which is common for triaxial galaxies due to their asymmetric shape. On the other hand, the deviation in the position angles might also be the result of the observed galaxy having intrinsically misaligned angular momentum, which would be a natural consequence of triaxial potentials supporting rotation around all three axes. Both of these effects require the host galaxy to be triaxial.
 
 \begin{figure}
 	\centering
@@ -206,7 +206,7 @@ The fainter Es with "cuspy" central surface brightness profiles are generally th
 
 In contrast, the formation mechanism for the "core" galaxies is that of dissipationless "dry" mergers. The formation of massive slowly rotating galaxies is assumed to be a two-stage process, similar to the model proposed by \cite{Oser2010}. Initially, the accumulation of stellar mass in "core" galaxies is driven by rapid "in-situ" star formation caused by inflows of cold gas; and afterwards, during redshift $3 > z > 0$, their growth in mass is dominated by major gas-poor ETG mergers \citep{Naab2009}. Since the massive galaxies in major galaxy mergers are expected to contain central supermassive black holes (SMBHs), it is often proposed that the "cores" in the bright ellipticals are a result of a scouring process, where the central binary black hole coalesces and ejects stellar material from the centre of the merger remnant in complex three-body interactions.
 
-\section{Core Galaxies}
+\section{Core Galaxies} \label{section:core_galaxies}
 
 While the basic principle of core galaxies being galaxies with "missing" light at their centre is easy to grasp, giving an explicit definition for what exactly constitutes a core galaxy is somewhat more challenging. Core galaxies have been defined as both, galaxies that contain an observed surface brightness profile, defined similarly to the one described in equation \ref{eq:nuker}, with an inner logarithmic slope of $\gamma < 0.3$ \citep{Lauer1995, Lauer2007}; and as galaxies that have surface brightness profiles that are a combination of a shallow inner profile and a steep outer profile \citep{Kormendy1999}. However, the problem with the definition proposed by \cite{Lauer1995} is that Sérsic galaxies with low values for the Sérsic index $n$ can have shallow inner profiles even when their cores do not contain a light deficit \citep{Graham2003}. Meanwhile, \cite{Dullo2012} argue that the other definition results in a "disconnect with the curved outer Sérsic profile". \cite{Graham2003} suggest that core galaxies should simply be defined by a deficit in the central surface brightness profile, when compared to the inward extrapolation of the outer Sérsic profile.
 
@@ -234,7 +234,7 @@ In addition to the model fitting methods, one could also estimate the size of th
 
 \section{Core Formation Through Black Hole Mergers}
 
-As stated before, currently the leading mechanism for the formation of the cores seen in massive ETGs is the ejection of stellar material due to three-body interactions between stars and binary supermassive black holes during SMBH mergers \citep[e.g.][]{Faber1997, Milosavljevic2002, GalaxyFormationAndEvo2010}. Core formation is expected to occur specifically during "dry" ETG mergers, as, due to the lack of gas, they do not contain merger induced star-formation, which would negate the photometric effect caused by the ejection of stars.
+As stated before, currently the leading mechanism for the formation of the cores seen in massive ETGs is the ejection of stellar material due to three-body interactions between stars and binary supermassive black holes during SMBH mergers \citep[e.g.][]{Faber1997, Milosavljevic2002, GalaxyFormationAndEvo2010}. Core formation is expected to occur specifically during "dry" ETG mergers, as, due to the lack of gas, they do not contain merger induced star-formation, which would mask the formation of the low-luminosity core.
 
 There are three different, and potentially overlapping, phases for SMBH mergers: the dynamical friction phase, the three-body interaction phase, and the gravitational wave radiation phase \citep{MerrittBook}. In each of the three phases, a different process removes kinetic energy and shrinks the separation between the coalescing SMBHs.
 
@@ -246,7 +246,7 @@ Dynamical friction also applies to the central SMBHs in galaxy mergers, while th
 \begin{equation}
 F_\mathrm{DF} = M\frac{d\mathbf{v_\bullet}}{dt} = -4\pi G^2 M^2 m \ln \Lambda \int d^3 \mathbf{v}_a f(\mathbf{v}_a) \frac{\mathbf{v_\bullet}-\mathbf{v}_a}{|\mathbf{v_\bullet}-\mathbf{v}_a|^3,} \label{eq:dynamical_friction}
 \end{equation}
-where $M$ and $\mathbf{v_\bullet}$ are the mass and velocity of the SMBH, respectively; $m$ and $\mathbf{v_a}$ are the mass and velocity of a field-particle; $f\left(\mathbf{v}_a\right)$ is the velocity distribution function of the field-particles; and $\ln \Lambda$ is described by the equation $\ln \Lambda \simeq \ln \left( \frac{b_\mathrm{max}}{b_{90}} \right)$, with $b_\mathrm{max}$ and $b_{90}$ being the maximum length and the $90^\circ$ reflection impact parameters, respectively.
+where $M$ and $\mathbf{v_\bullet}$ are the mass and velocity of the SMBH, respectively; $m$ and $\mathbf{v_a}$ are the mass and velocity of a field-particle; $f\left(\mathbf{v}_a\right)$ is the phase space density (see section \ref{section:collisionless}) of the field-particles; and $\ln \Lambda$ is described by the equation $\ln \Lambda \simeq \ln \left( \frac{b_\mathrm{max}}{b_{90}} \right)$, with $b_\mathrm{max}$ and $b_{90}$ being the maximum length and the $90^\circ$ reflection impact parameters, respectively.
 
 As can be seen from equation \ref{eq:dynamical_friction}, the strength of the dynamical friction force scales with the mass of the SMBH as $F_\mathrm{DF} \propto M^2$. This shows that the time it takes for an object to fall to the centre of a stellar system as a result of a dynamical friction driven inspiral, is dependent on the mass of said object. Thus, in galaxy mergers, only objects that have a large enough mass, such as SMBHs, can fall to the centre of the merger and form cores through three-body interactions. For example, globular clusters, which are old gas-free stellar systems with masses of $M \sim 10^5 M_\odot$ \citep{BinneyTremaine}, can still be seen orbiting around the nucleus of the Milky Way, implying that the time-scale for their inspiral is longer than the age of the Milky Way.
 
@@ -263,7 +263,7 @@ a = \frac{G\mu}{4\sigma},
 \end{equation}
 where $\mu$ is the reduced mass defined as: $\mu = M_1M_2 / M_1 + M_2$, where $M_1$ and $M_2$ are the masses of the SMBHs; and $\sigma$ is the velocity dispersion of the surrounding stars \citep{MerrittBook}.
 
-\subsection{Three-Body Interactions}
+\subsection{Three-Body Interactions} \label{section:three-body}
 
 The three-body interaction phase of the SMBH merger is the phase that is assumed to cause the actual formation of the core. It starts once the smaller SMBH falls inside the gravitational sphere-of-influence (SOI) of the more massive black hole, resulting in an SMBH binary \citep{MerrittBook}. The SOI of an SMBH is the spherical region in space, where the gravitational force of the SMBH dominates over the force of the surrounding stars, and which encompasses an amount of stellar mass equivalent to the mass of the black hole. If the velocity dispersion ($\sigma$) of the stars near an SMBH is known, the size of the SOI can be determined by comparing $\sigma$ to the velocity of a circular orbit around the SMBH, giving the following formula for the influence radius \citep{MerrittBook}:
 \begin{equation}
@@ -283,13 +283,17 @@ Once the three-body interactions with field-stars have shrunk the orbit of the b
 \begin{equation}
 a = \left\lbrace \frac{64}{5} \frac{G^3M_1M_2(M_1+M_2)F(e)}{c^5} \right\rbrace^{1/4},
 \end{equation}
-where $G$ is the gravitational constant, $M_1$ and $M_2$ are the masses of the black holes, $c$ is the speed of light, and $F(e)$ is an eccentricity-dependence factor; gravitational radiation in the form of gravitational waves becomes a significant factor in the evolution of the binary. This marks the start of the gravitational wave radiation phase of the SMBH merger evolution. The orbital energy of the binary is radiated away in the form gravitational waves, causing the semi-major axis of the binary orbit to become smaller. Furthermore, as the angular momentum of the binary system is also decreased through gravitational radiation, the eccentricity of the orbit decreases as well and starts to converge at $0$. In the case of post-Newtonian dynamics (post-Newtonian dynamics is discussed in greater detail in section \ref{section:PN}) taking into account PN-terms with degrees up to 2.5, these changes in the semi-major axis and the eccentricity of the binary orbit, occur at the rates of \citep{Peters1964}:
+where $G$ is the gravitational constant, $M_1$ and $M_2$ are the masses of the black holes, $c$ is the speed of light, and $F(e)$ is an eccentricity-dependent factor; gravitational radiation in the form of gravitational waves becomes a significant factor in the evolution of the binary. This marks the start of the gravitational wave radiation phase of the SMBH merger evolution. 
+
+The orbital energy of the binary is radiated away in the form of gravitational waves, causing the semi-major axis of the binary orbit to become smaller. Since the strength of the gravitational radiation is largest when the separation between the SMBHs is at its smallest, the most significant reduction to the kinetic energies of the black holes occurs near the pericentre of the binary orbit. The asymmetry in the decrease of the kinetic energy between the pericentre and the apocentre of the orbit, causes its eccentricity to decrease and start to converge at $0$. This effect is analogous to the procedure used to circularise the orbits of satellites, where their orbital motion is decelerated near the pericentre. Due to the decrease in its velocity, the satellite is unable to climb as far out in the gravitational well of the central body as it used to, which causes the distance between the pericentre and apocentre of its orbit to be reduced, resulting in a smaller eccentricity.
+
+In the case of post-Newtonian dynamics (post-Newtonian dynamics is discussed in greater detail in section \ref{section:PN}) taking into account PN-terms valid at 2.5PN, these changes in the semi-major axis and the eccentricity of the binary orbit, occur at the rates of \citep{Peters1964}:
 \begin{equation}
-\left\langle \frac{da}{dt} \right\rangle = -\frac{64}{5}\frac{G^3M_1M_2(M_1+M_2)}{c^5a^3(1-e^2)^{7/2}} \left( 1+\frac{73}{24}e^2+\frac{37}{96}e^4 \right),
+\left\langle \frac{da}{dt} \right\rangle = -\frac{64}{5}\frac{G^3M_1M_2(M_1+M_2)}{c^5a^3(1-e^2)^{7/2}} \left( 1+\frac{73}{24}e^2+\frac{37}{96}e^4 \right), \label{eq:pn_dadt}
 \end{equation}
 and:
 \begin{equation}
-\left\langle \frac{de}{dt} \right\rangle = -\frac{304}{15}e\frac{G^3M_1M_2(M_1+M_2)}{c^5a^4(1-e^2)^{5/2}} \left( 1+\frac{121}{304}e^2 \right),
+\left\langle \frac{de}{dt} \right\rangle = -\frac{304}{15}e\frac{G^3M_1M_2(M_1+M_2)}{c^5a^4(1-e^2)^{5/2}} \left( 1+\frac{121}{304}e^2 \right), \label{eq:pn_dedt}
 \end{equation}
 respectively, when averaged over the orbital period,. 
 
@@ -301,17 +305,17 @@ where $q \equiv M_2/M_1 \leq 1$. This shows that the efficiency of the final SMB
 
 \subsection{The Final-Parsec Problem}
 
-The fact that the gravitational radiation driven coalescence is effective only at very small binary SMBH separations, could provide a problem for the existence of actual SMBH mergers. When the SMBH binaries form at the centres of the galaxies their separation is usually $\sim 1 \; \mathrm{pc}$. As equation \ref{eq:t_gr} shows, assuming that the SMBH masses are $\sim 10^8 M_\odot$, and that the binary orbit is circular ($e = 0$), the black holes would coalesce in a time-scale far longer than the age of the Universe (the age of the Universe is $\sim 13.4 \; \mathrm{Gyr}$). Whether three-body interactions can sufficiently decrease the initial binary separation in order for the gravitational radiation driven coalescence to become efficient, is not certain. As seen in equation \ref{eq:loss-cone}, the size of the loss-cone shrinks as the orbit of the binary becomes smaller. This leads to the problem where, both due to its shrinking size and the ejection of mass from the loss-cone, the number of stars that can interact strongly with the binary becomes so small, that the three-body interaction driven coalescence of the SMBHs effectively ceases. This is called "the final parsec problem" \citep{Milosavljevic2003}.
+The fact that the gravitational radiation driven coalescence is effective only at very small binary SMBH separations, could provide a problem for the existence of actual SMBH mergers. When the SMBH binaries form at the centres of the galaxies their separation is usually $\sim 1 \; \mathrm{pc}$. As equation \ref{eq:t_gr} shows, assuming that the SMBH masses are $\sim 10^8 M_\odot$, and that the binary orbit is circular ($e = 0$, which is admittedly unrealistic, as the SMBH merger orbits are highly elliptical during most of the merger), the black holes would coalesce in a time-scale far longer than the age of the Universe (the age of the Universe is $\sim 13.4 \; \mathrm{Gyr}$). Whether three-body interactions can sufficiently decrease the initial binary separation in order for the gravitational radiation driven coalescence to become efficient, is not certain. As seen in equation \ref{eq:loss-cone}, the size of the loss-cone shrinks as the orbit of the binary becomes smaller. This leads to the problem where, both due to its shrinking size and the ejection of mass from the loss-cone, the number of stars that can interact strongly with the binary becomes so small, that the three-body interaction driven coalescence of the SMBHs effectively ceases. This is called "the final parsec problem" \citep{Milosavljevic2003}.
 
 Several mechanisms, which attempt to reconcile the "final parsec problem" by "repopulating" the loss-cone, have been proposed. These work by supplying the loss-cone with additional stars that can be ejected, further shrinking the orbit of the binary. One such mechanism is the repopulation of the loss-cone due to two-body relaxation. However, this has been found to be too inefficient, as the relaxation time scales inside the SOI of the central SMBHs seem to be $\sim 10^{11} \; \mathrm{yr}$ in almost all galaxies, which is larger than the Hubble time ($\sim 14 \; \mathrm{Gyr}$; \citealt{Faber1997, Milosavljevic2001}). Another proposed repopulation mechanism is the secondary slingshot; where the initial interaction between the binary and an orbiting star only moves the star into another bound orbit, from which it may interact with the binary once more \citep{MerrittBook}. It is also possible that the triaxial geometry of massive elliptical galaxies could account for the repopulation of the loss-cone. Torques resulting from the non-spherical gravitational potential in triaxial galaxies can change the angular momentum of stars, potentially causing some stars outside of the loss-cone to be included in the loss-cone regime \citep{MerrittBook, Gualandris2017}. Through simulations, \cite{Gualandris2017} have shown that this "collisionless orbit diffusion" can account for the repopulation of the loss-cone, and they even conclude that: "there is no 'final parsec problem'".
 
 \subsection{Observational Evidence for Core Formation Through SMBH Mergers}
 
-Whether the cores of the galaxies actually form through black hole mergers, depends on how probable the occurrence of these kind of events is. The observed empirical relation between the mass of a central SMBH and the velocity dispersion of its host galaxy (see equation \ref{eq:m-sigma}), has shown that all massive galaxies have supermassive black holes in their centre. Thus, a merger of two massive galaxies would undoubtedly contain two SMBHs. 
+Whether the cores of the galaxies actually form through black hole mergers, depends on how probable the occurrence of these kind of events is. The observed empirical relation between the mass of a central SMBH and the velocity dispersion of its host galaxy (see equation \ref{eq:m-sigma}), has shown that all massive galaxies have supermassive black holes in their centres. Thus, a merger of two massive galaxies would undoubtedly contain two SMBHs. 
 
-There have also been some direct observational evidence for SMBH binaries occurring in the centre of galaxies. For example, \cite{Rodriguez2006} observed two active galactic nuclei (AGN) with a projected separation of $\sim 7.3 \; \mathrm{pc}$ in the galaxy NGC 6240. Since AGN are powered by accretion of material onto supermassive black holes, and since the total mass of these supposed BHs in NGC 6240 is $\sim 1.5 \times 10^8 M_\odot$, both of the AGN are inside their gravitational influence radius, and the SMBHs would thus be considered to be a binary. The presence of an SMBH binary has also been observed in the active galaxy OJ 287, where the periodical optical variety of the AGN has been attributed to a smaller SMBH passing through the accretion disk of the larger active black hole \citep{MerrittBook}.
+There have also been some direct observational evidence for SMBH binaries occurring in the centres of galaxies. For example, \cite{Rodriguez2006} observed two active galactic nuclei (AGN) with a projected separation of $\sim 7.3 \; \mathrm{pc}$ in the galaxy NGC 6240. Since AGN are powered by accretion of material onto supermassive black holes, and since the total mass of these supposed BHs in NGC 6240 is $\sim 1.5 \times 10^8 M_\odot$, both of the AGN are inside their gravitational influence radius, and the SMBHs would thus be considered to be a binary. The presence of an SMBH binary has also been observed in the active galaxy OJ 287, where the periodical optical variety of the AGN has been attributed to a smaller SMBH passing through the accretion disk of the larger active black hole \citep{MerrittBook}.
 
-As for the existence of black hole mergers, recent gravitational wave observations performed using the \textit{Laser Interferometer Gravitational-Wave Observatory} (LIGO, \citealt{Abbott2016, Abbott2019}), provide unequivocal evidence that at least stellar-mass black hole mergers can occur. Though SMBH mergers have yet to be observed, the fact that black hole mergers have been shown to exist, alongside the aforementioned binary SMBH observations, greatly supports the idea that merging supermassive black holes could play a part in the evolution of some galaxies. Furthermore, taking account the fact that our current cosmological paradigm expects galaxies to have been formed through hierarchical mergers of galaxies, and that all merger progenitor galaxies most likely already contain a central SMBH, it stands to reason that binary SMBHs should exist at some point in most galaxies. Thus, the rarity of binary SMBH observations implies that SMBH mergers are required to occur.
+As for the existence of black hole mergers, recent gravitational wave observations performed using the \textit{Laser Interferometer Gravitational-Wave Observatory} (LIGO, \citealt{Abbott2016, Abbott2019}), provide unequivocal evidence that at least stellar-mass black hole mergers can occur. Though SMBH mergers have yet to be observed, the fact that black hole mergers have been shown to exist, alongside the aforementioned binary SMBH observations, greatly supports the idea that merging supermassive black holes could play a part in the evolution of some galaxies. Furthermore, taking account the fact that our current cosmological paradigm expects galaxies to have been formed through hierarchical mergers of galaxies, and that all merger progenitor galaxies most likely already contain a central SMBH, it stands to reason that binary SMBHs should exist at some point in most galaxies. Thus, the rarity of binary SMBH observations implies that SMBH mergers are taking place.
 
 \subsection{Black Hole Scaling Relations}
 
@@ -349,16 +353,21 @@ where $L_\mathrm{K,bulge}$ is the luminosity of the galactic bulge in $K$-band m
 \end{equation}
 where $M_\mathrm{bulge}$ is the mass of the central bulge. Plots for these three relations can be seen in figures \ref{figure:m-sigma} and \ref{figure:m-bulge}. 
 
-The above relations have often been used as evidence for the coevolution of the central black holes and their host galaxies. SMBHs are expected to gather most of their mass through the accretion of gas \citep{Soltan1982}. However, this gas accretion causes radiative and kinetic feedback-effects in the form of radiation from the accretion disk and outflows formed from the accreted material, respectively. The strength of the feedback is dependent on the gas accretion rate, and as a consequence, the mass of the accreting black hole. If the SMBH is massive enough, the energy released through the feedback-effects can overcome the binding energy ($E_\mathrm{bulge} \approx M_\mathrm{bulge} \; \sigma$; e.g. \citealt{Fabian2012}) of the galactic bulge, sweeping away the interstellar gas from the bulge, thus effectively stopping star formation, and further mass accretion by the black hole. Since the binding energy of the bulge is dependent on the mass and the velocity dispersion of the bulge, it is straightforward to see how this kind of a self-regulating process could result in the $M_\bullet$ – $\sigma$ and $M_\bullet$ – $M_\mathrm{bulge}$ relations. The $M_\bullet$ – $L_\mathrm{bulge}$ relation would then naturally arise as a consequence of the bulge-mass relation.
+The above relations have often been used as evidence for the coevolution of the central black holes and their host galaxies. SMBHs are expected to gather most of their mass through the accretion of gas \citep{Soltan1982}. However, this gas accretion causes radiative and kinetic feedback-effects in the form of radiation from the accretion disk and outflows formed from the accreted material, respectively. The strength of the feedback is dependent on the gas accretion rate, and as a consequence, the mass of the accreting black hole. If the SMBH is massive enough, the energy released through the feedback-effects can overcome the binding energy ($E_\mathrm{bulge} \approx M_\mathrm{bulge} \; \sigma^2$; e.g. \citealt{Fabian2012}) of the galactic bulge, sweeping away the interstellar gas from the bulge, thus effectively stopping star formation, and further mass accretion by the black hole. Since the binding energy of the bulge is dependent on the mass and the velocity dispersion of the bulge, it is implied that this kind of a self-regulating process could result in the $M_\bullet$ – $\sigma$ and $M_\bullet$ – $M_\mathrm{bulge}$ relations. The $M_\bullet$ – $L_\mathrm{bulge}$ relation would then naturally arise as a consequence of the bulge-mass relation.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{marconi_m-bul.png}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{marconi_l-bul.png}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{marconi_m-bul_2.png}
+	\end{subfigure}
 	\caption{Plots of both the $M_\bullet$ – $L_\mathrm{K,bulge}$ (left) and $M_\bullet$ – $M_\mathrm{bulge}$ (right) relations, with the observed data. The solid lines describe the relations given by equations \ref{eq:m-l_bulge} and \ref{eq:m-m_bulge}. The dashed lines are simple "least-squares" fits. The figures are adapted from \cite{Marconi2003}.}
 	\label{figure:m-bulge}
 \end{figure}
 
-\section{Integral-Field Spectroscopy}
+\section{Integral-Field Spectroscopy} \label{section:IFU}
 
 Integral-field spectroscopy (IFS) has become an essential part of studying the kinematic properties of ETGs, as it allows for the spatial analysis of galactic spectra. IFS is done using instruments called "integral-field units", which, in principle, calculate the spectrum of the observed light for each pixel. However, often the signal-to-noise ratio ($S/N$) of singular pixels is quite poor. To improve the $S/N$, the pixel measurements are usually combined into so-called "spaxels" (i.e. spatial pixels) using an algorithm, such as the Voronoi-tessellation algorithm \citep{Cappellari2003}. This results in IFU-maps similar to figure \ref{figure:krajnovic_ifus}.
 
@@ -382,7 +391,7 @@ The four remaining parameters: the average LOS velocity $V_\mathrm{avg}$, the LO
 
 By using IFS, a number of different kinematic features have been observed in ETGs. These features include: areas with low-level velocities or disk-like rotation, as well as regions where the kinematic axis of the galaxy is misaligned with its photometric axis \citep{Emsellem2007}. IFS has also helped identify so-called \textit{Kinematically Distinct Cores} (KDCs), which are central regions of galaxies with an angular momentum that has a different direction compared to the rest of its host. There has also been evidence of \textit{Counter Rotating Cores} (CRCs), which are galactic cores that have a difference of around $180^\circ$ in the position angle of their angular momentum vector, when compared to their immediate surroundings \citep{Krajnovic2011}.
 
-\subsubsection{Slow and Fast Rotators}
+\subsection{Slow and Fast Rotators} \label{section:slow_fast_rotators}
 
 Using LOSVD measurements done with IFS, \cite{Emsellem2007} have defined an explicit way to classify galaxies as either slow or fast rotators. The basis for this classification is the $\lambda_R$ parameter, which describes the angular momentum of a galaxy, and is defined as:  
 \begin{equation}
@@ -402,15 +411,15 @@ As expected, the dichotomy between slow and fast rotators clearly mirrors the ki
 
 \section{Galactic Dynamics}
 
-\subsection{Collisional And Collisionless Systems}
+\subsection{Collisional And Collisionless Systems} \label{section:collisionless}
 
-The motion of stars in stellar systems is caused by gravitational forces. However, due to the long-range nature of gravity, in systems with a very large number of stars, the stellar motion is dominated by the gravitational influence of the large number of far-away stars instead of a few strong close encounters. For this reason, when modelling such a system, it is often appropriate to ignore the changes to their orbits caused by specific stellar encounters, and simply approximate their motion as being caused by a smooth continuous gravitational potential. Systems where this approximation is applicable are called "collisionless systems", whereas systems where the modelling of the stellar motion requires knowledge about the gravitational effects caused by distinct massive particles, are called "collisional systems".
+The motion of stars in stellar systems is caused by gravitational forces. However, due to the long-range nature of gravity, in large systems with a very large number of stars, the stellar motion is dominated by the gravitational influence of the large number of far-away stars instead of a few strong close encounters. For this reason, when modelling such a system, it is often appropriate to ignore the changes to their orbits caused by specific stellar encounters, and simply approximate their motion as being caused by a smooth continuous gravitational potential. Systems where this approximation is applicable are called "collisionless systems", whereas systems where the modelling of the stellar motion requires knowledge about the gravitational effects caused by distinct massive particles, are called "collisional systems".
 
-A stellar system can be approximated as collisionless if its "relaxation time" is longer than its age. Relaxation time is defined as the time it takes, for the cumulative effect of encounters between a subject star and multiple field stars, to change the orbit of the subject star in such a significant way, that its initial conditions can not be inferred from its current motion. This process is often called "two-body relaxation". The relaxation time of a system can be calculated using the following formula \citep{BinneyTremaine}:
+A stellar system can be approximated as collisionless if its "relaxation time" is significantly longer than its age. The relaxation time is defined as the time it takes, for the cumulative effect of encounters between a subject star and multiple field stars, to change the orbit of the subject star in such a significant way, that its initial conditions can not be inferred from its current motion. This process is often called "two-body relaxation". The relaxation time of a system can be calculated using the following formula \citep{BinneyTremaine}:
 \begin{equation}
 t_\mathrm{relax} \simeq \frac{0.1N}{\ln N} t_\mathrm{cross},
 \end{equation}
-where $N$ is the number of particles in the system, and $t_\mathrm{cross}$ is the crossing time, which is defined as the time it takes for a typical field-star to cross the system once, and the value of which can be estimated using the radius of the system $R$ and the typical field-star velocity $v$ as $t_\mathrm{cross} = R/v$. The relaxation times of galaxies are generally much longer than the age of the Universe ($\sim 13.8 \; \mathrm{Gyr}$). For example, the relaxation time of the solar neighbourhood is $t_\mathrm{relax} \simeq 6 \times 10^{14} \; \mathrm{yr}$. Thus, approximating galaxies as collisionless systems is appropriate more often than not.
+where $N$ is the number of particles in the system, and $t_\mathrm{cross}$ is the crossing time, which is defined as the time it takes for a typical field-star to cross the system once, and the value of which can be estimated using the radius of the system $R$ and the typical field-star velocity $v$ as $t_\mathrm{cross} = R/v$. The relaxation times of galaxies are generally much longer than the age of the Universe ($\sim 13.8 \; \mathrm{Gyr}$). For example, the relaxation time of the solar neighbourhood is $t_\mathrm{relax} \simeq 6 \times 10^{14} \; \mathrm{yr}$. Thus, approximating galaxies as collisionless systems is a valid assumption.
 
 Of specific interest to collisionless systems is the concept of "phase space", as it allows one to model the general motion in stellar systems while neglecting the calculation of the motion of distinct stars. Phase space itself is a six-dimensional space, where, in addition to the three basic Cartesian position coordinates ($x, y, z$), the possible states of a system are described by three velocity coordinates ($v_x, v_y, v_z$). If all stars in a system have identical masses, these six dimensions can describe every dynamical state that a star can have, and thus the state of the whole stellar system at a certain time $t$ can be described using the stellar distribution function $f(\mathbf{x}, \mathbf{v}, t)$, which is also known as the phase space density. 
 
@@ -420,7 +429,7 @@ In collisionless systems, stellar trajectories are smooth and continuous, making
 \end{equation}
 where $\phi$ is the gravitational potential of the system. By integrating this equation over velocity, it is possible to derive equations which relate the gravitational potential of the stellar system to its moments of velocity distribution. These moments are statistical properties that can often be measured from observations. Thus, by using equation \ref{eq:CBE}, one can model the gravitational potential of a galaxy, without the knowledge of specific stellar orbits, from observations of the general stellar dynamics of a galaxy.
   
-\subsection{Potential-Density Models}
+\subsection{Potential-Density Models} \label{section:potential_density}
 
 When using the "collisionless system"-approximation to model a stellar system, knowledge about its gravitational potential is fundamental. If the mass-density distribution of the galaxy is known, the corresponding potential can be calculated from the Poisson's equation \citep{BinneyTremaine}:
 \begin{equation}
@@ -443,17 +452,17 @@ One of the most popular potential-density models used when approximating ellipti
 \end{equation}
 where $M$ is the total mass, $a$ is the scaling radius, and $\gamma$ is the central slope of the profile. There are a few reasons why this model in particular is used often. Firstly, the density profile is a combination of two power-laws. This is similar to many observed luminosity and surface brightness profiles in Es (see section \ref{section:ellip_photo}), and also many simulated dark-matter profiles \citep{BinneyTremaine}. Furthermore, when projected, the outer parts of the density profile resembles the empirical "de Vaucouleurs" surface brightness profile. The model is also a generalization of two other commonly used potential-density models, namely the Jaffe-model and the Hernquist-model \citep[for these models $\gamma = 2$ and $\gamma = 1$ respectively][]{Jaffe1983, Hernquist1990}. 
 
-\section{Regularization}
+\section{Regularisation} \label{section:regularisation}
 
 The nature of elliptical galaxy mergers and the formation of merger remnants with cores deficient in light, is such, that simulations of the process must take into account strong interactions between stars and black holes. This leads to a common issue encountered in simulations of collisional systems, namely the singularity at $r=0$ in the equation of motion \citep{BinneyTremaine}:
 \begin{equation}
 \ddot{r} = -GM/r^2, \label{eq:equation_of_motion}
 \end{equation}
-where $G$ is the gravitational constant, $M$ is the total mass of the two interacting particles, and $r$ is the distance between the particles. Often, when calculating the orbits of stars, these simulations maintain accuracy by reducing the integration time-step when the accelerations of the objects become large. On extremely close encounters, the singularity in equation \ref{eq:equation_of_motion} causes the accelerations of the objects to rise sharply, resulting in smaller and smaller time steps, effectively stopping the simulation time from progressing. 
+where $G$ is the gravitational constant, $M$ is the total mass of the two interacting particles, and $r$ is the distance between the particles. Often, when calculating the orbits of stars, these simulations maintain accuracy by reducing the integration time-step when the accelerations of the objects become large. On extremely close encounters, the singularity in equation \ref{eq:equation_of_motion} causes the accelerations of the objects to rise sharply, resulting in smaller and smaller time steps, effectively stopping the simulation from progressing. 
 
-The solution to the above issue is so-called regularization, where the singularity in the equation of motion (equation \ref{eq:equation_of_motion}) is removed through a coordinate transformation. Two examples of such transformations are given by \cite{BinneyTremaine}. 
+The solution to the above issue is so-called regularisation, where the singularity in the equation of motion (equation \ref{eq:equation_of_motion}) is removed through a coordinate transformation. Two examples of such transformations are given by \cite{BinneyTremaine}. 
 
-The first example is the "Burdet-Heggie regularization", which changes the simulation time to the fictitious time: $\mathrm{d}t = r \; \mathrm{d}\tau$, and adds the external gravitational field $g$ to the equation of motion. By applying these changes, it is possible to write the two-body equation of motion as:
+The first example is the "Burdet-Heggie regularisation", which changes the simulation time to the fictitious time: $\mathrm{d}t = r \; \mathrm{d}\tau$, and adds the external gravitational field $g$ to the equation of motion. By applying these changes, it is possible to write the two-body equation of motion as:
 \begin{equation}
 \mathbf{r}'' - 2E_2\mathbf{r} = - \mathbf{e}+r^2\mathbf{g}, \label{eq:bh_eom}
 \end{equation}
@@ -462,11 +471,11 @@ where $\mathbf{r}''$ is the second derivative of the position $\mathbf{r}$ with 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{binneytremaine_pic.png}
-	\caption{Fractional error of the energy of an orbit with an eccentricity of $e=0.99$, as a function of the number of force calculations per orbit. The errors were calculated after a single pericentre passage of the orbiting object. The multiple graphs denote errors produced by different integrators and regularization procedures. \textit{U}, \textit{BH} and \textit{KS} denote unregularized, "Burdet-Heggie" and "Kustaaheimo-Stiefel" regularizations, respectively. \textit{RK} and \textit{LF} denote "Runge-Kutta" and "Leapfrog" integrators (both defined in chapter 3), respectively. The figure is originally from \cite{BinneyTremaine}.}
+	\caption{Fractional error of the energy of an orbit with an eccentricity of $e=0.99$, as a function of the number of force calculations per orbit. The errors were calculated after a single pericentre passage of the orbiting object. The multiple graphs denote errors produced by different integrators and regularisation procedures. \textit{U}, \textit{BH} and \textit{KS} denote unregularised, "Burdet-Heggie" and "Kustaaheimo-Stiefel" regularisations, respectively. \textit{RK} and \textit{LF} denote "Runge-Kutta" and "Leapfrog" integrators (both defined in chapter 3), respectively. The figure is originally from \cite{BinneyTremaine}.}
 	\label{figure:regularized}
 \end{figure}
 
-The second example is the "Kustaaheimo-Stiefel" (KS) regularization, which converts the equation of motion of the two-body problem, into an equation of motion similar to that of a harmonic oscillator, by transforming the three-dimensional spatial coordinates into four-dimensional coordinates. Like the Burdet-Heggie regularization, KS-regularization defines a new fictitious time $\mathrm{d}t = r \; \mathrm{d}\tau$ and adds the gravitational field of the other particles to the equation of motion. The spatial coordinate transformation is done by changing the position vector $\mathbf{r} = (x, y, z)$ into a corresponding four-vector $\mathbf{u} = (u_1, u_2, u_3, u_4)$, where:
+The second example is the "Kustaaheimo-Stiefel" (KS) regularisation, which converts the equation of motion of the two-body problem, into an equation of motion similar to that of a harmonic oscillator, by transforming the three-dimensional spatial coordinates into four-dimensional coordinates. Like the Burdet-Heggie regularisation, KS-regularisation defines a new fictitious time $\mathrm{d}t = r \; \mathrm{d}\tau$ and adds the gravitational field of the other particles to the equation of motion. The spatial coordinate transformation is done by changing the position vector $\mathbf{r} = (x, y, z)$ into a corresponding four-vector $\mathbf{u} = (u_1, u_2, u_3, u_4)$, where:
 \begin{align}
 \begin{split}
 u_1^2& = \frac{1}{2}(x+r)\cos^2\psi \\
@@ -483,7 +492,7 @@ where $\mathbf{u}''$ denotes the second fictional time derivative of the four-ve
 \begin{equation}
 E = \frac{1}{2}v^2 - \frac{GM}{r} + \phi_e = 2 \frac{|\mathbf{u'}|^2}{|\mathbf{u}|} - \frac{GM}{|\mathbf{u}|^2} + \phi_e.
 \end{equation}
-Equation \ref{eq:ks_motion} is now the equation of motion of a four-dimensional harmonic oscillator with an added external force \citep{BinneyTremaine}. Furthermore, as the equation in question clearly shows, the regularized form of the equation of motion is well defined even when the new position vector gets the value $\mathbf{u} = 0$, and thus does not contain the same singularity as the basic Cartesian version in equation \ref{eq:equation_of_motion}. Once this regularized version of the equation of motion has been used to calculate the motion of a particle, its new position in the four-dimensional space can be transferred back to three dimensions using the following relations:
+Equation \ref{eq:ks_motion} is now the equation of motion of a four-dimensional harmonic oscillator with an added external force \citep{BinneyTremaine}. Furthermore, as the equation in question clearly shows, the regularised form of the equation of motion is well defined even when the new position vector gets the value $\mathbf{u} = 0$, and thus does not contain the same singularity as the basic Cartesian version in equation \ref{eq:equation_of_motion}. Once this regularised version of the equation of motion has been used to calculate the motion of a particle, its new position in the four-dimensional space can be transferred back to three dimensions using the following relations:
 \begin{align}
 \begin{split}
 x &= u_1^2 - u_2^2 - u_3^2 + u_4^2 \\
@@ -492,13 +501,13 @@ z &= 2 \left( u_1 u_3 + u_2 u_4 \right).
 \end{split}
 \end{align}
 
-Figure \ref{figure:regularized} by \cite{BinneyTremaine} compares the fractional errors in the energies of highly eccentric simulated orbits ($e = 0.99$), integrated in differently regularized (or non-regularized) coordinates, after one pericenter passage. The figure clearly shows how important the removal of the singularity is for the accuracy of the integration of the orbit. In regularized coordinates, the integrators require around an order of magnitude less force evaluations to achieve the same accuracy than in unregularized coordinates. Furthermore, the efficiency of the integration seems to also be affected by the type of regularization, as the more robust KS-regularization results in a smaller fractional energy error than the Burdet-Heggie regularization.
+Figure \ref{figure:regularized} by \cite{BinneyTremaine} compares the fractional errors in the energies of highly eccentric simulated orbits ($e = 0.99$), integrated in differently regularised (or non-regularised) coordinates, after one pericenter passage. The figure clearly shows how important the removal of the singularity is for the accuracy of the integration of the orbit. In regularized coordinates, the integrators require around an order of magnitude less force evaluations to achieve the same accuracy than in unregularised coordinates. Furthermore, the efficiency of the integration seems to also be affected by the type of regularisation, as the more robust KS-regularisation results in a smaller fractional energy error than the Burdet-Heggie regularisation technique.
 
 \section{Post-Newtonian Dynamics} \label{section:PN}
 
 When simulating mergers of galaxies that contain central SMBHs, general relativity has to be taken into account, as relativistic effects not only affect the orbits of stars that pass close to the black holes significantly, but are also required for the emission of the gravitational waves that drive the coalescence of the SMBH binary during the final stage of its merger. However, the equations that describe these effects are difficult to solve, and thus inefficient to use in simulations. For example, effects on the motion of particles caused by the distortion of space-time near extremely massive objects, can not be modelled using a fixed linear background or common time-steps between all particles. Due to such complications, the effects caused by general relativity are often approximated using so-called "Post-Newtonian" (PN) dynamics.
 
-PN dynamics are an extension of the basic Newtonian dynamics that approximates the effects that Einstein's general theory of relativity has in the two-body problem, by adding so-called PN-terms to the Newtonian equation of motion. Each term has its own degree, describing increasingly precise relativistic effects. The magnitude of these effects are proportional to the order of $\mathbf{a}_\mathrm{xPN} \propto \left( v^2 / c^2 \right)^x$, where $x$ is the degree of the term in question. The resulting equation of motion is similar to:
+PN dynamics is an extension of the basic Newtonian dynamics that approximates the effects that Einstein's general theory of relativity has in the two-body problem, by adding so-called PN-terms to the Newtonian equation of motion. Each term has its own degree, describing increasingly precise relativistic effects. The magnitude of these effects are proportional to the order of $\mathbf{a}_\mathrm{xPN} \propto \left( v^2 / c^2 \right)^x$, where $x$ is the degree of the term in question. The resulting equation of motion is similar to:
 \begin{equation}
 \mathbf{a} = \mathbf{a}_\mathrm{Newtonian} + \mathbf{a}_\mathrm{1PN} + \mathbf{a}_\mathrm{2PN} + \mathbf{a}_\mathrm{2.5PN} + \ldots, \label{eq:PN_eom}
 \end{equation}
@@ -512,11 +521,11 @@ The actual formulae for the PN-terms are quite long, and are thus not given here
 \end{equation}
 where $G$ is the gravitational constant, $c$ is the speed of light, $m$ is the total mass of the two interacting particles, and $v$ and $r$ are the relative velocity and distance between the particles respectively, holds true. In words, the above equation means that the velocities of the moving objects are assumed to be of the order that is expected for gravitaionally bound systems, and thus significantly slower than the speed of light, and that the objects are never brought near the gravitational radius of one another \citep{MerrittBook}. 
 
-An important caveat to note is that, the point mass assumption of the PN approximation ignores the relativistic effects that the spin of the black hole, alongside its non-spherical shape, has on closely orbiting objects. Thus, in order to take them into account, one needs to add an additional spin PN-term to equation \ref{eq:PN_eom}. The effects caused by the spin of the black hole include orbital precession (i.e. changes in the rotational axis of the orbit), as well as precession of the spin itself \citep{Kidder1995}. The lack of spherical symmetry in the shape of the BH, on the other hand, results in additional non-radial acceleration for the orbiting object \citep{MerrittBook}. 
+An important caveat to note is that, the point mass assumption of the PN approximation ignores the relativistic effects that the spin of the black hole, alongside its non-spherical shape, has on closely orbiting objects. Thus, in order to take them into account, one needs to add an additional spin PN-term to equation \ref{eq:PN_eom}. The effects caused by the spin of the black hole include orbital precession (i.e. changes in the rotational axis of the orbit), as well as precession of the spin itself \citep{Kidder1995}. Although a small effect in magnitude, the lack of spherical symmetry in the shape of the spinning BH, on the other hand, results in additional non-radial acceleration for the orbiting object \citep{MerrittBook}. 
 
 \chapter{KETJU}
 
-KETJU \citep{Rantala2017KETJU} is a simulation code, designed for efficient and simultaneous modelling of both galactic-scale dynamics and the precise motion of particles near SMBHs. This is achieved through the combined functionality of two integrators with different degrees of efficiency and precision. Global galactic dynamics are calculated using the tree-code (section \ref{section:tree}) included in GADGET-3 \citep{Springel2005}, which uses softened dynamics (section \ref{section:softened_dynamics}) to calculate the general motion of particles in a collisionless system. The motion of bodies close to the SMBHs is, on the other hand, calculated using an algorithmically regularized chain method (AR-CHAIN, section \ref{section:ar-chain}; \citep{Mikkola2008ARCHAIN}).
+KETJU \citep{Rantala2017KETJU} is a simulation code, designed for efficient and simultaneous modelling of both galactic-scale dynamics and the precise motion of particles near SMBHs. This is achieved through the combined functionality of two integrators with different degrees of efficiency and precision. The global galactic dynamics is calculated using the tree-code (section \ref{section:tree}) included in GADGET-3 \citep{Springel2005}, which uses softened dynamics (section \ref{section:softened_dynamics}) to calculate the general motion of particles in a collisionless system. The motion of bodies close to the SMBHs is, on the other hand, calculated using an algorithmically regularised chain method (AR-CHAIN, section \ref{section:ar-chain}; \citep{Mikkola2008ARCHAIN}).
 
 \section{Tree Codes} \label{section:tree}
 
@@ -533,9 +542,9 @@ where $m_\beta$ is the mass of the particle $\beta$, and $\mathbf{r}_\alpha$ and
 	\label{figure:oct_tree}
 \end{figure}
 
-In tree codes, the gravitational forces experienced by particles are not generated by the other particles themselves, but by so-called "nodes". These nodes are part of a structure called an "oct-tree", which is constructed as follows. First, the whole simulated system is enclosed in a single cubic volume called the "root" node. This cube is then divided into eight smaller cubic volumes called "child" nodes, and it becomes their "parent" node. Next begins a recursive process, where child nodes that contain more than one particle, are divided into their own respective child nodes. Nodes that contain a single particle are thus not divided into child nodes. These nodes are called "leaf" nodes. The above process continues, until every single particle is located inside its own leaf node. Figure \ref{figure:oct_tree} shows a two-dimensional representation of what the structure of an oct-tree might look like.
+In tree codes, the gravitational forces experienced by particles are not generated by the other particles themselves, but by so-called "nodes". These nodes are part of a structure called a "tree". In GADGET-3, this structure can be further specified as an "oct-tree", which is constructed as follows. First, the whole simulated system is enclosed in a single cubic volume called the "root" node. This cube is then divided into eight smaller cubic volumes called "child" nodes, and it becomes their "parent" node. Next begins a recursive process, where child nodes that contain more than one particle, are divided into their own respective child nodes. Nodes that contain a single particle are thus not divided into child nodes. These nodes are called "leaf" nodes. The above process continues, until every single particle is located inside its own leaf node. The construction of any type of tree structure follows the same basic principle outlined above, the differences between these types being in the shape of the node-volumes and the number of volumes into which the nodes are subdivided. Figure \ref{figure:oct_tree} shows a two-dimensional representation of what an oct-tree might look like. 
 
-The effect that a node has on the gravitational acceleration of a particle, is calculated in respect to the centre-of-mass of the node in question. In GADGET-3, the gravitational force of the node is generated by the sum of the masses of the particles inside the node (i.e. the monopole moment of the node \citealt{Springel2005}). However, it is also possible to calculate the force as the sum of the forces generated by the multipole moments of the node \citep{BinneyTremaine}:
+The effect that a node has on the gravitational acceleration of a particle, is calculated with respect to the centre-of-mass of the node in question. In GADGET-3, the gravitational force of the node is generated by the sum of the masses of the particles inside the node (i.e. the monopole moment of the node \citealt{Springel2005}). However, it is also possible to calculate the force as the sum of the forces generated by the multipole moments of the node \citep{BinneyTremaine}:
 \begin{equation}
 M_0 \equiv \displaystyle\sum_\alpha m_\alpha; \quad M_{ij} = \displaystyle\sum_\alpha m_\alpha x^\alpha_i x^\alpha_j; \quad M_{ijk} = \displaystyle\sum_\alpha m_\alpha x^\alpha_i x^\alpha_j x^\alpha_k,
 \end{equation}
@@ -547,7 +556,7 @@ Of course, using the gravitational influence of every node to generate the accel
 \end{equation}
 where $l$ is the length of the node, $D$ is the distance between the particle and the centre-of-mass of the node, and $\theta$ is some predetermined opening angle. Once all of the nodes that contribute to the acceleration of the particle have been determined, the gravitational influence that the system has on the motion of the particle can be calculated as the sum of these force contributions.
 
-It is important to note, that the oct-tree structure has to always be reconstructed after the particles in the simulated system have been propagated over some time step. The labour needed for the construction of the tree scales according to $N \ln N$, as does the number of force calculations \citep{BinneyTremaine}. However, the use of the tree code is still far more efficient, than the direct summation method with an $N^2$ scaling.
+It is important to note, that depending on the desired accuracy of a given simulation, the tree structure might have to always be reconstructed, after the particles in the simulated system have been propagated over some time step. The labour needed for the construction of the tree scales according to $N \ln N$, as does the number of force calculations \citep{BinneyTremaine}. However, when dealing with systems containing a large number of simulated particles, the use of the tree code is still far more efficient than the direct summation method, which has an $N^2$ scaling.
 
 \section{Softened Dynamics} \label{section:softened_dynamics}
 
@@ -557,45 +566,295 @@ As, for example, equation \ref{eq:f_alpha} shows, the gravitational force betwee
 \end{equation}
 and where $\epsilon$ is the "softening length". As one can see, using equation \ref{eq:plummer} to describe gravitational potential causes the potential to converge at a constant value, as the separation $r \rightarrow 0$.
 
-The use of softened dynamics is important when simulating the motion of multiple particles in a collisionless system. Usually, in simulations of galactic dynamics the interacting particles are not representative of singular bodies. Often the particles are used to denote the general flow of mass in the system, and are orders of magnitude more massive than for example a star. Due to this abnormally high mass, strong interactions between two such particles,and resulting changes in their motion, are possible in the simulated system; even though the process that the interaction represents is completely unphysical. Thus, removing the divergence in the strength of the gravitational force makes simulations of collisionless systems more physically accurate.
+The use of softened dynamics is important when simulating the motion of multiple particles in a collisionless system. Usually, in simulations of galactic dynamics the interacting particles are not representative of singular bodies. Often the particles are used to denote the general flow of mass in the system, and are orders of magnitude more massive than for example a star. Due to this abnormally high mass, strong interactions between two such particles, and resulting changes in their motion, are possible in the simulated system; even though the process that the interaction represents is completely unphysical. Thus, removing the divergence in the strength of the gravitational force makes simulations of collisionless systems more physically accurate.
 
-The tree code in GADGET-3 also uses softened dynamics when calculating the gravitational forces between particles. In the code, the softening is done using a "Monaghan-Lattanzio" spline kernel \citep{Monaghan1985}...
+The tree code in GADGET-3 also uses softened dynamics when calculating the gravitational forces between particles. In the code, the softening is done using a "Monaghan-Lattanzio" spline kernel \citep{Monaghan1985}, which gives an exactly Newtonian gravitational potential outside the softening length $h_\mathrm{ML}$. The equation for the softened gravitational potential is \citep{Springel2001}:
+\begin{equation}
+\phi(r) = \frac{GM}{h_\mathrm{ML}} W \left(\frac{r}{h_\mathrm{ML}} \right), \label{eq:splinekernel_softened_potential}
+\end{equation}
+where $W$ is the spline-kernel:
+\begin{equation}
+W(u) = 
+\begin{cases}
+\frac{16}{3}u^2 - \frac{48}{5} u^4 + \frac{35}{2} u^5 - \frac{14}{5} &\quad 0 \leq u < \frac{1}{2} \\
+\frac{1}{15}u^{-1} + \frac{32}{3}u^2 - 16u^3 + \frac{48}{5} u^4 - \frac{32}{15} u^5 - \frac{16}{5} &\quad \frac{1}{2} \leq u < 1 \\
+-\frac{1}{u} &\quad  1 \leq u
+\end{cases}.
+\end{equation} 
+The length of $h_\mathrm{ML}$ is defined as $h_\mathrm{ML} = 2.8\epsilon$, where $\epsilon$ is the Plummer softening length. This is done in order to have the spline-kernel softened potential to be equivalent to the Plummer-potential at $r = 0$.
+
+\begin{figure}
+	\centering	
+	\includegraphics[width=0.9\textwidth]{softened_potentials.png}	
+	\caption{Softened and pure Newtonian gravitational potentials as a function of distance. The potential on the y-axis is normalised so that, at $r=0$ the Plummer softened potential is $\phi_\mathrm{Plummer}(0) = -1$. The distance $r$ is given in units, where $G = M = \epsilon = 1$. The spline-kernel softening length is $h_\mathrm{ML} = 2.8 \epsilon$, and the dashed black line shows the location at which $r = h_\mathrm{ML}$.}
+	\label{figure:softened_potentials}
+\end{figure}
+
+Since the spline-kernel softened potential is equivalent to the purely Newtonian potential at distances beyond the softening length $H_\mathrm{ML}$, it provides a much more accurate estimation of galactic dynamics than the Plummer potential, which is never exactly Newtonian. Furthermore, the fact that the spline-kernel softening, similarly to Plummer softening, causes the potential to converge towards a constant value at $r=0$, it is applicable in simulations of collisionless systems. Figure \ref{figure:softened_potentials} shows both of these properties. From the figure, one can see that the spline-kernel softened potential seems to be all around more Newtonian than the Plummer potential. Thus, when simulating the internal dynamics of galaxies, spline-kernel softening is a very useful tool.
+
 
 \section{AR-CHAIN} \label{section:ar-chain}
 
-As stated above, KETJU uses the algorithmic regularization chain code (AR-CHAIN, \citealt{Mikkola2008ARCHAIN}) to simulate the dynamics near SMBHs with great accuracy. The AR-CHAIN consists of three procedures: regularization of the few-body problem through time-transformed leapfrog integration, reduction of roundoff errors through the use of relative "chain-coordinates", and the increase of the accuracy through "Bulrisch-Stoer" -extrapolation.
+As stated above, KETJU uses the algorithmic regularisation chain code (AR-CHAIN, \citealt{Mikkola2008ARCHAIN}) to simulate the dynamics near SMBHs with great accuracy. AR-CHAIN consists of three procedures: regularisation of the few-body problem through time-transformed leapfrog integration, reduction of roundoff errors through the use of relative "chain-coordinates", and the increase of its accuracy through "Gragg-Bulirsch-Stoer" -extrapolation.
 
-\section{Combined Functionality}
+\subsection{Algorithmic Regularisation}
 
-\textit{How the AR-CHAIN and GADGET-3 integrators work together: time-step problem, tidal-perturbations, particles moving from one region to another, chain macro-particle}
+The algorithmic regularisation procedure employed in AR-CHAIN, is based on the two following time-transformations \citep{Mikkola2008ARCHAIN}:
+\begin{equation}
+ds = [ \alpha ( T+B ) + \beta \omega + \gamma ] dt = [\alpha U + \beta \Omega + \gamma] dt, \label{eq:ds}
+\end{equation}
+where $s$ is the new fictitious time; $T$, $U$ and $B$, are the kinetic, potential and binding energies ($B = U - T$), respectively; $\alpha$, $\beta$ and $\gamma$ are adjustable variables, which determine how much each of the three terms influences the time-transformation; $\Omega$ is an arbitrary function of the particle positions ($\Omega = \Omega(\mathbf{r})$); and the parameter $\omega$ is defined by the initial value $\omega(0) = \Omega(0)$, and the time dependence:
+\begin{equation}
+\dot{\omega} = \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{r}} \cdot \mathbf{v},
+\end{equation}
+where $N$ is the number of particles in the system. Along the exact solution of the $N$-body equation of motion, the $\Omega$ and $\omega$ parameters should behave in the exact same way (i.e. $\Omega(t) = \omega(t)$).
 
-\subsection{Particle Types}
+In KETJU, the function used for $\Omega$ is similar to the potential energy, and is defined as:
+\begin{equation}
+\Omega = \displaystyle\sum^N_i \displaystyle\sum^N_{j > i} \frac{\Omega_{ij}}{|\mathbf{r}_{ij}|}, \label{eq:ketju_omega}
+\end{equation}
+where $\mathbf{r}_{ij}$ is the distance between particles $i$ and $j$, and where the parameter $\Omega_{ij}$ is equivalent to the mass in the formula of the potential energy. Its value can determined using the equation:
+\begin{equation}
+\Omega_{ij} = 
+\begin{cases}
+\tilde{m}^2 &\quad m_i m_j < \epsilon_\Omega \tilde{m}^2 \\
+0 &\quad \mathrm{otherwise}
+\end{cases},
+\end{equation}
+where the quantity $\tilde{m}^2$ is the mean-mass product of the system:
+\begin{equation}
+\tilde{m}^2 = \frac{2}{N(N-1)} \displaystyle\sum^N_i \displaystyle\sum^N_{j > i} m_i m_j,
+\end{equation}
+and $\epsilon_\Omega$ is a user defined parameter. The value of this parameter is set to $\epsilon_\Omega = 10^{-3}$ in KETJU, meaning that only gravitational influences between particles with sufficiently small masses is taken into account when calculating $\Omega$. This is done in order to make sure that the small bodies, which have a negligible impact in the total gravitational potential, could still affect the regularisation. 
 
-\textit{Chain particles, tree particles, perturber particles}
+Using the two equivalent fictitious time definitions in equation \ref{eq:ds}, allows us to form two sets of regularised equations of motion for the $N$-body problem. These equations consist of the coordinate equations:
+\begin{equation}
+\begin{split}
+t' = \frac{dt}{ds} &= 1/(\alpha(T+B) + \beta\Omega + \gamma) \\
+\frac{d\mathbf{r}_i}{ds} &= t' \mathbf{v}_i,
+\end{split}
+\end{equation}
+and the velocity equations:
+\begin{equation}
+\begin{split}
+\tilde{t}' = \frac{dt}{ds} &= 1/(\alpha U + \beta\omega + \gamma) \\
+\frac{d\mathbf{v}_i}{ds} &= \tilde{t}' (\mathbf{a}_i + \mathbf{f}_i) \\
+\frac{d\omega}{ds} &= \tilde{t}' \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{r}_i} \cdot \mathbf{v}_i \\
+\frac{dB}{ds} &= -\tilde{t}' \displaystyle\sum^N_i \frac{\partial T}{\partial \mathbf{v}_i} \cdot \mathbf{f}_i, \\
+\end{split}
+\end{equation}
+where $\mathbf{a}_i$ is the $N$-body acceleration, and $\mathbf{f}_i$ is the acceleration caused by some perturbing forces. 
 
-\section{Merging of Black Hole Particles}
+However, he gravitational force that produces the acceleration of the simulated particles is still Newtonian even in the time-transformed equations, and thus still contains the singularity discussed in section \ref{section:regularisation}. To circumvent the singularity, the algorithmic regularisation procedure uses a leapfrog integrator (explained below) when calculating the trajectories of the particles. 
 
-Since we are trying to determine if merging SMBH binaries form cores in merger remnants, we must make sure that the progenitors' central black holes actually merge in our simulations. This is done by looking at the "Run" simulations, as they contain the locations of the black holes from multiple time steps, and as the "Snapshots" still show both of the SMBHs.
+Numerical orbit integration procedures consist of two types of steps; so-called "kick" and "drift" steps, where the dynamics of a simulated particle is updated according to the current state of the system, and where the particle is propagated according to its current dynamics, respectively. In the simplest possible integrator, when propagating a system over some time-step $\Delta t$, the particles are both kicked and then drifted once (or vice versa) over the whole time-step. In a leapfrog integrator, however, the preceding step is divided into two smaller steps over half of the total time-step, which are then calculated before and after the second step. We can help visualise this difference, by using $\mathbf{X}(\Delta t)$ and $\mathbf{V}(\Delta t)$ to notate the drift and kick steps, respectively. For the simple integrator, a single time-step would be:
+\begin{equation}
+\mathbf{X}(\Delta t)\mathbf{V}(\Delta t),
+\end{equation} 
+while a leapfrog time-step could be written as:
+\begin{equation}
+\mathbf{X}(\Delta t/2)\mathbf{V}(\Delta t)\mathbf{X}(\Delta t/2). \label{eq:DKD}
+\end{equation}
+Depending on which of the steps is divided into two, the integrator can either be a so-called "kick-drift-kick" (KDK) leapfrog, or a "drift-kick-drift" (DKD) leapfrog. The variant described by equation \ref{eq:DKD} is the DKD leapfrog, which is also the version used by KETJU \citep{Rantala2017KETJU}.
 
-Plotting the positions of the black holes from "Run 3" in coordinates centred on the binary's centre-of-mass during the initial time step gives us figure \ref{figure:run3_traj}. Even by eye, one can clearly see that the orbit of the black hole with a smaller mass becomes smaller and smaller as the binary moves further away from its initial position. While this doesn't explicitly tell us that the black holes merge into each other, it does indicate the existence of a hardening process in the binary. Similar figures to figure \ref{figure:run3_traj} from all four "Runs" can be found in the appendix (figure \ref{figure:all_traj}).
+Using the time-transformation detailed above, a leapfrog integrator, and setting $(\alpha, \beta, \gamma)$ to either $(1, 0, 0)$ or $(0, 1, 0)$ ($(1, 0, 0)$ being used in KETJU), AR-CHAIN is able to calculate exact two body orbits, up to numerical accuracy \citep{Mikkola2008ARCHAIN}. The numerical accuracy of the algorithm is then improved through the use of a chained coordinate system, and an extrapolation method.
 
-\begin{figure}[h]
+\subsection{Chained Coordinate System}
+
+Apart from simple arithmetic operations with integers, all calculations done by computers contain roundoff errors, due to the finite accuracy of floating point numbers. The effects caused by these errors can be significant when subtracting numbers that have similar values, and a very high order of magnitude, from each other. To reduce the size of the roundoff error, AR-CHAIN uses a chain coordinate system to calculate gravitational interactions between nearby particles, where instead of using, for example, centre-of-mass coordinates to calculate the gravitational forces, the relative positions between particles and their closest neighbour are used. The relative distance between two particles is likely significantly shorter, than their respective distances from the centre-of-mass of the system.
+
+The chain system is constructed as follows. First, the shortest distance between any of the particles is found, and these particles become the "tail" and the "head" of the chain. Next, the particle that is closest to either the head or the head is added to the chain. This particle then becomes the new head or tail. This step is iterated over and over, until all of the particles in the system are included in the chain. 
+
+After the chain has been formed, and the particles have been renamed from 1 to $N$ according to their position in the chain, $N - 1$ relative position and velocity vectors can be calculated using \citep{Mikkola2008ARCHAIN}:
+\begin{equation}
+\begin{split}
+\mathbf{X}_k &= \mathbf{r}_{k+1} - \mathbf{r}_k \\
+\mathbf{V}_k &= \mathbf{v}_{k+1} - \mathbf{v}_k.
+\end{split}
+\end{equation}
+In the chained coordinate system, the basic equations of motion thus become:
+\begin{equation}
+\begin{split}
+\dot{\mathbf{X}}_k &= \mathbf{V}_k \\
+\dot{\mathbf{V}}_k &= \mathbf{A}_{k+1} - \mathbf{A}_{k} + \mathbf{f}_{k+1} - \mathbf{f}_{k},
+\end{split}
+\end{equation}
+where $\mathbf{f}$ is the acceleration caused by external gravitational perturbations, and $\mathbf{A}$ is the total Newtonian gravitational force, induced by the other particles in the chain system, and defined as:
+\begin{equation}
+\mathbf{A}_k = - \displaystyle\sum_{j \neq k} m_j \frac{\mathbf{r}_{jk}}{|\mathbf{r}_{jk}|^3}.
+\end{equation}
+The parameter $\mathbf{r}_{jk}$ in this equation, is the relative position from the subject particle $k$ to particle $j$. Using the chain coordinate system, this vector is as a sum of chain distances. However, this is only improves when used for particles that are sufficiently close to each other. For faraway particles, the distance is determined using the basic Cartesian positions. Thus, the position vector $\mathbf{r}_{jk}$ is determined as follows:
+\begin{equation}
+\mathbf{r}_{jk} = 
+	\begin{cases}
+		|\mathbf{r}_j - \mathbf{r}_k| &\quad |j-k| > N_d \\
+		\displaystyle\sum^{j-k}_{i=k} \mathrm{sign}(j-k) \mathbf{X}_i &\quad |j-k| < N_d
+	\end{cases}, \label{eq:relative_dist}
+\end{equation}
+where $N_d$ maximum separation between the indices of the particles in the chain, for which the relative distance is calculated using the chain distances. In the KETJU implementation of AR-CHAIN, $N_d$ is set as $N_d = 2$, since \cite{Mikkola2008ARCHAIN} find that this produces the best results.
+
+In the chain coordinates, the time-transformed coordinate equations of motion can be written as:
+\begin{equation}
+\begin{split}
+t'= \frac{dt}{ds} &= 1/(\alpha(T+B) + \beta\Omega + \gamma) \\
+\frac{d\mathbf{X}_i}{ds} &= t' \mathbf{V}_i,
+\end{split}
+\end{equation}
+while the velocity equations are:
+\begin{equation}
+\begin{split}
+\tilde{t}' = \frac{dt}{ds} &= 1/(\alpha U + \beta\omega + \gamma) \\
+\frac{d\mathbf{V}_i}{ds} &= \tilde{t}' (\mathbf{A}_i + \mathbf{f}_i) \\
+\frac{d\omega}{ds} &= \tilde{t}' \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{X}_i} \cdot \mathbf{V}_i \\
+\frac{dB}{ds} &= -\tilde{t}' \displaystyle\sum^N_i \frac{\partial T}{\partial \mathbf{v}_i} \cdot \mathbf{f}_i. \\
+\end{split}
+\end{equation}
+Using the chained variables in the equations of motion is not always convenient \citep{Mikkola2008ARCHAIN}. Thus, for example, the time-derivative of the binding energy is still evaluated using Cartesian velocities.
+
+\subsection{Velocity Dependent PN-Corrections}
+
+Since KETJU can be used to simulate dynamics near supermassive black holes, it takes relativistic effects into account, in the form of post-Newtonian corrections of up to order 3.5PN \citep{Rantala2017KETJU}. Some of these effects are dependent on the velocity of the simulated object, resulting in the following velocity equations of motion:
+\begin{equation}
+\begin{split}
+\tilde{t}' = \frac{dt}{ds} &= 1/(\alpha U + \beta\omega + \gamma) \\
+\frac{d\mathbf{V}_i}{ds} &= \tilde{t}' (\mathbf{A}_i + \mathbf{f}_i + g_i(\mathbf{v}_i)) \\
+\frac{d\omega}{ds} &= \tilde{t}' \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{X}_i} \cdot \mathbf{V}_i \\
+\frac{dB}{ds} &= -\tilde{t}' \displaystyle\sum^N_i \frac{\partial T}{\partial \mathbf{v}_i} \cdot \mathbf{f}_i \\
+\frac{d\mathbf{S}_i}{ds} &= \tilde{t}' \mathbf{S}_{\mathrm{PN},i} \times \mathbf{S}_i,
+\end{split} \label{eq:velocity_eom_pn}
+\end{equation}
+where $g(\mathbf{v}_i)$ describe the additional acceleration experienced by the particle due to velocity dependent PN effects, and $\mathbf{S}_i$ and $\mathbf{S}_{\mathrm{PN},i}$ are the spin of the particle and the spin PN-correction, respectively.
+
+The fact that the addition of the velocity dependent acceleration causes the time-derivative of the velocity to be dependent on itself, means that it can not be integrated conventionally \citep{Rantala2017KETJU}. In KETJU, this integration problem is solved through the use of an "auxiliary velocity" $\mathbf{w}_i$ and its chained counterpart $\mathbf{W}_i$. The use of $w_i$ is analogous to the leapfrog method. At the beginning of the kick-step of the actual leapfrog integration, both auxiliary velocities are set equal to their "physical" counterparts. Next, the physical velocities are kicked over half a time-step, while using the auxiliary velocities in the velocity dependent acceleration term. The new physical velocities are then used to update the auxiliary parameters over the whole time-step. Finally, the physical velocities are integrated over the remaining half-time-step, by applying the previously calculated auxiliary velocities for the velocity dependent terms.
+
+Notating the above integration steps similarly to the basic leapfrog algorithm, the velocity dependent kick step can be written as:
+\begin{equation}
+\mathbf{V}(\Delta t/2) \mathbf{W}(\Delta t) \mathbf{V}(\Delta t/2).
+\end{equation}
+Thus, a single DKD leapfrog time-step, where velocity dependent forces are calculated with the help of auxiliary velocities is:
+\begin{equation}
+\mathbf{X}(\Delta t/2) \mathbf{V}(\Delta t/2) \mathbf{W}(\Delta t) \mathbf{V}(\Delta t/2) \mathbf{X}(\Delta t/2).
+\end{equation}
+
+Of course, while the use of auxiliary variables has only been discussed in terms of integrating the time-derivative of the velocity in this section, the procedure can also be used to solve other equations of motion. For example, the same self-dependence problem, caused by the addition of PN-terms, extends to the time-derivative of the spin of the black hole. One can then the auxiliary spin ($\mathbf{Z}$) in order to resolve this issue.
+
+\subsection{Gragg-Bulirsch-Stoer Extrapolation}
+
+The final component in the high precision AR-CHAIN algorithm is the "Gragg-Bulirsch-Stoer" (GBS; \citealt{Gragg1965, Bulirsch1966}) extrapolation method, which is used simply to enhance the numerical accuracy of the algorithm. The basic principle behind GBS-extrapolation, is that; when integrating a function over a single time-interval, the integral is calculated multiple times, each time subsequently dividing the time-step into two times as many shorter steps. When raising the number ($n$) of these substeps, the integration accuracy increases, and the results should start to converge toward the exact solution. This exact solution can be estimated, by extrapolating the previously calculated results, and finding out what the solution would be at $n \leftarrow \infty$, i.e. when the time described by the subdivisions of the original integration time-step is infinitesimally small.
+
+The implementation of the GBS-extrapolation algorithm works as follows. Every time the function is integrated over the original integration interval using a different number of substeps, the results are extrapolated at $n \leftarrow \infty$ to get an approximation of the solution. Whether the result is good enough, is determined by the user-specified error tolerance parameter $\eta_\mathrm{GBS}$, which should fulfil the condition:
+\begin{equation}
+\eta_\mathrm{GBS} \leq \bigg| \frac{T_{k+1} - T_k}{T_k} \bigg|, \label{eq:GBS_tolerance}
+\end{equation}
+where $T_k$ are the results of the extrapolation, when the number of substeps is $n = 2^k$. The algorithm continues to iterate over $k$ until this equation holds true; or until $k$ exceeds some maximum value $k_\mathrm{max}$, at which point the procedure starts from the beginning, the difference being that the initial integration interval divided into two intervals.
+
+In AR-CHAIN, the integration over the substeps is naturally done using the chained leapfrog integrator. The function used for the extrapolation of the results, is either a polynomial or a rational function, and the tolerance limit from equation \ref{eq:GBS_tolerance}, is taken into account when integrating any of the equations of motion.
+
+\section{Combining AR-CHAIN and GADGET-3}
+
+\begin{figure}
 	\centering	
-	\includegraphics[width=0.7\textwidth]{Run3_Trajectory.png}	
-	\caption{The trajectories of the black holes during "Run 3". The coordinates are centred on the initial location of the centre-of-mass of the binary black hole. The orange and blue lines show the paths taken by the smaller and larger black holes respectively. Both paths show clear spiral patterns which become smaller and smaller as the simulation proceeds. The paths end at the location where the black holes merge, i.e. where the distance between them is $\lesssim 100 R_s$ ($R_s$ is the Schwarzschild radius).}
-	\label{figure:run3_traj}
+	\includegraphics[width=0.6\textwidth]{rantala2017.jpg}	
+	\caption{An illustration of the way KETJU divides the simulated particles into three different types. The red stars denote the chain particles, while the green and yellow stars show perturber and tree particles, respectively. The black dot is the SMBH particle, and the circles correspond to the regions, which determine the particle type. This figure is adopted from \cite{Rantala2017KETJU}.}
+	\label{figure:ketju_regions_illustration}
 \end{figure}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{semi_major_and_ecc.png}
-	\caption{The semi-major axes (left) and eccentricities (right) of the black hole systems in the simulations "Runs 1"-"Run-4" as a function of time. The zero position on the x-axis corresponds to the point in simulation time, where the black hole merging event occurs.}
-	\label{figure:semi_and_ecc}
-\end{figure}
+The combined functionality of the GADGET-3 tree code and the AR-CHAIN integrator, is achieved by dividing the simulated particles into three different types: chain particles, perturber particles, and tree particles. The dynamics of the chain particles are simulated using the AR-CHAIN algorithm, and they correspond to the stars near an SMBH as well as the SMBH itself. The perturber and the tree particles, on the other hand, are propagated using the GADGET-3 tree code, and they describe the general dynamics of the simulated stellar system. The difference between the perturbers and the tree particles is that, the former are located close enough to the SMBH particle to have a significant individual effect on the dynamics of the chain particles. Thus, the type of a particle is determined by its distance from an SMBH. An illustration of these particle type regions can be seen in figure \ref{figure:ketju_regions_illustration}.
 
-The most likely obstacle for the complete merging of the binary black holes is the so-called final-parsec problem; where, due to the lack of stellar material that can be ejected during the three-body scattering phase, the hardening of the binary stops when the separation between the two black holes is $\sim 1 \mathrm{pc}$. This is assumed to happen since, not only is the binary constantly ejecting the finite amount of stars inside the loss-cone (defined in section 2), but the loss cone itself is becoming smaller due to the contracting binary orbit.
+\subsection{The Chain Subsystem}
 
-Figure \ref{figure:semi_and_ecc} shows the time evolution of both the semi-major axis and the eccentricity of the binary orbits from all of the simulation runs. Interestingly enough the semi-major axes of all of the binaries go far below single parsec scales, meaning that the final-parsec problem doesn't seem to play a part in the simulations. This implies that, there exists some loss-cone refill mechanism which allows the binary to eject more stellar material than what initially exists inside the loss cone.
+In KETJU, an SMBH particle and the chain particles around it form a so-called "chain subsystem", where the AR-CHAIN algorithm is used for calculating the internal particle motion of the subsystem. Whether a stellar particle is included in the subsystem as a chain particle, is determined through a variable called the "chain radius", defined as \citep{Rantala2017KETJU}
+\begin{equation}
+\frac{r_\mathrm{chain}}{1 \; \mathrm{kpc}} = \lambda \times \frac{M_\bullet}{10^{10} M_\odot},
+\end{equation}
+where $M_\bullet$ is the mass of the SMBH particle, and $\lambda$ is a user-specified parameter. If the distance from a stellar particle to an SMBH particle is smaller than the chain radius, it is naturally included in the chain subsystem of the black hole in question. Additionally, since the GADGET-3 tree code in KETJU uses the "Monaghan-Lattanzio" -softening (see section \ref{section:softened_dynamics}), the condition $r_\mathrm{cahin} > h_\mathrm{ML}$ (where $h_\mathrm{ML}$ is the softening length) is taken into account when determining the length of the chain radius. Thus, it is ensured that gravitational interactions between SMBHs and stars as well as other SMBHs are not softened.
+
+In the tree code, the chain subsystem behaves as a single collisionless "macro particle". The motion of this macro particle is calculated using the centre-of-mass properties of the subsystem. In order to get the centre-of-mass acceleration of the subsystem, the tree-accelerations of all of the particles included in the chain are calculated. This means that, somewhat counter-intuitively, even though the chain particles are propagated in the tree as a single macro particle, they are "seen" as separate by the other tree-particles.
+
+Since every SMBH has its own regularised region, if two SMBH particles are close enough to each other, it is possible for two chain subsystems to merge. This occurs, when the volumes of the subsystems intersect. A merged chain subsystem behaves similarly to a basic regularised region, where all of the chain particles are included in a single chain in the AR-CHAIN algorithm.
+
+\subsection{Perturbative Effects of the Perturber and Tree Particles}
+
+When calculating the precise motion of the chain particles in the regularised regions around SMBHs, it is important to take into account tidal perturbation caused by the gravitational influence the other particles in the simulated stellar system. Both the aforementioned perturber and tree particles induce tidal perturbations, however, the way these effects are considered when propagating the chain particles, depends on the respective particle type. When calculating these effects, the gravitational forces induced by the softened gravitational potential (equation \ref{eq:splinekernel_softened_potential}) of the tree-code are used.
+
+The perturber particles are located outside of the regularised region, but lie close enough to the chain particles to have a significant individual perturbative effect on their equations-of-motion. In KETJU, a tree-particle is deemed to be a perturber, if it is located inside the "perturber radius" \citep{Rantala2017KETJU}:
+\begin{equation}
+r_{\mathrm{pert},i} = \gamma \left( \frac{m_i}{M_\bullet}{1/3} \right) r_\mathrm{chain},
+\end{equation}
+where $m_i$ is the mass of a potential perturber particle, and $\gamma$ is a user-specified parameter, that is set so, that $r_{\mathrm{pert},i} = 2r_\mathrm{chain}$ for the lowest-mass simulated particles. Naturally, chain subsystems can be perturbed by other subsystems. In case this happens, the perturbative subsystems are resolved, and the gravitational effects of individual chain particles are calculated.
+
+Since the perturber particles are located close to the chain subsystem, the tidal perturbation induced by them, is dependent on their location in respect to the chain particles. For this reason, when propagating the chain particles over even small time-steps using AR-CHAIN, the time-evolution of the locations of the perturber particle is estimated using their initial velocities and accelerations. This is not the case the for tree particles, which are estimated to be stationary during the whole integration time-step. This approximation is valid, as the scale of the tree-particle region is so large, that small variations in the positions of the particles do not have a significant effect on the total perturbative force \citep{Ahmad1973}.
+
+Naturally, as the perturber and tree particles exert a gravitational force onto the chain particles, they must experience an equal and opposing force from the particles in the subsystem (as stated by Newton's third law). This is taken into account in KETJU, by substituting the gravitational acceleration induced by the chain subsystem macro particle onto the perturbative particle, with the total gravitational force from the individual chain particles. This gravitational force is calculated with the direct summation method (see section \ref{section:tree}), using Monaghan-Lattanzio spline-kernel softening (equation \ref{eq:splinekernel_softened_potential}).
+
+\subsection{Particle Mergers}
+
+In KETJU simulations, it is possible for stellar and SMBH particles to merge with another SMBH particle. Whether two particles merge is determined by two possible criteria. The first criterion compares the gravitational wave coalescence time-scale for an SMBH binary to the tree code time-step, and is thus only relevant for SMBH-SMBH mergers. The coalescence time-scale can be approximated using \citep{Rantala2017KETJU}:
+\begin{equation}
+t_c \sim -\frac{a}{4\dot{a}},
+\end{equation}
+where $a$ is the semi-major axis of the binary orbit, and $\dot{a}$ is its time derivative, which can be calculated using at 2.5PN equation \ref{eq:pn_dadt}. If the condition $t_c < s_1 \Delta t_\mathrm{tree}$, where $s_1 > 1$ is a temporal safety factor, holds true; the two SMBH particles are merged.
+
+The second criterion is based on the relative position of the two particles. For two SMBHs, the merger event is set to occur, if their separation is smaller than: 
+\begin{equation}
+r_\mathrm{min,S} = 6\left( \frac{2GM_{\bullet,1}}{c^2} + \frac{2GM_{\bullet,1}}{c^2} \right),
+\end{equation}
+which is equivalent to the sum of the Schwarzschild-radii (i.e. the distance from a black hole where the escape velocity is the speed of light) of the binary pair multiplied by six. In the case of an SMBH - stellar particle merger however, depending on which of the parameters is larger; the minimum particle separation is determined either using the Schwarzschild radius of the SMBH, or the tidal disruption radius (i.e. the distance from the black hole, where its gravitational force tears an orbiting star apart). The minimum distance between two such particles is determined by following equation:
+\begin{equation}
+r_\mathrm{min,T} = \mathrm{max} \left\lbrace \frac{12GM_{\bullet}}{c^2}, \; s_2 R_\odot \left( \frac{M_\bullet}{M_\odot} \right)^{1/3} \right\rbrace,
+\end{equation}
+where $M_\odot$ and $R_\odot$ are the solar mass and radius, respectively, and $s_2 > 1$ is the spatial safety factor. 
+
+The particle mergers are checked before every integration time-step. If any of the merging conditions are met, the particles are replaced by a new particle with the following properties \citep{Rantala2017KETJU}:
+\begin{equation}
+\begin{split}
+M &= M_1 + M_2 \\
+\mathbf{r} &= (M_1 \mathbf{r}_1 + M_2 \mathbf{r}_2) / M \\
+\mathbf{v} &= (M_1 \mathbf{v}_1 + M_2 \mathbf{v}_2) / M \\
+\mathbf{L} &= \frac{M_1 M_2}{M} (\mathbf{r}_2 - \mathbf{r}_1) \times (\mathbf{v}_2 - \mathbf{v}_1) \\
+\mathbf{S} &= \mathbf{L} + \mathbf{S}_1 + \mathbf{S}_2,
+\end{split}
+\end{equation}
+where $\mathbf{L}$ is the angular momentum, and $\mathbf{S}$ is the spin of the particle.
+
+\subsection{Incorporating AR-CHAIN in the GADGET-3 Leapfrog}
+
+The GADGET-3 tree-code integrator used in KETJU, is a KDK-leapfrog \citep{Springel2005}. Including the regularised chain region in this integrator, naturally requires us to determine the types of every simulated particle and find the chain subsystem macro particles, before starting the integration cycle. The particles that have been determined as tree, perturber or macro particles, are then kicked and drifted, as expected. After the drift-step, the chain particles are propagated using the chain integrator. Once the AR-CHAIN algorithm has concluded its calculations, the final kick step of the GADGET-3 leapfrog takes place. The force corrections on the peruturbing particles, necessitated by the Newton's third law, are taken into account last. 
+
+The GADGET-3 leapfrog in KETJU, uses individual adaptive time-steps for different particles, the lengths of which can be determined using:
+\begin{equation}
+\Delta t_\mathrm{grav} = \left(\frac{2\eta \epsilon}{|\mathbf{a}|} \right)^{1/2},
+\end{equation}
+where $\mathbf{a}$ is the acceleration of a particle, $\epsilon$ is the gravitational softening length, and $\eta$ is a user-specified error tolerance parameter. These time-steps are then rounded down to the nearest discrete power-of-two time-step:
+\begin{equation}
+\Delta t_n = 2^n \Delta t_\mathrm{min},
+\end{equation}
+where $\Delta t_\mathrm{min}$ is the smallest possible time-step allowed by the simulation. The KETJU code uses this same prodeure, when determining the time-steps for the basic tree particles. However, the chain subsystem macro particles and the individual chain particles that are integrated using the AR-CHAIN algorithm, are placed onto the smallest possible time-step in the simulation. The same is done to the perturber particles, in order to make sure that they are synchronised with the chain particles. 
+
+
+%\section{Merging of Black Hole Particles}
+
+%Since we are trying to determine if merging SMBH binaries form cores in merger remnants, we must make sure that the progenitors' central black holes actually merge in our simulations. This is done by looking at the "Run" simulations, as they contain the locations of the black holes from multiple time steps, and as the "Snapshots" still show both of the SMBHs.
+
+%Plotting the positions of the black holes from "Run 3" in coordinates centred on the binary's centre-of-mass during the initial time step gives us figure \ref{figure:run3_traj}. Even by eye, one can clearly see that the orbit of the black hole with a smaller mass becomes smaller and smaller as the binary moves further away from its initial position. While this doesn't explicitly tell us that the black holes merge into each other, it does indicate the existence of a hardening process in the binary. Similar figures to figure \ref{figure:run3_traj} from all four "Runs" can be found in the appendix (figure \ref{figure:all_traj}).
+
+%\begin{figure}[h]
+%	\centering	
+%	\includegraphics[width=0.7\textwidth]{Run3_Trajectory.png}	
+%	\caption{The trajectories of the black holes during "Run 3". The coordinates are centred on the initial location of the centre-of-mass of the binary black hole. The orange and blue lines show the paths taken by the smaller and larger black holes respectively. Both paths show clear spiral patterns which become smaller and smaller as the simulation proceeds. The paths end at the location where the black holes merge, i.e. where the distance between them is $\lesssim 100 R_s$ ($R_s$ is the Schwarzschild radius).}
+%	\label{figure:run3_traj}
+%\end{figure}
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=\textwidth]{semi_major_and_ecc.png}
+%	\caption{The semi-major axes (left) and eccentricities (right) of the black hole systems in the simulations "Runs 1"-"Run-4" as a function of time. The zero position on the x-axis corresponds to the point in simulation time, where the black hole merging event occurs.}
+%	\label{figure:semi_and_ecc}
+%\end{figure}
+
+%The most likely obstacle for the complete merging of the binary black holes is the so-called final-parsec problem; where, due to the lack of stellar material that can be ejected during the three-body scattering phase, the hardening of the binary stops when the separation between the two black holes is $\sim 1 \mathrm{pc}$. This is assumed to happen since, not only is the binary constantly ejecting the finite amount of stars inside the loss-cone (defined in section 2), but the loss cone itself is becoming smaller due to the contracting binary orbit.
+
+%Figure \ref{figure:semi_and_ecc} shows the time evolution of both the semi-major axis and the eccentricity of the binary orbits from all of the simulation runs. Interestingly enough the semi-major axes of all of the binaries go far below single parsec scales, meaning that the final-parsec problem doesn't seem to play a part in the simulations. This implies that, there exists some loss-cone refill mechanism which allows the binary to eject more stellar material than what initially exists inside the loss cone.
 
 
 
@@ -608,18 +867,7 @@ In this chapter I study the formation of cored galaxies in galaxy mergers. The a
 
 The simulation sample run by \cite{Rantala2018} includes seven different equal-mass mergers of two identical galaxies. The merger progenitor galaxies (named BH-0 - BH-6) used in the different simulations consist of equal mass stellar particles and equal mass dark matter particles, where the mass of the stellar particles differ from the mass of the dark matter particles. The progenitors are gas free (i.e. the simulations describe so-called "dry" mergers), and all of them but one contains an SMBH at their centre.
 
-The initial conditions (ICs) of the merger progenitor galaxies are modelled as multicomponent, spherically symmetrical stellar systems. They consist of the three aforementioned components: stellar particles, dark matter particles and a central SMBH. The central SMBH is simply modelled as a single point mass, and is located at the origin of the host galaxy's internal coordinate systems. The stellar and dark matter component, on the other hand, consist of multiple particles which are distributed according to the spherically symmetric Dehnen density-potential model defined as \citep{Dehnen1993}:
-\begin{equation}
-\rho(r) = \frac{(3-\gamma)M}{4\pi} \frac{a}{r^\gamma (r+a)^{4-\gamma}}, 
-\end{equation}
-\begin{equation}
-\phi(r) = \frac{GM}{a} \times 
-\begin{cases}
-	-\frac{1}{2-\gamma} \left[ 1 - \left( \frac{r}{r+a} \right)^{2-\gamma} \right] & \; \gamma \neq 2 \\
-	\ln \frac{r}{r+a}	 & \; \gamma = 2
-\end{cases},
-\end{equation}
-where $M$ is the total mass, $a$ is the scaling radius, and $\gamma$ is the central slope of the profile. For stellar particles we set $\gamma = 3/2$, while for the dark matter particles the value of $\gamma = 1$ is used ($\gamma = 1$ corresponds to the so-called Hernquist profile, \citealt{Hernquist1990}). The Dehnen density-potential model uses a density profile, which is a generalization of stellar density models that, when projected, resemble the de Vaucouleurs - profile \citep[$\log(\mu) \propto R^{1/4}$;][]{deVaucouleurs1948} in the outer parts. The model's gravitational potential profile is derived from the density profile using the Poisson equation \textit{(refer to equation from chapter 2)}. 
+The initial conditions (ICs) of the merger progenitor galaxies are modelled as multicomponent, spherically symmetrical stellar systems. They consist of the three aforementioned components: stellar particles, dark matter particles and a central SMBH. The central SMBH is simply modelled as a single point mass, and is located at the origin of the internal coordinate system of the host galaxy. The stellar and dark matter components, on the other hand, consist of multiple particles which are distributed according to the spherically symmetric Dehnen density-potential model (\citealt{Dehnen1993}; see equations \ref{eq:dehnen_density} and \ref{eq:dehnen_potential} is section \ref{section:potential_density}). For stellar particles we set the $\gamma$-parameter to $\gamma = 3/2$, while for the dark matter particles the value of $\gamma = 1$ is used.
 
 When constructing the multicomponent ICs for the progenitor galaxies, the positions of the stellar and dark matter particles are determined through their respective cumulative mass profiles. These mass profiles are derived using the aforementioned Dehnen density-potential model, and can be written as:
 \begin{equation}
@@ -650,7 +898,7 @@ Finally, applying the half-mass radius approximation from equation \ref{eq:proje
 a_\mathrm{DM} \approx \frac{4}{3} \left[ \sqrt{\frac{2M_\mathrm{DM}}{M_\star} \left( \frac{1}{f_\mathrm{DM}(r_{1/2})} - 1 \right)} -1 \right] R_e.
 \end{equation}
 
-If the positions of the particles in the simulated progenitor galaxies are known, their velocities can be determined using Eddington's formula \citep{BinneyTremaine}. The different particles thus have the following distribution function in the position-velocity phase-space:
+If the positions of the particles in the simulated progenitor galaxies are known, their velocities can be determined using the Eddington's formula \citep{BinneyTremaine}. The different particles thus have the following distribution function in the position-velocity phase space:
 \begin{equation}
 f_i(\varepsilon) = \frac{1}{\sqrt{8}\pi^2} \int^{\Phi_T = \varepsilon}_{\Phi_T = 0} \frac{d^2\rho_i}{d\Phi^2_T}
 \frac{d\Phi_T}{\sqrt{\varepsilon - \Phi_T}}, \label{eq:eddington_form}
@@ -719,7 +967,7 @@ The surface brightness profiles are calculated from the merger remnant snapshots
 
 Determining the mass-to-light ratios of the stellar particles in the simulated merger remnants is problematic, as the simulations do not contain information about their ages and metallicities. The only properties that the stellar particles have are their position, velocity, and a mass that is identical for all of them; which are not enough to make valid, physically accurate, assumptions on their specific mass-to-light ratios. For this reason, a constant mass-to-light ratio of $M/L = 4$ is used. This is equivalent to the ratio derived from dynamical modelling of NGC 1600 by \cite{Thomas2016}. Thus, the use of this particular $M/L$ in the analysis of the simulation results, fits in well with the already established desire of similarity between the physical properties of the simulated merger remnants and NGC 1600.
 
-Figure \ref{figure:surface_brightness} shows the surface brightness profiles of every simulated merger remnant. Studying the curves, one can already see that, the presence of central SMBHs in the merger progenitors causes a clear brightness deficiency near the centre of the merger remnant. In addition, there is a systematic effect which shows that the larger the mass of the central black hole binary, the larger the amount of missing light in the core.
+Figure \ref{figure:surface_brightness} shows the surface brightness profiles of every simulated merger remnant. Studying the curves, one can already see that, the presence of central SMBHs in the merger progenitors causes a clear brightness deficit near the centre of the merger remnant. In addition, there is a systematic effect which shows that the larger the mass of the central black hole binary, the larger the amount of missing light in the core.
 
 \begin{figure}[h]
 	\centering
@@ -728,25 +976,7 @@ Figure \ref{figure:surface_brightness} shows the surface brightness profiles of 
 	\label{figure:surface_brightness}
 \end{figure}
 
-The lack of light in the surface brightness profiles reveals the presence of cores; however, determining the precise sizes of the cores requires us to find the exact locations where the deviations from the Sérsic fit begin. This can be done by fitting the derived brightness profile with a model that is a combination of two power laws: a shallow inner power-law, and a steeper outer power-law. The radius at which the outer power-law changes into the inner power-law (and vice-versa) is called the break radius ($r_b$), and can be defined as the radius of the core. 
-
-There are two commonly used options for modelling the surface brightness profiles. The first one is the core-Sérsic profile \citep{Graham2003}, which can be expressed using the following equation:
-\begin{equation}
-\mu(r) = \mu' \left[ 1 + \left( \frac{r_b}{r} \right)^\alpha \right]^{\gamma / \alpha} \exp \left\lbrace -b_n \left[ \left( r^\alpha + r_b^\alpha \right) / r_e^\alpha \right]^{1/(\alpha n)} \right\rbrace, \label{eq:core-sersic}
-\end{equation}
-where $r_b$ is the break radius, $\gamma$ is the logarithmic slope of the inner power-law, $\alpha$ controls the sharpness of the transition between the two power-laws, $r_e$ and $n$ are the effective half-mass radius and the Sérsic index of the outer power-law respectively, and the normalization factor $\mu'$ is defined by:
-\begin{equation}
-\mu' = \mu_b 2^{-\gamma/\alpha} \exp \left[ b_n \left( 2^{(1/\alpha)} r_b/r_e \right)^{1/n} \right], 
-\label{eq:mu_dot}
-\end{equation}
-where $\mu_b$ is the surface brightness at the break radius. 
-
-The second option is to use the so called Nuker profile \citep{Lauer1995}:
-\begin{equation}
-\mu(r) = 2^{(\beta - \gamma) / \alpha} \mu_b \left( \frac{r_b}{r} \right)^\gamma \left[ 1 + \left( \frac{r}{r_b} \right)^\alpha \right]^{(\gamma - \beta)/\alpha},
-\label{eq:nuker}
-\end{equation}
-where $r_b$ is once again the break radius, $\mu_b$ is the surface brightness at the break radius, $\beta$ and $\gamma$ are the logarithmic slopes of the power-laws inside and outside of the break radius respectively, and $\alpha$ once again describes the sharpness of the transition between the two slopes.
+The lack of light in the surface brightness profiles reveals the presence of cores; however, determining the precise sizes of the cores requires us to find the exact locations where the deviations from the Sérsic fit begin. We calculate the core radii of the merger remnants by using the "Levenberg-Marquardt" fitting algorithm to fit both the core-Sérsic model (equation \ref{eq:core-sersic}) and the Nuker model (equation \ref{eq:nuker}) to their surface brightness profiles. For the most part, the initial guesses for the values of the fitting parameters in the fitting algorithm, were determined through trial-and-error, as well as knowledge of their likely order of magnitude. This was not the case for the Sérsic-index ($n$) of the core-Sérsic profile however. In order to reduce degeneracy between the fitting parameters, $n$ was fixed to $n=4$ for all core-Sérsic profile fits.
 
 \begin{figure}[h]
 	\centering
@@ -755,21 +985,19 @@ where $r_b$ is once again the break radius, $\mu_b$ is the surface brightness at
 	\label{figure:core_nuker}
 \end{figure}
 
-We calculate the core radii of the merger remnants by using the "Levenberg-Marquardt" fitting algorithm to fit both the core-Sérsic model and the Nuker model to the remnants' surface brightness profiles. For the most part, the initial guesses for the fitting parameters' values in the fitting algorithm, were determined through trial-and-error, as well as knowledge of their likely order of magnitude. This was not the case for the Sérsic-index ($n$) of the core-Sérsic profile however. In order to reduce degeneracy between the fitting parameters, $n$ was fixed to $n=4$ for all core-Sérsic profile fits.
-
 Figure \ref{figure:core_nuker} shows a comparison between the core-Sérsic and Nuker profile fits for the BH-3 merger (refer to table \ref{table:properties}), while figures \ref{figure:all_core} and \ref{figure:all_nuker} show these fits for every simulated remnant containing an SMBH binary. The values of the best-fit parameters are shown on the figures. The units of the surface brightness are changed from $L_\odot \; \mathrm{pc^{-2}}$ to $\mathrm{mag \; arcsec^{-2}}$ (where $\mathrm{mag}$ is the magnitude in the V-band) using the common conversion formula:
 \begin{equation}
 \mu = M_\odot + 21.572 - 2.5 \log(I), 
 \end{equation}
 where $M_\odot$ is the absolute magnitude of the Sun in a specific spectral band (in our case the V-band magnitude of $4.83$ is used), and $I$ is the surface brightness in $L_\odot \mathrm{pc^{-2}}$.
 
-The root-mean-square of the fits' residuals are comparable to the values seen in profile fits of observed surface brightness profiles: $\Delta \approx 0.02 \; \mathrm{mag \; arcsec^{-2}}$ \citep{Dullo2012}. Although, while the RMS of the residuals show that the fits describe the surface brightness profiles rather well, most of the fits have large residual scatter near the centre of the merger remnant. This is especially noticeable in the Nuker fits, since in order to get sensible values for the fitting parameters, the fitting range needs to be concentrated in the galactic centre (in our analysis, the fitting range used for the Nuker profile was: $\sim 0.04 - 3 \; \mathrm{kpc}$, which is an order of magnitude lower compared to the range used for the core-Sérsic fit: $\sim 0.04 - 60 \; \mathrm{kpc}$). 
+The root-mean-square of the residuals in the fits are comparable to the values seen in profile fits of observed surface brightness profiles: $\Delta \approx 0.02 \; \mathrm{mag \; arcsec^{-2}}$ \citep{Dullo2012}. Although, while the RMS of the residuals show that the fits describe the surface brightness profiles rather well, most of the fits have large residual scatter near the centre of the merger remnant. This is especially noticeable in the Nuker fits, since in order to get sensible values for the fitting parameters, the fitting range needs to be concentrated in the galactic centre (in our analysis, the fitting range used for the Nuker profile was: $\sim 0.04 - 3 \; \mathrm{kpc}$, which is an order of magnitude lower compared to the range used for the core-Sérsic fit: $\sim 0.04 - 60 \; \mathrm{kpc}$). 
 
 The larger central residual scatter is most likely not indicative of any kind of physical structure in the merger remnant cores; but simply a result of the logarithmic spacing of the bins in the surface brightness profiles. The bins near the centre inherently contain less particles than the outer bins. When calculating the 100 projected surface brightness profiles from random viewing angles, this causes the variations in binned luminosities to be larger in the central bins, resulting in a final averaged profile that contains small jumps as well as small dips in its central luminosity. These arbitrary inconsistencies naturally cause the residuals of the fits to be scattered in a random way near the centre of the simulated galaxy. Unfortunately, remedying this problem by using bins that have a constant number of particles did not yield satisfactory results, due to the total number of particles being extremely small near the centre.
 
 Interestingly, all of the core-Sérsic fits show a peak in the size of the residuals at around $\sim 10 \; \mathrm{kpc}$. Once again, this residual property is probably just a small anomaly in the simulations and not indicative of any physical structure that could be found in actual merger remnants. However, the fact that this residual anomaly appears in the surface brightness profile of every simulation, indicates that; even though the masses of the SMBHs in the merger progenitors have a large effect on the central regions of the merger remnant, the outer regions are left relatively unaffected. In fact, the central SMBH binary only affects the outer regions of the merger remnant through stellar particles that have been ejected from the galactic centre. 
 
-All of the significant residual variations between the profile fits of the simulated merger remnant galaxies are concentrated near their respective centres. This implies that the results of the different simulations vary significantly from each other only due to the formation of a central SMBH binary, since the similar shapes of the outer regions of the residual plots can be explained through the limited range of the binaries' gravitational spheres-of-influence (SOI). The sizes of the SMBH binaries' SOI can be seen in table \ref{table:s-o-i}. They were calculated by: finding the radius of a sphere (centred at the c.o.m. of the host galaxy) that contains the amount of stellar mass equivalent to the mass of the SMBH binary. The sizes of the projected radii were determined through a similar relation to the one described in equation \ref{eq:projection_approximation}.
+All of the significant residual variations between the profile fits of the simulated merger remnant galaxies are concentrated near their respective centres. This implies that the results of the different simulations vary significantly from each other only due to the formation of a central SMBH binary, since the similar shapes of the outer regions of the residual plots can be explained through the limited range of the binaries' gravitational spheres-of-influence (SOI). The sizes of the SMBH binaries' SOI can be seen in table \ref{table:s-o-i}. They were calculated by finding the radius of a sphere (centred at the centre-of-mass of the host galaxy) that contains the amount of stellar mass equivalent to the mass of the SMBH binary. The sizes of the projected radii were determined through a similar relation to the one described in equation \ref{eq:projection_approximation}.
 
 
 \begin{table}
@@ -807,9 +1035,7 @@ All of the significant residual variations between the profile fits of the simul
 
 Figures \ref{figure:all_core} and \ref{figure:all_nuker} show that the core radius estimate depends quite strongly on the used fitting model. However, which of the two models is better for estimating the size of the core is still a matter of debate \citep{Lauer2007, Dullo2012}. While the RMS of the relative residuals seems to be consistently (although just marginally) smaller for the Nuker model (compare figures \ref{figure:all_core} and \ref{figure:all_nuker}), one also has to take into account that, in the Nuker model, the best-fit value for $r_b$ is strongly dependent on the fitting range \citep{Graham2003}. Furthermore, as stated by \cite{Rantala2018}, in order to get sensible values for all of the model parameters (e.g. $\alpha$, for which $\alpha \lesssim 1$ might even prevent the model from describing the profile as a combination of two power-laws), the fitting range of the Nuker model has to be narrowed down closer to the galactic centre. This, when combined with the parameters' high dependence on the fitting range, shows that the core radius estimations of the Nuker model can be inconsistent.
 
-In addition to the model fitting methods, one could also estimate the size of the core by calculating the so-called "cusp radius" $r_\gamma$. The cusp radius is the distance from the centre of the galaxy, at which the logarithmic slope of the surface brightness profile equals $\gamma' = -1/2$ \citep{Carollo1997, Lauer2007Cusp}. This distance provides an estimate for the location where the inner power-law of the profile changes into the outer power-law, and thus $r_\gamma$ can be equated to the core radius. 
-
-We calculate $r_\gamma$ for all of the merger remnants with central SMBH binaries (BH-1 - BH-6 mergers) by calculating the gradient of the surface brightness profiles, and then using a function minimization algorithm \citep{NelderMead} to minimize the difference $\big| \frac{d\mu(r)}{dr} - \left( - \frac{1}{2} \right) \big|$. This allows us to find the radius, at which the gradient gets the value $-1/2$. 
+In addition to the core radii derived through model fitting, we calculate the cusp radius $r_\gamma$ (see section \ref{section:core_galaxies}) for all of the merger remnants with central SMBH binaries (BH-1 - BH-6 mergers). These are derived by calculating the gradient of the surface brightness profiles, and using a function minimization algorithm \citep{NelderMead} to minimize the difference $\big| \frac{d\mu(r)}{dr} - \left( - \frac{1}{2} \right) \big|$. This allows us to find the radius, at which the gradient gets the value $-1/2$. 
 
 \begin{figure}[h]
 	\centering
@@ -818,17 +1044,13 @@ We calculate $r_\gamma$ for all of the merger remnants with central SMBH binarie
 	\label{figure:radii_comparison}
 \end{figure}
 
-Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every simulated merger remnant. The break radii from the Nuker fits are consistently larger than the other core radius estimates. They also have, in general, the largest deviations from the other core radii, and even contain two values that seem to break the trend of the core radius growing with the central SMBH binary mass (these being the break radii for the BH-2 and BH-3 mergers). Similar larger than expected Nuker core radii can be seen in the analysis of the simulations by \cite{Rantala2018}. Similarly to figure \ref{figure:radii_comparison}, the difference in their Nuker break radii and the other core radius estimates for the two mergers with the smallest and third smallest central SMBH binaries, are significantly larger than for the other mergers. The fact that these large deviations are present in both our analysis and the analysis by \cite{Rantala2018}, further implies that, due to its high dependence on the fitting range, the Nuker model can provide inconsistent values for the break radius. However, when excluding these few Nuker break radii, a clear trend of the size of the core growing with the merger progenitors' central SMBH masses can be seen.
+Figure \ref{figure:radii_comparison} compares the core radius estimates from each of the three methods for every simulated merger remnant. The break radii from the Nuker fits are consistently larger than the other core radius estimates. They also have, in general, the largest deviations from the other core radii, and even contain two values that seem to break the trend of the core radius growing with the central SMBH binary mass (these being the break radii for the BH-2 and BH-3 mergers). Similar larger than expected Nuker core radii can be seen in the analysis of the simulations by \cite{Rantala2018}. Like in figure \ref{figure:radii_comparison}, the difference in the Nuker break radii and the other core radius estimates for the two mergers with the smallest and third smallest central SMBH binaries, are significantly larger than for the other mergers. The fact that these large deviations are present in both our analysis and the analysis by \cite{Rantala2018}, further implies that, due to its high dependence on the fitting range, the Nuker model can provide inconsistent values for the break radius. However, when excluding these few Nuker break radii, a clear trend of the size of the core growing with the merger progenitors' central SMBH masses can be seen.
 
 The fact that the size of the core is dependent on the mass of the central SMBH binary is clear evidence towards the cores being formed through a scouring process by the binary black holes. Binaries with larger masses have larger gravitational spheres-of-influence (table \ref{table:s-o-i}), which naturally leads to the ejection of stellar particles that orbit farther away from the galactic centre (the larger SMBH binary mass also causes the stellar material to be ejected at a larger velocity). 
 
-This positive correlation between the core size and the SMBH binary mass has also been identified in independent measurements of the break radius and the central SMBH mass in cored galaxies \citep[e.g.][]{deRuiter2005, Lauer2007Cusp, Thomas2016}. The fact that this effect can be seen, not only in the simulations but also in the observations, makes it clear that merging SMBH binaries are a likely source for the observed cores.
+This positive correlation between the core size and the SMBH binary mass has also been identified in independent measurements of the break radius and the central SMBH mass in cored galaxies \citep[e.g.][]{deRuiter2005, Lauer2007Cusp, Thomas2016}. The fact that this effect can be seen, not only in the simulations, but also in the observations, makes it clear that merging SMBH binaries are a likely source for the observed cores.
 
-Alongside the size of the core, the surface brightness deficit also becomes larger as the central SMBH binary mass grows, as can clearly be seen in figure \ref{figure:surface_brightness}. This can be explained trough the concept of the loss-cone. \cite{BinneyTremaine} show that only stars with the angular momentum:
-\begin{equation}
-L \lesssim [G(M_1 + M_2)a]^{1/2},
-\end{equation}
-where $M_1$ and $M_2$ are the masses of the binary black holes, interact strongly enough with the binary to be ejected from the system (i.e. are inside the loss-cone). As the above equation implies, the upper limit of this condition grows alongside the binary mass. This causes more of the orbiting stellar particles to be located in the strong interaction range; as not only does the loss-cone widen, allowing for the ejection of particles with orbits more parallel to the plane of the binary; but the maximum velocities, at which a stellar particle can interact strongly with the binary, also become larger. Thus, a larger SMBH binary mass naturally results in the ejection of a larger number of stellar particles, which then leads to the growth of the central surface brightness deficit.  
+Alongside the size of the core, the surface brightness deficit also becomes larger as the central SMBH binary mass grows (figure \ref{figure:surface_brightness}). This can be explained trough the concept of the loss-cone. The condition that defines the loss-cone (equation \ref{eq:loss-cone}) shows, that the maximum angular momentum at which a star can interact strongly with the binary, grows alongside the masses of the black holes. This means that, a larger SMBH binary mass causes more of the orbiting stellar particles to be located in the strong interaction range; as not only does the loss-cone widen, allowing for the ejection of particles with orbits more parallel to the plane of the binary; but the maximum velocities, at which a stellar particle can interact strongly with the binary, also become larger. Thus, a more massive central SMBH binary naturally results in the ejection of a larger number of stellar particles, which then leads to the growth of the central surface brightness deficit.  
 
 \section{Velocity Anisotropy}
 
@@ -885,21 +1107,13 @@ As for the outer region of the $\beta$-profile of NGC 1600, it is possible, that
 
 \subsection{2D Kinematic Maps}
 
-In order to make sure that the KETJU simulations produce results which are in agreement with observations, I  also analyse the line-of-sight (LOS) kinematics of the simulated merger remnants. The analysis is focused on four different LOS velocity distribution parameters: the average LOS velocity $V_\mathrm{avg}$, the velocity dispersion $\sigma$, and the $h_3$ and $h_4$ parameters which correspond to the skewness and the kurtosis of the distribution respectively. The distribution from which these properties are calculated is defined as the following modified Gaussian function \citep{VanDerMarel1993, Bender1994}:
-\begin{equation}
-f(v) = I_0 e^{-\gamma^2/2}(1 + h_3 H_3(y) + h_4 H_4(y)), 
-\end{equation} 
-where $I_0$ is a normalization constant, $\gamma$ is the central slope of the particle density profile, $y = (v - V_\mathrm{avg})/\sigma$, and $H_3$ and $H_4$ are the third and fourth order Hermite polynomials respectively:
-\begin{eqnarray}
-H_3(y) = \left(2\sqrt{2}y^3 - 3\sqrt{2}y\right) / \sqrt{6}, \\
-H_4(y) = \left(4y^4 - 12y^2 + 3 \right) / \sqrt{24}.
-\end{eqnarray}
+In order to make sure that the KETJU simulations produce results which are in agreement with observations, I also analyse the line-of-sight kinematics of the simulated merger remnants. The analysis is focused on the four different LOS velocity distribution parameters: the average LOS velocity $V_\mathrm{avg}$, the velocity dispersion $\sigma$, and the $h_3$ and $h_4$ parameters (see section \ref{section:IFU}). 
 
-The above properties are calculated using a Python-script (Matteo Frigo, internal communication), which makes use of the Voronoi tessellation algorithm by \citep{Cappellari2003} in order to provide binned statistics of the LOS velocities. First, when using the script, the "line-of-sight" is defined as the intermediate axis of the merger remnant, after which the remnant is oriented accordingly using the inertia tensor. The 2D line-of-sight projection of the remnant is then divided into "spaxels" (or simply bins) using the aforementioned Voronoi tessellation algorithm. The shape and size of the spaxels are determined so that each one contains the same signal-to-noise ratio, which in our simulated case is defined as the number of stellar particles. The LOS-velocities inside the spaxels are then made into a histogram, into which the modified Gaussian function described in equation \ref{eq:mod_gaussian} is fitted. This gives the values of the LOS-velocity distribution parameters: $V_\mathrm{avg}$, $\sigma$, $h_3$ and $h_4$ for the spaxel in question. Finally, the values of the spaxels can be plotted, resulting in 2D voronoi binned maps of all of the four parameters.
+The above LOSVD-properties are calculated using a Python-script (Matteo Frigo, internal communication), which makes use of the Voronoi tessellation algorithm by \citep{Cappellari2003} in order to provide binned statistics of the LOS velocities. First, when using the script, the "line-of-sight" is defined as the intermediate axis of the merger remnant, after which the remnant is oriented accordingly using the inertia tensor. The 2D line-of-sight projection of the remnant is then divided into "spaxels" using the aforementioned Voronoi tessellation algorithm. The shape and size of the spaxels are determined so that each one contains the same signal-to-noise ratio, which in our simulated case is defined as the number of stellar particles. The LOS-velocities inside the spaxels are then made into a histogram, into which the modified Gaussian function described in equation \ref{eq:mod_gaussian} is fitted. This gives the values of the LOSVD parameters: $V_\mathrm{avg}$, $\sigma$, $h_3$ and $h_4$ for the spaxel in question. Finally, the values of the spaxels can be plotted, resulting in 2D Voronoi binned maps of all of the four parameters.
 
 Figure \ref{figure:IFU-maps} shows the voronoi binned 2D maps of the four LOS velocity distribution parameters for the simulated BH-0 merger (no central SMBH) and the BH-6 merger (largest central SMBH), as well as for two observed galaxies NGC 3414 and NGC 4111. The contours, which are added to help visualise the shape of the galaxy, denote flux isophotes of the merger remnants, and have a spacing of one magnitude. Similar maps for the rest of the simulated merger remnants can be seen in figure \ref{figure:rest_of_voronoi}. Figure \ref{figure:rest_of_voronoi} shows the IFU-maps of the four LOS-velocity parameters for the rest of the simulated merger remnants.
 
-The IFU maps in figures \ref{figure:IFU-maps} and \ref{figure:rest_of_voronoi} show that the average LOS velocities of the simulated merger remnants are far from isotropic, with most of the remnants containing central binary SMBHs showcasing counter-rotating central regions also known as "kinematically decoupled cores" (KDC). Some of the simulated remnants (BH-4 - BH-6 mergers) even contain another counter rotating structure inside the KDC \citep{Rantala2019}. These features, alongside the relatively low average LOS-velocities, are often found in galaxies called "slow rotators" \citep{Emsellem2007}. Slow rotator galaxies are early-type galaxies which are assumed to have been formed through gas-poor "dry" mergers \citep{Emsellem2007, Cappellari2007}; processes not unlike the ones simulated in our simulations. As such, the merger remnants being slow rotators is a somewhat expected result.
+The IFU maps in figures \ref{figure:IFU-maps} and \ref{figure:rest_of_voronoi} show that the average LOS velocities of the simulated merger remnants are far from isotropic, with most of the remnants containing central binary SMBHs showcasing KDCs. Some of the simulated remnants (BH-4 - BH-6 mergers) even contain another counter rotating structure inside the KDC \citep{Rantala2019}. These features, alongside the relatively low average LOS-velocities, imply that all of the merger remnants are likely slow rotators. Since slow rotator galaxies are assumed to have been formed through gas-poor "dry" mergers, processes not unlike the ones simulated in our simulations, this is a somewhat expected result.
 
 \begin{figure}
 	\centering
@@ -954,37 +1168,33 @@ Figures \ref{figure:IFU-maps} and \ref{figure:rest_of_voronoi} also contain IFU-
 
  %Furthermore, the velocity dispersion maps also show features found in observed galaxies (figure \ref{figure:IFU-maps}). \textit{Stuff about the features?}
 
-Apart from the BH-0 merger remnant, the $h_3$-parameter values in the IFU-maps of the simulated merger remnants show an anti-correlation with the average LOS-velocity. Indeed, \cite{Krajnovic2011} have found that, while the anti-correlation between the LOS velocities and the $h_3$-parameter is mostly found in fast rotators (see central region of NGC 4111 in figure \ref{figure:IFU-maps}), some galaxies with counter-rotating cores (CRC) also exhibit this behaviour. This anti-correlation can be seen in NGC 3414 from figure \ref{figure:IFU-maps}. Once again, the simulated KETJU results agree with the observations.
+Apart from the BH-0 merger remnant, the $h_3$-parameter values in the IFU-maps of the simulated merger remnants show an anti-correlation with the average LOS-velocity. Indeed, \cite{Krajnovic2011} have found that, while the anti-correlation between the LOS velocities and the $h_3$-parameter is mostly found in fast rotators (see central region of NGC 4111 in figure \ref{figure:IFU-maps}), some galaxies with CRCs also exhibit this behaviour. This anti-correlation can be seen in NGC 3414 from figure \ref{figure:IFU-maps}. Once again, the simulated KETJU results agree with the observations.
 
 The $h_4$-parameter roughly corresponds to the velocity anisotropy parameter $\beta$, where a negative value of $h_4$ identifies areas with a large tangential velocity dispersion, and a positive identifies areas with a more radial velocity dispersion \citep{Gerhard1993, Gerhard1998, Thomas2007}. Comparing the $\beta$-profiles from figure \ref{figure:beta_no_rb} with the $h_4$ IFU-maps from figures \ref{figure:IFU-maps} and \ref{figure:rest_of_voronoi}, this certainly seems to be the case. For the merger remnants with central SMBH binaries, both the $\beta$ and the $h_4$ values are largely positive in the outer regions of the galaxy, while being negative closer to their centres. The $h_4$ map of the BH-0 merger is then positive all around, exactly like its $\beta$-profile. The $h_4$ maps of NGC 3414 and NGC 4111 (figure \ref{figure:IFU-maps}) do not contain any specific structures and seem to be completely isotropic. As the negative $h_4$-areas in the IFU maps of the simulated merger remnants are likely caused by core scouring, and as neither of the observed galaxies are cored galaxies \citep{Lauer2007}; they most likely have not experienced such a process, making the lack of clear structures understandable.
 
 \subsection{The $\lambda_R$-parameter}
 
-Further analysis of the kinematics of the simulated merger remnants can be done by studying the $\lambda_R$ parameter, which describes the angular momentum of a galaxy \citep{Emsellem2007}. More importantly, the parameter allows us to differentiate between the aforementioned slowly rotating galaxies and so-called fast rotators (see figure \ref{figure:IFU-maps}) \citep{Emsellem2007}. The parameter itself is defined in a general form as:
-\begin{equation}
-\lambda_R \equiv \frac{\langle R |V| \rangle}{\langle R \sqrt{V^2 + \sigma^2} \rangle},
-\end{equation}
-where $R$ is the projected distance from the galactic centre, $V$ is the line-of-sight velocity, $\sigma$ is the velocity dispersion and $\langle \; \rangle$ denote that the nominator and denominator in the equation are luminosity weighted means. However, as most of the observational kinematic analysis of galaxies is done through binned 2D spectroscopy, and as the IFU-maps made from our simulations are produced the same way as the observed ones, we will be using the following version of the equation:
-\begin{equation}
-\lambda_R = \frac{\sum^{N_p}_{i=1} F_i R_i |V_i|}{\sum^{N_p}_{i=1} F_i R_i \sqrt{V_i^2 + \sigma^2_i}},
-\end{equation}
-where $F_i$, $R_i$, $V_i$ and $\sigma_i$ are the flux, projected distance from the galaxy centre, velocity and velocity dispersion of the $i$th bin, and $N_p$ is the number of bins. In the case of our simulations, the $N_p$ bins used are of course the voronoi bins described earlier in this section. 
+Further analysis of the kinematics of the simulated merger remnants can be done by studying the $\lambda_R$ parameter (equation \ref{eq:general_lambdar}), which allows us to determine whether the galaxies are slow or fast rotators. We use the Voronoi binned statistics from the IFU-maps to calculate $\lambda_{Re}$, i.e. $\lambda_R$ at the effective radius, using equation \ref{eq:binned_lambdar}. These are then compared to the three slow rotator thresholds described in section \ref{section:slow_fast_rotators}:
+ \begin{align}
+\begin{split}
+\lambda_{Re} &< 0.1, \\
+\lambda_{Re} &< 0.31\sqrt{\epsilon_e},\\
+\lambda_{Re} &< 0.08 + \epsilon_e/4,
+\end{split}
+\end{align}
+where $\epsilon_e$ is the ellipticity of the remnant at the effective radius.
 
-Determining whether a galaxy is either a fast or a slow rotator using $\lambda_R$, is done by comparing the value that the parameter gets at the galaxy's effective radius, to some pre-defined threshold. The originally used threshold is: $\lambda_{Re} < 0.1$, where $\lambda_{Re}$ is the aforementioned $\lambda_R$ at the effective radius, and where galaxies fulfilling this condition are classified as slow rotators \citep{Emsellem2007}. A revision of the threshold by \cite{Emsellem2011} takes the ellipticity ($\epsilon$) of the galaxy into account, and defines slow rotators as having $\lambda_{R_e} < 0.31 \sqrt{\epsilon}$, which accounts for the increased anisotropy in the kinematics of flatter galaxies. An even further refinement of the slow rotator definition has been proposed by \cite{Cappellari2016}, where slow rotator galaxies are determined using the following two criteria: $\lambda_{R_e} < 0.08 + \epsilon/4$ and $\epsilon < 0.4$. The former criterion of the threshold reduces the risk of misidentifying very round non-regular slow rotators as fast rotators, while the latter makes sure that only sufficiently round galaxies are classified as slow rotators (\citealt{Cappellari2016} argues that "genuine" disk-less slow rotators are all rounder than $\epsilon = 0.4$).
-
-As two of the three aforementioned slow rotator thresholds require us to know the ellipticity of the galaxy I wrote a program in Python that calculates ellipticities of the simulated merger remnants. These ellipticity calculations are done using a method described in \cite{Zemp2011}, which uses the shape tensor:
+As two of the three slow rotator thresholds require us to know the ellipticity of the galaxy, I wrote a program in Python that calculates ellipticities of the simulated merger remnants. These ellipticity calculations are done using a method described in \cite{Zemp2011}, which uses the shape tensor:
 \begin{equation}
 \mathbf{S} = \frac{\int_V \rho(\mathbf{r}) \omega(\mathbf{r}) \mathbf{r} \mathbf{r}^T \; dV }{\int_V \rho{\mathbf{r}} \; dV},
 \end{equation}
-where $\mathbf{r}$ is position from the galactic centre, $\rho(\mathbf{r})$ is the mass density, $V$ is the volume of an enclosed ellipsoid with the elliptical radius $r_\mathrm{ell}$, and where the weighting function $\omega(\mathbf{r}) = 1$. The eigenvalues of the shape tensor correspond to $a^2/3$, $b^2/3$ and $c^2/3$; where $a$, $b$ and $c$ are the semi-principal axes; and they can be used to calculate the ellipticity as $\epsilon = 1 - b/a$. 
+where $\mathbf{r}$ is position from the galactic centre, $\rho(\mathbf{r})$ is the mass density, $V$ is the volume of an enclosed ellipsoid with the elliptical radius $r_\mathrm{ell}$, and where the weighting function $\omega(\mathbf{r}) = 1$. The eigenvalues of the shape tensor correspond to $a^2/3$, $b^2/3$ and $c^2/3$; where $a$, $b$ and $c$ are the semi-principal axes. The parameter $a$ and $b$ correspond to the semi-major and semi-minor axes, respectively, and can be used to calculate the ellipticity (equation \ref{eq:ellipticity}). 
 
 However, simply calculating the shape tensor and getting the correct eigenvalues is not possible, as the elliptical radius $r_\mathrm{ell}$ is defined, in part, by using the axis ratios $a/b$ and $a/c$:
 \begin{equation}
 r_\mathrm{ell} = \sqrt{x_\mathrm{ell}^2 + \frac{y_\mathrm{ell}^2}{(b/a)^2} + \frac{z_\mathrm{ell}^2}{(c/a)^2}}.
 \end{equation}
-This means that we have to turn the calculation into an iterative process by starting with $b/a = c/a = 1$ for the initial value of $r_\mathrm{ell}$, and calculating new shape tensor eigenvalues using previously gained axis ratios until the values of the ratios start to converge. 
-
-We calculate $\lambda_{Re}$ and $\epsilon_e$, i.e. the ellipticity at the effective radius (the ellipticity is calculated using $r_\mathrm{ell} = R_e$, and a convergence criterion of a difference smaller than $10^{-3}$ between consequent axis ratios), for every merger simulation snapshot and plot them against each other. We also plot the previously mentioned slow rotator thresholds, as well as observations from the $\mathrm{ATLAS^{3D}}$-survey \citep{Cappellari2011}, in the same figure. The resulting plot can be seen in figure \ref{figure:lambda_epsilon}. 
+This means that we have to turn the calculation into an iterative process by starting with $b/a = c/a = 1$ for the initial value of $r_\mathrm{ell}$, and calculating new shape tensor eigenvalues using previously gained axis ratios until the values of the ratios start to converge, and the difference between two subsequent axis ratios falls below some pre-defined convergence criterion.
 
 \begin{figure}[h]
 	\centering
@@ -993,7 +1203,7 @@ We calculate $\lambda_{Re}$ and $\epsilon_e$, i.e. the ellipticity at the effect
 	\label{figure:lambda_epsilon}
 \end{figure}
 
-Regardless of the threshold used for differentiating between slow and fast rotators, figure \ref{figure:lambda_epsilon} shows us that, all of the simulated merger remnants are clearly classified as slow rotators. This agrees well with the kinematic anisotropies seen in the IFU maps, which also implied a slow rotator classification for the remnants.
+Plotting $\lambda_{Re}$ and $\epsilon_e$ against each other (the ellipticity is calculated using $r_\mathrm{ell} = R_e$, and a convergence criterion of a difference smaller than $10^{-3}$ between consequent axis ratios), alongside the slow rotator thresholds and observed values from the $\mathrm{ATLAS^{3D}}$-survey \citep{Cappellari2011}, gives us figure \ref{figure:lambda_epsilon}. Regardless of the threshold used for differentiating between slow and fast rotators, the figure shows that, all of the simulated merger remnants are clearly classified as slow rotators. This agrees well with the kinematic anisotropies seen in the IFU-maps, which also implied a slow rotator classification for the remnants.
 
 \section{Comparison to Observations}
 
@@ -1029,7 +1239,7 @@ It is impressive, that the simulation of the BH-6 merger is able to reproduce bo
 
 Interestingly, since the BH-6 merger has extremely similar kinematic properties with the BH-1 merger and NGC 1600, it can be assumed that the mass of the central SMBH binary does not affect the rotation of its host galaxy in any significant way. This suggests that, as far as the merger progenitors are concerned, it is the properties other than their central SMBH mass (i.e. them being massive gas-poor ETGs) that determine the stellar kinematics in the final merger remnant. As for NGC 4472, since both its $\lambda_e$ and LOS velocity are about an order of magnitude larger compared to the three other galaxies, it can be argued that its formation history must be quite different when compare to the other galaxies. However, due to the ambiguity of whether NGC 4472 is a fast rotator and whether its spin parameter is biased towards large values, the possibility that the galaxy has also formed through a dry ETG merger, should not be ruled out.
 
-Earlier in this chapter it was shown that there is a clear positive correlation between the central SMBH binary masses and the size of the core radii. However, the fact that the core radius sizes for the BH-1 merger remnant and NGC 4472 are comparable, and that many of their other properties are quite different; imply that, not only is there a correlation, the SMBH binary mass might be the only property that affects the size of the core in any significant way. If this is true, it is very strong evidence, that the cores are formed through a scouring process by binary SMBHs.
+Earlier in this chapter it was shown that there is a clear positive correlation between the central SMBH binary masses and the size of the core radii in the simulated merger remnants. However, the fact that the core radius sizes for the BH-1 merger remnant and NGC 4472 are comparable, and that many of their other properties are quite different; imply that, not only is there a correlation, the SMBH binary mass might be the only property that affects the size of the core in any significant way. If this is true, it is very strong evidence, that the cores are formed through a scouring process by binary SMBHs.
 
 
 \begin{table}
