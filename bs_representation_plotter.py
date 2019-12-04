@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 def func(x):
-    return x**2-1
+    return np.sin(x)**2 + np.cos(x)**3
 
 def polynomial(x, coeffs):
     y = np.zeros(x.size)
