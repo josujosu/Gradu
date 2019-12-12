@@ -1,5 +1,5 @@
 % STEP 1: Choose oneside or twoside. Use the 'draft' option a lot when writing.
-\documentclass[english, oneside]{HYgradu}
+\documentclass[english, twoside]{HYgradu}
 
 \usepackage[utf8]{inputenc} % For UTF8 support. Use UTF8 when saving your file.
 \usepackage{lmodern} % Font package
@@ -44,16 +44,16 @@
 % STEP 2:
 % Set up all the information for the title page and the abstract form.
 % Replace parameters with your information.
-\title{Formation of cores by merging supermassive black holes}
+\title{Formation of Cores by Merging Supermassive Black Holes}
 \author{Joonas Suortti}
 \date{\today}
 \level{Master's thesis}
-\faculty{Faculty of Whatever}
-\department{Department of Something}
-\address{PL 42 (Kuvitteellinen katu 1)\\00014 Helsingin yliopisto}
+\faculty{Faculty of Science}
+\department{Department of Physics}
+\address{PL 64 (Gustaf Hällströmin katu 2)\\00560 Helsingin yliopisto}
 \subject{Your Field}
-\prof{prof. Smith}
-\censors{prof. Smith}{doc. Smythe}{}
+\prof{prof. Peter Johansson}
+\censors{prof. Peter Johansson}{doc. Smythe}{}
 \depositeplace{}
 \additionalinformation{}
 \numberofpagesinformation{\numberofpages\ pages}
@@ -114,7 +114,7 @@ where $a$ and $b$ are the semi-major and semi-minor axes of a luminosity isophot
 
 \subsection{Photometry} \label{section:ellip_photo}
 
-The photometric properties of elliptical galaxies are often described in terms of the surface brightness, which describes the amount of observed luminosity from a unit area. Thus, an important property for studying the general spatial distribution of stellar material in observed elliptical galaxies, is the one-dimensional radial surface brightness profile $I(R)$, where $R$ is the projected distance from the centre of the galaxy. In practice, these profiles can be constructed by calculating the azimuthal averages of observed surface brightness at every projected radius $R$ \citep{MerrittBook}.
+The photometric properties of elliptical galaxies are often described in terms of the surface brightness, which describes the amount of observed luminosity from a unit area. Thus, an important property for studying the general spatial distribution of stellar material in observed elliptical galaxies, is the one-dimensional radial surface brightness profile $I(R)$, where $R$ is the projected distance from the centre of the galaxy. In practice, these profiles can be constructed by calculating the azimuthal averages of the observed surface brightness at every projected radius $R$ \citep{MerrittBook}.
 
 The observed surface brightness profiles of elliptical galaxies are typically smooth and featureless, declining smoothly as the projected radius grows, until the galaxy is indistinguishable from the background \citep{BinneyTremaine}. The observed "power-law"-like profiles are quite similar in shape across all elliptical galaxies, which has led to the formulation of a multitude of models that attempt to describe this general shape. An early example of such a model is the "de Vaucouleurs" power-law profile: $I \propto R^{1/4}$ \citep{deVaucouleurs1948}. This model, however, is quite simple, and only represents well the profiles of some elliptical galaxies, namely the bright ellipticals \citep{MerrittBook}. 
 
@@ -277,7 +277,7 @@ L \lesssim \left[ G(M_1 + M_2) a \right]^{1/2}, \label{eq:loss-cone}
 \end{equation}
 where $M_1$ and $M_2$ are the masses of the binary SMBHs, and $a$ is the semi-major axis of their orbit \citep{BinneyTremaine}. 
 
-\subsection{Gravitational Radiation}
+\subsection{Gravitational Radiation} \label{section:gravitational_radiation}
 
 Once the three-body interactions with field-stars have shrunk the orbit of the binary enough, and the separation of the SMBHs has become less than:
 \begin{equation}
@@ -525,15 +525,15 @@ An important caveat to note is that, the point mass assumption of the PN approxi
 
 \chapter{KETJU}
 
-KETJU \citep{Rantala2017KETJU} is a simulation code, designed for efficient and simultaneous modelling of both galactic-scale dynamics and the precise motion of particles near SMBHs. This is achieved through the combined functionality of two integrators with different degrees of efficiency and precision. The global galactic dynamics is calculated using the tree-code (section \ref{section:tree}) included in GADGET-3 \citep{Springel2005}, which uses softened dynamics (section \ref{section:softened_dynamics}) to calculate the general motion of particles in a collisionless system. The motion of bodies close to the SMBHs is, on the other hand, calculated using an algorithmically regularised chain method (AR-CHAIN, section \ref{section:ar-chain}; \citep{Mikkola2008ARCHAIN}).
+KETJU \citep{Rantala2017KETJU} is a simulation code, designed for efficient and simultaneous modelling of both galactic-scale dynamics and the precise motion of stellar particles near SMBHs. This is achieved through the combined functionality of two integrators with different degrees of efficiency and precision. The global dynamics of the simulated stellar system is calculated using the tree-integrator (section \ref{section:tree}) included in GADGET-3 simulation code \citep{Springel2005}, which uses softened dynamics (section \ref{section:softened_dynamics}) to calculate the general motion of particles in collisionless systems. The motion of bodies close to the SMBHs is, on the other hand, calculated using an algorithmically regularised chain method (AR-CHAIN, section \ref{section:ar-chain}; \citealt{Mikkola2008ARCHAIN}).
 
-\section{Tree Codes} \label{section:tree}
+\section{Direct Summation and Tree Codes} \label{section:tree}
 
-The simplest way of modelling the gravitational interactions between particles in a system, is to use the "direct summation" method. When using direct summation, the gravitational force acted upon particle $\alpha$ can be calculated using the following equation \citep{BinneyTremaine}:
+The simplest way of modelling the gravitational interactions between particles in a system, is to use the "direct summation" method. When using direct summation, the gravitational force acted upon particle $\alpha$ is calculated using the basic Newton's law of gravity:
 \begin{equation}
 \mathbf{F}_\alpha = \displaystyle\sum_{\beta \neq \alpha} Gm_\beta \frac{\mathbf{r}_\beta-\mathbf{r}_\alpha}{|\mathbf{r}_\beta-\mathbf{r}_\alpha|^3}, \label{eq:f_alpha}
 \end{equation}
-where $m_\beta$ is the mass of the particle $\beta$, and $\mathbf{r}_\alpha$ and $\mathbf{r}_\beta$ are the vector positions of particles $\alpha$ and $\beta$, respectively. Since every particle contributes to the total gravitational force experienced by every other particle, the number of calculations needed to determine the motion of the whole system scales according to $N^2$, where $N$ is the total number of particles. As a result, this method is very inefficient for simulations of systems such as galaxies, which may need millions of particles to adequately describe their internal dynamics. However, similar force-evaluation methods that only scale as $N\ln N$ also exist. One such method, included in GADGET-3 and used in the KETJU code, is the so-called "tree code".
+where $m_\beta$ is the mass of the particle $\beta$, and $\mathbf{r}_\alpha$ and $\mathbf{r}_\beta$ are the vector positions of particles $\alpha$ and $\beta$, respectively. Since every particle contributes to the total gravitational force experienced by every other particle, when using this equation to calculate gravitational forces, the number of calculations needed to determine the motion of the entire system scales according to $N^2$, where $N$ is the total number of simulated particles. As a result, this method is very inefficient for simulations of systems such as galaxies, which may need millions of particles to adequately describe their internal dynamics. However, similar force-evaluation methods that only scale as $N\ln N$ also exist. One such method, included in GADGET-3 and used in the KETJU code, is the so-called "tree code".
 
 \begin{figure}
 	\centering	
@@ -542,9 +542,9 @@ where $m_\beta$ is the mass of the particle $\beta$, and $\mathbf{r}_\alpha$ and
 	\label{figure:oct_tree}
 \end{figure}
 
-In tree codes, the gravitational forces experienced by particles are not generated by the other particles themselves, but by so-called "nodes". These nodes are part of a structure called a "tree". In GADGET-3, this structure can be further specified as an "oct-tree", which is constructed as follows. First, the whole simulated system is enclosed in a single cubic volume called the "root" node. This cube is then divided into eight smaller cubic volumes called "child" nodes, and it becomes their "parent" node. Next begins a recursive process, where child nodes that contain more than one particle, are divided into their own respective child nodes. Nodes that contain a single particle are thus not divided into child nodes. These nodes are called "leaf" nodes. The above process continues, until every single particle is located inside its own leaf node. The construction of any type of a tree structure follows the same basic principle outlined above. The differences between tree types, come from the shape of the node-volumes and the number of volumes into which the nodes are subdivided. Figure \ref{figure:oct_tree} shows a two-dimensional representation of what an oct-tree might look like. 
+In tree codes, the gravitational forces experienced by particles are not generated by the other particles themselves, but by so-called "nodes". These nodes are part of a structure called a "tree". In GADGET-3, this structure can be further specified as an "oct-tree", which is constructed as follows. First, the whole simulated system is enclosed in a single cubic volume called the "root" node. This cube is then divided into eight smaller cubic volumes called "child" nodes, and becomes their "parent" node. Next begins a recursive process, where child nodes that contain more than one particle, are divided into their own respective child nodes. Nodes that contain a single particle are thus not divided into child nodes, and are called "leaf" nodes. The above process continues, until every single particle is located inside its own leaf node. The construction of any type of a tree structure follows the same basic principle outlined above. The differences between tree types, come from the shape of the node-volumes and the number of volumes into which the nodes are subdivided. Figure \ref{figure:oct_tree} shows a two-dimensional representation of what an oct-tree would look like. 
 
-The effect that a node has on the gravitational acceleration of a particle, is calculated with respect to the centre-of-mass of the node in question. In GADGET-3, the gravitational force of the node is generated by the sum of the masses of the particles inside the node (i.e. the monopole moment of the node \citealt{Springel2005}). However, it is also possible to calculate the force as the sum of the forces generated by the multipole moments of the node \citep{BinneyTremaine}:
+The effect that a node has on the gravitational acceleration of a particle, is calculated with respect to the centre-of-mass of the node in question. In GADGET-3, the gravitational force of the node is generated by the sum of the masses of the particles inside the node (i.e. the monopole moment of the node; \citealt{Springel2005}). However, it is also possible to calculate the force as the sum of the forces generated by the multipole moments of the node \citep{BinneyTremaine}:
 \begin{equation}
 M_0 \equiv \displaystyle\sum_\alpha m_\alpha; \quad M_{ij} = \displaystyle\sum_\alpha m_\alpha x^\alpha_i x^\alpha_j; \quad M_{ijk} = \displaystyle\sum_\alpha m_\alpha x^\alpha_i x^\alpha_j x^\alpha_k,
 \end{equation}
@@ -552,36 +552,38 @@ where $m_\alpha$ is the mass of the particle $\alpha$ inside the node; and $x_i^
 
 Of course, using the gravitational influence of every node to generate the acceleration of a particle would not make sense, as every parent node contains the same particles as its child nodes. Thus, which nodes are considered in the evaluation of the gravitational acceleration of a particle, are determined through a "tree walk". Starting from the root node and moving recursively through its child nodes, if a node fulfils an "opening criterion" it is taken into account in the force calculation, otherwise the walk moves onto its child nodes. The original opening criterion described by \cite{Barnes1986} is the following:
 \begin{equation}
-\frac{l}{D} < \theta,
+\frac{l}{D} < \theta, \label{eq:opening_criterion}
 \end{equation}
-where $l$ is the length of the node, $D$ is the distance between the particle and the centre-of-mass of the node, and $\theta$ is some predetermined opening angle. Once all of the nodes that contribute to the acceleration of the particle have been determined, the gravitational influence that the system has on the motion of the particle can be calculated as the sum of these force contributions.
+where $l$ is the length of the node, $D$ is the distance between the particle and the centre-of-mass of the node, and $\theta$ is some predetermined opening angle. Once all of the nodes that contribute to the acceleration of the particle have been determined, the gravitational influence that the system has on the motion of the particle can be calculated as the sum of these force contributions. 
 
-It is important to note, that depending on the desired accuracy of a given simulation, the tree structure might have to always be reconstructed, after the particles in the simulated system have been propagated over some time step. The labour needed for the construction of the tree scales according to $N \ln N$, as does the number of force calculations \citep{BinneyTremaine}. However, when dealing with systems that contain a large number of simulated particles, the use of the tree code is still far more efficient than the direct summation method, which has an $N^2$ scaling.
+Using an opening criterion such as the one in equation \ref{eq:opening_criterion}, allows one to prioritise accurate calculations for the significant gravitational effects induced by nearby particles. The tree-code treats these neighbouring particles essentially as singular, while dealing with the individually weaker gravitational interactions from faraway particles, as though they were generated by a single bulk of mass. 
+
+It is important to note that, in order to maintain accuracy, the tree structure must be reconstructed once the simulated particles have been propagated over a number of time-steps. How often this reconstruction is done, however, depends on the desired accuracy of the simulation. In simulation codes such as KETJU, which need to simulate dynamics with exceptionally high precision, the tree must be built after every integration step. The labour needed for the construction of the tree scales according to $N \ln N$, as does the number of force calculations \citep{BinneyTremaine}. However, even accounting for this additional work, when dealing with systems that contain a large number of simulated particles, the use of the tree code is still far more efficient than the direct summation method, which has an $N^2$ scaling.
 
 \section{Softened Dynamics} \label{section:softened_dynamics}
 
-As, for example, equation \ref{eq:f_alpha} shows, the gravitational force between two massive point-masses starts to grow rapidly as the separation between them decreases. The removal of this divergence in the magnitude of the gravitational force is called "softening" the dynamics. The simplest example of softened dynamics is so-called Plummer softening, where the gravitational potential of a point-mass is described as:
+As equation \ref{eq:f_alpha} shows, the gravitational force between two massive point-masses starts to grow rapidly as the separation between them decreases. The removal of this divergence in the magnitude of the gravitational force is called "softening" the dynamics. The simplest example of softened dynamics is so-called Plummer softening, where the gravitational potential of a point-mass is described as:
 \begin{equation}
 \phi = -\frac{GM}{\sqrt{r^2 + \epsilon^2}}, \label{eq:plummer}
 \end{equation}
-and where $\epsilon$ is the "softening length". As one can see, using equation \ref{eq:plummer} to describe gravitational potential causes the potential to converge at a constant value, as the separation $r \rightarrow 0$.
+and where $\epsilon$ is the "softening length". As one can see, using equation \ref{eq:plummer} to describe the gravitational potential causes the potential to converge at a constant value, as the separation $r \rightarrow 0$. However, the gravitational forces generated by the Plummer potential are never exactly Newtonian, meaning that the use of this type of softening, inevitably introduces some errors into the motion of the simulated bodies.
 
-The use of softened dynamics is important when simulating the motion of multiple particles in a collisionless system. Usually, in simulations of galactic dynamics the interacting particles are not representative of singular bodies. Often the particles are used to denote the general flow of mass in the system, and are orders of magnitude more massive than for example a star. Due to this abnormally high mass, strong interactions between two such particles, and the resulting changes in their motion, are possible in the simulated system; even though the process that the interaction represents is completely unphysical. Thus, removing the divergence in the strength of the gravitational force makes simulations of collisionless systems more physically accurate.
+The use of softened dynamics is important when simulating the motion of multiple particles in a collisionless system. Usually, in simulations of galactic dynamics the interacting particles are not representative of singular bodies. Often these particles are orders of magnitude more massive, and significantly less numerous, than for example stars in a galaxy analogous to the simulated dynamical system. The particles are generated through Monte-Carlo sampling (i.e. random sampling) of the phase space mass distribution of the system, and are used to denote the general flow of mass. Due to their abnormally high mass, strong interactions between two such particles, and the resulting changes in their motion, are possible in the simulated system; even though the process that the interaction represents is completely unphysical. Thus, removing the divergence in the strength of the gravitational force is in fact necessary, when trying to make the simulations of collisionless systems physically accurate.
 
-The tree code in GADGET-3 uses softened dynamics when calculating the gravitational forces between particles. In the code, the softening is done using a "Monaghan-Lattanzio" spline kernel \citep{Monaghan1985}, which gives an exactly Newtonian gravitational potential outside the softening length $h_\mathrm{ML}$. The equation for the softened gravitational potential in the GADGET-3 tree code is \citep{Springel2001}:
+The tree code in GADGET-3 uses softened dynamics when calculating the gravitational forces between particles. In the code, the softening is done using a "Monaghan-Lattanzio" spline kernel \citep{Monaghan1985}, which gives an exactly Newtonian gravitational potential outside of the softening length $h_\mathrm{ML}$. The equation for the softened gravitational potential in the GADGET-3 tree code is \citep{Springel2001}:
 \begin{equation}
 \phi(r) = \frac{GM}{h_\mathrm{ML}} W \left(\frac{r}{h_\mathrm{ML}} \right), \label{eq:splinekernel_softened_potential}
 \end{equation}
-where $W$ is the spline-kernel:
+where $W$ is a spline-kernel defined as:
 \begin{equation}
 W(u) = 
 \begin{cases}
-\frac{16}{3}u^2 - \frac{48}{5} u^4 + \frac{35}{2} u^5 - \frac{14}{5} &\quad 0 \leq u < \frac{1}{2} \\
+\frac{16}{3}u^2 - \frac{48}{5} u^4 + \frac{32}{5} u^5 - \frac{14}{5} &\quad 0 \leq u < \frac{1}{2} \\
 \frac{1}{15}u^{-1} + \frac{32}{3}u^2 - 16u^3 + \frac{48}{5} u^4 - \frac{32}{15} u^5 - \frac{16}{5} &\quad \frac{1}{2} \leq u < 1 \\
 -\frac{1}{u} &\quad  1 \leq u
 \end{cases}.
 \end{equation} 
-The length of $h_\mathrm{ML}$ is defined as $h_\mathrm{ML} = 2.8\epsilon$, where $\epsilon$ is the Plummer softening length. This is done in order to have the spline-kernel softened potential to be equivalent to the Plummer-potential at $r = 0$.
+The length of $h_\mathrm{ML}$ is defined as $h_\mathrm{ML} = 2.8\epsilon$, where $\epsilon$ is the Plummer softening length. This naturally makes the softened gravitational potential fully Newtonian beyond $r = 2.8 \epsilon$. In addition, the use of this softening length in particular, also makes the spline-kernel softened potential equivalent to the Plummer-potential at $r = 0$.
 
 \begin{figure}
 	\centering	
@@ -590,30 +592,32 @@ The length of $h_\mathrm{ML}$ is defined as $h_\mathrm{ML} = 2.8\epsilon$, where
 	\label{figure:softened_potentials}
 \end{figure}
 
-Since the spline-kernel softened potential is equivalent to the purely Newtonian potential at distances beyond the softening length $h_\mathrm{ML}$, it provides a much more accurate estimation of galactic dynamics than the Plummer potential, which is never exactly Newtonian. Furthermore, the fact that the spline-kernel softening, similarly to Plummer softening, causes the potential to converge towards a constant value at $r=0$, it is also applicable in simulations of collisionless systems. Figure \ref{figure:softened_potentials} shows both of these properties. From the figure, one can also see that the spline-kernel softened potential seems to be all around more Newtonian than the Plummer potential, even at distances smaller than the softening length.
+Since the spline-kernel softened potential is equivalent to the purely Newtonian potential at distances beyond the softening length $h_\mathrm{ML}$, it provides a much more accurate estimation of galactic dynamics than the Plummer potential. Furthermore, the fact that the spline-kernel softening, similarly to Plummer softening, causes the potential to converge towards a constant value at $r=0$, it is also applicable in simulations of collisionless systems. Figure \ref{figure:softened_potentials} shows both of these properties. From the figure, one can also see that the spline-kernel softened potential seems to be all around more Newtonian than the Plummer potential, even at distances smaller than the softening length.
 
 
 \section{AR-CHAIN} \label{section:ar-chain}
 
-As stated above, KETJU uses the algorithmic regularisation chain code (AR-CHAIN, \citealt{Mikkola2008ARCHAIN}) to simulate the dynamics near SMBHs with great accuracy. AR-CHAIN consists of three procedures: regularisation of the few-body problem through time-transformed leapfrog integration, reduction of roundoff errors through the use of relative "chain-coordinates", and the increase of its accuracy through "Gragg-Bulirsch-Stoer" -extrapolation.
+As stated above, KETJU uses the algorithmic regularisation chain code (AR-CHAIN, \citealt{Mikkola2008ARCHAIN}) to simulate the dynamics near SMBHs with great accuracy. AR-CHAIN consists of three main components: regularisation of the few-body problem through time-transformed leapfrog integration, reduction of roundoff errors through the use of relative chain-coordinates, and the increase of its accuracy through Gragg-Bulirsch-Stoer extrapolation.
 
 \subsection{Algorithmic Regularisation}
 
-The algorithmic regularisation procedure employed in AR-CHAIN, is based on two time-transformations. The fictitious times employed for the regularisation of the time-derivatives of the particle positions and every other time-dependent variable, respectively, are subtly different from each other, but should be identical along the exact solution of the $N$-body problem. For the particle positions, the time-transformation is given as \citep{Mikkola2008ARCHAIN}:
+Recounting what was said in section \ref{section:regularisation}; when simulating strong inter-particle interactions while maintaining high simulation accuracy by using adaptive time-steps, it is important to regularise the equations of motion, in order to avoid infinitesimally short steps from effectively halting the simulation from progressing. In AR-CHAIN, the regularisation procedure employed is so-called "algorithmic regularisation", which is based on two different time-transformations for the equations of motion of the particle position and every other time-dependent variable, respectively. The two fictitious times used in the regularisation are subtly different from each other, but should be identical along the exact solution of the $N$-body problem. For the particle positions, the time-transformation is given as \citep{Mikkola2008ARCHAIN}:
 \begin{equation}
 ds = [ \alpha ( T+B ) + \beta \omega + \gamma ] dt, \label{eq:ds_coords}
 \end{equation}
-while for the other velocity-like variables:
+while for the other, velocity-like, variables:
 \begin{equation}
 ds = [\alpha U + \beta \Omega + \gamma] dt, \label{eq:ds_vels}
 \end{equation}
-where $s$ is the new fictitious time; $T$, $U$ and $B$, are the kinetic, potential and binding energies ($B = U - T$), respectively; $\alpha$, $\beta$ and $\gamma$ are adjustable variables, which determine how much each of the three terms influences the time-transformation; $\Omega$ is an arbitrary function of the particle positions ($\Omega = \Omega(\mathbf{r})$); and the parameter $\omega$ is defined by the initial value $\omega(0) = \Omega(0)$, and the time dependence:
+where $s$ is the new fictitious time; $T$, $U$ and $B$, are the kinetic, potential and binding energies ($B = U - T$), respectively; $\alpha$, $\beta$ and $\gamma$ are variables, which determine the terms that are taken into account in the time-transformation (often, for example in KETJU, these parameters are set as $(\alpha, \beta, \gamma) = (1, 0, 0)$); $\Omega$ is an arbitrary function of the particle positions ($\Omega = \Omega(\mathbf{r})$); and the parameter $\omega$ is defined by the initial value $\omega(0) = \Omega(0)$, and the time dependence:
 \begin{equation}
 \dot{\omega} = \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{r}} \cdot \mathbf{v},
 \end{equation}
-where $N$ is the number of particles in the system. Since the time-transformations should be identical along the exact solution of the $N$-body equation of motion, it follows that, for the exact solution, the $\Omega$ and $\omega$ parameters should behave in the same way (i.e. $\Omega(t) = \omega(t)$).
+where $N$ is the number of particles in the system. Since the time-transformations should be identical along the exact solution of the $N$-body equation of motion, it follows that, for the exact solution, the $\Omega$ and $\omega$ parameters should behave in the same way (i.e. $\Omega(t) = \omega(t)$). 
 
-In KETJU, the function used for $\Omega$ is similar to the potential energy, and is defined as:
+In the KETJU implementation of AR-CHAIN, the parameter $\beta$ is usually set as $\beta = 0$. This means that $\Omega$ and $\omega$ do not affect the time-transformation, and thus calculating their values is effectively optional. Still, following the time-evolution and convergence of these parameters is useful, as it allows one to examine how close to the exact solutions the equations of motion are being solved in the simulation, and update the simulation accuracy accordingly.   
+
+The function often used for $\Omega$ is similar to the potential energy, and is defined as:
 \begin{equation}
 \Omega = \displaystyle\sum^N_i \displaystyle\sum^N_{j > i} \frac{\Omega_{ij}}{|\mathbf{r}_{ij}|}, \label{eq:ketju_omega}
 \end{equation}
@@ -647,9 +651,7 @@ and the velocity equations:
 \frac{dB}{ds} &= -\tilde{t}' \displaystyle\sum^N_i \frac{\partial T}{\partial \mathbf{v}_i} \cdot \mathbf{f}_i, \\
 \end{split}
 \end{equation}
-where $\mathbf{a}_i$ is the $N$-body acceleration, and $\mathbf{f}_i$ is the acceleration caused by perturbing gravitational forces. 
-
-However, he gravitational force that produces the acceleration of the simulated particles is still Newtonian even in the time-transformed equations, and thus still contains the singularity discussed in section \ref{section:regularisation}. To circumvent the singularity, the algorithmic regularisation procedure uses a leapfrog integrator (explained below) when calculating the trajectories of the particles. 
+where $\mathbf{a}_i$ is the $N$-body acceleration, and $\mathbf{f}_i$ is the acceleration caused by perturbing gravitational forces, generated by bodies outside the $N$-body system simulated using AR-CHAIN. However, the gravitational force that produces the acceleration of the simulated particles is still Newtonian even in the time-transformed equations, and thus still contains the singularity discussed in section \ref{section:regularisation}. To circumvent the singularity, the algorithmic regularisation procedure uses a leapfrog integrator (explained below) when calculating the trajectories of the particles. 
 
 Generally, numerical orbit integration procedures consist of two types of steps; so-called "kick" and "drift" steps, where the dynamics of a simulated particle is updated according to the current state of the system, and where the particle is propagated according to its current dynamics, respectively. In the simplest possible integrator, when propagating a system over some time-step $\Delta t$, the particles are both kicked and then drifted once (or vice versa) over the whole time-step. In a leapfrog integrator, however, the preceding step is divided into two smaller steps over half of the total time-step, which are then calculated before and after the second step. We can help visualise this difference, by using $\mathbf{X}(\Delta t)$ and $\mathbf{V}(\Delta t)$ to notate the drift and kick steps, respectively. For the simple integrator, a single time-step would be:
 \begin{equation}
@@ -659,17 +661,17 @@ while a leapfrog time-step could be written as:
 \begin{equation}
 \mathbf{X}(\Delta t/2)\mathbf{V}(\Delta t)\mathbf{X}(\Delta t/2). \label{eq:DKD}
 \end{equation}
-Depending on which of the steps is divided into two, the integrator can either be a so-called "kick-drift-kick" (KDK) leapfrog, or a "drift-kick-drift" (DKD) leapfrog. The variant described by equation \ref{eq:DKD} is the DKD leapfrog, which is also the version used by KETJU \citep{Rantala2017KETJU}. Using a leapfrog integrator, allows the AR-CHAIN algorithm to skip calculating gravitational forces at $r = 0$.
+Depending on which of the steps is divided into two, the integrator can either be a so-called "kick-drift-kick" (KDK) leapfrog, or a "drift-kick-drift" (DKD) leapfrog. The variant described by equation \ref{eq:DKD} is the DKD leapfrog, which is also the version used by KETJU \citep{Rantala2017KETJU}. With the use of a leapfrog integrator, the AR-CHAIN algorithm is able to avoid calculating gravitational forces at $r = 0$.
 
-Using the time-transformation detailed above, a leapfrog integrator, and setting $(\alpha, \beta, \gamma)$ to either $(1, 0, 0)$ or $(0, 1, 0)$ ($(1, 0, 0)$ being used in KETJU), AR-CHAIN is able to calculate exact two body orbits, up to numerical accuracy \citep{Mikkola2008ARCHAIN}. Important to note is that, since the parameter $\beta$ from the time-transformations in equations \ref{eq:ds_coords} and \ref{eq:ds_vels} is set to $\beta = 0$ in the KETJU implementation of AR-CHAIN, $\Omega$ and $\omega$ effectively become optional parameters. However, even though these parameters are not used in the regularisation itself, calculating their values is still useful, as they provide information on how close the $N$-body orbits are to their exact solutions.
+Using the time-transformation detailed above, a leapfrog integrator, and setting $(\alpha, \beta, \gamma)$ to $(1, 0, 0)$; AR-CHAIN is able to calculate exact two body orbits, up to numerical accuracy \citep{Mikkola2008ARCHAIN}. However, simply using the algorithmic regularisation does not provide enough accuracy to calculate precise motion near SMBHs. Thus, it is imperative to improve the numerical accuracy of the integration through both, the usage of chain coordinates (section \ref{section:chained_coordiantes}), and an extrapolation method (section \ref{section:extrapolation}).
 
-\subsection{Chained Coordinate System}
+\subsection{Chained Coordinate System} \label{section:chained_coordiantes}
 
-Apart from simple arithmetic operations with integers, all calculations done by computers contain roundoff errors, due to the finite accuracy of floating point numbers. The effects caused by these errors can be significant when subtracting two numbers, that have similar values and a very high order of magnitude, from each other. To reduce the size of the roundoff error, AR-CHAIN uses a chain coordinate system to calculate gravitational interactions between nearby particles, where instead of using, for example, centre-of-mass coordinates to calculate the gravitational forces, the relative positions between particles and their closest neighbour are used. This naturally decreases the order of magnitude of the two values, as the relative distance between two particles is likely significantly shorter, than their respective distances from the centre-of-mass of the system.
+Apart from simple arithmetic operations with integers, all calculations done by computers contain roundoff errors, due to the finite accuracy of floating point numbers. The effects caused by these errors can be significant when subtracting two numbers that have similar and very large values, from each other. To reduce the size of the roundoff error, AR-CHAIN uses a chain coordinate system to calculate gravitational interactions between nearby particles, where instead of using, for example, centre-of-mass coordinates to calculate the gravitational forces, the relative positions between particles and their closest neighbour are used. This naturally decreases the size of the subtracted values, as the relative distance between two particles is likely significantly shorter, than their respective distances from the centre-of-mass of the system.
 
-The chain system is constructed as follows. First, the particles that have the shortest distance from each other are identified. These particles are designated as the "tail" and the "head" of the chain. Next, the particle that is closest to either the head or the tail is added to the chain. This particle then becomes the new head or tail. This step is iterated over, until every particle in the system is included in the chain, and the construction of the chain is deemed finished.
+The chain coordinate system is constructed as follows. First, the particles that have the shortest distance from each other are identified. These particles are designated as the "tail" and the "head" of the chain. Next, the particle that is closest to either the head or the tail is added to the chain. This particle then becomes the new head or tail. This step is iterated over, until every particle in the system is included in the chain, and the construction of the chain is thus deemed finished.
 
-Once the chain has been formed, and the particles have been renamed from 1 to $N$ according to their position in the chain, $N - 1$ relative position and velocity vectors can be calculated using \citep{Mikkola2008ARCHAIN}:
+Once the chain has been formed, and the particles have been renamed from 1 to $N$ according to their position in the chain, $N - 1$ relative position and velocity vectors can be calculated using the following \citep{Mikkola2008ARCHAIN}:
 \begin{equation}
 \begin{split}
 \mathbf{X}_k &= \mathbf{r}_{k+1} - \mathbf{r}_k \\
@@ -687,15 +689,15 @@ where $\mathbf{f}$ is the acceleration caused by external gravitational perturba
 \begin{equation}
 \mathbf{A}_k = - \displaystyle\sum_{j \neq k} m_j \frac{\mathbf{r}_{jk}}{|\mathbf{r}_{jk}|^3}.
 \end{equation}
-The parameter $\mathbf{r}_{jk}$ in this equation, is the relative position from the subject particle $k$ to particle $j$. Using solely the chain coordinate system, this vector is as a sum of the chain distances from $j$ to $k$. However, this only improves the numerical accuracy of the acceleration, when used for particles that are sufficiently close to each other. For faraway particles, the distance is determined using the basic Cartesian positions. Thus, the position vector $\mathbf{r}_{jk}$ is determined as follows:
+The parameter $\mathbf{r}_{jk}$ in this equation, is the relative position from the subject particle $k$ to particle $j$. Using the chain coordinate system, this vector is as a sum of the chain distances from $j$ to $k$. However, naturally the sum of inter-particle vectors is seldom equivalent to the exact separation between two arbitrary particles in Cartesian coordinates. The errors caused by this can be significant for particles that are far from each other in the chain. Thus, the use of chain coordinates improves the numerical accuracy of the acceleration, only when used for particles that are sufficiently close to each other. For faraway particles, the distance should still be determined using the basic Cartesian positions. Taking all this into account, the position vector $\mathbf{r}_{jk}$ is determined as follows \citep[e.g.][]{Rantala2017KETJU}:
 \begin{equation}
 \mathbf{r}_{jk} = 
 	\begin{cases}
-		|\mathbf{r}_j - \mathbf{r}_k| &\quad |j-k| > N_d \\
-		\displaystyle\sum^{j-k}_{i=k} \mathrm{sign}(j-k) \mathbf{X}_i &\quad |j-k| < N_d
+		\mathbf{r}_j - \mathbf{r}_k &\quad |j-k| > N_d \\
+		\displaystyle\sum^{\mathrm{max} \{ j,k \}-1}_{i = \mathrm{min} \{ j,k \}} \mathrm{sign}(j-k) \mathbf{X}_i &\quad |j-k| \leq N_d
 	\end{cases}, \label{eq:relative_dist}
 \end{equation}
-where $N_d$ is the maximum separation between the indices of the particles in the chain, for which the relative distance is calculated using the chain distances. \cite{Mikkola2008ARCHAIN} find that $N_d = 2$ produces the best results, and as such, the KETJU implementation of AR-CHAIN uses this same value.
+where $N_d$ denotes the maximum number of chain distances that can be used to determine the separation between two particles. \cite{Mikkola2008ARCHAIN} find that $N_d = 2$ produces the best results, and as such, the KETJU implementation of AR-CHAIN uses this same value.
 
 In the chain coordinates, the time-transformed coordinate equations of motion can be written as:
 \begin{equation}
@@ -711,27 +713,27 @@ while the velocity equations are:
 \frac{d\mathbf{V}_i}{ds} &= \tilde{t}' (\mathbf{A}_i + \mathbf{f}_i) \\
 \frac{d\omega}{ds} &= \tilde{t}' \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{X}_i} \cdot \mathbf{V}_i \\
 \frac{dB}{ds} &= -\tilde{t}' \displaystyle\sum^N_i \frac{\partial T}{\partial \mathbf{v}_i} \cdot \mathbf{f}_i. \\
-\end{split}
+\end{split} \label{eq:chain_vel_coords}
 \end{equation}
-Using the chained variables in the equations of motion is not always convenient \citep{Mikkola2008ARCHAIN}. Thus, for example, the time-derivative of the binding energy is still evaluated using Cartesian velocities.
+Using the chained variables in the equations of motion is not always convenient \citep{Mikkola2008ARCHAIN}. Thus, for example, the time-derivative of the binding energy (see final equation of the set in equation \ref{eq:chain_vel_coords}) is still evaluated using Cartesian velocities.
 
 \subsection{Velocity Dependent PN-Corrections}
 
-Since KETJU can be used to simulate dynamics near supermassive black holes, it takes relativistic effects into account, in the form of post-Newtonian corrections up to order 3.5PN \citep{Rantala2017KETJU}. Some of these effects are dependent on the velocity of the simulated object, resulting in the following velocity equations of motion:
+Since KETJU can be used to simulate dynamics near supermassive black holes, it takes relativistic effects into account, in the form of post-Newtonian corrections up to order 3.5PN \citep{Rantala2017KETJU}. As relativistic effects are dependent on the relative momentum between objects, the velocity of the simulated particle has to be considered, when applying the PN-corrections to its equations of motion. This results in the following equation of motion for the velocity of a particle:
 \begin{equation}
-\begin{split}
-\tilde{t}' = \frac{dt}{ds} &= 1/(\alpha U + \beta\omega + \gamma) \\
-\frac{d\mathbf{V}_i}{ds} &= \tilde{t}' (\mathbf{A}_i + \mathbf{f}_i + g_i(\mathbf{v}_i)) \\
-\frac{d\omega}{ds} &= \tilde{t}' \displaystyle\sum^N_i \frac{\partial \Omega}{\partial \mathbf{X}_i} \cdot \mathbf{V}_i \\
-\frac{dB}{ds} &= -\tilde{t}' \displaystyle\sum^N_i \frac{\partial T}{\partial \mathbf{v}_i} \cdot \mathbf{f}_i \\
-\frac{d\mathbf{S}_i}{ds} &= \tilde{t}' \mathbf{S}_{\mathrm{PN},i} \times \mathbf{S}_i,
-\end{split} \label{eq:velocity_eom_pn}
+\frac{d\mathbf{V}_i}{ds} = \tilde{t}' (\mathbf{A}_i + \mathbf{f}_i + g_i(\mathbf{v}_i)), \label{eq:velocity_eom_pn}
 \end{equation}
-where $g(\mathbf{v}_i)$ describe the additional acceleration experienced by the particle due to velocity dependent PN effects, and $\mathbf{S}_i$ and $\mathbf{S}_{\mathrm{PN},i}$ are the spin of the particle and the spin PN-correction, respectively.
+where $g(\mathbf{v}_i)$ describe the additional acceleration experienced by the particle due to velocity dependent PN effects. In the case of an SMBH, the spin of the particle is also susceptible to general relativity. The equation of motion of the spin is: 
+\begin{equation}
+\frac{d\mathbf{S}_i}{ds} = \tilde{t}' \mathbf{S}_{\mathrm{PN},i} \times \mathbf{S}_i, \label{eq:spin_eom_pn}
+\end{equation}
+where $\mathbf{S}_i$ and $\mathbf{S}_{\mathrm{PN},i}$ are the spin of the particle and the spin PN-correction, respectively.
 
-The fact that the addition of the velocity dependent acceleration causes the time-derivative of the velocity to be dependent on itself, means that it can not be integrated conventionally \citep{Rantala2017KETJU}. In KETJU, this integration problem is solved through the use of an "auxiliary velocity" $\mathbf{w}_i$ and its chained counterpart $\mathbf{W}_i$. The use of $w_i$ is analogous to the leapfrog method. At the beginning of the kick-step of the actual leapfrog integration, both auxiliary velocities are set equal to their "physical" counterparts. Next, the physical velocities are kicked over half a time-step, while using the auxiliary velocities in the velocity dependent acceleration term. The new physical velocities are then used to update the auxiliary parameters over the whole time-step. Finally, the physical velocities are integrated over the remaining half-time-step, by applying the previously calculated auxiliary velocities for the velocity dependent terms. This gives an accurate value for the velocity, after the time-step $\Delta t$.
+The fact that the addition of the velocity dependent acceleration causes the time-derivative of the velocity to be dependent on itself, means that it can not be integrated using conventional methods. In KETJU, this integration problem is solved through expanding the position-velocity phase space to include an "auxiliary velocity" $\mathbf{w}_i$, and using its chained counterpart $\mathbf{W}_i$ when necessary \citep{Rantala2017KETJU}. This allows one to separate the calculation of the time-derivative of the velocity from the velocity itself, by instead, using the auxiliary velocity when applying the accelerative PN-corrections \citep{Hellstrom2010, Pihajoki2015}.
 
-Notating the above velocity integration steps similarly to the basic leapfrog algorithm, the velocity dependent kick step can be written as:
+The addition of $w_i$ to the phase space modifies the leapfrog integration-step slightly. At the beginning of the kick-step, both auxiliary velocities are set equal to their "physical" counterparts. Next, the physical velocities are kicked over half a time-step, while using the auxiliary velocities in the velocity dependent acceleration term. The new physical velocities are then used to update the auxiliary parameters over the whole time-step. Finally, the physical velocities are integrated over the remaining half-time-step, by applying the previously calculated auxiliary velocities for the velocity dependent terms. This gives an accurate value for the velocity, after the time-step $\Delta t$.
+
+Using a notation similar to the one used for the basic leapfrog algorithm for the above velocity integration steps, the velocity dependent kick step can be written as:
 \begin{equation}
 \mathbf{V}(\Delta t/2) \mathbf{W}(\Delta t) \mathbf{V}(\Delta t/2).
 \end{equation}
@@ -740,23 +742,25 @@ Thus, a single DKD leapfrog time-step, where velocity dependent forces are calcu
 \mathbf{X}(\Delta t/2) \mathbf{V}(\Delta t/2) \mathbf{W}(\Delta t) \mathbf{V}(\Delta t/2) \mathbf{X}(\Delta t/2).
 \end{equation}
 
-Of course, while the use of auxiliary variables has only been discussed in terms of integrating the time-derivative of the velocity in this section, the procedure can also be used to solve other equations of motion. For example, the same self-dependence problem, caused by the addition of PN-terms, extends to the time-derivative of the spin of the black hole. One can then use the auxiliary spin ($\mathbf{Z}$) to resolve this issue.
+Of course, while the use of auxiliary variables has only been discussed in terms of integrating the time-derivative of the velocity in this section, the procedure can also be used to solve other equations of motion. For example, the same self-dependence problem caused by the addition of PN-terms, extends to the time-derivative of the spin of the black hole, as seen in equation \ref{eq:spin_eom_pn}. This issue can then be resolved, by expanding the phase space to include the auxiliary spin ($\mathbf{Z}$).
 
-\subsection{Gragg-Bulirsch-Stoer Extrapolation}
+\subsection{Gragg-Bulirsch-Stoer Extrapolation} \label{section:extrapolation}
 
-The final component in the high precision AR-CHAIN algorithm is the "Gragg-Bulirsch-Stoer" (GBS; \citealt{Gragg1965, Bulirsch1966}) extrapolation method, which is, once again, used simply to enhance the numerical accuracy of the algorithm. The basic principle behind GBS-extrapolation, is that; when integrating a function over a single time-interval, the integral is calculated multiple times, each time subsequently dividing the time-step into two times as many shorter steps. When raising the number ($n$) of these substeps, the integration accuracy increases, and the results should start to converge toward the exact solution. This exact solution can be estimated, by extrapolating the previously calculated results, and finding out what the solution would be at $n \leftarrow \infty$, i.e. when the time described by the subdivisions of the original integration time-step is infinitesimally small.
+The final component in the high precision AR-CHAIN algorithm is the "Gragg-Bulirsch-Stoer" (GBS; \citealt{Gragg1965, Bulirsch1966}) extrapolation method, the use of which is crucial for the high numerical accuracy of the algorithm. The basic principle behind GBS-extrapolation is that; when integrating a function over a single time-interval, the integral is calculated multiple times, each time subsequently dividing the time-step into two times as many shorter steps. When raising the number ($n$) of these substeps, the integration accuracy increases, and the results should start to converge toward the exact solution. This exact solution can be estimated, by extrapolating the previously calculated results, and finding out what the solution would be at $n \rightarrow \infty$, i.e. when the length of time described by the subdivisions of the original integration time-step is infinitesimally small.
 
-Implementing the GBS-extrapolation algorithm works as follows. Every time the function is integrated over the original integration interval using a different number of substeps, the results are extrapolated at $n \leftarrow \infty$ to get an approximation of the solution. Whether the result is good enough, is determined by the user-specified error tolerance parameter $\eta_\mathrm{GBS}$, which should fulfil the condition:
+Implementing the GBS-extrapolation algorithm works as follows. Every time the function is integrated over the original integration interval using a different $n$, the results are extrapolated at $n \rightarrow \infty$ to get an approximation of the exact solution. In order to extrapolate the results, they are expressed as a function of the length of time described by the individual $n$ substeps used to calculate their value; that is, as a function of: $\Delta t = h/n$, where $h$ is the length of the initial integration time-step. Then, either a polynomial or a rational function is fitted onto these results. The value of the fit at $\Delta t = 0$, now corresponds to the supposed exact solution of the integral at $n \rightarrow \infty$.
+
+Whether the extrapolated result is good enough too be considered "exact", is determined by the user-specified error tolerance parameter $\eta_\mathrm{GBS}$, which should fulfil the condition:
 \begin{equation}
 \eta_\mathrm{GBS} \leq \bigg| \frac{T_{k+1} - T_k}{T_k} \bigg|, \label{eq:GBS_tolerance}
 \end{equation}
-where $T_k$ are the results of the extrapolation, when the number of substeps is $n = 2^k$. The algorithm continues to iterate over $k$ until this equation holds true; or until $k$ exceeds some maximum value $k_\mathrm{max}$, at which point the procedure starts from the beginning; the difference now being that, the initial integration interval is divided into two initial intervals.
+where $T_k$ are previously extrapolated solutions to the integral, $k$ denoting the number of approximate integral solutions used in the extrapolation procedure when calculating the solution in question. The algorithm continues to iterate over $k$, calculating a new approximate solution of the integral using $n = 2^k$ substeps, and adding it to extrapolation procedure in order to get a more accurate value for the exact solution at $n \rightarrow \infty$, until equation \ref{eq:GBS_tolerance} holds true. Alternatively, if $k$ exceeds some predefined maximum value $k_\mathrm{max}$, the process starts from the beginning; the difference now being that, the initial integration interval is divided into two new initial intervals. The value that is able to fulfil the error tolerance condition, is then deemed the exact solution of the integral.
 
-In AR-CHAIN, the integration over the substeps is naturally done using the chained leapfrog integrator. The function used for the extrapolation of the results, is either a polynomial or a rational function, and the tolerance limit from equation \ref{eq:GBS_tolerance}, is taken into account when integrating any of the equations of motion.
+%In AR-CHAIN, the extrapolation algorithm works as specified above, and the integration over the individual $n$ substeps is naturally done using the chained leapfrog algorithm. The tolerance limit from equation \ref{eq:GBS_tolerance}, is taken into account when determining the extrapolated solution for any equation-of-motion.
 
 \section{Basic Properties of KETJU}
 
-In KETJU, the galactic dynamics are simulated as interactions between particles that represent either; the mass concentration of stars, dark matter or gas; or singular supermassive black holes. The combined functionality of the GADGET-3 tree code and the AR-CHAIN integrator, is then achieved by dividing these simulated particles into three different types: chain particles, perturber particles, and tree particles. The dynamics of the chain particles are simulated using the AR-CHAIN algorithm, and they correspond to the stars near an SMBH as well as the SMBH itself. The perturber and the tree particles, on the other hand, are propagated using the GADGET-3 tree code, and they describe the general dynamics of the simulated stellar system. The difference between the perturbers and the tree particles is that, the former are located close enough to the SMBH particle to have a significant individual effect on the dynamics of the chain particles. The type of a particle is determined by its distance from an SMBH, however, as of the current version of the KETJU code, only stellar and SMBH particles can be categorised as chain particles. An illustration of the different particle type regions around an SMBH particle can be seen in figure \ref{figure:ketju_regions_illustration}.
+In KETJU, the galactic dynamics is simulated as interactions between particles that represent either; the mass concentration of stars, dark matter or gas; or singular supermassive black holes. The combined functionality of the GADGET-3 tree code and the AR-CHAIN integrator, is then achieved by dividing these simulated particles into three different types: chain particles, perturber particles, and tree particles. The dynamics of the chain particles are simulated using the AR-CHAIN algorithm, and they correspond to the stars near an SMBH as well as the SMBH itself. The perturber and the tree particles, on the other hand, are propagated using the GADGET-3 tree code, and they describe the general dynamics of the simulated stellar system at larger scales. The difference between the perturbers and the tree particles is that, the former are located close enough to the SMBH particle to have a significant individual effect on the dynamics of the chain particles. The type of a particle is determined by its distance from an SMBH. However, as of the current version of the KETJU code, only stellar and SMBH particles can be categorised as chain particles. An illustration of the different particle type regions around an SMBH particle can be seen in figure \ref{figure:ketju_regions_illustration}.
 
 \begin{figure}
 	\centering	
@@ -767,49 +771,61 @@ In KETJU, the galactic dynamics are simulated as interactions between particles 
 
 \subsection{The Chain Subsystem}
 
-In KETJU, an SMBH particle and the chain particles around it form a so-called "chain subsystem", where the AR-CHAIN algorithm is used for calculating its internal dynamics. Whether a stellar particle is included in the subsystem as a chain particle, is determined through a variable called the "chain radius", defined as \citep{Rantala2017KETJU}:
+In simulations of galaxy mergers, it is of utmost importance, that the dynamics of the central black holes are never softened. Softened gravitational potentials naturally induce weaker gravitational interactions, reducing the strength of effects such as dynamical friction, and thus unnaturally lengthening the time-scale of the SMBH binary inspiral and merger. In KETJU, the non-softened interactions between the SMBH particles are enforced through the combined use of a "chain subsystem", the internal dynamics of which are calculated using the AR-CHAIN, and "Monaghan-Lattanzio" (ML) spline-kernel softening (see section \ref{section:softened_dynamics}). 
+
+A chain subsystem is made up of an SMBH particle and its surrounding chain particles. Whether a stellar particle is included in the subsystem as a chain particle, is determined through a variable called the "chain radius", defined as \citep{Rantala2017KETJU}:
 \begin{equation}
 \frac{r_\mathrm{chain}}{1 \; \mathrm{kpc}} = \lambda \times \frac{M_\bullet}{10^{10} M_\odot},
 \end{equation}
-where $M_\bullet$ is the mass of the SMBH particle, and $\lambda$ is a user-specified parameter. If the distance from a stellar particle to an SMBH particle is smaller than the chain radius, it is naturally included in the chain subsystem of the black hole in question. Additionally, since the GADGET-3 tree code in KETJU uses the "Monaghan-Lattanzio" -softening (see section \ref{section:softened_dynamics}), the condition $r_\mathrm{cahin} > h_\mathrm{ML}$ (where $h_\mathrm{ML}$ is the softening length) is taken into account when determining the length of the chain radius. Thus, it is ensured that gravitational interactions between SMBHs and stars as well as other SMBHs are not softened.
+where $M_\bullet$ is the mass of the SMBH particle, and $\lambda$ is a user-specified parameter. If the distance from a stellar particle to an SMBH particle is smaller than the chain radius, it is naturally included in the chain subsystem of the black hole in question. Additionally, the condition $r_\mathrm{cahin} > h_\mathrm{ML}$ (where $h_\mathrm{ML} = 2.8\epsilon$ is the "Monaghan-Lattanzio" softening length employed in KETJU) is taken into account when determining the length of the chain radius. Since the dynamics of particles beyond the softening length is exactly Newtonian when using ML-softening, this ensures that gravitational interactions between SMBHs and stars, as well as other SMBHs, are always non-softened.
 
 In the tree code, the chain subsystem behaves as a single collisionless "macro particle". The motion of this macro particle is calculated using the centre-of-mass properties of the subsystem. In order to get the centre-of-mass acceleration of the subsystem, the tree-accelerations of all of the particles included in the chain are calculated. This means that, somewhat counter-intuitively, even though the chain particles are propagated in the tree as a single macro particle, they are "seen" as separate by the other tree-particles.
 
-Since every SMBH has its own regularised region, if two SMBH particles are close enough to each other, it is possible for two chain subsystems to merge. This occurs, when the volumes of the subsystems intersect. A merged chain subsystem behaves similarly to a basic regularised region, where all of the chain particles are included in a single chain in the AR-CHAIN algorithm. In the case of a merged subsystem, the inclusion of stellar particles as chain particles, is determined by checking the condition for both SMBHs.
+Since every SMBH has its own regularised region, if two SMBH particles are close enough to each other, it is possible for two chain subsystems to merge. This occurs, when the volumes of the subsystems intersect. A merged chain subsystem behaves similarly to a basic regularised region, where all of the chain particles are included in a single chain in the AR-CHAIN algorithm. In the case of a merged subsystem, the inclusion of stellar particles as chain particles is determined by checking the condition for both SMBHs.
 
 \subsection{Perturbative Effects of the Perturber and Tree Particles}
 
 When calculating the precise motion of the chain particles in the regularised regions around SMBHs, it is important to take into account tidal perturbation caused by the gravitational influence the other particles in the simulated stellar system. Both the aforementioned perturber and tree particles induce tidal perturbations, however, the way these effects are considered when propagating the chain particles, depends on the respective particle type. When calculating these effects, the gravitational forces induced by the softened gravitational potential (equation \ref{eq:splinekernel_softened_potential}) of the tree-code are used.
 
-The perturber particles are located outside of the regularised region, but lie close enough to the chain particles to have a significant individual perturbative effect on their equations-of-motion. In KETJU, a tree-particle is deemed to be a perturber, if it is located inside the "perturber radius" \citep{Rantala2017KETJU}:
+The perturber particles are located outside of the regularised region, but lie close enough to the chain particles to have a significant individual perturbative effect on their equations of motion. In KETJU, a tree-particle is deemed to be a perturber, if it is located inside the "perturber radius" \citep{Rantala2017KETJU}:
 \begin{equation}
-r_{\mathrm{pert},i} = \gamma \left( \frac{m_i}{M_\bullet}{1/3} \right) r_\mathrm{chain},
+r_{\mathrm{pert},i} = \gamma \left( \frac{m_i}{M_\bullet} \right)^{1/3} r_\mathrm{chain},
 \end{equation}
-where $m_i$ is the mass of a potential perturber particle, and $\gamma$ is a user-specified parameter, that is set so, that $r_{\mathrm{pert},i} = 2r_\mathrm{chain}$ for the lowest-mass simulated particles. Naturally, chain subsystems can be perturbed by other subsystems. In case this happens, the perturbative subsystems are resolved, and the gravitational effects of individual chain particles are calculated.
+where $m_i$ is the mass of a potential perturber particle, and $\gamma$ is a user-specified parameter, that is set so, that $r_{\mathrm{pert},i} = 2r_\mathrm{chain}$ for the lowest-mass simulated particles. Naturally, chain subsystems can be perturbed by other chain subsystems. In case this happens, the perturbative subsystems are resolved, and the gravitational effects of individual chain particles are calculated.
 
-Since the perturber particles are located close to the chain subsystem, the tidal perturbation induced by them, is dependent on their location in respect to the chain particles. For this reason, when propagating the chain particles over even small time-steps using AR-CHAIN, the time-evolution of the positions of the perturber particle is estimated using their initial velocities and accelerations. This is not the case the for tree particles, which are estimated to be stationary during the whole integration time-step. This approximation is valid, as the scale of the tree-particle region is so large, that small variations in the positions of the individual particles do not have a significant effect on the total perturbative force \citep{Ahmad1973}.
+Since the perturber particles are located close to the chain subsystem, the tidal perturbation induced by them depends significantly on their location in respect to the chain particles. This is problematic when calculating the trajectories of the chain particles using AR-CHAIN, as the integration time-steps used in the algorithm are smaller than the time-step used for the propagation of the perturber particles (see section \ref{section:archain_plus_gadget}), making the perturbers effectively stationary during the AR-CHAIN integration procedure. To remedy this, the time-evolution of the position of the perturber particles is estimated using following quadratic equation:
+\begin{equation}
+\mathbf{r}(t) = \mathbf{r}(t_0) + \mathbf{v}(t_0)\Delta t + \frac{1}{2}\mathbf{a}(t_0) (\Delta t)^2,
+\end{equation}
+where $t_0$ is the moment in simulation time, at which the AR-CHAIN integration procedure starts; $\mathbf{r}(t_0)$, $\mathbf{v}(t_0)$ and $\mathbf{a}(t_0)$ are the initial position, velocity and acceleration of a perturber particle, respectively; and $\Delta t$ is the time elapsed form $t_0$, i.e. $\Delta t = t - t_0$. The tree particles, on the other hand, are estimated to be stationary during the whole integration time-step. This approximation is valid, as the scale of the tree-particle region is so large, that small variations in the positions of the individual particles do not have a significant effect on the total perturbative force \citep{Ahmad1973}.
 
 Naturally, as the perturber and tree particles exert a gravitational force onto the chain particles, they must experience an equal and opposing force from the particles in the subsystem (as stated by Newton's third law). This is taken into account in KETJU, by substituting the gravitational acceleration induced by the chain subsystem macro particle onto the perturbative particle, with the total gravitational force from the individual chain particles. This gravitational force is calculated with the direct summation method (see section \ref{section:tree}), using Monaghan-Lattanzio spline-kernel softening (equation \ref{eq:splinekernel_softened_potential}).
 
 \subsection{Particle Mergers}
 
-In KETJU simulations, it is possible for stellar and SMBH particles to merge with another SMBH particle. Whether the two particles merge, is determined by two possible criteria. The first criterion compares the gravitational wave coalescence time-scale for an SMBH binary to the tree code time-step, and is thus only relevant for SMBH-SMBH mergers. The coalescence time-scale can be approximated using \citep{Rantala2017KETJU}:
+In KETJU simulations, it is possible for an SMBH particle to merge with a stellar particle or another SMBH particle. Whether the merger event occurs, is determined by two possible criteria. The first criterion compares the gravitational wave coalescence time-scale for an SMBH binary to the tree code time-step, and is thus only relevant for SMBH-SMBH mergers. The coalescence time-scale can be approximated using \citep{Rantala2017KETJU}:
 \begin{equation}
 t_c \sim -\frac{a}{4\dot{a}},
 \end{equation}
-where $a$ is the semi-major axis of the binary orbit, and $\dot{a}$ is its time derivative, which can be calculated using post-Newtonian corrections at 2.5PN (equation \ref{eq:pn_dadt}). If the condition $t_c < s_1 \Delta t_\mathrm{tree}$, where $s_1 > 1$ is a temporal safety factor, holds true; the two SMBH particles are merged.
+where $a$ is the semi-major axis of the binary orbit, and $\dot{a}$ is its time derivative, which (as shown in section \ref{section:gravitational_radiation}) can be calculated using post-Newtonian corrections at order 2.5PN as:
+\begin{equation}
+\left\langle \frac{da}{dt} \right\rangle = -\frac{64}{5}\frac{G^3M_1M_2(M_1+M_2)}{c^5a^3(1-e^2)^{7/2}} \left( 1+\frac{73}{24}e^2+\frac{37}{96}e^4 \right).
+\end{equation}
+If the condition $t_c < s_1 \Delta t_\mathrm{tree}$, where $s_1 > 1$ is a temporal safety factor (usually $s_1 = 10$), holds true; the two SMBH particles are merged.
 
 The second criterion is based on the relative position of the two particles. For two SMBHs, the merger event is set to occur, if their separation is smaller than: 
 \begin{equation}
-r_\mathrm{min,S} = 6\left( \frac{2GM_{\bullet,1}}{c^2} + \frac{2GM_{\bullet,1}}{c^2} \right),
+r_\mathrm{min,S} = 6\left( \frac{2GM_{\bullet,1}}{c^2} + \frac{2GM_{\bullet,1}}{c^2} \right), \label{eq:bh_binary_merger_cond}
 \end{equation}
-which corresponds to the sum of the Schwarzschild-radii (i.e. the distance from a black hole where the escape velocity is equivalent the speed of light) of the binary pair multiplied by six. In the case of an SMBH - stellar particle merger however, depending on which of the parameters is larger; the minimum particle separation is determined either using the Schwarzschild radius of the SMBH, or the tidal disruption radius (i.e. the distance from the black hole, where its gravitational force tears an orbiting star apart). The minimum distance between two such particles is determined by following equation:
+which corresponds to the sum of the Schwarzschild-radii (i.e. the distance from a black hole at which the escape velocity is equivalent to the speed of light) of the binary pair multiplied by six. The seemingly arbitrary multiplication of the condition, comes from the fact that the use of PN dynamics is based on the approximation that $v/c \ll 1$. At small binary separations, the orbital velocities of the SMBHs naturally rise, which might invalidate the use of the PN-approximation. Through testing, \cite{Rantala2017KETJU} find that PN-dynamics is still valid at distances corresponding to equation \ref{eq:bh_binary_merger_cond}. 
+
+In the case of an SMBH - stellar particle merger however, depending on which of the parameters is larger; the minimum particle separation is determined either using the Schwarzschild radius of the SMBH, or the tidal disruption radius (i.e. the distance from the black hole, where its gravitational force tears an orbiting star apart). The minimum distance between two such particles is determined by following equation:
 \begin{equation}
 r_\mathrm{min,T} = \mathrm{max} \left\lbrace \frac{12GM_{\bullet}}{c^2}, \; s_2 R_\odot \left( \frac{M_\bullet}{M_\odot} \right)^{1/3} \right\rbrace,
 \end{equation}
 where $M_\odot$ and $R_\odot$ are the solar mass and radius, respectively, and $s_2 > 1$ is the spatial safety factor. 
 
-The particle mergers are checked before every integration time-step. If any of the merging conditions are met, the particles are replaced by a new particle with the following properties \citep{Rantala2017KETJU}:
+The particle mergers are checked before every integration time-step. If either of the SMBH-SMBH merging conditions are met, the simulated particles are replaced by a new particle with the following properties \citep{Rantala2017KETJU}:
 \begin{equation}
 \begin{split}
 M &= M_1 + M_2 \\
@@ -819,11 +835,13 @@ M &= M_1 + M_2 \\
 \mathbf{S} &= \mathbf{L} + \mathbf{S}_1 + \mathbf{S}_2,
 \end{split}
 \end{equation}
-where $\mathbf{L}$ is the angular momentum, and $\mathbf{S}$ is the spin of the particle.
+where $\mathbf{L}$ is the angular momentum, and $\mathbf{S}$ is the spin of the SMBH. If an SMBH particle and a stellar particle merge, however, the stellar particle is simply removed from the simulation.
 
-\subsection{Incorporating AR-CHAIN in the GADGET-3 Leapfrog}
+\subsection{Incorporating AR-CHAIN in the GADGET-3 Leapfrog} \label{section:archain_plus_gadget}
 
-The GADGET-3 tree-code integrator used in KETJU, is a KDK-leapfrog \citep{Springel2005}. Implementing the regularised chain region in the leapfrog integration works as follows. The first step, before starting the integration cycle itself, is naturally to determine the particle types for all particles in the simulated system and find the chain subsystem macro particles. Next, the particles that have been determined as tree, perturber or macro particles, are then kicked and drifted, as expected in a KDK-leapfrog. After the drift-step, the chain particles are propagated using the chain integrator. Once the AR-CHAIN algorithm has concluded its calculations, the final kick step of the GADGET-3 leapfrog takes place. Lastly, the force corrections on the peruturbing particles, necessitated by the Newton's third law, are taken into account. 
+The GADGET-3 tree-code integrator used in KETJU, is a KDK-leapfrog \citep{Springel2005}. Implementing the regularised chain region in the leapfrog integration works as follows. The first step, before starting the integration cycle itself, is naturally to determine the particle types for all particles in the simulated system and find the chain subsystem macro particles. 
+
+Next, the particles that have been determined as tree, perturber or macro particles, are then kicked and drifted, as expected in a KDK-leapfrog. After the drift-step, the chain particles are propagated using the chain integrator. Once the AR-CHAIN algorithm has concluded its calculations, the final kick step of the GADGET-3 leapfrog takes place. Lastly, the force corrections on the peruturbing particles, necessitated by the Newton's third law, are taken into account. 
 
 The GADGET-3 leapfrog in KETJU, uses individual adaptive time-steps for different particles, the lengths of which can be determined using:
 \begin{equation}
@@ -835,7 +853,7 @@ where $\mathbf{a}$ is the acceleration of a particle, $\epsilon$ is the gravitat
 \end{equation}
 where $\Delta t_\mathrm{min}$ is the smallest possible time-step allowed by the simulation. 
 
-The basic procedure for determining the time-steps for individual particles in GADGET-3, is used for the tree-particles in KETJU. The chain subsystem macro particles and the individual chain particles that are integrated using the AR-CHAIN algorithm, are placed onto the smallest tree time-step found. Naturally the chain particles should be on small time-step, in order for the simulation to calculate precise stellar trajectories; however, this also ensures that the chain particles are active at all times during the simulation, and that they are on the smallest time-step, when leaving the chain region. The perturber particles also placed on the smallest tree particle time-step, in order to make sure that they are synchronised with the chain particles. 
+The basic procedure for determining the time-steps for individual particles in GADGET-3, is used for the tree-particles in KETJU. The chain subsystem macro particles and the individual chain particles that are integrated using the AR-CHAIN algorithm, are placed onto the smallest tree time-step found. This time-step is used as the initial integration interval in the AR-CHAIN integration. Using the smallest time-step from the tree code for the chain particles, ensures that they are active at all times during the simulation, and that they are on the smallest time-step, if they happen to leave the chain region. The perturber particles are also placed on the smallest tree particle time-step. This is done in order to make sure that they are synchronised with the chain particles. 
 
 %\section{Merging of Black Hole Particles}
 
@@ -863,7 +881,7 @@ The basic procedure for determining the time-steps for individual particles in G
 
 
 
-\chapter{Merger Simulations Using KETJU}
+\chapter{Simulating Core Formation Using KETJU}
 
 In this chapter I study the formation of cored galaxies in galaxy mergers. The analysis focuses on the results from galaxy merger simulations run by \cite{Rantala2018} using the KETJU code. In all but one simulation, the merger progenitor galaxies contain central supermassive black holes. During the merger event the SMBHs form a hard binary. These binaries are a likely source for the observed low-luminosity cores, as they can eject stars from the galactic centre through complex three-body interactions. Here I determine if there is a connection between the central binary SMBH and the existence of a core deficient in light, and if the simulated KETJU results agree with observations of cored galaxies.
 
