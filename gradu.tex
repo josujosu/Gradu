@@ -56,9 +56,10 @@
 \censors{Prof. Peter Johansson}{Dr. Stuart McAlpine}{}
 \depositeplace{}
 \additionalinformation{}
-\numberofpagesinformation{\numberofpages\ pages}
+%\numberofpagesinformation{\numberofpages\ pages}
+\numberofpagesinformation{83}
 \classification{}
-\keywords{Your keywords here}
+\keywords{galaxies : formation - galaxies : cores - methods : N-body simulations}
 \quoting{}
 %\quoting{``Bachelor's degrees make pretty good placemats if you get them laminated.'' \\---Jeph Jacques}
 
@@ -76,7 +77,17 @@
 % but you should also then redefine some of the above parameters in the proper
 % language as well, in between the abstract definitions.
 \begin{abstract}
-Abstract goes here.
+Core galaxies are bright gas-poor elliptical galaxies that contain a shallow central surface brightness profile. They are expected to form in mergers massive gas-poor elliptical galaxies that contain supermassive black holes in their respective centres. During the merger process, these black holes form a coalescing binary, which causes the ejection of stars from the centre of the galaxy merger in complex three-body interactions.
+
+I have studied the above formation model for core galaxies, by analysing the results of seven galaxy merger simulations done using KETJU, a simulation code specifically made for studying sueprmassive black holes in stellar populations. KETJU is a regularised tree-code, combining both the GADGET-3 tree-code and an AR-CHAIN integrator in order to calculate both general galactic dynamics and accurate particle motion near black holes.
+
+All of the seven simulations contained a merger of two identical galaxies. Six of the simulations had galaxies with central SMBHs , with the mass of the black holes changing from one simulation to another and ranging from $8.5 \times 10^8 M_\odot$ to $7.5 \times 10^9 M_\odot$. For the sake of comparison, the galaxies in the seventh simulation did not contain SMBHs. The other properties of these galaxies were determined such, that the resulting merger remnant would be as similar as possible to the knwon core galaxy NGC 1600. These properties were identical across all of the simulation runs. 
+
+By calculating the surface brightness profiles of the merger remnants in the simulation results, I found out that only simulations that contained SMBHs produced remnants with cores. Furthermore, I identified a clear positive correlation between the size of the core and the mass of the binary SMBH. Both of these results enforce the idea that the cores are formed by the black hole binaries. This interpretation was further corroborated by the fact that, according to their velocity anisotropy profiles, stellar orbits near the centre of the remnants were tangentially dominated, implying that stellar particles on radial orbits had been ejected from the system. I also generated 2D maps of the stellar line-of-sight velocity distributions in the simulated merger remnants. These maps showed kinematic properties similar to observed core galaxies, such as "kinematically distinct cores".
+
+Finally, I compared both photometric and kinematic properties of the simulated merger remnant with the largest SMBH binary to the observed properties of NGC 1600, which I found to agree well with each other. Since the properties of the simulated merger remnants follow theoretical expectations and perform well in comparisons to observations, I conclude that the formation of the cores in bright elliptical galaxies is likely caused by coalescing binary black holes in gas-poor galaxy mergers.
+
+
 \end{abstract}
 
 % Place ToC
@@ -92,9 +103,9 @@ Abstract goes here.
 
 \section{Low-Luminosity Cores}
 
-Studying the distribution of light in galaxies is vital for the research of extra-galactic stellar systems. By drawing an equivalence between the observed light and stellar mass, it is possible to gain information about the internal structure of the system. Through observations of their luminosity distributions, many massive elliptical galaxies have been found to contain so-called "cores", central regions with nearly constant surface brightnesses. Since many models of elliptical galaxies assume that the surface brightness grows gradually towards the centre \citep[e.g.][]{deVaucouleurs1948, Sersic1968} this property might seem quite curious, however considerable research has been conducted in this area.
+Studying the distribution of light in galaxies is vital for the research of extra-galactic stellar systems. By drawing an equivalence between the observed light and stellar mass, it is possible to gain information about the internal structure of the system. Through observations of their luminosity distributions, many massive elliptical galaxies have been found to contain so-called "cores", central regions with nearly constant surface brightnesses. Since many models of elliptical galaxies assume that the surface brightness grows gradually towards the centre \citep[e.g.][]{deVaucouleurs1948, Sersic1968} this property might seem quite curious.
 
-The low-luminosity cores have been observed for a long time \citep[e.g.][]{King1966}, however their true nature was initially not certain. It was debated, whether these observed properties were in-part caused by atmospheric interference \citep{King1978, Schweizer1979}. Later, high-resolution CCD-cameras allowed observers to show that the cores were, in fact, actual photometric properties in some elliptical galaxies \citep{Lauer1985, Kormendy1985}. However, it was not until the launch of the "Hubble Space Telescope" (HST), that the cores could be studied in detail.
+The low-luminosity cores have been observed for a long time \citep[e.g.][]{King1966}, however their true nature was initially not certain. It was debated whether these observed properties were in-part caused by atmospheric interference \citep{King1978, Schweizer1979}. Later, high-resolution CCD-cameras allowed observers to show that the cores were in fact actual photometric structures in some elliptical galaxies \citep{Lauer1985, Kormendy1985}. However, it was not until the launch of the "Hubble Space Telescope" (HST), that the cores could be studied in detail.
 
 Using data gathered by the HST, \cite{Ferrarese1994} observed that the shallow cores seemed to occur in bright ellipticals. In fainter elliptical galaxies, on the other hand, the surface brightness appeared to grow gradually towards the centre. This apparent dichotomy between bright and faint ellipticals was also observed by \cite{Lauer1995}, who coined the term "core galaxy" for the brighter and "power-law galaxy" for the fainter galaxies. The faint ellipticals are often also called "cusp" galaxies. This supposed dichotomy between bright and faint elliptical galaxies implies that both types of stellar systems are formed through a qualitatively different formation mechanism. 
 
