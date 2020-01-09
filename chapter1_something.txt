@@ -3,11 +3,78 @@ CHAPTER 1:
 
 - Historical context
   - discovery of galaxies (1 sentence maybe)
-  - how knowledge about the propertiees of galaxies have improved
-    - discovery of central SMBHs
-  - history of elliptical galaxies
+  - Hubble classification
+  - Elliptical galaxies
+  - initially thought to be homogeneous objects
+  - later on (?) photometric/kinematic properties coupled with luminosity
+  - though to be consequenco of different formation methods
 
-- brief introduction to cores and cored galaxies
+  - core galaxies part of brights (Ferrarese, Lauer, Kormendy)
+  - describe formation
+  - SMBHs thought to be common
+
+- Numerical Simulations
+  - need numerical simulations to test theories, we can only see what equates to a snapshot of the Universe in our lifetime
+  - Holmberg 1941
+    - simulated whether loss of energy via tidal disturbances causes clustering 
+    - light bulbs - photocell - mass replaced by light
+  - N-body codes
+    - von Hoerner
+    - Aarseth (NBODY series of codes)
+    - regularisation (KS)
+    - AR-CHAIN
+  - more efficient codes
+    - Appel and Barnes & Hut (1985 and 1986)
+    - GADGET
+  - need combination of previous codes
+  - talk about KETJU
 
 - aims of thesis
-  - mention core formation in galaxy mergers at this point?
+  - determine whether core galaxies are formed as a result of SMBH mergers through analysing simulation data from KETJU
+
+
+---------- NEW PLAN -----------
+
+- Historical context
+
+- even during early when Es were though to be a homogeneous class of galaxies, it was known that there are Es with flat core profiles and steep profiles
+- werent known if this was the result of atmospherical interference
+- Hubble Space Telescope
+- comparing land observations and HST, Ferrarese 1994 found type I and type II
+- something that looks like a dichotomy -> different evolutionary paths
+- CDM cosmology assumes mergers
+- black holes have been found to affect evolution
+- SMBHs might eject stars from the centre
+-> current formation theory: massive gas-poor Es with central SMBHs
+   - lack of gas -> slow rotation, no cenral star formation
+   - SMBH binary -> ejection of stars
+- formation theories cant be observed
+  - find time it takes for Antennae galaxy to merge
+  - need other methods 
+
+- Numerical Simulations
+  WRITE IN CONTEXT OF SIMULATIONS OF GALAXY FORMATION AND ESPECIALLY CORE FORMATION
+  - need numerical simulations to test theories, we can only see what equates to a snapshot of the Universe in our lifetime
+  - even in 1940s
+  - Holmberg 1941
+    - simulated whether loss of energy via tidal disturbances causes clustering 
+    - light bulbs - photocell - mass replaced by light
+  - N-body codes
+    - von Hoerner
+    - Aarseth (NBODY series of codes)
+    - regularisation (KS)
+    - AR-CHAIN
+  - more efficient codes
+    - Appel and Barnes & Hut (1985 and 1986)
+    - GADGET
+  - core simulations require both high efficiency and precision
+  - often efficiency comes in expense of precision
+  - need combination of previous codes
+  - regularised tree codes
+  - talk about KETJU
+
+- aims of thesis
+  - determine whether core galaxies are formed as a result of SMBH mergers through analysing simulation data from KETJU
+
+
+Binney (1982) - smaller central consentration probably caused by being less resolved due to large distance

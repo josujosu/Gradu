@@ -51,15 +51,16 @@
 \faculty{Faculty of Science}
 \department{Department of Physics}
 \address{PL 64 (Gustaf Hällströmin katu 2)\\00560 Helsingin yliopisto}
-\subject{Your Field}
-\prof{prof. Peter Johansson}
-\censors{prof. Peter Johansson}{doc. Smythe}{}
+\subject{Astronomy}
+\prof{Prof. Peter Johansson}
+\censors{Prof. Peter Johansson}{Dr. Stuart McAlpine}{}
 \depositeplace{}
 \additionalinformation{}
 \numberofpagesinformation{\numberofpages\ pages}
 \classification{}
 \keywords{Your keywords here}
-\quoting{``Bachelor's degrees make pretty good placemats if you get them laminated.'' \\---Jeph Jacques}
+\quoting{}
+%\quoting{``Bachelor's degrees make pretty good placemats if you get them laminated.'' \\---Jeph Jacques}
 
 \begin{document}
 
@@ -89,7 +90,46 @@ Abstract goes here.
 % to change the parameters. Removing the abstract and ToC commands will mess up stuff.
 \chapter{Introduction}
 
-\chapter{Background Theory}
+\section{Low-Luminosity Cores}
+
+Studying the distribution of light in galaxies is vital for the research of extra-galactic stellar systems. By drawing an equivalence between the observed light and stellar mass, it is possible to gain information about the internal structure of the system. Through observations of their luminosity distributions, many massive elliptical galaxies have been found to contain so-called "cores", central regions with nearly constant surface brightnesses. Since many models of elliptical galaxies assume that the surface brightness grows gradually towards the centre \citep[e.g.][]{deVaucouleurs1948, Sersic1968} this property might seem quite curious, however considerable research has been conducted in this area.
+
+The low-luminosity cores have been observed for a long time \citep[e.g.][]{King1966}, however their true nature was initially not certain. It was debated, whether these observed properties were in-part caused by atmospheric interference \citep{King1978, Schweizer1979}. Later, high-resolution CCD-cameras allowed observers to show that the cores were, in fact, actual photometric properties in some elliptical galaxies \citep{Lauer1985, Kormendy1985}. However, it was not until the launch of the "Hubble Space Telescope" (HST), that the cores could be studied in detail.
+
+Using data gathered by the HST, \cite{Ferrarese1994} observed that the shallow cores seemed to occur in bright ellipticals. In fainter elliptical galaxies, on the other hand, the surface brightness appeared to grow gradually towards the centre. This apparent dichotomy between bright and faint ellipticals was also observed by \cite{Lauer1995}, who coined the term "core galaxy" for the brighter and "power-law galaxy" for the fainter galaxies. The faint ellipticals are often also called "cusp" galaxies. This supposed dichotomy between bright and faint elliptical galaxies implies that both types of stellar systems are formed through a qualitatively different formation mechanism. 
+
+%The current cosmological paradigm expects large scale structures to form bottom-up, where mergers of initially smaller systems form the galaxies observed today. Thus, the the formation mechanisms of core and cusp galaxies, are expected to differ in the types of galaxies that are merged, i.e. the merger progenitor galaxies.  
+
+The formation of the low-luminosity cores themselves is usually attributed to gravitational interactions between stars and a coalescing binary supermassive black hole (SMBH) \citep{Begelman1980, Faber1997, GalaxyFormationAndEvo2010}. These complex three-body interactions between stars and black holes eject stellar material from the galactic core, lowering its stellar density and luminosity. Since every massive galaxy is expected to have an SMBH in its centre \citep{Kormendy2013}, SMBH binaries are likely to form in galaxy mergers. It is important that the merging galaxies are gas-poor however, as the gas in a galaxy merger is expected to fall to the centre of the merger, likely inducing star-formation which would mask the low-luminosity core.
+
+Determining whether coalescing SMBH binaries in gas-poor galaxy mergers actually produce cored merger remnants, naturally cannot be done through observations. If a merger suitable for studying the problem in question were observed, the merger event would likely take hundreds of millions of years to conclude. Thus, the only reasonable way of researching the evolution of interacting stellar systems is through numerical simulations.
+
+
+%Up until the 1920s, the nature of the stellar systems, nowadays known as galaxies, was not known. It was debated whether these "nebulae" were part of the Milky Way or, as implied by the apparent magnitude of the novae observed in them, separate "island Universes", extra-galactic objects similar to our galaxy \cite{Curtis1917}. Measurements of their radial velocities allowed astronomers to determine relatively precise distances for these stellar systems \citep[e.g.][]{Opik1922}. These distances were measured to be so large, that the observed systems could not be located inside the Milky Way. This, alongside with later observations of Cepheid variables by \cite{Hubble1929}, provided unequivocal evidence that the nebulae are extra-galactic Milky Way -like objects.
+
+%In 1926, Hubble invented the Hubble classification for galactic morphology \citep{Hubble1926}. It consists of three main morphological categories for galaxies. These are: the disk-like spiral galaxies that contain distinct areas with high star formation called spiral arms, the gas poor elliptical galaxies with ellipsoidal shapes, and the irregular galaxies that do not conform to any of the other classifications. 
+
+%Compared to the visually striking spiral galaxies, elliptical galaxies might seem quite dull. In fact, even during the 1970s, it was assumed that ellipticals were part of a largely homogeneous class, where differences between them could be explained nearly exclusively through their total stellar mass \citep{Faber1976}. However, upon closer inspection, it is clear that these stellar systems contain 
+
+\section{Numerical Simulations of Galactic Interactions}
+
+Due to the length of time that interactions between stellar systems take, N-body simulations have been used to study them even before digital computers could be used for general scientific research. The first numerical  simulation of interactions between galaxies was done by \cite{Holmberg1941}, using light-bulbs to represent mass elements, and photocells alongside galvanometers to determine the gravitational forces between them. The simulation consisted of only $\lesssim 100$ particles. 
+
+Once digital computers could be used to make simulations, their efficiency naturally increased. The initial N-body simulations used the so-called "direct summation" method for calculating the motion of the simulated particles, where the gravitational forces acted upon a particle by the other individual particles are summed together, when determining its acceleration \citep{vonHoerner1960, Aarseth1963}. In the 1970s, the introduction of regularisation schemes into N-body simulations, which allow for the removal of the singularity at $r = 0$ in the Newtonian equation of motion, further improved their accuracy \citep{Aarseth1999}.
+
+The major drawback of the direct summation N-body codes is that it is extremely inefficient when simulating large dynamical systems. The number of calculations needed for determining the motion of the $N$ simulated particles scales according to $N^2$. As a response to this, several simulation codes that scale as $N \ln N$ have also been developed. The most popular of these is arguably the Barnes-Hut "tree code", which divides the simulated system into nodes, and uses their multipole moments to calculate the motion of the simulated particles \citep{Barnes1986}. This method has been implement, for example, in the prominent GADGET series of cosmological simulation codes \citep{Springel2001}. However, while the tree-codes are certainly more efficient than the direct N-body codes, it is still advisable to use the direct summation method when calculating the dynamics of small systems, as it generally produces more accurate results.
+
+Simulating the effects that binary black holes have in galaxy mergers provides an interesting problem. Direct summation codes are too inefficient for simulating the large number of particles needed for accurately describing the dynamics of a large stellar system means. On the other hand, $N \ln N$ scaling codes, such as the tree-code, do not have the accuracy needed to describe the gravitational interactions between stars the binary SMBH in a physically accurate fashion. One solution to this dilemma is to use so-called "regularised tree-codes". These are analogous to normal tree-codes, however they contain some algorithmically defined sub-systems, the dynamics of which are calculated using a regularised direct summation method.
+
+An example of a regularised tree-code, and the simulation code used in this thesis, is the KETJU code by \cite{Rantala2017KETJU}. It is a combination of the GADGET-3 tree-code \citep{Springel2005} and an integration code that uses the algorithmically regularised chain-method (AR-CHAIN; \citealt{Mikkola2008ARCHAIN}) when calcualting the dynamics in the regularised sub-system. KETJU is specifically made for galactic scale simulations concerned with the dynamics of supermassive black holes. As such, the regularised sub-systems are centred around particles that correspond to SMBHs.
+
+\section{Aim of the Thesis}
+
+The aim of this thesis is to study, whether a binary supermassive black hole in a merger of massive gas-poor elliptical galaxies, causes the resulting merger remnant to contain a low-luminosity core. I will be comparing the results of several KETJU simulations of the same galaxy merger with each other, where only the mass of the SMBH binary changes from one simulation to another. The analysis of the results will focus on the photometric and kinematic properties, such as the size of the core and velocity anisotropy profiles, of the merger remnants. I am also going to compare these properties to observations of a few known core galaxies, in order to verify that the results adequately describe the actual phenomenon.
+
+In chapter \ref{chapter:2}, I will explain the background theory, necessary for understanding core galaxies and their formation, as well as the simulations and the analysis of their results. In chapter \ref{chapter:3}, I go over the two integration methods used in the KETJU code, and describe the basic properties that allow it to use them in conjunction with each other. Chapter \ref{chapter:4} presents the results of the simulations, and includes my analysis of said results. Finally, in chapter \ref{chapter:5} I give my conclusions on the thesis, and suggest possible subjects for further research on the formation of core galaxies.
+
+\chapter{Background Theory} \label{chapter:2}
 
 \section{Elliptical Galaxies} \label{section:elliptical}
 
@@ -523,7 +563,7 @@ where $G$ is the gravitational constant, $c$ is the speed of light, $m$ is the t
 
 An important caveat to note is that, the point mass assumption of the PN approximation ignores the relativistic effects that the spin of the black hole, alongside its non-spherical shape, has on closely orbiting objects. Thus, in order to take them into account, one needs to add an additional spin PN-term to equation \ref{eq:PN_eom}. The effects caused by the spin of the black hole include orbital precession (i.e. changes in the rotational axis of the orbit), as well as precession of the spin itself \citep{Kidder1995}. Although a small effect in magnitude, the lack of spherical symmetry in the shape of the spinning BH, on the other hand, results in additional non-radial acceleration for the orbiting object \citep{MerrittBook}. 
 
-  \chapter{KETJU}
+\chapter{KETJU} \label{chapter:3}
 
 KETJU \citep{Rantala2017KETJU} is a simulation code, designed for efficient and simultaneous modelling of both galactic-scale dynamics and the precise motion of stellar particles near SMBHs. This is achieved through the combined functionality of two integrators with different degrees of efficiency and precision. The global dynamics of the simulated stellar system is calculated using the tree-integrator (section \ref{section:tree}) of the GADGET-3 simulation code \citep{Springel2005}, which uses softened dynamics (section \ref{section:softened_dynamics}) to calculate the general motion of particles in collisionless systems. The motion of bodies close to the SMBHs is on the other hand calculated using an algorithmically regularised chain method (AR-CHAIN, section \ref{section:ar-chain}; \citealt{Mikkola2008ARCHAIN}).
 
@@ -1315,7 +1355,7 @@ Earlier in this chapter it was shown that there is a clear positive correlation 
 \end{figure}
 
 
-\chapter{Conclusions}
+\chapter{Conclusions} \label{chapter:5}
 
 In this Master's thesis, I have studied the formation of low-luminosity galactic cores in mergers of gas-free elliptical galaxies that contain a supermassive black hole in their respective centres. I analysed results from seven galaxy merger simulations done using the KETJU code, a combination of both the GADGET-3 tree code and the AR-CHAIN integrator, which can simulate both general galactic dynamics as well as precise stellar motion near SMBHs, simultaneously. Each simulation run contained two identical galaxies, the difference between the different runs being in the mass of the central SMBH. 
 
@@ -1356,6 +1396,8 @@ Finally, as seen in this thesis, efficient and precise simulation codes of large
 \newcommand{\prl}{Physical Review Letters}
 \newcommand{\ssr}{Space Science Reviews}
 \newcommand{\prd}{Physical Review D}
+\newcommand{\pasp}{Publications of the Astronomical Society of the Pacific}
+\newcommand{\zap}{Z. Astrophys.}
 
 \clearpage
 \addcontentsline{toc}{chapter}{Bibliography} % This lines adds the bibliography to the ToC
